@@ -363,7 +363,7 @@
             "@id": "http://qudt.org/schema/qudt/relevantQuantityKind",
             "@type": "@id"
         },
-        "concept": "https://data.omgeving.vlaanderen.be/id/concept/parameter/",
+        "concept": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
         "collectie": "https://data.omgeving.vlaanderen.be/id/collection/luchtzuiveringssysteem/",
         "access_right": "http://publications.europa.eu/resource/authority/access-right/",
         "adms": "http://www.w3.org/ns/adms#",
@@ -419,6 +419,7 @@
         "xkos": "http://rdf-vocabulary.ddialliance.org/xkos#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "wb": "https://data.omgeving.vlaanderen.be/id/concept/waardebepaling/",
+        "lzp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
         "lzs": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/",
         "lzss": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/",
         "lzsst": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/",
@@ -429,7 +430,7 @@
         "quantitykind": "http://qudt.org/vocab/quantitykind/",
         "ssn": "http://www.w3.org/ns/ssn/",
         "sosa": "http://www.w3.org/ns/sosa/",
-        "@base": "https://data.omgeving.vlaanderen.be/id/concept/parameter/"
+        "@base": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/"
     },
     "graph": [
         {
@@ -569,42 +570,7 @@
             "topConceptOf": "conceptscheme:lzs"
         },
         {
-            "id": "lzsst:in_gebruik",
-            "type": "skos:Concept",
-            "inScheme": "conceptscheme:lzsst",
-            "prefLabel": "Stal in gebruik, dieren aanwezig.",
-            "topConceptOf": "conceptscheme:lzsst"
-        },
-        {
-            "id": "lzsst:leeg",
-            "type": "skos:Concept",
-            "inScheme": "conceptscheme:lzsst",
-            "prefLabel": "Lege stal",
-            "topConceptOf": "conceptscheme:lzsst"
-        },
-        {
-            "id": "lzss:onderhoud",
-            "type": "skos:Concept",
-            "inScheme": "conceptscheme:lzss",
-            "prefLabel": "In onderhoud",
-            "topConceptOf": "conceptscheme:lzss"
-        },
-        {
-            "id": "lzss:operationeel",
-            "type": "skos:Concept",
-            "inScheme": "conceptscheme:lzss",
-            "prefLabel": "Operationeel",
-            "topConceptOf": "conceptscheme:lzss"
-        },
-        {
-            "id": "lzss:storing",
-            "type": "skos:Concept",
-            "inScheme": "conceptscheme:lzss",
-            "prefLabel": "Storing",
-            "topConceptOf": "conceptscheme:lzss"
-        },
-        {
-            "id": "concept:drukvaloverhetsysteem",
+            "id": "lzp:drukvaloverhetsysteem",
             "type": [
                 "skos:Concept",
                 "ssn:Property",
@@ -685,7 +651,7 @@
             }
         },
         {
-            "id": "concept:geleidbaarheidvanhetwaswater",
+            "id": "lzp:geleidbaarheidvanhetwaswater",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -758,7 +724,7 @@
             }
         },
         {
-            "id": "concept:spuitwaterproductie",
+            "id": "lzp:spuitwaterproductie",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -831,7 +797,7 @@
             }
         },
         {
-            "id": "concept:spuitwaterproductiepercolaat",
+            "id": "lzp:spuitwaterproductiepercolaat",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -911,7 +877,7 @@
             }
         },
         {
-            "id": "concept:spuitwaterproductievoorbevochtiging",
+            "id": "lzp:spuitwaterproductievoorbevochtiging",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -991,7 +957,7 @@
             }
         },
         {
-            "id": "concept:stalbezetting",
+            "id": "lzp:stalbezetting",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -1058,7 +1024,7 @@
             }
         },
         {
-            "id": "concept:systeemstatus",
+            "id": "lzp:systeemstatus",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -1125,7 +1091,7 @@
             }
         },
         {
-            "id": "concept:waswaterdebiet",
+            "id": "lzp:waswaterdebiet",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -1205,7 +1171,7 @@
             }
         },
         {
-            "id": "concept:waswaterdebietbevloeiing",
+            "id": "lzp:waswaterdebietbevloeiing",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -1285,7 +1251,7 @@
             }
         },
         {
-            "id": "concept:waswaterdebietvoorbevochtiging",
+            "id": "lzp:waswaterdebietvoorbevochtiging",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -1365,7 +1331,7 @@
             }
         },
         {
-            "id": "concept:zuurtegraadwaswater",
+            "id": "lzp:zuurtegraadwaswater",
             "type": [
                 "skos:Concept",
                 "par:Parameter"
@@ -1445,6 +1411,41 @@
             }
         },
         {
+            "id": "lzsst:in_gebruik",
+            "type": "skos:Concept",
+            "inScheme": "conceptscheme:lzsst",
+            "prefLabel": "Stal in gebruik, dieren aanwezig.",
+            "topConceptOf": "conceptscheme:lzsst"
+        },
+        {
+            "id": "lzsst:leeg",
+            "type": "skos:Concept",
+            "inScheme": "conceptscheme:lzsst",
+            "prefLabel": "Lege stal",
+            "topConceptOf": "conceptscheme:lzsst"
+        },
+        {
+            "id": "lzss:onderhoud",
+            "type": "skos:Concept",
+            "inScheme": "conceptscheme:lzss",
+            "prefLabel": "In onderhoud",
+            "topConceptOf": "conceptscheme:lzss"
+        },
+        {
+            "id": "lzss:operationeel",
+            "type": "skos:Concept",
+            "inScheme": "conceptscheme:lzss",
+            "prefLabel": "Operationeel",
+            "topConceptOf": "conceptscheme:lzss"
+        },
+        {
+            "id": "lzss:storing",
+            "type": "skos:Concept",
+            "inScheme": "conceptscheme:lzss",
+            "prefLabel": "Storing",
+            "topConceptOf": "conceptscheme:lzss"
+        },
+        {
             "id": "conceptscheme:drager",
             "type": "skos:ConceptScheme",
             "hasTopConcept": [
@@ -1485,17 +1486,17 @@
             "id": "conceptscheme:parameter",
             "type": "skos:ConceptScheme",
             "hasTopConcept": [
-                "concept:drukvaloverhetsysteem",
-                "concept:geleidbaarheidvanhetwaswater",
-                "concept:spuitwaterproductie",
-                "concept:spuitwaterproductiepercolaat",
-                "concept:spuitwaterproductievoorbevochtiging",
-                "concept:stalbezetting",
-                "concept:systeemstatus",
-                "concept:waswaterdebiet",
-                "concept:waswaterdebietbevloeiing",
-                "concept:waswaterdebietvoorbevochtiging",
-                "concept:zuurtegraadwaswater"
+                "lzp:drukvaloverhetsysteem",
+                "lzp:geleidbaarheidvanhetwaswater",
+                "lzp:spuitwaterproductie",
+                "lzp:spuitwaterproductiepercolaat",
+                "lzp:spuitwaterproductievoorbevochtiging",
+                "lzp:stalbezetting",
+                "lzp:systeemstatus",
+                "lzp:waswaterdebiet",
+                "lzp:waswaterdebietbevloeiing",
+                "lzp:waswaterdebietvoorbevochtiging",
+                "lzp:zuurtegraadwaswater"
             ],
             "prefLabel": "conceptschema parameter"
         },

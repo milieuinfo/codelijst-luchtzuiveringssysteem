@@ -4,7 +4,7 @@ skos:
     skos_rules : /../node_modules/maven-metadata-generator-npm/src/n3/skos-rules.n3
     dcterms_rules : /../node_modules/maven-metadata-generator-npm/src/n3/dcterms-rules.n3
   prefixes :
-    concept : https://data.omgeving.vlaanderen.be/id/concept/parameter/
+    concept : https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/
     collectie : https://data.omgeving.vlaanderen.be/id/collection/luchtzuiveringssysteem/
   path: ./main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/
   name: luchtzuiveringssysteem
@@ -158,6 +158,7 @@ prefixes :
   xkos: http://rdf-vocabulary.ddialliance.org/xkos#
   xsd: http://www.w3.org/2001/XMLSchema#
   wb: https://data.omgeving.vlaanderen.be/id/concept/waardebepaling/
+  lzp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/
   lzs: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/
   lzss: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/
   lzsst: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/
