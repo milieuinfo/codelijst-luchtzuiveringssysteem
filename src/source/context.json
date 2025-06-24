@@ -360,10 +360,24 @@
     "@id" : "http://qudt.org/schema/qudt/applicableUnit",
     "@type" : "@id"
   },
+  "relevantUnit": {
+    "@id" : "http://qudt.org/schema/qudt/relevantUnit",
+    "@type" : "@id"
+  },
   "relevantQuantityKind" : {
     "@id" : "http://qudt.org/schema/qudt/relevantQuantityKind",
     "@type" : "@id"
+  },
+  "hasProcedureForProperty":  {
+  "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#hasProcedureForProperty",
+  "@type" : "@id"
+},
+  "relevantSystem":  {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#relevantSystem",
+    "@type" : "@id"
   }
+
+
 
 }
 

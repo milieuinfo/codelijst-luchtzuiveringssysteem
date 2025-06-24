@@ -58,6 +58,8 @@
 @prefix lzs: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/>.
 @prefix lzss: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/>.
 @prefix lzsst: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/>.
+@prefix lzsm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/>.
+@prefix lzsp: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/>.
 @prefix dr: <https://data.omgeving.vlaanderen.be/id/concept/drager/>.
 @prefix par: <https://data.omgeving.vlaanderen.be/ns/parameter#>.
 @prefix qudt: <http://qudt.org/schema/qudt/>.
@@ -65,6 +67,7 @@
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/>.
 @prefix ssn: <http://www.w3.org/ns/ssn/>.
 @prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix procedure: <https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/>.
 
 quantitykind:Acidity qudt:applicableUnit unit:PH;
     a qudt:QuantityKind.
@@ -84,26 +87,6 @@ quantitykind:VolumeFlowRate qudt:applicableUnit unit:M3-PER-HR;
     a qudt:QuantityKind.
 quantitykind:VolumePerTime qudt:applicableUnit unit:M3-PER-HR;
     a qudt:QuantityKind.
-dr:hetelektronischmonitoringssysteem a skos:Concept, par:Drager;
-    skos:inScheme conceptscheme:drager;
-    skos:prefLabel "Het elektronisch monitoringssysteem"@nl;
-    skos:topConceptOf conceptscheme:drager.
-dr:lucht a skos:Concept, par:Drager;
-    skos:inScheme conceptscheme:drager;
-    skos:prefLabel "Lucht"@nl;
-    skos:topConceptOf conceptscheme:drager.
-dr:spuiwater a skos:Concept, par:Drager;
-    skos:inScheme conceptscheme:drager;
-    skos:prefLabel "Spuiwater"@nl;
-    skos:topConceptOf conceptscheme:drager.
-dr:stal a skos:Concept, par:Drager;
-    skos:inScheme conceptscheme:drager;
-    skos:prefLabel "Stal"@nl;
-    skos:topConceptOf conceptscheme:drager.
-dr:waswater a skos:Concept, par:Drager;
-    skos:inScheme conceptscheme:drager;
-    skos:prefLabel "Waswater"@nl;
-    skos:topConceptOf conceptscheme:drager.
 lzs:biobed_s3 a skos:Concept;
     skos:broader lzs:luchtzuiveringssysteem;
     skos:broaderTransitive lzs:luchtzuiveringssysteem;
@@ -111,6 +94,101 @@ lzs:biobed_s3 a skos:Concept;
     skos:notation "S3";
     skos:prefLabel "Biobed S3"@nl;
     skos:semanticRelation lzs:luchtzuiveringssysteem.
+lzsp:drukvaloverhetsysteem qudt:relevantQuantityKind quantitykind:Fugacity, quantitykind:VaporPressure;
+    qudt:relevantUnit unit:PA;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Drukval over het systeem"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:lucht;
+    par:relevantSystem lzs:luchtzuiveringssysteem;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0329>.
+lzsp:geleidbaarheidvanhetwaswater qudt:relevantQuantityKind quantitykind:Conductivity;
+    qudt:relevantUnit unit:MilliS-PER-CentiM;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Geleidbaarheid van het waswater"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:hasProcedureForProperty procedure:WAC_I_A_011;
+    par:relevantSystem lzs:luchtwasser;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0010>.
+lzsp:spuitwaterproductie qudt:relevantQuantityKind quantitykind:Volume;
+    qudt:relevantUnit unit:M3;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Spuitwaterproductie"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:spuiwater;
+    par:relevantSystem lzs:luchtwasser;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0050>.
+lzsp:spuitwaterproductiepercolaat qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
+    qudt:relevantUnit unit:M3-PER-HR;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Spuitwaterproductie percolaat"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:relevantSystem lzs:biobed_s3;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0053>.
+lzsp:spuitwaterproductievoorbevochtiging qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
+    qudt:relevantUnit unit:M3-PER-HR;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Spuitwaterproductie voorbevochtiging"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:relevantSystem lzs:biobed_s3;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0053>.
+lzsp:stalbezetting a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Stalbezetting"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:stal;
+    par:relevantSystem lzs:luchtzuiveringssysteem.
+lzsp:systeemstatus a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "SysteemStatus"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:hetelektronischmonitoringssysteem;
+    par:relevantSystem lzs:luchtzuiveringssysteem.
+lzsp:waswaterdebiet qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
+    qudt:relevantUnit unit:M3-PER-HR;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Waswaterdebiet"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:relevantSystem lzs:luchtwasser;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0053>.
+lzsp:waswaterdebietbevloeiing qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
+    qudt:relevantUnit unit:M3-PER-HR;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Waswaterdebiet bevloeiing"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:relevantSystem lzs:biobed_s3;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0053>.
+lzsp:waswaterdebietvoorbevochtiging qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
+    qudt:relevantUnit unit:M3-PER-HR;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Waswaterdebiet voorbevochtiging"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:relevantSystem lzs:biobed_s3;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0053>.
+lzsp:zuurtegraadwaswater qudt:relevantQuantityKind quantitykind:Acidity, quantitykind:Basicity;
+    qudt:relevantUnit unit:PH;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:lzsp;
+    skos:prefLabel "Zuurtegraad waswater"@nl;
+    skos:topConceptOf conceptscheme:lzsp;
+    par:drager lzsm:waswater;
+    par:hasProcedureForProperty procedure:WAC_I_A_011;
+    par:relevantSystem lzs:luchtwasser;
+    par:variabele <https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0076>.
 lzs:luchtwasser a skos:Concept;
     skos:broader lzs:luchtzuiveringssysteem;
     skos:broaderTransitive lzs:luchtzuiveringssysteem;
@@ -140,79 +218,26 @@ lzs:luchtzuiveringssysteem a skos:Concept;
     skos:prefLabel "Luchtzuiveringssysteem"@nl;
     skos:semanticRelation lzs:biobed_s3, lzs:luchtwasser, lzs:luchtwasser_s1, lzs:luchtwasser_s2;
     skos:topConceptOf conceptscheme:lzs.
-lzp:drukvaloverhetsysteem qudt:applicableUnit unit:PA;
-    qudt:relevantQuantityKind quantitykind:Fugacity, quantitykind:VaporPressure;
-    a skos:Concept, ssn:Property, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Drukval over het systeem"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:lucht.
-lzp:geleidbaarheidvanhetwaswater qudt:applicableUnit unit:MilliS-PER-CentiM;
-    qudt:relevantQuantityKind quantitykind:Conductivity;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Geleidbaarheid van het waswater"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
-lzp:spuitwaterproductie qudt:applicableUnit unit:M3;
-    qudt:relevantQuantityKind quantitykind:Volume;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Spuitwaterproductie"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:spuiwater.
-lzp:spuitwaterproductiepercolaat qudt:applicableUnit unit:M3-PER-HR;
-    qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Spuitwaterproductie percolaat"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
-lzp:spuitwaterproductievoorbevochtiging qudt:applicableUnit unit:M3-PER-HR;
-    qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Spuitwaterproductie voorbevochtiging"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
-lzp:stalbezetting a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Stalbezetting"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:stal.
-lzp:systeemstatus a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "SysteemStatus"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:hetelektronischmonitoringssysteem.
-lzp:waswaterdebiet qudt:applicableUnit unit:M3-PER-HR;
-    qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Waswaterdebiet"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
-lzp:waswaterdebietbevloeiing qudt:applicableUnit unit:M3-PER-HR;
-    qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Waswaterdebiet bevloeiing"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
-lzp:waswaterdebietvoorbevochtiging qudt:applicableUnit unit:M3-PER-HR;
-    qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Waswaterdebiet voorbevochtiging"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
-lzp:zuurtegraadwaswater qudt:applicableUnit unit:PH;
-    qudt:relevantQuantityKind quantitykind:Acidity, quantitykind:Basicity;
-    a skos:Concept, par:Parameter;
-    skos:inScheme conceptscheme:parameter;
-    skos:prefLabel "Zuurtegraad waswater"@nl;
-    skos:topConceptOf conceptscheme:parameter;
-    par:drager dr:waswater.
+lzsm:hetelektronischmonitoringssysteem a skos:Concept, par:Drager;
+    skos:inScheme conceptscheme:lzsm;
+    skos:prefLabel "Het elektronisch monitoringssysteem"@nl;
+    skos:topConceptOf conceptscheme:lzsm.
+lzsm:lucht a skos:Concept, par:Drager;
+    skos:inScheme conceptscheme:lzsm;
+    skos:prefLabel "Lucht"@nl;
+    skos:topConceptOf conceptscheme:lzsm.
+lzsm:spuiwater a skos:Concept, par:Drager;
+    skos:inScheme conceptscheme:lzsm;
+    skos:prefLabel "Spuiwater"@nl;
+    skos:topConceptOf conceptscheme:lzsm.
+lzsm:stal a skos:Concept, par:Drager;
+    skos:inScheme conceptscheme:lzsm;
+    skos:prefLabel "Stal"@nl;
+    skos:topConceptOf conceptscheme:lzsm.
+lzsm:waswater a skos:Concept, par:Drager;
+    skos:inScheme conceptscheme:lzsm;
+    skos:prefLabel "Waswater"@nl;
+    skos:topConceptOf conceptscheme:lzsm.
 lzsst:in_gebruik a skos:Concept;
     skos:inScheme conceptscheme:lzsst;
     skos:prefLabel "Stal in gebruik, dieren aanwezig."@nl;
@@ -233,20 +258,20 @@ lzss:storing a skos:Concept;
     skos:inScheme conceptscheme:lzss;
     skos:prefLabel "Storing"@nl;
     skos:topConceptOf conceptscheme:lzss.
-conceptscheme:drager a skos:ConceptScheme;
-    skos:hasTopConcept dr:hetelektronischmonitoringssysteem, dr:lucht, dr:spuiwater, dr:stal, dr:waswater;
-    skos:prefLabel "conceptschema drager"@nl.
 conceptscheme:lzs a skos:ConceptScheme;
     skos:hasTopConcept lzs:luchtzuiveringssysteem;
     skos:prefLabel "conceptschema luchtzuiveringssysteem"@nl.
+conceptscheme:lzsm a skos:ConceptScheme;
+    skos:hasTopConcept lzsm:hetelektronischmonitoringssysteem, lzsm:lucht, lzsm:spuiwater, lzsm:stal, lzsm:waswater;
+    skos:prefLabel "conceptschema luchtzuiveringssysteem medium"@nl.
+conceptscheme:lzsp a skos:ConceptScheme;
+    skos:hasTopConcept lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuitwaterproductie, lzsp:spuitwaterproductiepercolaat, lzsp:spuitwaterproductievoorbevochtiging, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:waswaterdebietbevloeiing, lzsp:waswaterdebietvoorbevochtiging, lzsp:zuurtegraadwaswater;
+    skos:prefLabel "conceptschema luchtzuiveringssysteem eigenschap"@nl.
 conceptscheme:lzss a skos:ConceptScheme;
     skos:hasTopConcept lzss:onderhoud, lzss:operationeel, lzss:storing;
     skos:prefLabel "conceptschema luchtzuiveringssysteem status"@nl.
 conceptscheme:lzsst a skos:ConceptScheme;
     skos:hasTopConcept lzsst:in_gebruik, lzsst:leeg;
     skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.
-conceptscheme:parameter a skos:ConceptScheme;
-    skos:hasTopConcept lzp:drukvaloverhetsysteem, lzp:geleidbaarheidvanhetwaswater, lzp:spuitwaterproductie, lzp:spuitwaterproductiepercolaat, lzp:spuitwaterproductievoorbevochtiging, lzp:stalbezetting, lzp:systeemstatus, lzp:waswaterdebiet, lzp:waswaterdebietbevloeiing, lzp:waswaterdebietvoorbevochtiging, lzp:zuurtegraadwaswater;
-    skos:prefLabel "conceptschema parameter"@nl.
 conceptscheme:waardebepaling a skos:ConceptScheme;
     skos:prefLabel "conceptschema waardebepaling"@nl.

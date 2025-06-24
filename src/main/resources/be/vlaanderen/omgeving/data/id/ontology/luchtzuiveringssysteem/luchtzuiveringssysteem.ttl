@@ -1,0 +1,13 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix par: <https://data.omgeving.vlaanderen.be/ns/parameter#> .
+
+# Definitie van de nieuwe afgeleide property
+par:hasProcedureForProperty a rdf:Property ;
+                           rdfs:label "has procedure for property"@en ;
+                           owl:propertyChainAxiom (
+        ^sosa:observedProperty   # Stap 1: Ga van de property naar de observation
+        sosa:usedProcedure       # Stap 2: Ga van de observation naar de procedure
+) .

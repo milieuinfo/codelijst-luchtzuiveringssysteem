@@ -162,6 +162,8 @@ prefixes :
   lzs: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/
   lzss: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/
   lzsst: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/
+  lzsm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/
+  lzsp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/
   dr: https://data.omgeving.vlaanderen.be/id/concept/drager/
   par: https://data.omgeving.vlaanderen.be/ns/parameter#
   qudt: http://qudt.org/schema/qudt/
@@ -169,6 +171,7 @@ prefixes :
   quantitykind: http://qudt.org/vocab/quantitykind/
   ssn: http://www.w3.org/ns/ssn/
   sosa: http://www.w3.org/ns/sosa/
+  procedure: https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/
 
 deploy:
   virtuoso: virtuoso-algemeen
