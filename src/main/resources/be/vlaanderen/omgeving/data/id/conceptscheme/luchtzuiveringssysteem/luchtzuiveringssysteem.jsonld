@@ -459,6 +459,328 @@
             "semanticRelation": "lzs:luchtzuiveringssysteem"
         },
         {
+            "id": "lzsp:biobedspoelwaterproductie",
+            "type": [
+                "skos:Concept",
+                "ssn:Property"
+            ],
+            "relevantQuantityKind": {
+                "id": "quantitykind:Volume",
+                "type": "qudt:QuantityKind",
+                "applicableUnit": "unit:M3"
+            },
+            "relevantUnit": "unit:M3",
+            "inScheme": "conceptscheme:lzsp",
+            "prefLabel": "Biobedspoelwaterproductie",
+            "topConceptOf": "conceptscheme:lzsp",
+            "drager": {
+                "id": "lzsm:waswater",
+                "type": [
+                    "skos:Concept",
+                    "par:Drager"
+                ],
+                "inScheme": {
+                    "id": "conceptscheme:lzsm",
+                    "type": "skos:ConceptScheme",
+                    "hasTopConcept": [
+                        "lzsm:waswater",
+                        {
+                            "id": "lzsm:spuiwater",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:stal",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Stal",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:hetelektronischmonitoringssysteem",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Het elektronisch monitoringssysteem",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        }
+                    ],
+                    "prefLabel": "conceptschema luchtzuiveringssysteem medium"
+                },
+                "prefLabel": "Waswater",
+                "topConceptOf": "conceptscheme:lzsm"
+            },
+            "relevantSystem": {
+                "id": "lzs:biobed_s3",
+                "type": "skos:Concept",
+                "broader": {
+                    "id": "lzs:luchtzuiveringssysteem",
+                    "type": "skos:Concept",
+                    "inScheme": {
+                        "id": "conceptscheme:lzs",
+                        "type": "skos:ConceptScheme",
+                        "hasTopConcept": "lzs:luchtzuiveringssysteem",
+                        "prefLabel": "conceptschema luchtzuiveringssysteem"
+                    },
+                    "narrower": [
+                        "lzs:biobed_s3",
+                        {
+                            "id": "lzs:luchtwasser",
+                            "type": "skos:Concept",
+                            "broader": "lzs:luchtzuiveringssysteem",
+                            "broaderTransitive": "lzs:luchtzuiveringssysteem",
+                            "inScheme": "conceptscheme:lzs",
+                            "narrower": [
+                                {
+                                    "id": "lzs:luchtwasser_s1",
+                                    "type": "skos:Concept",
+                                    "broader": "lzs:luchtwasser",
+                                    "broaderTransitive": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ],
+                                    "inScheme": "conceptscheme:lzs",
+                                    "notation": "S1",
+                                    "prefLabel": "Luchtwasser S1",
+                                    "semanticRelation": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ]
+                                },
+                                {
+                                    "id": "lzs:luchtwasser_s2",
+                                    "type": "skos:Concept",
+                                    "broader": "lzs:luchtwasser",
+                                    "broaderTransitive": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ],
+                                    "inScheme": "conceptscheme:lzs",
+                                    "notation": "S2",
+                                    "prefLabel": "Luchtwasser S2",
+                                    "semanticRelation": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ]
+                                }
+                            ],
+                            "narrowerTransitive": [
+                                "lzs:luchtwasser_s1",
+                                "lzs:luchtwasser_s2"
+                            ],
+                            "prefLabel": "Luchtwasser",
+                            "semanticRelation": [
+                                "lzs:luchtzuiveringssysteem",
+                                "lzs:luchtwasser_s1",
+                                "lzs:luchtwasser_s2"
+                            ]
+                        }
+                    ],
+                    "narrowerTransitive": [
+                        "lzs:biobed_s3",
+                        "lzs:luchtwasser",
+                        "lzs:luchtwasser_s1",
+                        "lzs:luchtwasser_s2"
+                    ],
+                    "prefLabel": "Luchtzuiveringssysteem",
+                    "semanticRelation": [
+                        "lzs:biobed_s3",
+                        "lzs:luchtwasser",
+                        "lzs:luchtwasser_s1",
+                        "lzs:luchtwasser_s2"
+                    ],
+                    "topConceptOf": "conceptscheme:lzs"
+                },
+                "broaderTransitive": "lzs:luchtzuiveringssysteem",
+                "inScheme": "conceptscheme:lzs",
+                "notation": "S3",
+                "prefLabel": "Biobed S3",
+                "semanticRelation": "lzs:luchtzuiveringssysteem"
+            },
+            "variabele": "omg_id:concept/fysico-chemisch/0053"
+        },
+        {
+            "id": "lzsp:biobedspuiwaterproductie",
+            "type": [
+                "skos:Concept",
+                "ssn:Property"
+            ],
+            "relevantQuantityKind": {
+                "id": "quantitykind:Volume",
+                "type": "qudt:QuantityKind",
+                "applicableUnit": "unit:M3"
+            },
+            "relevantUnit": "unit:M3",
+            "inScheme": "conceptscheme:lzsp",
+            "prefLabel": "Biobedspuiwaterproductie",
+            "topConceptOf": "conceptscheme:lzsp",
+            "drager": {
+                "id": "lzsm:spuiwater",
+                "type": [
+                    "skos:Concept",
+                    "par:Drager"
+                ],
+                "inScheme": {
+                    "id": "conceptscheme:lzsm",
+                    "type": "skos:ConceptScheme",
+                    "hasTopConcept": [
+                        {
+                            "id": "lzsm:waswater",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Waswater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        "lzsm:spuiwater",
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:stal",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Stal",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:hetelektronischmonitoringssysteem",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Het elektronisch monitoringssysteem",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        }
+                    ],
+                    "prefLabel": "conceptschema luchtzuiveringssysteem medium"
+                },
+                "prefLabel": "Spuiwater",
+                "topConceptOf": "conceptscheme:lzsm"
+            },
+            "relevantSystem": {
+                "id": "lzs:biobed_s3",
+                "type": "skos:Concept",
+                "broader": {
+                    "id": "lzs:luchtzuiveringssysteem",
+                    "type": "skos:Concept",
+                    "inScheme": {
+                        "id": "conceptscheme:lzs",
+                        "type": "skos:ConceptScheme",
+                        "hasTopConcept": "lzs:luchtzuiveringssysteem",
+                        "prefLabel": "conceptschema luchtzuiveringssysteem"
+                    },
+                    "narrower": [
+                        "lzs:biobed_s3",
+                        {
+                            "id": "lzs:luchtwasser",
+                            "type": "skos:Concept",
+                            "broader": "lzs:luchtzuiveringssysteem",
+                            "broaderTransitive": "lzs:luchtzuiveringssysteem",
+                            "inScheme": "conceptscheme:lzs",
+                            "narrower": [
+                                {
+                                    "id": "lzs:luchtwasser_s1",
+                                    "type": "skos:Concept",
+                                    "broader": "lzs:luchtwasser",
+                                    "broaderTransitive": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ],
+                                    "inScheme": "conceptscheme:lzs",
+                                    "notation": "S1",
+                                    "prefLabel": "Luchtwasser S1",
+                                    "semanticRelation": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ]
+                                },
+                                {
+                                    "id": "lzs:luchtwasser_s2",
+                                    "type": "skos:Concept",
+                                    "broader": "lzs:luchtwasser",
+                                    "broaderTransitive": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ],
+                                    "inScheme": "conceptscheme:lzs",
+                                    "notation": "S2",
+                                    "prefLabel": "Luchtwasser S2",
+                                    "semanticRelation": [
+                                        "lzs:luchtzuiveringssysteem",
+                                        "lzs:luchtwasser"
+                                    ]
+                                }
+                            ],
+                            "narrowerTransitive": [
+                                "lzs:luchtwasser_s1",
+                                "lzs:luchtwasser_s2"
+                            ],
+                            "prefLabel": "Luchtwasser",
+                            "semanticRelation": [
+                                "lzs:luchtzuiveringssysteem",
+                                "lzs:luchtwasser_s1",
+                                "lzs:luchtwasser_s2"
+                            ]
+                        }
+                    ],
+                    "narrowerTransitive": [
+                        "lzs:biobed_s3",
+                        "lzs:luchtwasser",
+                        "lzs:luchtwasser_s1",
+                        "lzs:luchtwasser_s2"
+                    ],
+                    "prefLabel": "Luchtzuiveringssysteem",
+                    "semanticRelation": [
+                        "lzs:biobed_s3",
+                        "lzs:luchtwasser",
+                        "lzs:luchtwasser_s1",
+                        "lzs:luchtwasser_s2"
+                    ],
+                    "topConceptOf": "conceptscheme:lzs"
+                },
+                "broaderTransitive": "lzs:luchtzuiveringssysteem",
+                "inScheme": "conceptscheme:lzs",
+                "notation": "S3",
+                "prefLabel": "Biobed S3",
+                "semanticRelation": "lzs:luchtzuiveringssysteem"
+            },
+            "variabele": "omg_id:concept/fysico-chemisch/0050"
+        },
+        {
             "id": "lzsp:drukvaloverhetsysteem",
             "type": [
                 "skos:Concept",
@@ -490,7 +812,6 @@
                     "id": "conceptscheme:lzsm",
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
-                        "lzsm:lucht",
                         {
                             "id": "lzsm:waswater",
                             "type": [
@@ -511,6 +832,7 @@
                             "prefLabel": "Spuiwater",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
+                        "lzsm:lucht",
                         {
                             "id": "lzsm:stal",
                             "type": [
@@ -651,16 +973,6 @@
                     "id": "conceptscheme:lzsm",
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
                         "lzsm:waswater",
                         {
                             "id": "lzsm:spuiwater",
@@ -670,6 +982,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         {
@@ -789,7 +1111,7 @@
             "variabele": "omg_id:concept/fysico-chemisch/0010"
         },
         {
-            "id": "lzsp:spuitwaterproductie",
+            "id": "lzsp:spuiwaterproductie",
             "type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -801,7 +1123,7 @@
             },
             "relevantUnit": "unit:M3",
             "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Spuitwaterproductie",
+            "prefLabel": "Spuiwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
             "drager": {
                 "id": "lzsm:spuiwater",
@@ -814,16 +1136,6 @@
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
                         {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
                             "id": "lzsm:waswater",
                             "type": [
                                 "skos:Concept",
@@ -834,6 +1146,16 @@
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         "lzsm:spuiwater",
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
                         {
                             "id": "lzsm:stal",
                             "type": [
@@ -950,342 +1272,6 @@
             "variabele": "omg_id:concept/fysico-chemisch/0050"
         },
         {
-            "id": "lzsp:spuitwaterproductiepercolaat",
-            "type": [
-                "skos:Concept",
-                "ssn:Property"
-            ],
-            "relevantQuantityKind": [
-                {
-                    "id": "quantitykind:VolumeFlowRate",
-                    "type": "qudt:QuantityKind",
-                    "applicableUnit": "unit:M3-PER-HR"
-                },
-                {
-                    "id": "quantitykind:VolumePerTime",
-                    "type": "qudt:QuantityKind",
-                    "applicableUnit": "unit:M3-PER-HR"
-                }
-            ],
-            "relevantUnit": "unit:M3-PER-HR",
-            "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Spuitwaterproductie percolaat",
-            "topConceptOf": "conceptscheme:lzsp",
-            "drager": {
-                "id": "lzsm:waswater",
-                "type": [
-                    "skos:Concept",
-                    "par:Drager"
-                ],
-                "inScheme": {
-                    "id": "conceptscheme:lzsm",
-                    "type": "skos:ConceptScheme",
-                    "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        "lzsm:waswater",
-                        {
-                            "id": "lzsm:spuiwater",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Spuiwater",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
-                            "id": "lzsm:stal",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Stal",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
-                            "id": "lzsm:hetelektronischmonitoringssysteem",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Het elektronisch monitoringssysteem",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        }
-                    ],
-                    "prefLabel": "conceptschema luchtzuiveringssysteem medium"
-                },
-                "prefLabel": "Waswater",
-                "topConceptOf": "conceptscheme:lzsm"
-            },
-            "relevantSystem": {
-                "id": "lzs:biobed_s3",
-                "type": "skos:Concept",
-                "broader": {
-                    "id": "lzs:luchtzuiveringssysteem",
-                    "type": "skos:Concept",
-                    "inScheme": {
-                        "id": "conceptscheme:lzs",
-                        "type": "skos:ConceptScheme",
-                        "hasTopConcept": "lzs:luchtzuiveringssysteem",
-                        "prefLabel": "conceptschema luchtzuiveringssysteem"
-                    },
-                    "narrower": [
-                        "lzs:biobed_s3",
-                        {
-                            "id": "lzs:luchtwasser",
-                            "type": "skos:Concept",
-                            "broader": "lzs:luchtzuiveringssysteem",
-                            "broaderTransitive": "lzs:luchtzuiveringssysteem",
-                            "inScheme": "conceptscheme:lzs",
-                            "narrower": [
-                                {
-                                    "id": "lzs:luchtwasser_s1",
-                                    "type": "skos:Concept",
-                                    "broader": "lzs:luchtwasser",
-                                    "broaderTransitive": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ],
-                                    "inScheme": "conceptscheme:lzs",
-                                    "notation": "S1",
-                                    "prefLabel": "Luchtwasser S1",
-                                    "semanticRelation": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ]
-                                },
-                                {
-                                    "id": "lzs:luchtwasser_s2",
-                                    "type": "skos:Concept",
-                                    "broader": "lzs:luchtwasser",
-                                    "broaderTransitive": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ],
-                                    "inScheme": "conceptscheme:lzs",
-                                    "notation": "S2",
-                                    "prefLabel": "Luchtwasser S2",
-                                    "semanticRelation": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ]
-                                }
-                            ],
-                            "narrowerTransitive": [
-                                "lzs:luchtwasser_s1",
-                                "lzs:luchtwasser_s2"
-                            ],
-                            "prefLabel": "Luchtwasser",
-                            "semanticRelation": [
-                                "lzs:luchtzuiveringssysteem",
-                                "lzs:luchtwasser_s1",
-                                "lzs:luchtwasser_s2"
-                            ]
-                        }
-                    ],
-                    "narrowerTransitive": [
-                        "lzs:biobed_s3",
-                        "lzs:luchtwasser",
-                        "lzs:luchtwasser_s1",
-                        "lzs:luchtwasser_s2"
-                    ],
-                    "prefLabel": "Luchtzuiveringssysteem",
-                    "semanticRelation": [
-                        "lzs:biobed_s3",
-                        "lzs:luchtwasser",
-                        "lzs:luchtwasser_s1",
-                        "lzs:luchtwasser_s2"
-                    ],
-                    "topConceptOf": "conceptscheme:lzs"
-                },
-                "broaderTransitive": "lzs:luchtzuiveringssysteem",
-                "inScheme": "conceptscheme:lzs",
-                "notation": "S3",
-                "prefLabel": "Biobed S3",
-                "semanticRelation": "lzs:luchtzuiveringssysteem"
-            },
-            "variabele": "omg_id:concept/fysico-chemisch/0053"
-        },
-        {
-            "id": "lzsp:spuitwaterproductievoorbevochtiging",
-            "type": [
-                "skos:Concept",
-                "ssn:Property"
-            ],
-            "relevantQuantityKind": [
-                {
-                    "id": "quantitykind:VolumeFlowRate",
-                    "type": "qudt:QuantityKind",
-                    "applicableUnit": "unit:M3-PER-HR"
-                },
-                {
-                    "id": "quantitykind:VolumePerTime",
-                    "type": "qudt:QuantityKind",
-                    "applicableUnit": "unit:M3-PER-HR"
-                }
-            ],
-            "relevantUnit": "unit:M3-PER-HR",
-            "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Spuitwaterproductie voorbevochtiging",
-            "topConceptOf": "conceptscheme:lzsp",
-            "drager": {
-                "id": "lzsm:waswater",
-                "type": [
-                    "skos:Concept",
-                    "par:Drager"
-                ],
-                "inScheme": {
-                    "id": "conceptscheme:lzsm",
-                    "type": "skos:ConceptScheme",
-                    "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        "lzsm:waswater",
-                        {
-                            "id": "lzsm:spuiwater",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Spuiwater",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
-                            "id": "lzsm:stal",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Stal",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
-                            "id": "lzsm:hetelektronischmonitoringssysteem",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Het elektronisch monitoringssysteem",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        }
-                    ],
-                    "prefLabel": "conceptschema luchtzuiveringssysteem medium"
-                },
-                "prefLabel": "Waswater",
-                "topConceptOf": "conceptscheme:lzsm"
-            },
-            "relevantSystem": {
-                "id": "lzs:biobed_s3",
-                "type": "skos:Concept",
-                "broader": {
-                    "id": "lzs:luchtzuiveringssysteem",
-                    "type": "skos:Concept",
-                    "inScheme": {
-                        "id": "conceptscheme:lzs",
-                        "type": "skos:ConceptScheme",
-                        "hasTopConcept": "lzs:luchtzuiveringssysteem",
-                        "prefLabel": "conceptschema luchtzuiveringssysteem"
-                    },
-                    "narrower": [
-                        "lzs:biobed_s3",
-                        {
-                            "id": "lzs:luchtwasser",
-                            "type": "skos:Concept",
-                            "broader": "lzs:luchtzuiveringssysteem",
-                            "broaderTransitive": "lzs:luchtzuiveringssysteem",
-                            "inScheme": "conceptscheme:lzs",
-                            "narrower": [
-                                {
-                                    "id": "lzs:luchtwasser_s1",
-                                    "type": "skos:Concept",
-                                    "broader": "lzs:luchtwasser",
-                                    "broaderTransitive": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ],
-                                    "inScheme": "conceptscheme:lzs",
-                                    "notation": "S1",
-                                    "prefLabel": "Luchtwasser S1",
-                                    "semanticRelation": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ]
-                                },
-                                {
-                                    "id": "lzs:luchtwasser_s2",
-                                    "type": "skos:Concept",
-                                    "broader": "lzs:luchtwasser",
-                                    "broaderTransitive": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ],
-                                    "inScheme": "conceptscheme:lzs",
-                                    "notation": "S2",
-                                    "prefLabel": "Luchtwasser S2",
-                                    "semanticRelation": [
-                                        "lzs:luchtzuiveringssysteem",
-                                        "lzs:luchtwasser"
-                                    ]
-                                }
-                            ],
-                            "narrowerTransitive": [
-                                "lzs:luchtwasser_s1",
-                                "lzs:luchtwasser_s2"
-                            ],
-                            "prefLabel": "Luchtwasser",
-                            "semanticRelation": [
-                                "lzs:luchtzuiveringssysteem",
-                                "lzs:luchtwasser_s1",
-                                "lzs:luchtwasser_s2"
-                            ]
-                        }
-                    ],
-                    "narrowerTransitive": [
-                        "lzs:biobed_s3",
-                        "lzs:luchtwasser",
-                        "lzs:luchtwasser_s1",
-                        "lzs:luchtwasser_s2"
-                    ],
-                    "prefLabel": "Luchtzuiveringssysteem",
-                    "semanticRelation": [
-                        "lzs:biobed_s3",
-                        "lzs:luchtwasser",
-                        "lzs:luchtwasser_s1",
-                        "lzs:luchtwasser_s2"
-                    ],
-                    "topConceptOf": "conceptscheme:lzs"
-                },
-                "broaderTransitive": "lzs:luchtzuiveringssysteem",
-                "inScheme": "conceptscheme:lzs",
-                "notation": "S3",
-                "prefLabel": "Biobed S3",
-                "semanticRelation": "lzs:luchtzuiveringssysteem"
-            },
-            "variabele": "omg_id:concept/fysico-chemisch/0053"
-        },
-        {
             "id": "lzsp:stalbezetting",
             "type": [
                 "skos:Concept",
@@ -1305,16 +1291,6 @@
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
                         {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
                             "id": "lzsm:waswater",
                             "type": [
                                 "skos:Concept",
@@ -1332,6 +1308,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         "lzsm:stal",
@@ -1459,16 +1445,6 @@
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
                         {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
-                        {
                             "id": "lzsm:waswater",
                             "type": [
                                 "skos:Concept",
@@ -1486,6 +1462,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         {
@@ -1613,7 +1599,7 @@
             ],
             "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Waswaterdebiet",
+            "prefLabel": "Waswaterdebiet over het waspakket",
             "topConceptOf": "conceptscheme:lzsp",
             "drager": {
                 "id": "lzsm:waswater",
@@ -1625,16 +1611,6 @@
                     "id": "conceptscheme:lzsm",
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
                         "lzsm:waswater",
                         {
                             "id": "lzsm:spuiwater",
@@ -1644,6 +1620,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         {
@@ -1781,7 +1767,7 @@
             ],
             "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Waswaterdebiet bevloeiing",
+            "prefLabel": "Waswaterdebiet van de bevloeiing van het vulmateriaal",
             "topConceptOf": "conceptscheme:lzsp",
             "drager": {
                 "id": "lzsm:waswater",
@@ -1793,16 +1779,6 @@
                     "id": "conceptscheme:lzsm",
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
                         "lzsm:waswater",
                         {
                             "id": "lzsm:spuiwater",
@@ -1812,6 +1788,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         {
@@ -1949,7 +1935,7 @@
             ],
             "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Waswaterdebiet voorbevochtiging",
+            "prefLabel": "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht",
             "topConceptOf": "conceptscheme:lzsp",
             "drager": {
                 "id": "lzsm:waswater",
@@ -1961,16 +1947,6 @@
                     "id": "conceptscheme:lzsm",
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
                         "lzsm:waswater",
                         {
                             "id": "lzsm:spuiwater",
@@ -1980,6 +1956,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         {
@@ -2117,7 +2103,7 @@
             ],
             "relevantUnit": "unit:PH",
             "inScheme": "conceptscheme:lzsp",
-            "prefLabel": "Zuurtegraad waswater",
+            "prefLabel": "Zuurtegraad van het waswater",
             "topConceptOf": "conceptscheme:lzsp",
             "drager": {
                 "id": "lzsm:waswater",
@@ -2129,16 +2115,6 @@
                     "id": "conceptscheme:lzsm",
                     "type": "skos:ConceptScheme",
                     "hasTopConcept": [
-                        {
-                            "id": "lzsm:lucht",
-                            "type": [
-                                "skos:Concept",
-                                "par:Drager"
-                            ],
-                            "inScheme": "conceptscheme:lzsm",
-                            "prefLabel": "Lucht",
-                            "topConceptOf": "conceptscheme:lzsm"
-                        },
                         "lzsm:waswater",
                         {
                             "id": "lzsm:spuiwater",
@@ -2148,6 +2124,16 @@
                             ],
                             "inScheme": "conceptscheme:lzsm",
                             "prefLabel": "Spuiwater",
+                            "topConceptOf": "conceptscheme:lzsm"
+                        },
+                        {
+                            "id": "lzsm:lucht",
+                            "type": [
+                                "skos:Concept",
+                                "par:Drager"
+                            ],
+                            "inScheme": "conceptscheme:lzsm",
+                            "prefLabel": "Lucht",
                             "topConceptOf": "conceptscheme:lzsm"
                         },
                         {
@@ -2437,9 +2423,9 @@
             "id": "conceptscheme:lzsm",
             "type": "skos:ConceptScheme",
             "hasTopConcept": [
-                "lzsm:lucht",
                 "lzsm:waswater",
                 "lzsm:spuiwater",
+                "lzsm:lucht",
                 "lzsm:stal",
                 "lzsm:hetelektronischmonitoringssysteem"
             ],
@@ -2449,11 +2435,11 @@
             "id": "conceptscheme:lzsp",
             "type": "skos:ConceptScheme",
             "hasTopConcept": [
+                "lzsp:biobedspoelwaterproductie",
+                "lzsp:biobedspuiwaterproductie",
                 "lzsp:drukvaloverhetsysteem",
                 "lzsp:geleidbaarheidvanhetwaswater",
-                "lzsp:spuitwaterproductie",
-                "lzsp:spuitwaterproductiepercolaat",
-                "lzsp:spuitwaterproductievoorbevochtiging",
+                "lzsp:spuiwaterproductie",
                 "lzsp:stalbezetting",
                 "lzsp:systeemstatus",
                 "lzsp:waswaterdebiet",
