@@ -1,0 +1,30 @@
+@prefix par: <https://data.omgeving.vlaanderen.be/ns/lzs#> .
+
+
+
+{ ?x par:relevantSystem ?y } => { ?y par:relevantProperty ?x} .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

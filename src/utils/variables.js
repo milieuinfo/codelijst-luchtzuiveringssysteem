@@ -16,7 +16,7 @@ const context_prefixes = Object.assign({},context , prefixes)
 
 const frame_skos_prefixes = {
     "@context": context_prefixes,
-    "@type": ["rdfs:Resource", "skos:ConceptScheme", "skos:Collection", "skos:Concept"],
+    "@type": ["rdfs:Resource", "skos:ConceptScheme", "skos:Concept", "http://qudt.org/schema/qudt/QuantityKind"],
     "member": {
         "@type": "skos:Concept",
         "@embed": "@never",
@@ -91,26 +91,63 @@ const frame_skos_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
+    "drager" : {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantSystem" : {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantQuantityKind" : {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "subject" : {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantCodeList":  {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantDataType":  {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+
+    "hasProcedureForProperty":  {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+
+    "seeAlso":{
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantProperty": {
+        "@embed": "@never",
+        "@omitDefault": true
+    }
+
 
 }
 
 
 const frame_skos_no_prefixes = {
     "@context": context,
-    "@type": ["http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Collection", "http://www.w3.org/2004/02/skos/core#Concept"],
+    "@type": ["http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Concept", "http://qudt.org/schema/qudt/QuantityKind"],
     "member": {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
         "@omitDefault": true
     },
     "inScheme": {
-        "@type": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
         "@embed": "@never",
         "@omitDefault": true
     },
 
     "topConceptOf": {
-        "@type": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
         "@embed": "@never",
         "@omitDefault": true
     }
@@ -179,11 +216,61 @@ const frame_skos_no_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
+
+    "relevantSystem" : {
+        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
     "semanticRelation" : {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
         "@omitDefault": true
     },
+    "relevantQuantityKind" : {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "subject" : {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantCodeList":  {
+        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantDataType":  {
+        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "hasProcedureForProperty":  {
+        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+
+    "relevantUnit": {
+        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantProperty": {
+        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    }
+
+    ,
+    "seeAlso":{
+        "@embed": "@never",
+        "@omitDefault": true
+    }
+
+
+
+
 
 }
 

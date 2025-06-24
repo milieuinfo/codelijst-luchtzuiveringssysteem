@@ -20,6 +20,11 @@
     "@id" : "http://purl.org/dc/terms/source",
     "@type" : "@id"
   },
+  "subject" : {
+    "@id" : "http://purl.org/dc/terms/subject",
+    "@type" : "@id"
+  },
+
   "sparql-service-description-name" : {
     "@id" : "http://www.w3.org/ns/sparql-service-description#name",
     "@type" : "@id"
@@ -345,15 +350,15 @@
     "@id" : "http://purl.org/dc/elements/1.1/identifier"
   },
   "variabele" : {
-    "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#variabele",
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#variabele",
     "@type" : "@id"
   },
   "drager" : {
-    "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#drager",
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#drager",
     "@type" : "@id"
   },
   "waardebepaling" : {
-    "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#waardebepaling",
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#waardebepaling",
     "@type" : "@id"
   },
   "applicableUnit" : {
@@ -369,16 +374,25 @@
     "@type" : "@id"
   },
   "hasProcedureForProperty":  {
-  "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#hasProcedureForProperty",
+  "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty",
   "@type" : "@id"
 },
   "relevantSystem":  {
-    "@id" : "https://data.omgeving.vlaanderen.be/ns/parameter#relevantSystem",
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem",
+    "@type" : "@id"
+  },
+  "relevantCodeList":  {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList",
+    "@type" : "@id"
+  },
+  "relevantDataType":  {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType",
+    "@type" : "@id"
+  },
+  "relevantProperty": {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty",
     "@type" : "@id"
   }
-
-
-
 }
 
 
