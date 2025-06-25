@@ -517,7 +517,7 @@
             "broaderTransitive": "lzs:luchtzuiveringssysteem",
             "inScheme": "conceptscheme:lzs",
             "notation": "S3",
-            "prefLabel": "Biobed S3",
+            "prefLabel": "Biobed",
             "semanticRelation": "lzs:luchtzuiveringssysteem",
             "relevantProperty": [
                 "lzsp:biobedspoelwaterproductie",
@@ -771,7 +771,7 @@
             ],
             "inScheme": "conceptscheme:lzs",
             "notation": "S1",
-            "prefLabel": "Luchtwasser S1",
+            "prefLabel": "Biologische luchtwasser",
             "semanticRelation": [
                 "lzs:luchtzuiveringssysteem",
                 "lzs:luchtwasser"
@@ -796,7 +796,7 @@
             ],
             "inScheme": "conceptscheme:lzs",
             "notation": "S2",
-            "prefLabel": "Luchtwasser S2",
+            "prefLabel": "Chemische luchtwasser",
             "semanticRelation": [
                 "lzs:luchtzuiveringssysteem",
                 "lzs:luchtwasser"

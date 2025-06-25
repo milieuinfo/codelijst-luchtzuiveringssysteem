@@ -93,7 +93,7 @@ lzs:biobed_s3 a skos:Concept;
     skos:broaderTransitive lzs:luchtzuiveringssysteem;
     skos:inScheme conceptscheme:lzs;
     skos:notation "S3";
-    skos:prefLabel "Biobed S3"@nl;
+    skos:prefLabel "Biobed"@nl;
     skos:semanticRelation lzs:luchtzuiveringssysteem;
     lzsns:relevantProperty lzsp:biobedspoelwaterproductie, lzsp:biobedspuiwaterproductie, lzsp:drukvaloverhetsysteem, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebietbevloeiing, lzsp:waswaterdebietvoorbevochtiging.
 lzsp:biobedspoelwaterproductie dct:subject lzsm:waswater;
@@ -215,7 +215,7 @@ lzs:luchtwasser_s1 a skos:Concept;
     skos:broaderTransitive lzs:luchtwasser, lzs:luchtzuiveringssysteem;
     skos:inScheme conceptscheme:lzs;
     skos:notation "S1";
-    skos:prefLabel "Luchtwasser S1"@nl;
+    skos:prefLabel "Biologische luchtwasser"@nl;
     skos:semanticRelation lzs:luchtwasser, lzs:luchtzuiveringssysteem;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:zuurtegraadwaswater.
 lzs:luchtwasser_s2 a skos:Concept;
@@ -223,7 +223,7 @@ lzs:luchtwasser_s2 a skos:Concept;
     skos:broaderTransitive lzs:luchtwasser, lzs:luchtzuiveringssysteem;
     skos:inScheme conceptscheme:lzs;
     skos:notation "S2";
-    skos:prefLabel "Luchtwasser S2"@nl;
+    skos:prefLabel "Chemische luchtwasser"@nl;
     skos:semanticRelation lzs:luchtwasser, lzs:luchtzuiveringssysteem;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:zuurtegraadwaswater.
 lzs:luchtzuiveringssysteem a skos:Concept;

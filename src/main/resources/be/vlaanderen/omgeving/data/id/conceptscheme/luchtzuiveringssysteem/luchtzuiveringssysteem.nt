@@ -21,7 +21,7 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <http://www.w3.org/2004/02/skos/core#notation> "S3" .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biobed S3"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biobed"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/biobed_s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> .
@@ -180,7 +180,7 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#notation> "S1" .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#prefLabel> "Luchtwasser S1"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biologische luchtwasser"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> .
@@ -196,7 +196,7 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#notation> "S2" .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Luchtwasser S2"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Chemische luchtwasser"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwasser_s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> .
