@@ -522,6 +522,9 @@
             "relevantProperty": [
                 "lzsp:biobedspoelwaterproductie",
                 "lzsp:biobedspuiwaterproductie",
+                "lzsp:drukvaloverhetsysteem",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
                 "lzsp:waswaterdebietbevloeiing",
                 "lzsp:waswaterdebietvoorbevochtiging"
             ]
@@ -575,7 +578,11 @@
             "prefLabel": "Drukval over het systeem",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:luchtzuiveringssysteem"
+            "relevantSystem": [
+                "lzs:biobed_s3",
+                "lzs:luchtwasser_s1",
+                "lzs:luchtwasser_s2"
+            ]
         },
         {
             "id": "lzsp:geleidbaarheidvanhetwaswater",
@@ -627,7 +634,11 @@
             "prefLabel": "Stalbezetting",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantCodeList": "conceptscheme:lzsst",
-            "relevantSystem": "lzs:luchtzuiveringssysteem"
+            "relevantSystem": [
+                "lzs:biobed_s3",
+                "lzs:luchtwasser_s1",
+                "lzs:luchtwasser_s2"
+            ]
         },
         {
             "id": "lzsp:systeemstatus",
@@ -640,7 +651,11 @@
             "prefLabel": "SysteemStatus",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantCodeList": "conceptscheme:lzss",
-            "relevantSystem": "lzs:luchtzuiveringssysteem"
+            "relevantSystem": [
+                "lzs:biobed_s3",
+                "lzs:luchtwasser_s1",
+                "lzs:luchtwasser_s2"
+            ]
         },
         {
             "id": "lzsp:waswaterdebiet",
@@ -659,7 +674,10 @@
             "prefLabel": "Waswaterdebiet over het waspakket",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:luchtwasser"
+            "relevantSystem": [
+                "lzs:luchtwasser_s1",
+                "lzs:luchtwasser_s2"
+            ]
         },
         {
             "id": "lzsp:waswaterdebietbevloeiing",
@@ -741,8 +759,7 @@
                 "lzs:luchtzuiveringssysteem",
                 "lzs:luchtwasser_s1",
                 "lzs:luchtwasser_s2"
-            ],
-            "relevantProperty": "lzsp:waswaterdebiet"
+            ]
         },
         {
             "id": "lzs:luchtwasser_s1",
@@ -760,8 +777,12 @@
                 "lzs:luchtwasser"
             ],
             "relevantProperty": [
+                "lzsp:drukvaloverhetsysteem",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
                 "lzsp:geleidbaarheidvanhetwaswater",
                 "lzsp:spuiwaterproductie",
+                "lzsp:waswaterdebiet",
                 "lzsp:zuurtegraadwaswater"
             ]
         },
@@ -781,8 +802,12 @@
                 "lzs:luchtwasser"
             ],
             "relevantProperty": [
+                "lzsp:drukvaloverhetsysteem",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
                 "lzsp:geleidbaarheidvanhetwaswater",
                 "lzsp:spuiwaterproductie",
+                "lzsp:waswaterdebiet",
                 "lzsp:zuurtegraadwaswater"
             ]
         },
@@ -807,12 +832,7 @@
                 "lzs:luchtwasser_s2",
                 "lzs:luchtwasser"
             ],
-            "topConceptOf": "conceptscheme:lzs",
-            "relevantProperty": [
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus"
-            ]
+            "topConceptOf": "conceptscheme:lzs"
         },
         {
             "id": "lzsm:hetelektronischmonitoringssysteem",
@@ -923,13 +943,13 @@
             "hasTopConcept": [
                 "lzsp:biobedspoelwaterproductie",
                 "lzsp:biobedspuiwaterproductie",
-                "lzsp:waswaterdebietbevloeiing",
-                "lzsp:waswaterdebietvoorbevochtiging",
                 "lzsp:drukvaloverhetsysteem",
-                "lzsp:geleidbaarheidvanhetwaswater",
-                "lzsp:spuiwaterproductie",
                 "lzsp:stalbezetting",
                 "lzsp:systeemstatus",
+                "lzsp:waswaterdebietbevloeiing",
+                "lzsp:waswaterdebietvoorbevochtiging",
+                "lzsp:geleidbaarheidvanhetwaswater",
+                "lzsp:spuiwaterproductie",
                 "lzsp:waswaterdebiet",
                 "lzsp:zuurtegraadwaswater"
             ],

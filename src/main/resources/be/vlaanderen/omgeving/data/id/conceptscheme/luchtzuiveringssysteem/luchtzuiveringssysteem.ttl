@@ -95,7 +95,7 @@ lzs:biobed_s3 a skos:Concept;
     skos:notation "S3";
     skos:prefLabel "Biobed S3"@nl;
     skos:semanticRelation lzs:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzsp:biobedspoelwaterproductie, lzsp:biobedspuiwaterproductie, lzsp:waswaterdebietbevloeiing, lzsp:waswaterdebietvoorbevochtiging.
+    lzsns:relevantProperty lzsp:biobedspoelwaterproductie, lzsp:biobedspuiwaterproductie, lzsp:drukvaloverhetsysteem, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebietbevloeiing, lzsp:waswaterdebietvoorbevochtiging.
 lzsp:biobedspoelwaterproductie dct:subject lzsm:waswater;
     qudt:relevantQuantityKind quantitykind:Volume;
     qudt:relevantUnit unit:M3;
@@ -125,7 +125,7 @@ lzsp:drukvaloverhetsysteem dct:subject lzsm:lucht;
     skos:prefLabel "Drukval over het systeem"@nl;
     skos:topConceptOf conceptscheme:lzsp;
     lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantSystem lzs:luchtzuiveringssysteem.
+    lzsns:relevantSystem lzs:biobed_s3, lzs:luchtwasser_s1, lzs:luchtwasser_s2.
 lzsp:geleidbaarheidvanhetwaswater dct:subject lzsm:waswater;
     qudt:relevantQuantityKind quantitykind:Conductivity;
     qudt:relevantUnit unit:MilliS-PER-CentiM;
@@ -153,14 +153,14 @@ lzsp:stalbezetting dct:subject lzsm:stal;
     skos:prefLabel "Stalbezetting"@nl;
     skos:topConceptOf conceptscheme:lzsp;
     lzsns:relevantCodeList conceptscheme:lzsst;
-    lzsns:relevantSystem lzs:luchtzuiveringssysteem.
+    lzsns:relevantSystem lzs:biobed_s3, lzs:luchtwasser_s1, lzs:luchtwasser_s2.
 lzsp:systeemstatus dct:subject lzsm:hetelektronischmonitoringssysteem;
     a skos:Concept, ssn:Property;
     skos:inScheme conceptscheme:lzsp;
     skos:prefLabel "SysteemStatus"@nl;
     skos:topConceptOf conceptscheme:lzsp;
     lzsns:relevantCodeList conceptscheme:lzss;
-    lzsns:relevantSystem lzs:luchtzuiveringssysteem.
+    lzsns:relevantSystem lzs:biobed_s3, lzs:luchtwasser_s1, lzs:luchtwasser_s2.
 lzsp:waswaterdebiet dct:subject lzsm:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -170,7 +170,7 @@ lzsp:waswaterdebiet dct:subject lzsm:waswater;
     skos:prefLabel "Waswaterdebiet over het waspakket"@nl;
     skos:topConceptOf conceptscheme:lzsp;
     lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantSystem lzs:luchtwasser.
+    lzsns:relevantSystem lzs:luchtwasser_s1, lzs:luchtwasser_s2.
 lzsp:waswaterdebietbevloeiing dct:subject lzsm:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate, quantitykind:VolumePerTime;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -209,8 +209,7 @@ lzs:luchtwasser a skos:Concept;
     skos:narrower lzs:luchtwasser_s1, lzs:luchtwasser_s2;
     skos:narrowerTransitive lzs:luchtwasser_s1, lzs:luchtwasser_s2;
     skos:prefLabel "Luchtwasser"@nl;
-    skos:semanticRelation lzs:luchtwasser_s1, lzs:luchtwasser_s2, lzs:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzsp:waswaterdebiet.
+    skos:semanticRelation lzs:luchtwasser_s1, lzs:luchtwasser_s2, lzs:luchtzuiveringssysteem.
 lzs:luchtwasser_s1 a skos:Concept;
     skos:broader lzs:luchtwasser;
     skos:broaderTransitive lzs:luchtwasser, lzs:luchtzuiveringssysteem;
@@ -218,7 +217,7 @@ lzs:luchtwasser_s1 a skos:Concept;
     skos:notation "S1";
     skos:prefLabel "Luchtwasser S1"@nl;
     skos:semanticRelation lzs:luchtwasser, lzs:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:zuurtegraadwaswater.
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:zuurtegraadwaswater.
 lzs:luchtwasser_s2 a skos:Concept;
     skos:broader lzs:luchtwasser;
     skos:broaderTransitive lzs:luchtwasser, lzs:luchtzuiveringssysteem;
@@ -226,15 +225,14 @@ lzs:luchtwasser_s2 a skos:Concept;
     skos:notation "S2";
     skos:prefLabel "Luchtwasser S2"@nl;
     skos:semanticRelation lzs:luchtwasser, lzs:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:zuurtegraadwaswater.
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:zuurtegraadwaswater.
 lzs:luchtzuiveringssysteem a skos:Concept;
     skos:inScheme conceptscheme:lzs;
     skos:narrower lzs:biobed_s3, lzs:luchtwasser;
     skos:narrowerTransitive lzs:biobed_s3, lzs:luchtwasser, lzs:luchtwasser_s1, lzs:luchtwasser_s2;
     skos:prefLabel "Luchtzuiveringssysteem"@nl;
     skos:semanticRelation lzs:biobed_s3, lzs:luchtwasser, lzs:luchtwasser_s1, lzs:luchtwasser_s2;
-    skos:topConceptOf conceptscheme:lzs;
-    lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:stalbezetting, lzsp:systeemstatus.
+    skos:topConceptOf conceptscheme:lzs.
 lzsm:hetelektronischmonitoringssysteem a rdfs:Resource, skos:Concept;
     skos:inScheme conceptscheme:lzsm;
     skos:prefLabel "Het elektronisch monitoringssysteem"@nl;
