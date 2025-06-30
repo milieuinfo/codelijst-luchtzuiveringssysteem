@@ -511,25 +511,6 @@
             "applicableUnit": "unit:M3-PER-HR"
         },
         {
-            "id": "lzs:biobed_s3",
-            "type": "skos:Concept",
-            "broader": "lzs:luchtzuiveringssysteem",
-            "broaderTransitive": "lzs:luchtzuiveringssysteem",
-            "inScheme": "conceptscheme:lzs",
-            "notation": "S3",
-            "prefLabel": "Biobed",
-            "semanticRelation": "lzs:luchtzuiveringssysteem",
-            "relevantProperty": [
-                "lzsp:biobedspoelwaterproductie",
-                "lzsp:biobedspuiwaterproductie",
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:waswaterdebietbevloeiing",
-                "lzsp:waswaterdebietvoorbevochtiging"
-            ]
-        },
-        {
             "id": "lzsp:biobedspoelwaterproductie",
             "type": [
                 "skos:Concept",
@@ -543,7 +524,7 @@
             "prefLabel": "Biobedspoelwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:biobed_s3"
+            "relevantSystem": "lzs:s3"
         },
         {
             "id": "lzsp:biobedspuiwaterproductie",
@@ -559,7 +540,7 @@
             "prefLabel": "Biobedspuiwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:biobed_s3"
+            "relevantSystem": "lzs:s3"
         },
         {
             "id": "lzsp:drukvaloverhetsysteem",
@@ -579,9 +560,9 @@
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
             "relevantSystem": [
-                "lzs:biobed_s3",
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s3",
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
@@ -600,8 +581,8 @@
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
             "relevantDataType": "xsd:decimal",
             "relevantSystem": [
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
@@ -619,8 +600,8 @@
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
             "relevantSystem": [
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
@@ -635,9 +616,9 @@
             "topConceptOf": "conceptscheme:lzsp",
             "relevantCodeList": "conceptscheme:lzsst",
             "relevantSystem": [
-                "lzs:biobed_s3",
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s3",
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
@@ -652,9 +633,9 @@
             "topConceptOf": "conceptscheme:lzsp",
             "relevantCodeList": "conceptscheme:lzss",
             "relevantSystem": [
-                "lzs:biobed_s3",
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s3",
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
@@ -675,8 +656,8 @@
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
             "relevantSystem": [
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
@@ -696,7 +677,7 @@
             "prefLabel": "Waswaterdebiet van de bevloeiing van het vulmateriaal",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:biobed_s3"
+            "relevantSystem": "lzs:s3"
         },
         {
             "id": "lzsp:waswaterdebietvoorbevochtiging",
@@ -715,7 +696,7 @@
             "prefLabel": "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:biobed_s3"
+            "relevantSystem": "lzs:s3"
         },
         {
             "id": "lzsp:zuurtegraadwaswater",
@@ -736,79 +717,29 @@
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
             "relevantDataType": "xsd:decimal",
             "relevantSystem": [
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s1",
+                "lzs:s2"
             ]
         },
         {
-            "id": "lzs:luchtwasser",
+            "id": "lzs:luchtwassysteem",
             "type": "skos:Concept",
             "broader": "lzs:luchtzuiveringssysteem",
             "broaderTransitive": "lzs:luchtzuiveringssysteem",
             "inScheme": "conceptscheme:lzs",
             "narrower": [
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s1",
+                "lzs:s2"
             ],
             "narrowerTransitive": [
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
+                "lzs:s1",
+                "lzs:s2"
             ],
-            "prefLabel": "Luchtwasser",
+            "prefLabel": "Luchtwassysteem",
             "semanticRelation": [
-                "lzs:luchtzuiveringssysteem",
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2"
-            ]
-        },
-        {
-            "id": "lzs:luchtwasser_s1",
-            "type": "skos:Concept",
-            "broader": "lzs:luchtwasser",
-            "broaderTransitive": [
-                "lzs:luchtzuiveringssysteem",
-                "lzs:luchtwasser"
-            ],
-            "inScheme": "conceptscheme:lzs",
-            "notation": "S1",
-            "prefLabel": "Biologische luchtwasser",
-            "semanticRelation": [
-                "lzs:luchtzuiveringssysteem",
-                "lzs:luchtwasser"
-            ],
-            "relevantProperty": [
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:geleidbaarheidvanhetwaswater",
-                "lzsp:spuiwaterproductie",
-                "lzsp:waswaterdebiet",
-                "lzsp:zuurtegraadwaswater"
-            ]
-        },
-        {
-            "id": "lzs:luchtwasser_s2",
-            "type": "skos:Concept",
-            "broader": "lzs:luchtwasser",
-            "broaderTransitive": [
-                "lzs:luchtzuiveringssysteem",
-                "lzs:luchtwasser"
-            ],
-            "inScheme": "conceptscheme:lzs",
-            "notation": "S2",
-            "prefLabel": "Chemische luchtwasser",
-            "semanticRelation": [
-                "lzs:luchtzuiveringssysteem",
-                "lzs:luchtwasser"
-            ],
-            "relevantProperty": [
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:geleidbaarheidvanhetwaswater",
-                "lzsp:spuiwaterproductie",
-                "lzsp:waswaterdebiet",
-                "lzsp:zuurtegraadwaswater"
+                "lzs:s1",
+                "lzs:s2",
+                "lzs:luchtzuiveringssysteem"
             ]
         },
         {
@@ -816,21 +747,21 @@
             "type": "skos:Concept",
             "inScheme": "conceptscheme:lzs",
             "narrower": [
-                "lzs:biobed_s3",
-                "lzs:luchtwasser"
+                "lzs:s3",
+                "lzs:luchtwassysteem"
             ],
             "narrowerTransitive": [
-                "lzs:biobed_s3",
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2",
-                "lzs:luchtwasser"
+                "lzs:s3",
+                "lzs:s1",
+                "lzs:s2",
+                "lzs:luchtwassysteem"
             ],
             "prefLabel": "Luchtzuiveringssysteem",
             "semanticRelation": [
-                "lzs:biobed_s3",
-                "lzs:luchtwasser_s1",
-                "lzs:luchtwasser_s2",
-                "lzs:luchtwasser"
+                "lzs:s3",
+                "lzs:s1",
+                "lzs:s2",
+                "lzs:luchtwassysteem"
             ],
             "topConceptOf": "conceptscheme:lzs"
         },
@@ -883,6 +814,75 @@
             "inScheme": "conceptscheme:lzsm",
             "prefLabel": "Waswater",
             "topConceptOf": "conceptscheme:lzsm"
+        },
+        {
+            "id": "lzs:s1",
+            "type": "skos:Concept",
+            "broader": "lzs:luchtwassysteem",
+            "broaderTransitive": [
+                "lzs:luchtwassysteem",
+                "lzs:luchtzuiveringssysteem"
+            ],
+            "inScheme": "conceptscheme:lzs",
+            "notation": "S1",
+            "prefLabel": "Biologisch luchtwassysteem",
+            "semanticRelation": [
+                "lzs:luchtwassysteem",
+                "lzs:luchtzuiveringssysteem"
+            ],
+            "relevantProperty": [
+                "lzsp:drukvaloverhetsysteem",
+                "lzsp:geleidbaarheidvanhetwaswater",
+                "lzsp:spuiwaterproductie",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
+                "lzsp:waswaterdebiet",
+                "lzsp:zuurtegraadwaswater"
+            ]
+        },
+        {
+            "id": "lzs:s2",
+            "type": "skos:Concept",
+            "broader": "lzs:luchtwassysteem",
+            "broaderTransitive": [
+                "lzs:luchtwassysteem",
+                "lzs:luchtzuiveringssysteem"
+            ],
+            "inScheme": "conceptscheme:lzs",
+            "notation": "S2",
+            "prefLabel": "Chemisch luchtwassysteem",
+            "semanticRelation": [
+                "lzs:luchtwassysteem",
+                "lzs:luchtzuiveringssysteem"
+            ],
+            "relevantProperty": [
+                "lzsp:drukvaloverhetsysteem",
+                "lzsp:geleidbaarheidvanhetwaswater",
+                "lzsp:spuiwaterproductie",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
+                "lzsp:waswaterdebiet",
+                "lzsp:zuurtegraadwaswater"
+            ]
+        },
+        {
+            "id": "lzs:s3",
+            "type": "skos:Concept",
+            "broader": "lzs:luchtzuiveringssysteem",
+            "broaderTransitive": "lzs:luchtzuiveringssysteem",
+            "inScheme": "conceptscheme:lzs",
+            "notation": "S3",
+            "prefLabel": "Biobed",
+            "semanticRelation": "lzs:luchtzuiveringssysteem",
+            "relevantProperty": [
+                "lzsp:biobedspoelwaterproductie",
+                "lzsp:biobedspuiwaterproductie",
+                "lzsp:drukvaloverhetsysteem",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
+                "lzsp:waswaterdebietbevloeiing",
+                "lzsp:waswaterdebietvoorbevochtiging"
+            ]
         },
         {
             "id": "lzsst:in_gebruik",
@@ -944,13 +944,13 @@
                 "lzsp:biobedspoelwaterproductie",
                 "lzsp:biobedspuiwaterproductie",
                 "lzsp:drukvaloverhetsysteem",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:waswaterdebietbevloeiing",
-                "lzsp:waswaterdebietvoorbevochtiging",
                 "lzsp:geleidbaarheidvanhetwaswater",
                 "lzsp:spuiwaterproductie",
+                "lzsp:stalbezetting",
+                "lzsp:systeemstatus",
                 "lzsp:waswaterdebiet",
+                "lzsp:waswaterdebietbevloeiing",
+                "lzsp:waswaterdebietvoorbevochtiging",
                 "lzsp:zuurtegraadwaswater"
             ],
             "prefLabel": "conceptschema luchtzuiveringssysteem eigenschap"
