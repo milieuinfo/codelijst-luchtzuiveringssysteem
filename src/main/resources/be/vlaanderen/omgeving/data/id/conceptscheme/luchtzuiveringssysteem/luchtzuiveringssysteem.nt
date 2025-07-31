@@ -26,7 +26,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biobedspoelwaterproductie"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/spuiwater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Volume> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/M3> .
@@ -37,7 +36,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biobedspuiwaterproductie"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/lucht> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Fugacity> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VaporPressure> .
@@ -49,9 +47,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <http://www.w3.org/2004/02/skos/core#prefLabel> "Drukval over het systeem"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Conductivity> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/MilliS-PER-CentiM> .
@@ -63,8 +58,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty> <https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/WAC_I_A_011> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/spuiwater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Volume> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/M3> .
@@ -75,8 +68,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <http://www.w3.org/2004/02/skos/core#prefLabel> "Spuiwaterproductie"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/stal> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ssn/Property> .
@@ -84,9 +75,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <http://www.w3.org/2004/02/skos/core#prefLabel> "Stalbezetting"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsst> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/hetelektronischmonitoringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/ssn/Property> .
@@ -94,9 +82,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "SysteemStatus"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzss> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VolumePerTime> .
@@ -108,8 +93,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <http://www.w3.org/2004/02/skos/core#prefLabel> "Waswaterdebiet over het waspakket"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VolumePerTime> .
@@ -121,7 +104,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <http://www.w3.org/2004/02/skos/core#prefLabel> "Waswaterdebiet van de bevloeiing van het vulmateriaal"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VolumeFlowRate> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/VolumePerTime> .
@@ -133,7 +115,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <http://www.w3.org/2004/02/skos/core#prefLabel> "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <http://purl.org/dc/terms/subject> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
@@ -146,8 +127,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsp> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty> <https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/WAC_I_A_011> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType> <http://www.w3.org/2001/XMLSchema#decimal> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> <http://www.w3.org/2004/02/skos/core#broader> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
@@ -199,6 +178,78 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsm> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> <http://www.w3.org/2004/02/skos/core#prefLabel> "Waswater"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsm> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/PH> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://www.w3.org/2004/02/skos/core#prefLabel> "Zuurtegraad (pH) van het waswater is lager dan 6."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <https://data.omgeving.vlaanderen.be/ns/lzs#actie> "Verklaring vragen"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie> "?value < 6" .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <https://data.omgeving.vlaanderen.be/ns/lzs#normstatus> "Buiten de norm"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/PH> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Zuurtegraad (pH) van het waswater ligt tussen 6 en 6,5."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Warning> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <https://data.omgeving.vlaanderen.be/ns/lzs#actie> "Aandachtspunt"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie> "?value >= 6 && ?value < 6.5" .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <https://data.omgeving.vlaanderen.be/ns/lzs#normstatus> "Randgebied"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/PH> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://www.w3.org/2004/02/skos/core#prefLabel> "Zuurtegraad (pH) van het waswater ligt tussen 6,5 en 7,5."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Trace> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <https://data.omgeving.vlaanderen.be/ns/lzs#actie> "Geen actie"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie> "?value >= 6.5 && ?value <= 7.5" .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <https://data.omgeving.vlaanderen.be/ns/lzs#normstatus> "Binnen de norm"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/PH> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://www.w3.org/2004/02/skos/core#prefLabel> "Zuurtegraad (pH) van het waswater ligt tussen 7,5 en 8,5."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Warning> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <https://data.omgeving.vlaanderen.be/ns/lzs#actie> "Aandachtspunt"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie> "?value > 7.5 && ?value <= 8.5" .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <https://data.omgeving.vlaanderen.be/ns/lzs#normstatus> "Randgebied"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/PH> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://www.w3.org/2004/02/skos/core#prefLabel> "Zuurtegraad (pH) van het waswater hoger dan 8,5."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <https://data.omgeving.vlaanderen.be/ns/lzs#actie> "Aandachtspunt"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie> "?value > 8.5" .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <https://data.omgeving.vlaanderen.be/ns/lzs#normstatus> "Buiten de norm"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Acidity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://qudt.org/schema/qudt/relevantQuantityKind> <http://qudt.org/vocab/quantitykind/Basicity> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://qudt.org/schema/qudt/relevantUnit> <http://qudt.org/vocab/unit/PH> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geleidbaarheid (eC) van het waswater hoger dan 40."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <https://data.omgeving.vlaanderen.be/ns/lzs#actie> "Aandachtspunt"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie> "?value > 40" .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <https://data.omgeving.vlaanderen.be/ns/lzs#normstatus> "Buiten de norm"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <http://www.w3.org/2004/02/skos/core#broader> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> .
@@ -208,13 +259,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biologisch luchtwassysteem"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <http://www.w3.org/2004/02/skos/core#broader> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> .
@@ -224,13 +268,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <http://www.w3.org/2004/02/skos/core#prefLabel> "Chemisch luchtwassysteem"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <http://www.w3.org/2004/02/skos/core#broader> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <http://www.w3.org/2004/02/skos/core#broaderTransitive> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
@@ -238,13 +275,6 @@
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <http://www.w3.org/2004/02/skos/core#notation> "S3" .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <http://www.w3.org/2004/02/skos/core#prefLabel> "Biobed"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <http://www.w3.org/2004/02/skos/core#semanticRelation> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/stalbezetting> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/systeemstatus> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing> .
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3> <https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/in_gebruik> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/in_gebruik> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsst> .
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/in_gebruik> <http://www.w3.org/2004/02/skos/core#prefLabel> "Stal in gebruik, dieren aanwezig."@nl .
@@ -297,3 +327,11 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsst> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/in_gebruik> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsst> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/leeg> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsst> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem stalbezetting"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/1> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/2> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/3> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/4> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/5> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/6> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/normatieve_structuur> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem normatieve structuur"@nl .

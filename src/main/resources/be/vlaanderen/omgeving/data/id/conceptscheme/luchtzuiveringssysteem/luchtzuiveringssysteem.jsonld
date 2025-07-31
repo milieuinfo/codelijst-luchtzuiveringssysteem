@@ -262,6 +262,17 @@
         "notation": {
             "@id": "http://www.w3.org/2004/02/skos/core#notation"
         },
+        "actie": {
+            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#actie",
+            "@language": "nl"
+        },
+        "normstatus": {
+            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#normstatus",
+            "@language": "nl"
+        },
+        "intervalcategorie": {
+            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie"
+        },
         "altLabel": {
             "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
             "@language": "nl"
@@ -363,6 +374,10 @@
             "@id": "http://qudt.org/schema/qudt/applicableUnit",
             "@type": "@id"
         },
+        "severity": {
+            "@id": "http://www.w3.org/ns/shacl#severity",
+            "@type": "@id"
+        },
         "relevantUnit": {
             "@id": "http://qudt.org/schema/qudt/relevantUnit",
             "@type": "@id"
@@ -447,6 +462,7 @@
         "xkos": "http://rdf-vocabulary.ddialliance.org/xkos#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
         "wb": "https://data.omgeving.vlaanderen.be/id/concept/waardebepaling/",
+        "normatieve_structuur": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/",
         "lzp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
         "lzs": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/",
         "lzss": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/",
@@ -457,11 +473,11 @@
         "lzsns": "https://data.omgeving.vlaanderen.be/ns/lzs#",
         "qudt": "http://qudt.org/schema/qudt/",
         "unit": "http://qudt.org/vocab/unit/",
+        "sh": "http://www.w3.org/ns/shacl#",
         "quantitykind": "http://qudt.org/vocab/quantitykind/",
         "ssn": "http://www.w3.org/ns/ssn/",
         "sosa": "http://www.w3.org/ns/sosa/",
         "procedure": "https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/",
-        "fysico-chemisch": "https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/",
         "@base": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/"
     },
     "graph": [
@@ -519,12 +535,11 @@
             "subject": "lzsm:waswater",
             "relevantQuantityKind": "quantitykind:Volume",
             "relevantUnit": "unit:M3",
-            "seeAlso": "fysico-chemisch:0053",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Biobedspoelwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:s3"
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:biobedspuiwaterproductie",
@@ -535,12 +550,11 @@
             "subject": "lzsm:spuiwater",
             "relevantQuantityKind": "quantitykind:Volume",
             "relevantUnit": "unit:M3",
-            "seeAlso": "fysico-chemisch:0050",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0050",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Biobedspuiwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:s3"
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:drukvaloverhetsysteem",
@@ -554,16 +568,11 @@
                 "quantitykind:VaporPressure"
             ],
             "relevantUnit": "unit:PA",
-            "seeAlso": "fysico-chemisch:0329",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0329",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Drukval over het systeem",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": [
-                "lzs:s3",
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:geleidbaarheidvanhetwaswater",
@@ -574,16 +583,12 @@
             "subject": "lzsm:waswater",
             "relevantQuantityKind": "quantitykind:Conductivity",
             "relevantUnit": "unit:MilliS-PER-CentiM",
-            "seeAlso": "fysico-chemisch:0010",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0010",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Geleidbaarheid van het waswater",
             "topConceptOf": "conceptscheme:lzsp",
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": [
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:spuiwaterproductie",
@@ -594,15 +599,11 @@
             "subject": "lzsm:spuiwater",
             "relevantQuantityKind": "quantitykind:Volume",
             "relevantUnit": "unit:M3",
-            "seeAlso": "fysico-chemisch:0050",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0050",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Spuiwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": [
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:stalbezetting",
@@ -614,12 +615,7 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Stalbezetting",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantCodeList": "conceptscheme:lzsst",
-            "relevantSystem": [
-                "lzs:s3",
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantCodeList": "conceptscheme:lzsst"
         },
         {
             "id": "lzsp:systeemstatus",
@@ -631,12 +627,7 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "SysteemStatus",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantCodeList": "conceptscheme:lzss",
-            "relevantSystem": [
-                "lzs:s3",
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantCodeList": "conceptscheme:lzss"
         },
         {
             "id": "lzsp:waswaterdebiet",
@@ -650,15 +641,11 @@
                 "quantitykind:VolumePerTime"
             ],
             "relevantUnit": "unit:M3-PER-HR",
-            "seeAlso": "fysico-chemisch:0053",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Waswaterdebiet over het waspakket",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": [
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:waswaterdebietbevloeiing",
@@ -672,12 +659,11 @@
                 "quantitykind:VolumePerTime"
             ],
             "relevantUnit": "unit:M3-PER-HR",
-            "seeAlso": "fysico-chemisch:0053",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Waswaterdebiet van de bevloeiing van het vulmateriaal",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:s3"
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:waswaterdebietvoorbevochtiging",
@@ -691,12 +677,11 @@
                 "quantitykind:VolumePerTime"
             ],
             "relevantUnit": "unit:M3-PER-HR",
-            "seeAlso": "fysico-chemisch:0053",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": "lzs:s3"
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzsp:zuurtegraadwaswater",
@@ -710,16 +695,12 @@
                 "quantitykind:Basicity"
             ],
             "relevantUnit": "unit:PH",
-            "seeAlso": "fysico-chemisch:0076",
+            "seeAlso": "omg_id:concept/fysico-chemisch/0076",
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Zuurtegraad van het waswater",
             "topConceptOf": "conceptscheme:lzsp",
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
-            "relevantDataType": "xsd:decimal",
-            "relevantSystem": [
-                "lzs:s1",
-                "lzs:s2"
-            ]
+            "relevantDataType": "xsd:decimal"
         },
         {
             "id": "lzs:luchtwassysteem",
@@ -737,9 +718,9 @@
             ],
             "prefLabel": "Luchtwassysteem",
             "semanticRelation": [
+                "lzs:luchtzuiveringssysteem",
                 "lzs:s1",
-                "lzs:s2",
-                "lzs:luchtzuiveringssysteem"
+                "lzs:s2"
             ]
         },
         {
@@ -747,21 +728,21 @@
             "type": "skos:Concept",
             "inScheme": "conceptscheme:lzs",
             "narrower": [
-                "lzs:s3",
-                "lzs:luchtwassysteem"
+                "lzs:luchtwassysteem",
+                "lzs:s3"
             ],
             "narrowerTransitive": [
-                "lzs:s3",
+                "lzs:luchtwassysteem",
                 "lzs:s1",
                 "lzs:s2",
-                "lzs:luchtwassysteem"
+                "lzs:s3"
             ],
             "prefLabel": "Luchtzuiveringssysteem",
             "semanticRelation": [
-                "lzs:s3",
+                "lzs:luchtwassysteem",
                 "lzs:s1",
                 "lzs:s2",
-                "lzs:luchtwassysteem"
+                "lzs:s3"
             ],
             "topConceptOf": "conceptscheme:lzs"
         },
@@ -816,6 +797,108 @@
             "topConceptOf": "conceptscheme:lzsm"
         },
         {
+            "id": "normatieve_structuur:1",
+            "type": "skos:Concept",
+            "relevantQuantityKind": [
+                "quantitykind:Acidity",
+                "quantitykind:Basicity"
+            ],
+            "relevantUnit": "unit:PH",
+            "inScheme": "conceptscheme:normatieve_structuur",
+            "prefLabel": "Zuurtegraad (pH) van het waswater is lager dan 6.",
+            "topConceptOf": "conceptscheme:normatieve_structuur",
+            "severity": "sh:Violation",
+            "actie": "Verklaring vragen",
+            "intervalcategorie": "?value < 6",
+            "normstatus": "Buiten de norm",
+            "relevantProperty": "lzsp:zuurtegraadwaswater"
+        },
+        {
+            "id": "normatieve_structuur:2",
+            "type": "skos:Concept",
+            "relevantQuantityKind": [
+                "quantitykind:Acidity",
+                "quantitykind:Basicity"
+            ],
+            "relevantUnit": "unit:PH",
+            "inScheme": "conceptscheme:normatieve_structuur",
+            "prefLabel": "Zuurtegraad (pH) van het waswater ligt tussen 6 en 6,5.",
+            "topConceptOf": "conceptscheme:normatieve_structuur",
+            "severity": "sh:Warning",
+            "actie": "Aandachtspunt",
+            "intervalcategorie": "?value >= 6 && ?value < 6.5",
+            "normstatus": "Randgebied",
+            "relevantProperty": "lzsp:zuurtegraadwaswater"
+        },
+        {
+            "id": "normatieve_structuur:3",
+            "type": "skos:Concept",
+            "relevantQuantityKind": [
+                "quantitykind:Acidity",
+                "quantitykind:Basicity"
+            ],
+            "relevantUnit": "unit:PH",
+            "inScheme": "conceptscheme:normatieve_structuur",
+            "prefLabel": "Zuurtegraad (pH) van het waswater ligt tussen 6,5 en 7,5.",
+            "topConceptOf": "conceptscheme:normatieve_structuur",
+            "severity": "sh:Trace",
+            "actie": "Geen actie",
+            "intervalcategorie": "?value >= 6.5 && ?value <= 7.5",
+            "normstatus": "Binnen de norm",
+            "relevantProperty": "lzsp:zuurtegraadwaswater"
+        },
+        {
+            "id": "normatieve_structuur:4",
+            "type": "skos:Concept",
+            "relevantQuantityKind": [
+                "quantitykind:Acidity",
+                "quantitykind:Basicity"
+            ],
+            "relevantUnit": "unit:PH",
+            "inScheme": "conceptscheme:normatieve_structuur",
+            "prefLabel": "Zuurtegraad (pH) van het waswater ligt tussen 7,5 en 8,5.",
+            "topConceptOf": "conceptscheme:normatieve_structuur",
+            "severity": "sh:Warning",
+            "actie": "Aandachtspunt",
+            "intervalcategorie": "?value > 7.5 && ?value <= 8.5",
+            "normstatus": "Randgebied",
+            "relevantProperty": "lzsp:zuurtegraadwaswater"
+        },
+        {
+            "id": "normatieve_structuur:5",
+            "type": "skos:Concept",
+            "relevantQuantityKind": [
+                "quantitykind:Acidity",
+                "quantitykind:Basicity"
+            ],
+            "relevantUnit": "unit:PH",
+            "inScheme": "conceptscheme:normatieve_structuur",
+            "prefLabel": "Zuurtegraad (pH) van het waswater hoger dan 8,5.",
+            "topConceptOf": "conceptscheme:normatieve_structuur",
+            "severity": "sh:Violation",
+            "actie": "Aandachtspunt",
+            "intervalcategorie": "?value > 8.5",
+            "normstatus": "Buiten de norm",
+            "relevantProperty": "lzsp:zuurtegraadwaswater"
+        },
+        {
+            "id": "normatieve_structuur:6",
+            "type": "skos:Concept",
+            "relevantQuantityKind": [
+                "quantitykind:Acidity",
+                "quantitykind:Basicity"
+            ],
+            "relevantUnit": "unit:PH",
+            "inScheme": "conceptscheme:normatieve_structuur",
+            "prefLabel": "Geleidbaarheid (eC) van het waswater hoger dan 40.",
+            "topConceptOf": "conceptscheme:normatieve_structuur",
+            "severity": "sh:Violation",
+            "actie": "Aandachtspunt",
+            "intervalcategorie": "?value > 40",
+            "normstatus": "Buiten de norm",
+            "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater"
+        },
+        {
             "id": "lzs:s1",
             "type": "skos:Concept",
             "broader": "lzs:luchtwassysteem",
@@ -829,15 +912,6 @@
             "semanticRelation": [
                 "lzs:luchtwassysteem",
                 "lzs:luchtzuiveringssysteem"
-            ],
-            "relevantProperty": [
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:geleidbaarheidvanhetwaswater",
-                "lzsp:spuiwaterproductie",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:waswaterdebiet",
-                "lzsp:zuurtegraadwaswater"
             ]
         },
         {
@@ -854,15 +928,6 @@
             "semanticRelation": [
                 "lzs:luchtwassysteem",
                 "lzs:luchtzuiveringssysteem"
-            ],
-            "relevantProperty": [
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:geleidbaarheidvanhetwaswater",
-                "lzsp:spuiwaterproductie",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:waswaterdebiet",
-                "lzsp:zuurtegraadwaswater"
             ]
         },
         {
@@ -873,16 +938,7 @@
             "inScheme": "conceptscheme:lzs",
             "notation": "S3",
             "prefLabel": "Biobed",
-            "semanticRelation": "lzs:luchtzuiveringssysteem",
-            "relevantProperty": [
-                "lzsp:biobedspoelwaterproductie",
-                "lzsp:biobedspuiwaterproductie",
-                "lzsp:drukvaloverhetsysteem",
-                "lzsp:stalbezetting",
-                "lzsp:systeemstatus",
-                "lzsp:waswaterdebietbevloeiing",
-                "lzsp:waswaterdebietvoorbevochtiging"
-            ]
+            "semanticRelation": "lzs:luchtzuiveringssysteem"
         },
         {
             "id": "lzsst:in_gebruik",
@@ -973,6 +1029,19 @@
                 "lzsst:leeg"
             ],
             "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
+        },
+        {
+            "id": "conceptscheme:normatieve_structuur",
+            "type": "skos:ConceptScheme",
+            "hasTopConcept": [
+                "normatieve_structuur:1",
+                "normatieve_structuur:2",
+                "normatieve_structuur:3",
+                "normatieve_structuur:4",
+                "normatieve_structuur:5",
+                "normatieve_structuur:6"
+            ],
+            "prefLabel": "conceptschema luchtzuiveringssysteem normatieve structuur"
         }
     ]
 }

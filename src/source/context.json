@@ -263,6 +263,17 @@
   "notation" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#notation"
   },
+  "actie" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#actie",
+    "@language" : "nl"
+  },
+  "normstatus" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#normstatus",
+    "@language" : "nl"
+  },
+  "intervalcategorie" : {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie"
+  },
   "altLabel" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
     "@language" : "nl"
@@ -365,6 +376,11 @@
     "@id" : "http://qudt.org/schema/qudt/applicableUnit",
     "@type" : "@id"
   },
+  "severity": {
+    "@id" : "http://www.w3.org/ns/shacl#severity",
+    "@type" : "@id"
+  },
+
   "relevantUnit": {
     "@id" : "http://qudt.org/schema/qudt/relevantUnit",
     "@type" : "@id"

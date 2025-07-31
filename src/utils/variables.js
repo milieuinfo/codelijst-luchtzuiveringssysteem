@@ -128,7 +128,23 @@ const frame_skos_prefixes = {
     "relevantProperty": {
         "@embed": "@never",
         "@omitDefault": true
-    }
+    },
+    "normstatus": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "actie": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "severity": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "intervalcategorie": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
 
 
 }
@@ -260,9 +276,26 @@ const frame_skos_no_prefixes = {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
         "@omitDefault": true
-    }
+    },
+    "normstatus": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "actie": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "severity": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "intervalcategorie": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
 
-    ,
+
+
     "seeAlso":{
         "@embed": "@never",
         "@omitDefault": true
