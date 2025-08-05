@@ -12,7 +12,7 @@
     "@reverse": "member"
   },
   "id": "@id",
-  "_type" : {
+  "type" : {
     "@id" : "@type",
     "@type" : "@id"
   },
@@ -256,7 +256,7 @@
     "@id" : "@id",
     "@type" : "@id"
   },
-  "type": {
+  "dct_type": {
     "@id": "http://purl.org/dc/terms/type",
     "@type": "@id"
   },

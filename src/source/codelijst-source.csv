@@ -1,4 +1,4 @@
-uri,_type,topConceptOf,inScheme,prefLabel,altLabel,notation,definition,broader,relevantDataType,relevantCodeList,type,relevantProperty,relevantQuantityKind,relevantUnit,applicableUnit,seeAlso,subject,hasProcedureForProperty,dc_type,actie,value,minValue,maxValue,operatie
+uri,type,topConceptOf,inScheme,prefLabel,altLabel,notation,definition,broader,relevantDataType,relevantCodeList,dct_type,relevantProperty,relevantQuantityKind,relevantUnit,applicableUnit,seeAlso,subject,hasProcedureForProperty,dc_type,actie,value,minValue,maxValue,operatie
 ,,,,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzsp,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem eigenschap,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzsm,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem medium,,,,,,,,,,,,,,,,,,,,
