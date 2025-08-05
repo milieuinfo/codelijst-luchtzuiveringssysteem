@@ -12,7 +12,7 @@
     "@reverse": "member"
   },
   "id": "@id",
-  "type" : {
+  "_type" : {
     "@id" : "@type",
     "@type" : "@id"
   },
@@ -256,6 +256,14 @@
     "@id" : "@id",
     "@type" : "@id"
   },
+  "type": {
+    "@id": "http://purl.org/dc/terms/type",
+    "@type": "@id"
+  },
+  "operatie": {
+    "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#operatie",
+    "@language" : "nl"
+  },
   "prefLabel" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
     "@language" : "nl"
@@ -351,6 +359,18 @@
   "belongsTo" : {
     "@id" : "http://rdf-vocabulary.ddialliance.org/xkos#belongsTo",
     "@type" : "@id"
+  },
+  "value": {
+    "@id": "https://schema.org/value",
+    "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+  },
+  "minValue": {
+    "@id": "https://schema.org/minValue",
+    "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+  },
+  "maxValue": {
+    "@id": "https://schema.org/maxValue",
+    "@type": "http://www.w3.org/2001/XMLSchema#decimal"
   },
 
   "related" : {

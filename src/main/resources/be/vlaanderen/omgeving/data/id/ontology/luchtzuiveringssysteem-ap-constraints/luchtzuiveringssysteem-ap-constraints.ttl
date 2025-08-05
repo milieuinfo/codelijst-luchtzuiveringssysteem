@@ -26,9 +26,9 @@
 omg_ont:luchtzuiveringssysteem-ap-constraints
     a               owl:Ontology ;
     rdfs:comment
-                    "Specifieert hoe de data in de codelijst van matrices te encoderen in RDF (i.e. RDF termen, kardinaliteiten,...)."@en ;
+                    "Specifieert hoe de data in de codelijst van luchtzuiveringssystemen te encoderen in RDF (i.e. RDF termen, kardinaliteiten,...)."@en ;
     rdfs:label      "Matrix AP Constraints"@en ;
-    dct:abstract    "Het luchtzuiveringssysteem applicatieprofiel specifieert de RDF termen (klassen en properties) en bijhorende constraints die gebruikt worden voor het beschrijven van matrices. Het maakt hierbij zoveel mogelijk gebruik van bestaande termen (klassen en properties) uit bestaande , skos, dbo, dbp en een minimale set van nieuwe termen gedefinieerd in het Matrix Vocabularium."@en ;
+    dct:abstract    "Het luchtzuiveringssysteem applicatieprofiel specifieert de RDF termen (klassen en properties) en bijhorende constraints die gebruikt worden voor het beschrijven van luchtzuiveringssystemen. Het maakt hierbij zoveel mogelijk gebruik van bestaande termen (klassen en properties) uit bestaande , skos, dbo, dbp en een minimale set van nieuwe termen gedefinieerd in het Matrix Vocabularium."@en ;
     dct:alternative "Matrix AP Shapes"@en ;
     dct:creator     omg_ag_cl:creator ;
     dct:description "Dit is de SHACL encodering van het applicatieprofiel van een luchtzuiveringssysteem."@en ;
@@ -56,13 +56,13 @@ omg_ag_cl:creator
 # Node Shapes
 ons:schema
     a                sh:NodeShape ;
-    rdfs:label       "conceptschema van matrices"@en ;
-    sh:name          "conceptschema van matrices"@en ;
-    sh:description   "Het schema waarbinnen de matrices gedefinieerd zijn"@en ;
+    rdfs:label       "conceptschema van luchtzuiveringssystemen"@en ;
+    sh:name          "conceptschema van luchtzuiveringssystemen"@en ;
+    sh:description   "Het schema waarbinnen de luchtzuiveringssystemen gedefinieerd zijn"@en ;
     rdfs:isDefinedBy omg_ont:luchtzuiveringssysteem-ap-constraints, omg_voc:luchtzuiveringssysteem-ap-constraints ;
     sh:property      omg_ps:conceptscheme_prefLabel, omg_ps:schema_hasTopConcept,
                      omg_ps:definition, omg_ps:rdf_type;
-        sh:closed true ;
+
     sh:targetClass   skos:ConceptScheme .
 
 
@@ -71,11 +71,11 @@ ons:collection
     a                sh:NodeShape ;
     rdfs:label       "verzameling"@en ;
     sh:name          "verzameling"@en ;
-    sh:description   "Verzamelingen bundelen matrices met gelijkaardige eigenschappen, analysemethoden of matrices waarin ze gemeten worden."@en ;
+    sh:description   "Verzamelingen bundelen luchtzuiveringssystemen met gelijkaardige eigenschappen, analysemethoden of luchtzuiveringssystemen waarin ze gemeten worden."@en ;
     rdfs:isDefinedBy omg_ont:luchtzuiveringssysteem-ap-constraints, omg_voc:luchtzuiveringssysteem-ap-constraints ;
     sh:property      omg_ps:prefLabel, omg_ps:collection_member,
                      omg_ps:inScheme, omg_ps:rdf_type;
-    sh:closed true ;
+
     sh:targetClass   skos:Collection .
 
 
@@ -85,14 +85,14 @@ ons:luchtzuiveringssysteem
     rdfs:label       "luchtzuiveringssysteem"@en ;
     sh:name          "luchtzuiveringssysteem"@en ;
     sh:description   "analysemethodes"@en ;
-    rdfs:comment     "compendia onderhouden door VITO"@en ;
+    rdfs:comment     ""@en ;
     rdfs:isDefinedBy omg_ont:luchtzuiveringssysteem-ap-constraints, omg_voc:luchtzuiveringssysteem-ap-constraints ;
     sh:property      omg_ps:notation, omg_ps:inScheme,
                      omg_ps:references, omg_ps:definition,
                      omg_ps:prefLabel, omg_ps:theme,
                       omg_ps:topConceptOf, omg_ps:altLabel,
                      omg_ps:rdf_type, omg_ps:note ;
-    sh:closed true ;
+
     sh:targetClass   skos:Concept .
 
 
@@ -105,7 +105,7 @@ omg_ps:rdf_type
     sh:name          "rdf type"@en ;
     sh:description   "Aanduiding dat een bron een instantie van een bepaalde klasse is."@en ;
     rdfs:isDefinedBy omg_ont:luchtzuiveringssysteem-ap-constraints, omg_voc:luchtzuiveringssysteem-ap-constraints ;
-    sh:maxCount      1 ;
+
     sh:minCount      1 ;
     sh:nodeKind      sh:IRI ;
     sh:path          rdf:type .
@@ -129,7 +129,6 @@ omg_ps:theme
     sh:name          "thema"@en ;
     sh:description   "De relatie naar een europees thema"@en ;
     rdfs:isDefinedBy omg_ont:luchtzuiveringssysteem-ap-constraints, omg_voc:luchtzuiveringssysteem-ap-constraints ;
-    sh:minCount      1 ;
     sh:nodeKind      sh:IRI ;
     sh:path          dcat:theme .
 

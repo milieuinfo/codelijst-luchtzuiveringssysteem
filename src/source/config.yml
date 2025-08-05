@@ -124,6 +124,7 @@ prefixes :
   formats: http://www.w3.org/ns/formats/
   frequency: http://publications.europa.eu/resource/authority/frequency/
   gemet: http://www.eionet.europa.eu/gemet/concept/
+  schema: https://schema.org/
   licence: http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/
   metadata: https://data.omgeving.vlaanderen.be/ns/metadata#
   omg_catalog: https://data.omgeving.vlaanderen.be/id/catalog/
@@ -161,7 +162,8 @@ prefixes :
   wb: https://data.omgeving.vlaanderen.be/id/concept/waardebepaling/
   normatieve_structuur: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/
   lzp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/
-  lzs: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/
+  lzs-type: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/
+  lzs-norm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/
   lzss: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/
   lzsst: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/
   lzsm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/

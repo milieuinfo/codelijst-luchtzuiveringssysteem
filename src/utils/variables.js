@@ -33,7 +33,6 @@ const frame_skos_prefixes = {
         "@omitDefault": true
     },
     "broader": {
-        "@type": "skos:Concept",
         "@embed": "@never",
         "@omitDefault": true
     },
@@ -137,7 +136,7 @@ const frame_skos_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
-    "severity": {
+    "type": {
         "@embed": "@never",
         "@omitDefault": true
     },
@@ -152,7 +151,7 @@ const frame_skos_prefixes = {
 
 const frame_skos_no_prefixes = {
     "@context": context,
-    "@type": ["http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Concept", "http://qudt.org/schema/qudt/QuantityKind"],
+    "_type": ["http://www.w3.org/2004/02/skos/core#ConceptScheme", "http://www.w3.org/2004/02/skos/core#Concept", "http://qudt.org/schema/qudt/QuantityKind"],
     "member": {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
@@ -162,18 +161,20 @@ const frame_skos_no_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
+    "type": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
 
     "topConceptOf": {
         "@embed": "@never",
         "@omitDefault": true
-    }
-    ,
+    },
     "broader": {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
         "@omitDefault": true
-    }
-    ,
+    },
     "narrower": {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
