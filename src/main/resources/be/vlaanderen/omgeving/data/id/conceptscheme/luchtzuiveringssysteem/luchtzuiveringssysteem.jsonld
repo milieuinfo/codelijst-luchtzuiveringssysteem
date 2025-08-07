@@ -15,7 +15,8 @@
         "id": "@id",
         "type": {
             "@id": "@type",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "source": {
             "@id": "http://purl.org/dc/terms/source",
@@ -249,7 +250,8 @@
         },
         "hasTopConcept": {
             "@id": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "uri": {
             "@id": "@id",
@@ -257,7 +259,8 @@
         },
         "dct_type": {
             "@id": "http://purl.org/dc/terms/type",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "operatie": {
             "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#operatie",
@@ -341,19 +344,23 @@
         },
         "narrower": {
             "@id": "http://www.w3.org/2004/02/skos/core#narrower",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "narrowerTransitive": {
             "@id": "http://www.w3.org/2004/02/skos/core#narrowerTransitive",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "narrowMatch": {
             "@id": "http://www.w3.org/2004/02/skos/core#narrowMatch",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "semanticRelation": {
             "@id": "http://www.w3.org/2004/02/skos/core#semanticRelation",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "belongsTo": {
             "@id": "http://rdf-vocabulary.ddialliance.org/xkos#belongsTo",
@@ -404,7 +411,8 @@
         },
         "relevantQuantityKind": {
             "@id": "http://qudt.org/schema/qudt/relevantQuantityKind",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "hasProcedureForProperty": {
             "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty",
@@ -412,11 +420,13 @@
         },
         "relevantSystem": {
             "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "relevantCodeList": {
             "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "relevantDataType": {
             "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType",
@@ -505,47 +515,65 @@
     "graph": [
         {
             "id": "quantitykind:Acidity",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:PH"
         },
         {
             "id": "quantitykind:Basicity",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:PH"
         },
         {
             "id": "quantitykind:Conductivity",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:MilliS-PER-CentiM"
         },
         {
             "id": "quantitykind:Count",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:NUM"
         },
         {
             "id": "quantitykind:Fugacity",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:PA"
         },
         {
             "id": "quantitykind:VaporPressure",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:PA"
         },
         {
             "id": "quantitykind:Volume",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:M3"
         },
         {
             "id": "quantitykind:VolumeFlowRate",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:M3-PER-HR"
         },
         {
             "id": "quantitykind:VolumePerTime",
-            "type": "qudt:QuantityKind",
+            "type": [
+                "qudt:QuantityKind"
+            ],
             "applicableUnit": "unit:M3-PER-HR"
         },
         {
@@ -555,8 +583,12 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": "lzs-type:s3",
-            "relevantQuantityKind": "quantitykind:Volume",
+            "dct_type": [
+                "lzs-type:s3"
+            ],
+            "relevantQuantityKind": [
+                "quantitykind:Volume"
+            ],
             "relevantUnit": "unit:M3",
             "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:lzsp",
@@ -571,8 +603,12 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:spuiwater",
-            "dct_type": "lzs-type:s3",
-            "relevantQuantityKind": "quantitykind:Volume",
+            "dct_type": [
+                "lzs-type:s3"
+            ],
+            "relevantQuantityKind": [
+                "quantitykind:Volume"
+            ],
             "relevantUnit": "unit:M3",
             "seeAlso": "omg_id:concept/fysico-chemisch/0050",
             "inScheme": "conceptscheme:lzsp",
@@ -614,7 +650,9 @@
                 "lzs-type:s1",
                 "lzs-type:s2"
             ],
-            "relevantQuantityKind": "quantitykind:Conductivity",
+            "relevantQuantityKind": [
+                "quantitykind:Conductivity"
+            ],
             "relevantUnit": "unit:MilliS-PER-CentiM",
             "seeAlso": "omg_id:concept/fysico-chemisch/0010",
             "inScheme": "conceptscheme:lzsp",
@@ -634,7 +672,9 @@
                 "lzs-type:s1",
                 "lzs-type:s2"
             ],
-            "relevantQuantityKind": "quantitykind:Volume",
+            "relevantQuantityKind": [
+                "quantitykind:Volume"
+            ],
             "relevantUnit": "unit:M3",
             "seeAlso": "omg_id:concept/fysico-chemisch/0050",
             "inScheme": "conceptscheme:lzsp",
@@ -657,7 +697,9 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Stalbezetting",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantCodeList": "conceptscheme:lzsst"
+            "relevantCodeList": [
+                "conceptscheme:lzsst"
+            ]
         },
         {
             "id": "lzsp:systeemstatus",
@@ -674,7 +716,9 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "SysteemStatus",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantCodeList": "conceptscheme:lzss"
+            "relevantCodeList": [
+                "conceptscheme:lzss"
+            ]
         },
         {
             "id": "lzsp:waswaterdebiet",
@@ -705,7 +749,9 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": "lzs-type:s3",
+            "dct_type": [
+                "lzs-type:s3"
+            ],
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate",
                 "quantitykind:VolumePerTime"
@@ -724,7 +770,9 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": "lzs-type:s3",
+            "dct_type": [
+                "lzs-type:s3"
+            ],
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate",
                 "quantitykind:VolumePerTime"
@@ -761,7 +809,9 @@
         },
         {
             "id": "lzs-type:luchtwassysteem",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "broader": "lzs-type:luchtzuiveringssysteem",
             "broaderTransitive": "lzs-type:luchtzuiveringssysteem",
             "inScheme": "conceptscheme:lzs",
@@ -782,7 +832,9 @@
         },
         {
             "id": "lzs-type:luchtzuiveringssysteem",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "inScheme": "conceptscheme:lzs",
             "narrower": [
                 "lzs-type:s3",
@@ -855,8 +907,12 @@
         },
         {
             "id": "lzs-norm:1",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Onder de minimum grenswaarde van 6",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Onder de minimum grenswaarde van 6",
@@ -867,8 +923,12 @@
         },
         {
             "id": "lzs-norm:2",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Boven de maximum grenswaarde van 8,5",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Boven de maximum grenswaarde van 8,5",
@@ -879,8 +939,12 @@
         },
         {
             "id": "lzs-norm:3",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Boven de maximale waarde op technische fiche",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Boven de maximale waarde op technische fiche",
@@ -892,8 +956,12 @@
         },
         {
             "id": "lzs-norm:4",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Onder de minimum grenswaarde, een afwijking > 20% t.o.v referentiewaarde technische fiche",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Onder de minimum grenswaarde, een afwijking > 20% t.o.v referentiewaarde technische fiche",
@@ -905,8 +973,12 @@
         },
         {
             "id": "lzs-norm:5",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Onder de minimum grenswaarde, een afwijking > 10% t.o.v referentiewaarde technische fiche",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Onder de minimum grenswaarde, een afwijking > 10% t.o.v referentiewaarde technische fiche",
@@ -918,8 +990,12 @@
         },
         {
             "id": "lzs-norm:6",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Onder de minimum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Onder de minimum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
@@ -931,8 +1007,12 @@
         },
         {
             "id": "lzs-norm:7",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s1",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s1"
+            ],
             "definition": "Boven de maximum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Boven de maximum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
@@ -944,8 +1024,12 @@
         },
         {
             "id": "lzs-norm:8",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s2",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s2"
+            ],
             "definition": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 1 pH)",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 1 pH)",
@@ -957,8 +1041,12 @@
         },
         {
             "id": "lzs-norm:9",
-            "type": "skos:Concept",
-            "dct_type": "lzs-type:s3",
+            "type": [
+                "skos:Concept"
+            ],
+            "dct_type": [
+                "lzs-type:s3"
+            ],
             "definition": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 50 Pa)",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 50 Pa)",
@@ -970,7 +1058,9 @@
         },
         {
             "id": "lzs-type:s1",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "broader": "lzs-type:luchtwassysteem",
             "broaderTransitive": [
                 "lzs-type:luchtwassysteem",
@@ -986,7 +1076,9 @@
         },
         {
             "id": "lzs-type:s2",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "broader": "lzs-type:luchtwassysteem",
             "broaderTransitive": [
                 "lzs-type:luchtwassysteem",
@@ -1002,58 +1094,78 @@
         },
         {
             "id": "lzs-type:s3",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "broader": "lzs-type:luchtzuiveringssysteem",
             "broaderTransitive": "lzs-type:luchtzuiveringssysteem",
             "inScheme": "conceptscheme:lzs",
             "notation": "S3",
             "prefLabel": "Biobed",
-            "semanticRelation": "lzs-type:luchtzuiveringssysteem"
+            "semanticRelation": [
+                "lzs-type:luchtzuiveringssysteem"
+            ]
         },
         {
             "id": "lzsst:in_gebruik",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "inScheme": "conceptscheme:lzsst",
             "prefLabel": "Stal in gebruik, dieren aanwezig.",
             "topConceptOf": "conceptscheme:lzsst"
         },
         {
             "id": "lzsst:leeg",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "inScheme": "conceptscheme:lzsst",
             "prefLabel": "Lege stal",
             "topConceptOf": "conceptscheme:lzsst"
         },
         {
             "id": "lzss:onderhoud",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "inScheme": "conceptscheme:lzss",
             "prefLabel": "In onderhoud",
             "topConceptOf": "conceptscheme:lzss"
         },
         {
             "id": "lzss:operationeel",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "inScheme": "conceptscheme:lzss",
             "prefLabel": "Operationeel",
             "topConceptOf": "conceptscheme:lzss"
         },
         {
             "id": "lzss:storing",
-            "type": "skos:Concept",
+            "type": [
+                "skos:Concept"
+            ],
             "inScheme": "conceptscheme:lzss",
             "prefLabel": "Storing",
             "topConceptOf": "conceptscheme:lzss"
         },
         {
             "id": "conceptscheme:lzs",
-            "type": "skos:ConceptScheme",
-            "hasTopConcept": "lzs-type:luchtzuiveringssysteem",
+            "type": [
+                "skos:ConceptScheme"
+            ],
+            "hasTopConcept": [
+                "lzs-type:luchtzuiveringssysteem"
+            ],
             "prefLabel": "conceptschema luchtzuiveringssysteem"
         },
         {
             "id": "conceptscheme:lzsm",
-            "type": "skos:ConceptScheme",
+            "type": [
+                "skos:ConceptScheme"
+            ],
             "hasTopConcept": [
                 "lzsm:waswater",
                 "lzsm:spuiwater",
@@ -1065,7 +1177,9 @@
         },
         {
             "id": "conceptscheme:lzsp",
-            "type": "skos:ConceptScheme",
+            "type": [
+                "skos:ConceptScheme"
+            ],
             "hasTopConcept": [
                 "lzsp:biobedspoelwaterproductie",
                 "lzsp:biobedspuiwaterproductie",
@@ -1083,7 +1197,9 @@
         },
         {
             "id": "conceptscheme:lzss",
-            "type": "skos:ConceptScheme",
+            "type": [
+                "skos:ConceptScheme"
+            ],
             "hasTopConcept": [
                 "lzss:onderhoud",
                 "lzss:operationeel",
@@ -1093,7 +1209,9 @@
         },
         {
             "id": "conceptscheme:lzsst",
-            "type": "skos:ConceptScheme",
+            "type": [
+                "skos:ConceptScheme"
+            ],
             "hasTopConcept": [
                 "lzsst:in_gebruik",
                 "lzsst:leeg"
@@ -1102,7 +1220,9 @@
         },
         {
             "id": "conceptscheme:norm_bandbreedte",
-            "type": "skos:ConceptScheme",
+            "type": [
+                "skos:ConceptScheme"
+            ],
             "altLabel": "Ranges",
             "hasTopConcept": [
                 "lzs-norm:1",

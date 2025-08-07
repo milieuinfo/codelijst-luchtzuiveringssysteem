@@ -294,18 +294,10 @@ const frame_skos_no_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
-
-
-
     "seeAlso":{
         "@embed": "@never",
         "@omitDefault": true
     }
-
-
-
-
-
 }
 
 const ttl = config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.turtle

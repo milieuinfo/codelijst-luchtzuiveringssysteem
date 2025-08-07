@@ -14,7 +14,8 @@
   "id": "@id",
   "type" : {
     "@id" : "@type",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "source" : {
     "@id" : "http://purl.org/dc/terms/source",
@@ -250,7 +251,8 @@
   },
   "hasTopConcept" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#hasTopConcept",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "uri" : {
     "@id" : "@id",
@@ -258,7 +260,8 @@
   },
   "dct_type": {
     "@id": "http://purl.org/dc/terms/type",
-    "@type": "@id"
+    "@type": "@id",
+    "@container": "@set"
   },
   "operatie": {
     "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#operatie",
@@ -342,19 +345,23 @@
   },
   "narrower" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#narrower",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "narrowerTransitive" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#narrowerTransitive",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "narrowMatch" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#narrowMatch",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "semanticRelation" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#semanticRelation",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "belongsTo" : {
     "@id" : "http://rdf-vocabulary.ddialliance.org/xkos#belongsTo",
@@ -407,7 +414,8 @@
   },
   "relevantQuantityKind" : {
     "@id" : "http://qudt.org/schema/qudt/relevantQuantityKind",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "hasProcedureForProperty":  {
   "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty",
@@ -415,11 +423,13 @@
 },
   "relevantSystem":  {
     "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "relevantCodeList":  {
     "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList",
-    "@type" : "@id"
+    "@type" : "@id",
+    "@container": "@set"
   },
   "relevantDataType":  {
     "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType",

@@ -16,6 +16,7 @@ skos:
   rdf_xml: .rdf
   xlsx: .xlsx
   nt: .nt
+  parquet: .parquet
 
 source:
   path: ./source/
@@ -77,6 +78,10 @@ metadata :
     temporal : https://data.omgeving.vlaanderen.be/id/periodoftime/dataset_omg
     type : http://www.w3.org/ns/dcat#Dataset
   distribution :
+    parquet:
+      mediaType: https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+      format: http://publications.europa.eu/resource/authority/file-type/XLSX
+      type: http://www.w3.org/ns/dcat#Distribution
     xlsx:
       mediaType: https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
       format: http://publications.europa.eu/resource/authority/file-type/XLSX
