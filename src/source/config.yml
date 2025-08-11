@@ -38,6 +38,7 @@ ap :
   turtle: .ttl
 
 metadata :
+  start_version : 0.0.5
   sparqlservice:
     endpoint: https://data.omgeving.vlaanderen.be/sparql
     feature:
@@ -79,8 +80,8 @@ metadata :
     type : http://www.w3.org/ns/dcat#Dataset
   distribution :
     parquet:
-      mediaType: https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-      format: http://publications.europa.eu/resource/authority/file-type/XLSX
+      mediaType: https://www.iana.org/assignments/media-types/application/vnd.apache.parquet
+      format: http://publications.europa.eu/resource/authority/file-type/PARQUET
       type: http://www.w3.org/ns/dcat#Distribution
     xlsx:
       mediaType: https://www.iana.org/assignments/media-types/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet

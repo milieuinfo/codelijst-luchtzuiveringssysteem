@@ -1,11 +1,11 @@
 'use strict';
-import {  generate_skos } from 'maven-metadata-generator-npm';
+import { generate_skos } from 'maven-metadata-generator-npm';
 import {
-    ttl,
-    nt,
-    jsonld,
-    csv
+    turtlePath,
+    jsonldOptions,
+    ntriplesPath,
+    csvOptions
 } from './utils/variables.js';
 
-generate_skos(ttl, jsonld, nt, csv);
+generate_skos(turtlePath, jsonldOptions, ntriplesPath, csvOptions);
 
