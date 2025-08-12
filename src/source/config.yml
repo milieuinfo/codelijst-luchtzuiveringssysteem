@@ -170,6 +170,7 @@ prefixes :
   lzp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/
   lzs-type: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/
   lzs-norm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/
+  lzs-param-norm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/
   lzss: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/
   lzsst: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/
   lzsm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/
