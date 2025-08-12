@@ -373,13 +373,164 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Onder de minimum grenswaarde van 6",
+        "definition": "De zuurtegraad van het waswater is kleiner dan 6",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Onder de minimum grenswaarde van 6",
-        "prefLabel": "Zuurtegraad waswater < 6",
+        "note": [
+            "De zuurtegraad van het waswater is kleiner dan 6",
+            "< 6"
+        ],
+        "prefLabel": "Zuurtegraad waswater < 6 (S1 systeem)",
+        "scopeNote": "< 6",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater",
-        "maxValue": "6.0"
+        "maxValue": "6"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/10",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,8 x waarde technische fiche (afwijking > 20%)"
+        ],
+        "prefLabel": "Waswaterdebiet afwijking naar beneden > 20% (S2 systeem)",
+        "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "product",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet",
+        "maxValue": "0.8"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/11",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,9 x waarde technische fiche (afwijking > 10%)"
+        ],
+        "prefLabel": "Spuiwaterdebiet afwijking naar beneden > 10% (S2 systeem)",
+        "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "product",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie",
+        "maxValue": "0.9"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/12",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "definition": "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,6 x waarde technische fiche (afwijking > 40%)"
+        ],
+        "prefLabel": "Drukval afwijking naar beneden > 40% (S2 systeem)",
+        "scopeNote": "< 0,6 x waarde technische fiche (afwijking > 40%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "product",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
+        "maxValue": "0.6"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/13",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "definition": "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
+            "> 1,4 x waarde technische fiche (afwijking > 40%)"
+        ],
+        "prefLabel": "Drukval afwijking naar boven > 40% (S2 systeem)",
+        "scopeNote": "> 1,4 x waarde technische fiche (afwijking > 40%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "product",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
+        "minValue": "1.4"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/14",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "definition": "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "< 0,8 x waarde technische fiche (afwijking > 20%)",
+            "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."
+        ],
+        "prefLabel": "Waswaterdebiet voorbevochtiging afwijking naar beneden > 20% (S3 systeem)",
+        "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "product",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging",
+        "maxValue": "0.8"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/15",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "definition": "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "< 0,8 x waarde technische fiche (afwijking > 20%)",
+            "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."
+        ],
+        "prefLabel": "Waswaterdebiet bevloeiing afwijking naar beneden > 20% (S3 systeem)",
+        "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "product",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing",
+        "maxValue": "0.8"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/16",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "definition": "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "note": [
+            "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
+            "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)"
+        ],
+        "prefLabel": "Drukval afwijking naar boven > 50 Pa (S3 systeem)",
+        "scopeNote": "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
+        "operatie": "som",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
+        "minValue": "50"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/2",
@@ -389,10 +540,14 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Boven de maximum grenswaarde van 8,5",
+        "definition": "De zuurtegraad van het waswater is groter dan 8,5",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Boven de maximum grenswaarde van 8,5",
-        "prefLabel": "Zuurtegraad waswater > 8,5",
+        "note": [
+            "De zuurtegraad van het waswater is groter dan 8,5",
+            "> 8,5"
+        ],
+        "prefLabel": "Zuurtegraad waswater > 8,5 (S1 systeem)",
+        "scopeNote": "> 8,5",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater",
         "minValue": "8.5"
@@ -405,14 +560,18 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Boven de maximale waarde op technische fiche",
+        "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Boven de maximale waarde op technische fiche",
-        "prefLabel": "Geleidbaarheid > maximum operationele waarde",
+        "note": [
+            "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
+            "> waarde technische fiche"
+        ],
+        "prefLabel": "Geleidbaarheid waswater > maximale waarde (S1 systeem)",
+        "scopeNote": "> waarde technische fiche",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "som",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater",
-        "minValue": "0.0"
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/4",
@@ -422,10 +581,14 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Onder de minimum grenswaarde, een afwijking > 20% t.o.v referentiewaarde technische fiche",
+        "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Onder de minimum grenswaarde, een afwijking > 20% t.o.v referentiewaarde technische fiche",
-        "prefLabel": "Waswaterdebiet afwijking > 20% onder normale operationele waarde",
+        "note": [
+            "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,8 x waarde technische fiche (afwijking > 20%)"
+        ],
+        "prefLabel": "Waswaterdebiet afwijking naar beneden > 20% (S1 systeem)",
+        "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "product",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet",
@@ -439,10 +602,14 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Onder de minimum grenswaarde, een afwijking > 10% t.o.v referentiewaarde technische fiche",
+        "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Onder de minimum grenswaarde, een afwijking > 10% t.o.v referentiewaarde technische fiche",
-        "prefLabel": "Spuiwaterproductie afwijking > 10% normale operationele waarde",
+        "note": [
+            "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,9 x waarde technische fiche (afwijking > 10%)"
+        ],
+        "prefLabel": "Spuiwaterdebiet afwijking naar beneden > 10% (S1 systeem)",
+        "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "product",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie",
@@ -456,10 +623,14 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Onder de minimum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
+        "definition": "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Onder de minimum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
-        "prefLabel": "Drukval afwijking > 40% onder normale operationele waarde",
+        "note": [
+            "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,6 x waarde technische fiche (afwijking > 40%)"
+        ],
+        "prefLabel": "Drukval afwijking naar beneden > 40% (S1 systeem)",
+        "scopeNote": "< 0,6 x waarde technische fiche (afwijking > 40%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "product",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
@@ -473,10 +644,14 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
         ],
-        "definition": "Boven de maximum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
+        "definition": "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Boven de maximum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche",
-        "prefLabel": "Drukval afwijking > 40% normale operationele waarde",
+        "note": [
+            "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
+            "> 1,4 x waarde technische fiche (afwijking > 40%)"
+        ],
+        "prefLabel": "Drukval afwijking naar boven > 40% (S1 systeem)",
+        "scopeNote": "> 1,4 x waarde technische fiche (afwijking > 40%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "product",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
@@ -490,14 +665,18 @@
         "dct_type": [
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
         ],
-        "definition": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 1 pH)",
+        "definition": "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 1 pH)",
-        "prefLabel": "Zuurtegraad waswater afwijking > 1 pH-eenheid boven normale operationele waarde",
+        "note": [
+            "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
+            "> 1 pH + waarde technische fiche (afwijking > 1pH)"
+        ],
+        "prefLabel": "Zuurtegraad waswater afwijking naar boven > 1 pH-eenheid (S2 systeem)",
+        "scopeNote": "> 1 pH + waarde technische fiche (afwijking > 1pH)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "som",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater",
-        "minValue": "1.0"
+        "minValue": "1"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9",
@@ -505,16 +684,259 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
         ],
-        "definition": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 50 Pa)",
+        "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
-        "note": "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 50 Pa)",
-        "prefLabel": "Bandbreedte drukval afwijking > 50 Pa boven normale operationele waarde",
+        "note": [
+            "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
+            "> waarde technische fiche"
+        ],
+        "prefLabel": "Geleidbaarheid waswater > maximale waarde (S2 systeem)",
+        "scopeNote": "> waarde technische fiche",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/norm_bandbreedte",
         "operatie": "som",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater",
+        "minValue": "0"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/PH",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Zuurtegraad waswater S1 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater",
+        "technishefiche": "false"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/PA",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Drukval S2 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "exact",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
-        "minValue": "50.0"
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Waswaterdebiet voorbevochtiging S3 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietvoorbevochtiging",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Waswaterdebiet bevloeiing S3 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebietbevloeiing",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Biobedspuiwaterproductie S3 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspuiwaterproductie",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Biobedspoelwaterproductie S3 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/PA",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Drukval S3 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "maximum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/MilliS-PER-CentiM",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Geleidbaarheid waswater S1 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "maximum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Waswaterdebiet S1 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Spuiwaterdebiet S1 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/PA",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Drukval S1 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "exact",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/drukvaloverhetsysteem",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/PH",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Zuurtegraad waswater S2 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "maximum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/zuurtegraadwaswater",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/MilliS-PER-CentiM",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Geleidbaarheid waswater S2 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "maximum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/geleidbaarheidvanhetwaswater",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Waswaterdebiet S2 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/waswaterdebiet",
+        "technishefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dct_type": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/M3",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "prefLabel": "Spuiwaterdebiet S2 systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType": "minimum",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie",
+        "technishefiche": "true"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
@@ -622,6 +1044,30 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs-param-norm",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "hasTopConcept": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9"
+        ],
+        "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzsm",
         "type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
@@ -685,6 +1131,13 @@
         ],
         "altLabel": "Ranges",
         "hasTopConcept": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/10",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/11",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/12",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/13",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/14",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/15",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/16",
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/1",
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/2",
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/3",
