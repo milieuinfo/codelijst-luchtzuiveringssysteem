@@ -59,6 +59,7 @@
 @prefix lzp: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/>.
 @prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/>.
 @prefix lzs-norm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/>.
+@prefix lzs-param-norm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/>.
 @prefix lzss: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/>.
 @prefix lzsst: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/>.
 @prefix lzsm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/>.
@@ -232,94 +233,314 @@ lzsm:waswater a rdfs:Resource, skos:Concept;
     skos:inScheme conceptscheme:lzsm;
     skos:prefLabel "Waswater"@nl;
     skos:topConceptOf conceptscheme:lzsm.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/10> dct:type lzs-type:s2;
+    a skos:Concept;
+    skos:definition "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl, "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Waswaterdebiet afwijking naar beneden > 20% (S2 systeem)"@nl;
+    skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "product"@nl;
+    lzsns:relevantProperty lzsp:waswaterdebiet;
+    schema:maxValue 0.8.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/11> dct:type lzs-type:s2;
+    a skos:Concept;
+    skos:definition "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl, "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Spuiwaterdebiet afwijking naar beneden > 10% (S2 systeem)"@nl;
+    skos:scopeNote "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "product"@nl;
+    lzsns:relevantProperty lzsp:spuiwaterproductie;
+    schema:maxValue 0.9.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/12> dct:type lzs-type:s2;
+    a skos:Concept;
+    skos:definition "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "< 0,6 x waarde technische fiche (afwijking > 40%)"@nl, "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Drukval afwijking naar beneden > 40% (S2 systeem)"@nl;
+    skos:scopeNote "< 0,6 x waarde technische fiche (afwijking > 40%)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "product"@nl;
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
+    schema:maxValue 0.6.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/13> dct:type lzs-type:s2;
+    a skos:Concept;
+    skos:definition "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "> 1,4 x waarde technische fiche (afwijking > 40%)"@nl, "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Drukval afwijking naar boven > 40% (S2 systeem)"@nl;
+    skos:scopeNote "> 1,4 x waarde technische fiche (afwijking > 40%)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "product"@nl;
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
+    schema:minValue 1.4.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/14> dct:type lzs-type:s3;
+    a skos:Concept;
+    skos:definition "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl, "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Waswaterdebiet voorbevochtiging afwijking naar beneden > 20% (S3 systeem)"@nl;
+    skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "product"@nl;
+    lzsns:relevantProperty lzsp:waswaterdebietvoorbevochtiging;
+    schema:maxValue 0.8.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/15> dct:type lzs-type:s3;
+    a skos:Concept;
+    skos:definition "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl, "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Waswaterdebiet bevloeiing afwijking naar beneden > 20% (S3 systeem)"@nl;
+    skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "product"@nl;
+    lzsns:relevantProperty lzsp:waswaterdebietbevloeiing;
+    schema:maxValue 0.8.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/16> dct:type lzs-type:s3;
+    a skos:Concept;
+    skos:definition "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm_bandbreedte;
+    skos:note "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)"@nl, "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Drukval afwijking naar boven > 50 Pa (S3 systeem)"@nl;
+    skos:scopeNote "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)"@nl;
+    skos:topConceptOf conceptscheme:norm_bandbreedte;
+    lzsns:operatie "som"@nl;
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
+    schema:minValue "50"^^xsd:decimal.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/1> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Onder de minimum grenswaarde van 6"@nl;
+    skos:definition "De zuurtegraad van het waswater is kleiner dan 6"@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Onder de minimum grenswaarde van 6"@nl;
-    skos:prefLabel "Zuurtegraad waswater < 6"@nl;
+    skos:note "< 6"@nl, "De zuurtegraad van het waswater is kleiner dan 6"@nl;
+    skos:prefLabel "Zuurtegraad waswater < 6 (S1 systeem)"@nl;
+    skos:scopeNote "< 6"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:relevantProperty lzsp:zuurtegraadwaswater;
-    schema:maxValue 6.0.
+    schema:maxValue "6"^^xsd:decimal.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/2> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Boven de maximum grenswaarde van 8,5"@nl;
+    skos:definition "De zuurtegraad van het waswater is groter dan 8,5"@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Boven de maximum grenswaarde van 8,5"@nl;
-    skos:prefLabel "Zuurtegraad waswater > 8,5"@nl;
+    skos:note "> 8,5"@nl, "De zuurtegraad van het waswater is groter dan 8,5"@nl;
+    skos:prefLabel "Zuurtegraad waswater > 8,5 (S1 systeem)"@nl;
+    skos:scopeNote "> 8,5"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:relevantProperty lzsp:zuurtegraadwaswater;
     schema:minValue 8.5.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/3> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Boven de maximale waarde op technische fiche"@nl;
+    skos:definition "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Boven de maximale waarde op technische fiche"@nl;
-    skos:prefLabel "Geleidbaarheid > maximum operationele waarde"@nl;
+    skos:note "> waarde technische fiche"@nl, "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Geleidbaarheid waswater > maximale waarde (S1 systeem)"@nl;
+    skos:scopeNote "> waarde technische fiche"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "som"@nl;
     lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
-    schema:minValue 0.0.
+    schema:minValue "0"^^xsd:decimal.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/4> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Onder de minimum grenswaarde, een afwijking > 20% t.o.v referentiewaarde technische fiche"@nl;
+    skos:definition "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Onder de minimum grenswaarde, een afwijking > 20% t.o.v referentiewaarde technische fiche"@nl;
-    skos:prefLabel "Waswaterdebiet afwijking > 20% onder normale operationele waarde"@nl;
+    skos:note "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl, "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Waswaterdebiet afwijking naar beneden > 20% (S1 systeem)"@nl;
+    skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "product"@nl;
     lzsns:relevantProperty lzsp:waswaterdebiet;
     schema:maxValue 0.8.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/5> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Onder de minimum grenswaarde, een afwijking > 10% t.o.v referentiewaarde technische fiche"@nl;
+    skos:definition "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Onder de minimum grenswaarde, een afwijking > 10% t.o.v referentiewaarde technische fiche"@nl;
-    skos:prefLabel "Spuiwaterproductie afwijking > 10% normale operationele waarde"@nl;
+    skos:note "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl, "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Spuiwaterdebiet afwijking naar beneden > 10% (S1 systeem)"@nl;
+    skos:scopeNote "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "product"@nl;
     lzsns:relevantProperty lzsp:spuiwaterproductie;
     schema:maxValue 0.9.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/6> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Onder de minimum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche"@nl;
+    skos:definition "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Onder de minimum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche"@nl;
-    skos:prefLabel "Drukval afwijking > 40% onder normale operationele waarde"@nl;
+    skos:note "< 0,6 x waarde technische fiche (afwijking > 40%)"@nl, "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Drukval afwijking naar beneden > 40% (S1 systeem)"@nl;
+    skos:scopeNote "< 0,6 x waarde technische fiche (afwijking > 40%)"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "product"@nl;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
     schema:maxValue 0.6.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/7> dct:type lzs-type:s1;
     a skos:Concept;
-    skos:definition "Boven de maximum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche"@nl;
+    skos:definition "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Boven de maximum grenswaarde, een afwijking > 40% t.o.v referentiewaarde technische fiche"@nl;
-    skos:prefLabel "Drukval afwijking > 40% normale operationele waarde"@nl;
+    skos:note "> 1,4 x waarde technische fiche (afwijking > 40%)"@nl, "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Drukval afwijking naar boven > 40% (S1 systeem)"@nl;
+    skos:scopeNote "> 1,4 x waarde technische fiche (afwijking > 40%)"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "product"@nl;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
     schema:minValue 1.4.
 <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/8> dct:type lzs-type:s2;
     a skos:Concept;
-    skos:definition "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 1 pH)"@nl;
+    skos:definition "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 1 pH)"@nl;
-    skos:prefLabel "Zuurtegraad waswater afwijking > 1 pH-eenheid boven normale operationele waarde"@nl;
+    skos:note "> 1 pH + waarde technische fiche (afwijking > 1pH)"@nl, "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Zuurtegraad waswater afwijking naar boven > 1 pH-eenheid (S2 systeem)"@nl;
+    skos:scopeNote "> 1 pH + waarde technische fiche (afwijking > 1pH)"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "som"@nl;
     lzsns:relevantProperty lzsp:zuurtegraadwaswater;
-    schema:minValue 1.0.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9> dct:type lzs-type:s3;
+    schema:minValue "1"^^xsd:decimal.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9> dct:type lzs-type:s2;
     a skos:Concept;
-    skos:definition "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 50 Pa)"@nl;
+    skos:definition "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
     skos:inScheme conceptscheme:norm_bandbreedte;
-    skos:note "Boven de maximum grenswaarde, een afwijking > (waarde technische fiche + 50 Pa)"@nl;
-    skos:prefLabel "Bandbreedte drukval afwijking > 50 Pa boven normale operationele waarde"@nl;
+    skos:note "> waarde technische fiche"@nl, "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Geleidbaarheid waswater > maximale waarde (S2 systeem)"@nl;
+    skos:scopeNote "> waarde technische fiche"@nl;
     skos:topConceptOf conceptscheme:norm_bandbreedte;
     lzsns:operatie "som"@nl;
+    lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
+    schema:minValue "0"^^xsd:decimal.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10> dct:type lzs-type:s2;
+    qudt:applicableUnit unit:PA;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Drukval S2 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "exact";
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
-    schema:minValue 50.0.
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11> dct:type lzs-type:s3;
+    qudt:applicableUnit unit:M3-PER-HR;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Waswaterdebiet voorbevochtiging S3 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:waswaterdebietvoorbevochtiging;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12> dct:type lzs-type:s3;
+    qudt:applicableUnit unit:M3-PER-HR;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Waswaterdebiet bevloeiing S3 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:waswaterdebietbevloeiing;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13> dct:type lzs-type:s3;
+    qudt:applicableUnit unit:M3;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Biobedspuiwaterproductie S3 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:biobedspuiwaterproductie;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14> dct:type lzs-type:s3;
+    qudt:applicableUnit unit:M3;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Biobedspoelwaterproductie S3 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:biobedspoelwaterproductie;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15> dct:type lzs-type:s3;
+    qudt:applicableUnit unit:PA;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Drukval S3 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "maximum";
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1> dct:type lzs-type:s1;
+    qudt:applicableUnit unit:PH;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Zuurtegraad waswater S1 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:relevantProperty lzsp:zuurtegraadwaswater;
+    lzsns:technischefiche false.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2> dct:type lzs-type:s1;
+    qudt:applicableUnit unit:MilliS-PER-CentiM;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Geleidbaarheid waswater S1 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "maximum";
+    lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3> dct:type lzs-type:s1;
+    qudt:applicableUnit unit:M3-PER-HR;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Waswaterdebiet S1 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:waswaterdebiet;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4> dct:type lzs-type:s1;
+    qudt:applicableUnit unit:M3;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Spuiwaterdebiet S1 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:spuiwaterproductie;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5> dct:type lzs-type:s1;
+    qudt:applicableUnit unit:PA;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Drukval S1 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "exact";
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6> dct:type lzs-type:s2;
+    qudt:applicableUnit unit:PH;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Zuurtegraad waswater S2 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "maximum";
+    lzsns:relevantProperty lzsp:zuurtegraadwaswater;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7> dct:type lzs-type:s2;
+    qudt:applicableUnit unit:MilliS-PER-CentiM;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Geleidbaarheid waswater S2 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "maximum";
+    lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8> dct:type lzs-type:s2;
+    qudt:applicableUnit unit:M3-PER-HR;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Waswaterdebiet S2 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:waswaterdebiet;
+    lzsns:technischefiche true.
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9> dct:type lzs-type:s2;
+    qudt:applicableUnit unit:M3;
+    a skos:Concept;
+    skos:inScheme conceptscheme:lzs-param-norm;
+    skos:prefLabel "Spuiwaterdebiet S2 systeem"@nl;
+    skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:referentiewaardeType "minimum";
+    lzsns:relevantProperty lzsp:spuiwaterproductie;
+    lzsns:technischefiche true.
 lzs-type:s1 a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
     skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
@@ -361,6 +582,9 @@ lzss:storing a skos:Concept;
     skos:inScheme conceptscheme:lzss;
     skos:prefLabel "Storing"@nl;
     skos:topConceptOf conceptscheme:lzss.
+conceptscheme:lzs-param-norm a skos:ConceptScheme;
+    skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9>;
+    skos:prefLabel "conceptschema luchtzuiveringssysteem parameter specificatie"@nl.
 conceptscheme:lzs a skos:ConceptScheme;
     skos:hasTopConcept lzs-type:luchtzuiveringssysteem;
     skos:prefLabel "conceptschema luchtzuiveringssysteem"@nl.
@@ -378,5 +602,5 @@ conceptscheme:lzsst a skos:ConceptScheme;
     skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.
 conceptscheme:norm_bandbreedte a skos:ConceptScheme;
     skos:altLabel "Ranges"@nl;
-    skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/1>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/2>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/3>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/4>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/5>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/6>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/7>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/8>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9>;
+    skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/10>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/11>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/12>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/13>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/14>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/15>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/16>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/1>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/2>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/3>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/4>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/5>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/6>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/7>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/8>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9>;
     skos:prefLabel "conceptschema luchtzuiveringssysteem normbandbreedte"@nl.

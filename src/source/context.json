@@ -297,6 +297,10 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#definition",
     "@language" : "nl"
   },
+  "scopeNote" : {
+    "@id" : "http://www.w3.org/2004/02/skos/core#scopeNote",
+    "@language" : "nl"
+  },
   "member" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#member",
     "@type" : "@id"
@@ -407,7 +411,6 @@
     "@id" : "http://www.w3.org/ns/shacl#severity",
     "@type" : "@id"
   },
-
   "relevantUnit": {
     "@id" : "http://qudt.org/schema/qudt/relevantUnit",
     "@type" : "@id"
@@ -438,6 +441,14 @@
   "relevantProperty": {
     "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty",
     "@type" : "@id"
+  },
+  "technishefiche": {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#technischefiche",
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+  },
+  "referentiewaardeType": {
+    "@id" : "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType",
+    "@type" : "http://www.w3.org/2001/XMLSchema#string"
   }
 }
 
