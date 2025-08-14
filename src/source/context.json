@@ -447,8 +447,7 @@
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
   },
   "referentiewaardeType": {
-    "@id" : "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType",
-    "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    "@id" : "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType"
   }
 }
 
