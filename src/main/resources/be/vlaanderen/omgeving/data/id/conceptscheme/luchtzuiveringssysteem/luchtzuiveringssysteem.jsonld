@@ -263,7 +263,7 @@
             "@container": "@set"
         },
         "operatie": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#operatie",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie",
             "@language": "nl"
         },
         "prefLabel": {
@@ -274,15 +274,15 @@
             "@id": "http://www.w3.org/2004/02/skos/core#notation"
         },
         "actie": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#actie",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#actie",
             "@language": "nl"
         },
         "normstatus": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#normstatus",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#normstatus",
             "@language": "nl"
         },
         "intervalcategorie": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#intervalcategorie"
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#intervalcategorie"
         },
         "altLabel": {
             "@id": "http://www.w3.org/2004/02/skos/core#altLabel",
@@ -390,15 +390,15 @@
             "@id": "http://purl.org/dc/elements/1.1/identifier"
         },
         "variabele": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#variabele",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#variabele",
             "@type": "@id"
         },
         "drager": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#drager",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#drager",
             "@type": "@id"
         },
         "waardebepaling": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#waardebepaling",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#waardebepaling",
             "@type": "@id"
         },
         "applicableUnit": {
@@ -419,41 +419,40 @@
             "@container": "@set"
         },
         "hasProcedureForProperty": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#hasProcedureForProperty",
             "@type": "@id"
         },
         "relevantSystem": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantSystem",
             "@type": "@id",
             "@container": "@set"
         },
         "relevantCodeList": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantCodeList",
             "@type": "@id",
             "@container": "@set"
         },
         "relevantDataType": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantDataType",
             "@type": "@id"
         },
         "relevantProperty": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty",
             "@type": "@id"
         },
-        "technishefiche": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#technischefiche",
+        "technischefiche": {
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#technischefiche",
             "@type": "http://www.w3.org/2001/XMLSchema#boolean"
         },
         "referentiewaardeType": {
-            "@id": "https://data.omgeving.vlaanderen.be/ns/lzs#referentiewaardeType",
-            "@type": "http://www.w3.org/2001/XMLSchema#string"
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType"
         },
         "concept": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
         "collectie": "https://data.omgeving.vlaanderen.be/id/collection/luchtzuiveringssysteem/",
         "access_right": "http://publications.europa.eu/resource/authority/access-right/",
         "adms": "http://www.w3.org/ns/adms#",
         "assettype": "http://purl.org/adms/assettype/",
-        "conceptscheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/",
+        "conceptscheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/",
         "country": "http://publications.europa.eu/resource/authority/country/",
         "datasets": "https://datasets.omgeving.vlaanderen.be/",
         "datatheme_be": "http://vocab.belgif.be/auth/datatheme/",
@@ -515,7 +514,7 @@
         "lzsm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/",
         "lzsp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/",
         "dr": "https://data.omgeving.vlaanderen.be/id/concept/drager/",
-        "lzsns": "https://data.omgeving.vlaanderen.be/ns/lzs#",
+        "lzsns": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#",
         "qudt": "http://qudt.org/schema/qudt/",
         "unit": "http://qudt.org/vocab/unit/",
         "sh": "http://www.w3.org/ns/shacl#",
@@ -1265,7 +1264,7 @@
             "prefLabel": "Zuurtegraad waswater S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
-            "technishefiche": "false"
+            "technischefiche": "false"
         },
         {
             "id": "lzs-param-norm:10",
@@ -1279,9 +1278,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Drukval S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "exact",
+            "referentiewaardeType": "exact",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:11",
@@ -1295,9 +1294,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet voorbevochtiging S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:waswaterdebietvoorbevochtiging",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:12",
@@ -1311,9 +1310,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet bevloeiing S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:waswaterdebietbevloeiing",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:13",
@@ -1327,9 +1326,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Biobedspuiwaterproductie S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:biobedspuiwaterproductie",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:14",
@@ -1343,9 +1342,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Biobedspoelwaterproductie S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:biobedspoelwaterproductie",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:15",
@@ -1359,9 +1358,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Drukval S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "maximum",
+            "referentiewaardeType": "maximum",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:2",
@@ -1375,9 +1374,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Geleidbaarheid waswater S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "maximum",
+            "referentiewaardeType": "maximum",
             "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:3",
@@ -1391,9 +1390,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:waswaterdebiet",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:4",
@@ -1407,9 +1406,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Spuiwaterdebiet S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:spuiwaterproductie",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:5",
@@ -1423,9 +1422,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Drukval S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "exact",
+            "referentiewaardeType": "exact",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:6",
@@ -1439,9 +1438,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Zuurtegraad waswater S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "maximum",
+            "referentiewaardeType": "maximum",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:7",
@@ -1455,9 +1454,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Geleidbaarheid waswater S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "maximum",
+            "referentiewaardeType": "maximum",
             "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:8",
@@ -1471,9 +1470,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:waswaterdebiet",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-param-norm:9",
@@ -1487,9 +1486,9 @@
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Spuiwaterdebiet S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
-            "lzsns:referentiewaardeType": "minimum",
+            "referentiewaardeType": "minimum",
             "relevantProperty": "lzsp:spuiwaterproductie",
-            "technishefiche": "true"
+            "technischefiche": "true"
         },
         {
             "id": "lzs-type:s1",

@@ -119,7 +119,7 @@ prefixes :
   access_right: http://publications.europa.eu/resource/authority/access-right/
   adms: http://www.w3.org/ns/adms#
   assettype: http://purl.org/adms/assettype/
-  conceptscheme: https://data.omgeving.vlaanderen.be/id/conceptscheme/
+  conceptscheme: https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/
   country: http://publications.europa.eu/resource/authority/country/
   datasets: https://datasets.omgeving.vlaanderen.be/
   datatheme_be: http://vocab.belgif.be/auth/datatheme/
@@ -181,7 +181,7 @@ prefixes :
   lzsm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/
   lzsp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/
   dr: https://data.omgeving.vlaanderen.be/id/concept/drager/
-  lzsns: https://data.omgeving.vlaanderen.be/ns/lzs#
+  lzsns: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#
   qudt: http://qudt.org/schema/qudt/
   unit: http://qudt.org/vocab/unit/
   sh: http://www.w3.org/ns/shacl#
