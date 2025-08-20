@@ -271,6 +271,9 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel",
     "@language" : "nl"
   },
+  "provenance" : {
+    "@id" : "http://purl.org/dc/terms/provenance"
+  },
   "notation" : {
     "@id" : "http://www.w3.org/2004/02/skos/core#notation"
   },

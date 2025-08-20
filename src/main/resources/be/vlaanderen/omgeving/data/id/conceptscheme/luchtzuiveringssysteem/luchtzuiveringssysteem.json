@@ -70,7 +70,7 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/Volume"
@@ -88,7 +88,7 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/spuiwater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/Volume"
@@ -106,9 +106,9 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/lucht",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/Fugacity",
@@ -127,8 +127,8 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/Conductivity"
@@ -146,8 +146,8 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/spuiwater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/Volume"
@@ -165,9 +165,9 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/stal",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsp",
         "prefLabel": "Stalbezetting",
@@ -181,9 +181,9 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/hetelektronischmonitoringssysteem",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsp",
         "prefLabel": "SysteemStatus",
@@ -197,8 +197,8 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/VolumeFlowRate",
@@ -217,7 +217,7 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/VolumeFlowRate",
@@ -236,7 +236,7 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/VolumeFlowRate",
@@ -255,8 +255,8 @@
         ],
         "subject": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/waswater",
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "relevantQuantityKind": [
             "http://qudt.org/vocab/quantitykind/Acidity",
@@ -266,54 +266,6 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsp",
         "prefLabel": "Zuurtegraad van het waswater",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsp"
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem",
-        "broaderTransitive": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem",
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
-        "narrower": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
-        ],
-        "narrowerTransitive": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
-        ],
-        "prefLabel": "Luchtwassysteem",
-        "semanticRelation": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
-        ]
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
-        "narrower": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem"
-        ],
-        "narrowerTransitive": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem"
-        ],
-        "prefLabel": "Luchtzuiveringssysteem",
-        "semanticRelation": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem"
-        ],
-        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/hetelektronischmonitoringssysteem",
@@ -371,7 +323,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "De zuurtegraad van het waswater is kleiner dan 6",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -391,7 +343,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -412,7 +364,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -433,7 +385,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "definition": "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -454,7 +406,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "definition": "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -475,7 +427,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "definition": "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -496,7 +448,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "definition": "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -517,7 +469,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "definition": "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -538,7 +490,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "De zuurtegraad van het waswater is groter dan 8,5",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -558,7 +510,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -579,7 +531,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -600,7 +552,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -621,7 +573,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -642,7 +594,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "definition": "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -663,7 +615,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "definition": "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -684,7 +636,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm_bandbreedte",
@@ -705,7 +657,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/PH",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -720,7 +672,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/PA",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -736,7 +688,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -752,7 +704,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -768,7 +720,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -784,7 +736,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -800,7 +752,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/PA",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -816,7 +768,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/MilliS-PER-CentiM",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -832,7 +784,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -848,7 +800,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -864,7 +816,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/PA",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -880,7 +832,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/PH",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -896,7 +848,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/MilliS-PER-CentiM",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -912,7 +864,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -928,7 +880,7 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "dct_type": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
         ],
         "applicableUnit": "http://qudt.org/vocab/unit/M3",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
@@ -937,56 +889,6 @@
         "referentiewaardeType": "minimum",
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/spuiwaterproductie",
         "technischefiche": "true"
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s1",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-        "broaderTransitive": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
-        ],
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
-        "notation": "S1",
-        "prefLabel": "Biologisch luchtwassysteem",
-        "semanticRelation": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
-        ]
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s2",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-        "broaderTransitive": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
-        ],
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
-        "notation": "S2",
-        "prefLabel": "Chemisch luchtwassysteem",
-        "semanticRelation": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtwassysteem",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
-        ]
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/s3",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem",
-        "broaderTransitive": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem",
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
-        "notation": "S3",
-        "prefLabel": "Biobed",
-        "semanticRelation": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
-        ]
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/in_gebruik",
@@ -1034,12 +936,110 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzss"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem",
+        "broaderTransitive": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
+        "narrower": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
+        ],
+        "narrowerTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2"
+        ],
+        "prefLabel": "Luchtwassysteem",
+        "semanticRelation": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
+        ]
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
+        "narrower": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem"
+        ],
+        "narrowerTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem"
+        ],
+        "prefLabel": "Luchtzuiveringssysteem",
+        "semanticRelation": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem"
+        ],
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s1",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+        "broaderTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
+        "notation": "S1",
+        "prefLabel": "Biologisch luchtwassysteem",
+        "semanticRelation": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
+        ]
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s2",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+        "broaderTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
+        "notation": "S2",
+        "prefLabel": "Chemisch luchtwassysteem",
+        "semanticRelation": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtwassysteem",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
+        ]
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/s3",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "broader": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem",
+        "broaderTransitive": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
+        "notation": "S3",
+        "prefLabel": "Biobed",
+        "semanticRelation": [
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
+        ]
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs",
         "type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
         "hasTopConcept": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/luchtzuiveringssysteem"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/luchtzuiveringssysteem"
         ],
         "prefLabel": "conceptschema luchtzuiveringssysteem"
     },

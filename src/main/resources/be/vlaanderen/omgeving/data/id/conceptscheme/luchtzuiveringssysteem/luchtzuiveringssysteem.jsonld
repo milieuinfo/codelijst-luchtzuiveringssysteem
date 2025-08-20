@@ -270,6 +270,9 @@
             "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
             "@language": "nl"
         },
+        "provenance": {
+            "@id": "http://purl.org/dc/terms/provenance"
+        },
         "notation": {
             "@id": "http://www.w3.org/2004/02/skos/core#notation"
         },
@@ -447,7 +450,7 @@
         "referentiewaardeType": {
             "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType"
         },
-        "concept": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
+        "concept": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/",
         "collectie": "https://data.omgeving.vlaanderen.be/id/collection/luchtzuiveringssysteem/",
         "access_right": "http://publications.europa.eu/resource/authority/access-right/",
         "adms": "http://www.w3.org/ns/adms#",
@@ -460,19 +463,28 @@
         "dbo": "http://dbpedia.org/ontology/",
         "dcat": "http://www.w3.org/ns/dcat#",
         "dc": "http://purl.org/dc/elements/1.1/",
-        "dcterms": "http://purl.org/dc/terms/",
         "dct": "http://purl.org/dc/terms/",
+        "dr": "https://data.omgeving.vlaanderen.be/id/concept/drager/",
         "eurovoc": "http://eurovoc.europa.eu/",
         "file_type": "http://publications.europa.eu/resource/authority/file-type/",
         "foaf": "http://xmlns.com/foaf/0.1/",
         "formats": "http://www.w3.org/ns/formats/",
         "frequency": "http://publications.europa.eu/resource/authority/frequency/",
         "gemet": "http://www.eionet.europa.eu/gemet/concept/",
-        "schema": "https://schema.org/",
         "licence": "http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/",
+        "lzp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
+        "lzsm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/",
+        "lzs-norm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/",
+        "lzsns": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#",
+        "lzs-param-norm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/",
+        "lzsp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/",
+        "lzss": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/",
+        "lzsst": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/",
+        "lzs-type": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/",
         "metadata": "https://data.omgeving.vlaanderen.be/ns/metadata#",
-        "omg_catalog": "https://data.omgeving.vlaanderen.be/id/catalog/",
+        "normatieve_structuur": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/",
         "omg_catalog_doc": "https://data.omgeving.vlaanderen.be/doc/catalog/",
+        "omg_catalog": "https://data.omgeving.vlaanderen.be/id/catalog/",
         "omg_collection": "https://data.omgeving.vlaanderen.be/id/collection/",
         "omg_dataservice": "https://data.omgeving.vlaanderen.be/id/dataservice/",
         "omg_dataset_doc": "https://data.omgeving.vlaanderen.be/doc/dataset/",
@@ -490,39 +502,29 @@
         "omg_vcard": "https://data.omgeving.vlaanderen.be/id/vcard/",
         "ovo": "http://data.vlaanderen.be/id/organisatie/",
         "owl": "http://www.w3.org/2002/07/owl#",
-        "repo": "https://repo.omgeving.vlaanderen.be/artifactory/release/",
+        "procedure": "https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/",
+        "provenancestatement": "https://data.omgeving.vlaanderen.be/id/provenancestatement/dataset/",
+        "quantitykind": "http://qudt.org/vocab/quantitykind/",
+        "qudt": "http://qudt.org/schema/qudt/",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "repo": "https://repo.omgeving.vlaanderen.be/artifactory/release/",
+        "schema": "https://schema.org/",
         "sd": "http://www.w3.org/ns/sparql-service-description#",
+        "sh": "http://www.w3.org/ns/shacl#",
         "skos": "http://www.w3.org/2004/02/skos/core#",
+        "sosa": "http://www.w3.org/ns/sosa/",
         "spdx": "http://spdx.org/rdf/terms#",
         "ssd": "http://www.w3.org/ns/sparql-service-description#",
+        "ssn": "http://www.w3.org/ns/ssn/",
         "ts": "http://www.w3.org/ns/formats/",
+        "unit": "http://qudt.org/vocab/unit/",
         "vcard": "http://www.w3.org/2006/vcard/ns#",
         "void": "http://rdfs.org/ns/void#",
         "wise": "http://dd.eionet.europa.eu/vocabulary/wise/ObservedProperty/",
         "xkos": "http://rdf-vocabulary.ddialliance.org/xkos#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "wb": "https://data.omgeving.vlaanderen.be/id/concept/waardebepaling/",
-        "normatieve_structuur": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/",
-        "lzp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/",
-        "lzs-type": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/",
-        "lzs-norm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/",
-        "lzs-param-norm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/",
-        "lzss": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/",
-        "lzsst": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/",
-        "lzsm": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/",
-        "lzsp": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/",
-        "dr": "https://data.omgeving.vlaanderen.be/id/concept/drager/",
-        "lzsns": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#",
-        "qudt": "http://qudt.org/schema/qudt/",
-        "unit": "http://qudt.org/vocab/unit/",
-        "sh": "http://www.w3.org/ns/shacl#",
-        "quantitykind": "http://qudt.org/vocab/quantitykind/",
-        "ssn": "http://www.w3.org/ns/ssn/",
-        "sosa": "http://www.w3.org/ns/sosa/",
-        "procedure": "https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/",
-        "@base": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/"
+        "@base": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/"
     },
     "graph": [
         {
@@ -818,54 +820,6 @@
             "topConceptOf": "conceptscheme:lzsp",
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
             "relevantDataType": "xsd:decimal"
-        },
-        {
-            "id": "lzs-type:luchtwassysteem",
-            "type": [
-                "skos:Concept"
-            ],
-            "broader": "lzs-type:luchtzuiveringssysteem",
-            "broaderTransitive": "lzs-type:luchtzuiveringssysteem",
-            "inScheme": "conceptscheme:lzs",
-            "narrower": [
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
-            "narrowerTransitive": [
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
-            "prefLabel": "Luchtwassysteem",
-            "semanticRelation": [
-                "lzs-type:s1",
-                "lzs-type:s2",
-                "lzs-type:luchtzuiveringssysteem"
-            ]
-        },
-        {
-            "id": "lzs-type:luchtzuiveringssysteem",
-            "type": [
-                "skos:Concept"
-            ],
-            "inScheme": "conceptscheme:lzs",
-            "narrower": [
-                "lzs-type:s3",
-                "lzs-type:luchtwassysteem"
-            ],
-            "narrowerTransitive": [
-                "lzs-type:s3",
-                "lzs-type:s1",
-                "lzs-type:s2",
-                "lzs-type:luchtwassysteem"
-            ],
-            "prefLabel": "Luchtzuiveringssysteem",
-            "semanticRelation": [
-                "lzs-type:s3",
-                "lzs-type:s1",
-                "lzs-type:s2",
-                "lzs-type:luchtwassysteem"
-            ],
-            "topConceptOf": "conceptscheme:lzs"
         },
         {
             "id": "lzsm:hetelektronischmonitoringssysteem",
@@ -1491,6 +1445,99 @@
             "technischefiche": "true"
         },
         {
+            "id": "lzsst:in_gebruik",
+            "type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:lzsst",
+            "prefLabel": "Stal in gebruik, dieren aanwezig.",
+            "topConceptOf": "conceptscheme:lzsst"
+        },
+        {
+            "id": "lzsst:leeg",
+            "type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:lzsst",
+            "prefLabel": "Lege stal",
+            "topConceptOf": "conceptscheme:lzsst"
+        },
+        {
+            "id": "lzss:onderhoud",
+            "type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:lzss",
+            "prefLabel": "In onderhoud",
+            "topConceptOf": "conceptscheme:lzss"
+        },
+        {
+            "id": "lzss:operationeel",
+            "type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:lzss",
+            "prefLabel": "Operationeel",
+            "topConceptOf": "conceptscheme:lzss"
+        },
+        {
+            "id": "lzss:storing",
+            "type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:lzss",
+            "prefLabel": "Storing",
+            "topConceptOf": "conceptscheme:lzss"
+        },
+        {
+            "id": "lzs-type:luchtwassysteem",
+            "type": [
+                "skos:Concept"
+            ],
+            "broader": "lzs-type:luchtzuiveringssysteem",
+            "broaderTransitive": "lzs-type:luchtzuiveringssysteem",
+            "inScheme": "conceptscheme:lzs",
+            "narrower": [
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ],
+            "narrowerTransitive": [
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ],
+            "prefLabel": "Luchtwassysteem",
+            "semanticRelation": [
+                "lzs-type:s1",
+                "lzs-type:s2",
+                "lzs-type:luchtzuiveringssysteem"
+            ]
+        },
+        {
+            "id": "lzs-type:luchtzuiveringssysteem",
+            "type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:lzs",
+            "narrower": [
+                "lzs-type:s3",
+                "lzs-type:luchtwassysteem"
+            ],
+            "narrowerTransitive": [
+                "lzs-type:s3",
+                "lzs-type:s1",
+                "lzs-type:s2",
+                "lzs-type:luchtwassysteem"
+            ],
+            "prefLabel": "Luchtzuiveringssysteem",
+            "semanticRelation": [
+                "lzs-type:s3",
+                "lzs-type:s1",
+                "lzs-type:s2",
+                "lzs-type:luchtwassysteem"
+            ],
+            "topConceptOf": "conceptscheme:lzs"
+        },
+        {
             "id": "lzs-type:s1",
             "type": [
                 "skos:Concept"
@@ -1539,51 +1586,6 @@
             "semanticRelation": [
                 "lzs-type:luchtzuiveringssysteem"
             ]
-        },
-        {
-            "id": "lzsst:in_gebruik",
-            "type": [
-                "skos:Concept"
-            ],
-            "inScheme": "conceptscheme:lzsst",
-            "prefLabel": "Stal in gebruik, dieren aanwezig.",
-            "topConceptOf": "conceptscheme:lzsst"
-        },
-        {
-            "id": "lzsst:leeg",
-            "type": [
-                "skos:Concept"
-            ],
-            "inScheme": "conceptscheme:lzsst",
-            "prefLabel": "Lege stal",
-            "topConceptOf": "conceptscheme:lzsst"
-        },
-        {
-            "id": "lzss:onderhoud",
-            "type": [
-                "skos:Concept"
-            ],
-            "inScheme": "conceptscheme:lzss",
-            "prefLabel": "In onderhoud",
-            "topConceptOf": "conceptscheme:lzss"
-        },
-        {
-            "id": "lzss:operationeel",
-            "type": [
-                "skos:Concept"
-            ],
-            "inScheme": "conceptscheme:lzss",
-            "prefLabel": "Operationeel",
-            "topConceptOf": "conceptscheme:lzss"
-        },
-        {
-            "id": "lzss:storing",
-            "type": [
-                "skos:Concept"
-            ],
-            "inScheme": "conceptscheme:lzss",
-            "prefLabel": "Storing",
-            "topConceptOf": "conceptscheme:lzss"
         },
         {
             "id": "conceptscheme:lzs",

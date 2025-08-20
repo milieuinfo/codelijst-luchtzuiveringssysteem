@@ -1,4 +1,4 @@
-@prefix concept: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/>.
+@prefix concept: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/>.
 @prefix collectie: <https://data.omgeving.vlaanderen.be/id/collection/luchtzuiveringssysteem/>.
 @prefix access_right: <http://publications.europa.eu/resource/authority/access-right/>.
 @prefix adms: <http://www.w3.org/ns/adms#>.
@@ -11,19 +11,28 @@
 @prefix dbo: <http://dbpedia.org/ontology/>.
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
-@prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix dct: <http://purl.org/dc/terms/>.
+@prefix dr: <https://data.omgeving.vlaanderen.be/id/concept/drager/>.
 @prefix eurovoc: <http://eurovoc.europa.eu/>.
 @prefix file_type: <http://publications.europa.eu/resource/authority/file-type/>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix formats: <http://www.w3.org/ns/formats/>.
 @prefix frequency: <http://publications.europa.eu/resource/authority/frequency/>.
 @prefix gemet: <http://www.eionet.europa.eu/gemet/concept/>.
-@prefix schema: <https://schema.org/>.
 @prefix licence: <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/>.
+@prefix lzp: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/>.
+@prefix lzsm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/>.
+@prefix lzs-norm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/>.
+@prefix lzsns: <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#>.
+@prefix lzs-param-norm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/>.
+@prefix lzsp: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/>.
+@prefix lzss: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/>.
+@prefix lzsst: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/>.
+@prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/>.
 @prefix metadata: <https://data.omgeving.vlaanderen.be/ns/metadata#>.
-@prefix omg_catalog: <https://data.omgeving.vlaanderen.be/id/catalog/>.
+@prefix normatieve_structuur: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/>.
 @prefix omg_catalog_doc: <https://data.omgeving.vlaanderen.be/doc/catalog/>.
+@prefix omg_catalog: <https://data.omgeving.vlaanderen.be/id/catalog/>.
 @prefix omg_collection: <https://data.omgeving.vlaanderen.be/id/collection/>.
 @prefix omg_dataservice: <https://data.omgeving.vlaanderen.be/id/dataservice/>.
 @prefix omg_dataset_doc: <https://data.omgeving.vlaanderen.be/doc/dataset/>.
@@ -41,38 +50,28 @@
 @prefix omg_vcard: <https://data.omgeving.vlaanderen.be/id/vcard/>.
 @prefix ovo: <http://data.vlaanderen.be/id/organisatie/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix repo: <https://repo.omgeving.vlaanderen.be/artifactory/release/>.
+@prefix procedure: <https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/>.
+@prefix provenancestatement: <https://data.omgeving.vlaanderen.be/id/provenancestatement/dataset/>.
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix repo: <https://repo.omgeving.vlaanderen.be/artifactory/release/>.
+@prefix schema: <https://schema.org/>.
 @prefix sd: <http://www.w3.org/ns/sparql-service-description#>.
+@prefix sh: <http://www.w3.org/ns/shacl#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
 @prefix spdx: <http://spdx.org/rdf/terms#>.
 @prefix ssd: <http://www.w3.org/ns/sparql-service-description#>.
+@prefix ssn: <http://www.w3.org/ns/ssn/>.
 @prefix ts: <http://www.w3.org/ns/formats/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
 @prefix void: <http://rdfs.org/ns/void#>.
 @prefix wise: <http://dd.eionet.europa.eu/vocabulary/wise/ObservedProperty/>.
 @prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix wb: <https://data.omgeving.vlaanderen.be/id/concept/waardebepaling/>.
-@prefix normatieve_structuur: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/>.
-@prefix lzp: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/>.
-@prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/>.
-@prefix lzs-norm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/>.
-@prefix lzs-param-norm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/>.
-@prefix lzss: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/>.
-@prefix lzsst: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/>.
-@prefix lzsm: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/>.
-@prefix lzsp: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/>.
-@prefix dr: <https://data.omgeving.vlaanderen.be/id/concept/drager/>.
-@prefix lzsns: <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#>.
-@prefix qudt: <http://qudt.org/schema/qudt/>.
-@prefix unit: <http://qudt.org/vocab/unit/>.
-@prefix sh: <http://www.w3.org/ns/shacl#>.
-@prefix quantitykind: <http://qudt.org/vocab/quantitykind/>.
-@prefix ssn: <http://www.w3.org/ns/ssn/>.
-@prefix sosa: <http://www.w3.org/ns/sosa/>.
-@prefix procedure: <https://data.omgeving.vlaanderen.be/id/concept/observatieprocedure/>.
 
 quantitykind:Acidity qudt:applicableUnit unit:PH;
     a qudt:QuantityKind.
@@ -198,21 +197,6 @@ lzsp:zuurtegraadwaswater dct:subject lzsm:waswater;
     skos:topConceptOf conceptscheme:lzsp;
     lzsns:hasProcedureForProperty procedure:WAC_I_A_011;
     lzsns:relevantDataType xsd:decimal.
-lzs-type:luchtwassysteem a skos:Concept;
-    skos:broader lzs-type:luchtzuiveringssysteem;
-    skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
-    skos:inScheme conceptscheme:lzs;
-    skos:narrower lzs-type:s1, lzs-type:s2;
-    skos:narrowerTransitive lzs-type:s1, lzs-type:s2;
-    skos:prefLabel "Luchtwassysteem"@nl;
-    skos:semanticRelation lzs-type:luchtzuiveringssysteem, lzs-type:s1, lzs-type:s2.
-lzs-type:luchtzuiveringssysteem a skos:Concept;
-    skos:inScheme conceptscheme:lzs;
-    skos:narrower lzs-type:luchtwassysteem, lzs-type:s3;
-    skos:narrowerTransitive lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
-    skos:prefLabel "Luchtzuiveringssysteem"@nl;
-    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
-    skos:topConceptOf conceptscheme:lzs.
 lzsm:hetelektronischmonitoringssysteem a rdfs:Resource, skos:Concept;
     skos:inScheme conceptscheme:lzsm;
     skos:prefLabel "Het elektronisch monitoringssysteem"@nl;
@@ -541,6 +525,41 @@ lzsm:waswater a rdfs:Resource, skos:Concept;
     lzsns:referentiewaardeType "minimum";
     lzsns:relevantProperty lzsp:spuiwaterproductie;
     lzsns:technischefiche true.
+lzsst:in_gebruik a skos:Concept;
+    skos:inScheme conceptscheme:lzsst;
+    skos:prefLabel "Stal in gebruik, dieren aanwezig."@nl;
+    skos:topConceptOf conceptscheme:lzsst.
+lzsst:leeg a skos:Concept;
+    skos:inScheme conceptscheme:lzsst;
+    skos:prefLabel "Lege stal"@nl;
+    skos:topConceptOf conceptscheme:lzsst.
+lzss:onderhoud a skos:Concept;
+    skos:inScheme conceptscheme:lzss;
+    skos:prefLabel "In onderhoud"@nl;
+    skos:topConceptOf conceptscheme:lzss.
+lzss:operationeel a skos:Concept;
+    skos:inScheme conceptscheme:lzss;
+    skos:prefLabel "Operationeel"@nl;
+    skos:topConceptOf conceptscheme:lzss.
+lzss:storing a skos:Concept;
+    skos:inScheme conceptscheme:lzss;
+    skos:prefLabel "Storing"@nl;
+    skos:topConceptOf conceptscheme:lzss.
+lzs-type:luchtwassysteem a skos:Concept;
+    skos:broader lzs-type:luchtzuiveringssysteem;
+    skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
+    skos:inScheme conceptscheme:lzs;
+    skos:narrower lzs-type:s1, lzs-type:s2;
+    skos:narrowerTransitive lzs-type:s1, lzs-type:s2;
+    skos:prefLabel "Luchtwassysteem"@nl;
+    skos:semanticRelation lzs-type:luchtzuiveringssysteem, lzs-type:s1, lzs-type:s2.
+lzs-type:luchtzuiveringssysteem a skos:Concept;
+    skos:inScheme conceptscheme:lzs;
+    skos:narrower lzs-type:luchtwassysteem, lzs-type:s3;
+    skos:narrowerTransitive lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
+    skos:prefLabel "Luchtzuiveringssysteem"@nl;
+    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
+    skos:topConceptOf conceptscheme:lzs.
 lzs-type:s1 a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
     skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
@@ -562,26 +581,6 @@ lzs-type:s3 a skos:Concept;
     skos:notation "S3";
     skos:prefLabel "Biobed"@nl;
     skos:semanticRelation lzs-type:luchtzuiveringssysteem.
-lzsst:in_gebruik a skos:Concept;
-    skos:inScheme conceptscheme:lzsst;
-    skos:prefLabel "Stal in gebruik, dieren aanwezig."@nl;
-    skos:topConceptOf conceptscheme:lzsst.
-lzsst:leeg a skos:Concept;
-    skos:inScheme conceptscheme:lzsst;
-    skos:prefLabel "Lege stal"@nl;
-    skos:topConceptOf conceptscheme:lzsst.
-lzss:onderhoud a skos:Concept;
-    skos:inScheme conceptscheme:lzss;
-    skos:prefLabel "In onderhoud"@nl;
-    skos:topConceptOf conceptscheme:lzss.
-lzss:operationeel a skos:Concept;
-    skos:inScheme conceptscheme:lzss;
-    skos:prefLabel "Operationeel"@nl;
-    skos:topConceptOf conceptscheme:lzss.
-lzss:storing a skos:Concept;
-    skos:inScheme conceptscheme:lzss;
-    skos:prefLabel "Storing"@nl;
-    skos:topConceptOf conceptscheme:lzss.
 conceptscheme:lzs-param-norm a skos:ConceptScheme;
     skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9>;
     skos:prefLabel "conceptschema luchtzuiveringssysteem parameter specificatie"@nl.
