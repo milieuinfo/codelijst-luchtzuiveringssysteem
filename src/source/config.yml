@@ -58,7 +58,7 @@ metadata :
       - http://www.w3.org/ns/formats/SPARQL_Results_JSON
     supportedLanguage: http://www.w3.org/ns/sparql-service-description#SPARQL10Query
   all :
-    accessURL : https://github.com/omgeving/codelijst-luchtzuiveringssysteem.git
+    accessURL : https://github.com/milieuinfo/codelijst-luchtzuiveringssysteem.git
     contactPoint : https://data.omgeving.vlaanderen.be/id/vcard/helpdesk
     license : http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0
     publisher : http://data.vlaanderen.be/id/organisatie/OVO003323
