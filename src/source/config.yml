@@ -39,7 +39,7 @@ ap :
   turtle: .ttl
 
 metadata :
-  start_version : 0.0.5
+  start_version : 0.1.0
   sparqlservice:
     title: "Sparql service op endpoint https://data.omgeving.vlaanderen.be/sparql"
     description: "Een beschrijving van de sparql service, met de verschillende kenmerken."
