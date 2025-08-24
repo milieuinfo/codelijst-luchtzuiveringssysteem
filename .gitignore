@@ -22,3 +22,4 @@ src/utils/setenv2.js
 target
 temp
 node_modules
+validation
