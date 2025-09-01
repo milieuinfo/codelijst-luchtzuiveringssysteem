@@ -116,12 +116,14 @@ const frame_skos_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
-
+    "relevantLZS":  {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
     "hasProcedureForProperty":  {
         "@embed": "@never",
         "@omitDefault": true
     },
-
     "seeAlso":{
         "@embed": "@never",
         "@omitDefault": true
@@ -173,7 +175,6 @@ const frame_skos_no_prefixes = {
         "@omitDefault": true
     },
     "broader": {
-        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
         "@omitDefault": true
     },
@@ -261,6 +262,10 @@ const frame_skos_no_prefixes = {
     },
     "relevantDataType":  {
         "@type": "http://www.w3.org/2004/02/skos/core#Concept",
+        "@embed": "@never",
+        "@omitDefault": true
+    },
+    "relevantLZS":  {
         "@embed": "@never",
         "@omitDefault": true
     },

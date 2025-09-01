@@ -443,6 +443,10 @@
             "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty",
             "@type": "@id"
         },
+        "relevantLZS": {
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS",
+            "@type": "@id"
+        },
         "technischefiche": {
             "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#technischefiche",
             "@type": "http://www.w3.org/2001/XMLSchema#boolean"
@@ -597,9 +601,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:Volume"
             ],
@@ -608,7 +609,8 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Biobedspoelwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": "lzs-type:s3"
         },
         {
             "id": "lzsp:biobedspuiwaterproductie",
@@ -617,9 +619,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:spuiwater",
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:Volume"
             ],
@@ -628,7 +627,8 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Biobedspuiwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": "lzs-type:s3"
         },
         {
             "id": "lzsp:drukvaloverhetsysteem",
@@ -637,11 +637,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:lucht",
-            "dct_type": [
-                "lzs-type:s3",
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:Fugacity",
                 "quantitykind:VaporPressure"
@@ -651,7 +646,12 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Drukval over het systeem",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:s3",
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ]
         },
         {
             "id": "lzsp:geleidbaarheidvanhetwaswater",
@@ -660,10 +660,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": [
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:Conductivity"
             ],
@@ -673,7 +669,11 @@
             "prefLabel": "Geleidbaarheid van het waswater",
             "topConceptOf": "conceptscheme:lzsp",
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ]
         },
         {
             "id": "lzsp:spuiwaterproductie",
@@ -682,10 +682,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:spuiwater",
-            "dct_type": [
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:Volume"
             ],
@@ -694,7 +690,11 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Spuiwaterproductie",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ]
         },
         {
             "id": "lzsp:stalbezetting",
@@ -703,16 +703,16 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:stal",
-            "dct_type": [
-                "lzs-type:s3",
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Stalbezetting",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantCodeList": [
                 "conceptscheme:lzsst"
+            ],
+            "relevantLZS": [
+                "lzs-type:s3",
+                "lzs-type:s1",
+                "lzs-type:s2"
             ]
         },
         {
@@ -722,16 +722,16 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:hetelektronischmonitoringssysteem",
-            "dct_type": [
-                "lzs-type:s3",
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "SysteemStatus",
             "topConceptOf": "conceptscheme:lzsp",
             "relevantCodeList": [
                 "conceptscheme:lzss"
+            ],
+            "relevantLZS": [
+                "lzs-type:s3",
+                "lzs-type:s1",
+                "lzs-type:s2"
             ]
         },
         {
@@ -741,10 +741,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": [
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate",
                 "quantitykind:VolumePerTime"
@@ -754,7 +750,11 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Waswaterdebiet over het waspakket",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ]
         },
         {
             "id": "lzsp:waswaterdebietbevloeiing",
@@ -763,9 +763,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate",
                 "quantitykind:VolumePerTime"
@@ -775,7 +772,8 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Waswaterdebiet van de bevloeiing van het vulmateriaal",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": "lzs-type:s3"
         },
         {
             "id": "lzsp:waswaterdebietvoorbevochtiging",
@@ -784,9 +782,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate",
                 "quantitykind:VolumePerTime"
@@ -796,7 +791,8 @@
             "inScheme": "conceptscheme:lzsp",
             "prefLabel": "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht",
             "topConceptOf": "conceptscheme:lzsp",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": "lzs-type:s3"
         },
         {
             "id": "lzsp:zuurtegraadwaswater",
@@ -805,10 +801,6 @@
                 "ssn:Property"
             ],
             "subject": "lzsm:waswater",
-            "dct_type": [
-                "lzs-type:s1",
-                "lzs-type:s2"
-            ],
             "relevantQuantityKind": [
                 "quantitykind:Acidity",
                 "quantitykind:Basicity"
@@ -819,7 +811,11 @@
             "prefLabel": "Zuurtegraad van het waswater",
             "topConceptOf": "conceptscheme:lzsp",
             "hasProcedureForProperty": "procedure:WAC_I_A_011",
-            "relevantDataType": "xsd:decimal"
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:s1",
+                "lzs-type:s2"
+            ]
         },
         {
             "id": "lzsm:hetelektronischmonitoringssysteem",
@@ -876,9 +872,6 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s1"
-            ],
             "definition": "De zuurtegraad van het waswater is kleiner dan 6",
             "inScheme": "conceptscheme:norm_bandbreedte",
             "note": [
@@ -888,6 +881,7 @@
             "prefLabel": "Zuurtegraad waswater < 6 (S1 systeem)",
             "scopeNote": "< 6",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
             "maxValue": "6"
         },
@@ -895,9 +889,6 @@
             "id": "lzs-norm:10",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s2"
             ],
             "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -909,6 +900,7 @@
             "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:waswaterdebiet",
             "maxValue": "0.8"
         },
@@ -916,9 +908,6 @@
             "id": "lzs-norm:11",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s2"
             ],
             "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -930,6 +919,7 @@
             "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:spuiwaterproductie",
             "maxValue": "0.9"
         },
@@ -937,9 +927,6 @@
             "id": "lzs-norm:12",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s2"
             ],
             "definition": "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -951,6 +938,7 @@
             "scopeNote": "< 0,6 x waarde technische fiche (afwijking > 40%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "maxValue": "0.6"
         },
@@ -958,9 +946,6 @@
             "id": "lzs-norm:13",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s2"
             ],
             "definition": "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -972,6 +957,7 @@
             "scopeNote": "> 1,4 x waarde technische fiche (afwijking > 40%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "minValue": "1.4"
         },
@@ -979,9 +965,6 @@
             "id": "lzs-norm:14",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s3"
             ],
             "definition": "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -993,6 +976,7 @@
             "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:waswaterdebietvoorbevochtiging",
             "maxValue": "0.8"
         },
@@ -1000,9 +984,6 @@
             "id": "lzs-norm:15",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s3"
             ],
             "definition": "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1014,6 +995,7 @@
             "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:waswaterdebietbevloeiing",
             "maxValue": "0.8"
         },
@@ -1021,9 +1003,6 @@
             "id": "lzs-norm:16",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s3"
             ],
             "definition": "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1035,6 +1014,7 @@
             "scopeNote": "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "som",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "minValue": "50"
         },
@@ -1042,9 +1022,6 @@
             "id": "lzs-norm:2",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s1"
             ],
             "definition": "De zuurtegraad van het waswater is groter dan 8,5",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1055,6 +1032,7 @@
             "prefLabel": "Zuurtegraad waswater > 8,5 (S1 systeem)",
             "scopeNote": "> 8,5",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
             "minValue": "8.5"
         },
@@ -1062,9 +1040,6 @@
             "id": "lzs-norm:3",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s1"
             ],
             "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1076,6 +1051,7 @@
             "scopeNote": "> waarde technische fiche",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "som",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater",
             "minValue": "0"
         },
@@ -1083,9 +1059,6 @@
             "id": "lzs-norm:4",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s1"
             ],
             "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1097,6 +1070,7 @@
             "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:waswaterdebiet",
             "maxValue": "0.8"
         },
@@ -1104,9 +1078,6 @@
             "id": "lzs-norm:5",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s1"
             ],
             "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1118,6 +1089,7 @@
             "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:spuiwaterproductie",
             "maxValue": "0.9"
         },
@@ -1125,9 +1097,6 @@
             "id": "lzs-norm:6",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s1"
             ],
             "definition": "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1139,6 +1108,7 @@
             "scopeNote": "< 0,6 x waarde technische fiche (afwijking > 40%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "maxValue": "0.6"
         },
@@ -1146,9 +1116,6 @@
             "id": "lzs-norm:7",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s1"
             ],
             "definition": "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1160,6 +1127,7 @@
             "scopeNote": "> 1,4 x waarde technische fiche (afwijking > 40%)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "product",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "minValue": "1.4"
         },
@@ -1167,9 +1135,6 @@
             "id": "lzs-norm:8",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s2"
             ],
             "definition": "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1181,6 +1146,7 @@
             "scopeNote": "> 1 pH + waarde technische fiche (afwijking > 1pH)",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "som",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
             "minValue": "1"
         },
@@ -1188,9 +1154,6 @@
             "id": "lzs-norm:9",
             "type": [
                 "skos:Concept"
-            ],
-            "dct_type": [
-                "lzs-type:s2"
             ],
             "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
             "inScheme": "conceptscheme:norm_bandbreedte",
@@ -1202,6 +1165,7 @@
             "scopeNote": "> waarde technische fiche",
             "topConceptOf": "conceptscheme:norm_bandbreedte",
             "operatie": "som",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater",
             "minValue": "0"
         },
@@ -1210,13 +1174,11 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s1"
-            ],
             "applicableUnit": "unit:PH",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Zuurtegraad waswater S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
             "technischefiche": "false"
         },
@@ -1225,14 +1187,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s2"
-            ],
             "applicableUnit": "unit:PA",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Drukval S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "exact",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "technischefiche": "true"
         },
@@ -1241,14 +1201,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "applicableUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet voorbevochtiging S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:waswaterdebietvoorbevochtiging",
             "technischefiche": "true"
         },
@@ -1257,14 +1215,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "applicableUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet bevloeiing S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:waswaterdebietbevloeiing",
             "technischefiche": "true"
         },
@@ -1273,14 +1229,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "applicableUnit": "unit:M3",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Biobedspuiwaterproductie S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:biobedspuiwaterproductie",
             "technischefiche": "true"
         },
@@ -1289,14 +1243,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "applicableUnit": "unit:M3",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Biobedspoelwaterproductie S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:biobedspoelwaterproductie",
             "technischefiche": "true"
         },
@@ -1305,14 +1257,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s3"
-            ],
             "applicableUnit": "unit:PA",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Drukval S3 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "maximum",
+            "relevantLZS": "lzs-type:s3",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "technischefiche": "true"
         },
@@ -1321,14 +1271,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s1"
-            ],
             "applicableUnit": "unit:MilliS-PER-CentiM",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Geleidbaarheid waswater S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "maximum",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater",
             "technischefiche": "true"
         },
@@ -1337,14 +1285,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s1"
-            ],
             "applicableUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:waswaterdebiet",
             "technischefiche": "true"
         },
@@ -1353,14 +1299,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s1"
-            ],
             "applicableUnit": "unit:M3",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Spuiwaterdebiet S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:spuiwaterproductie",
             "technischefiche": "true"
         },
@@ -1369,14 +1313,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s1"
-            ],
             "applicableUnit": "unit:PA",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Drukval S1 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "exact",
+            "relevantLZS": "lzs-type:s1",
             "relevantProperty": "lzsp:drukvaloverhetsysteem",
             "technischefiche": "true"
         },
@@ -1385,14 +1327,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s2"
-            ],
             "applicableUnit": "unit:PH",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Zuurtegraad waswater S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "maximum",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:zuurtegraadwaswater",
             "technischefiche": "true"
         },
@@ -1401,14 +1341,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s2"
-            ],
             "applicableUnit": "unit:MilliS-PER-CentiM",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Geleidbaarheid waswater S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "maximum",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:geleidbaarheidvanhetwaswater",
             "technischefiche": "true"
         },
@@ -1417,14 +1355,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s2"
-            ],
             "applicableUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Waswaterdebiet S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:waswaterdebiet",
             "technischefiche": "true"
         },
@@ -1433,14 +1369,12 @@
             "type": [
                 "skos:Concept"
             ],
-            "dct_type": [
-                "lzs-type:s2"
-            ],
             "applicableUnit": "unit:M3",
             "inScheme": "conceptscheme:lzs-param-norm",
             "prefLabel": "Spuiwaterdebiet S2 systeem",
             "topConceptOf": "conceptscheme:lzs-param-norm",
             "referentiewaardeType": "minimum",
+            "relevantLZS": "lzs-type:s2",
             "relevantProperty": "lzsp:spuiwaterproductie",
             "technischefiche": "true"
         },

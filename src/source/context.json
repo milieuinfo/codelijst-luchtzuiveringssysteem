@@ -445,6 +445,10 @@
     "@id" : "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty",
     "@type" : "@id"
   },
+  "relevantLZS": {
+    "@id" : "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS",
+    "@type" : "@id"
+  },
   "technischefiche": {
     "@id" : "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#technischefiche",
     "@type" : "http://www.w3.org/2001/XMLSchema#boolean"

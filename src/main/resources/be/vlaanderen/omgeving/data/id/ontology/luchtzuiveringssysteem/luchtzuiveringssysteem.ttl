@@ -2,12 +2,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix par: <https://data.omgeving.vlaanderen.be/ns/parameter#> .
+@prefix lzsns: <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#>.
 
 # Definitie van de nieuwe afgeleide property
-par:hasProcedureForProperty a rdf:Property ;
-                           rdfs:label "has procedure for property"@en ;
-                           owl:propertyChainAxiom (
-        ^sosa:observedProperty   # Stap 1: Ga van de property naar de observation
-        sosa:usedProcedure       # Stap 2: Ga van de observation naar de procedure
+lzsns:hasProcedureForProperty a rdf:Property ;
+    rdfs:label "has procedure for property"@en ;
+    owl:propertyChainAxiom (
+^sosa:observedProperty   # Stap 1: Ga van de property naar de observation
+sosa:usedProcedure       # Stap 2: Ga van de observation naar de procedure
 ) .
+
+lzsns:relevantDataType a rdf:Property ;
+    rdfs:label "relevant Data Type"@nl .
+
+lzsns:operatie a rdf:Property ;
+    rdfs:label "operatie"@nl .
+
+lzsns:referentiewaardeType  a rdf:Property ;
+    rdfs:label "type referentiewaarde"@nl .
+
+lzsns:relevantCodeList  a rdf:Property ;
+    rdfs:label "relevante codelijst"@nl .
+
+lzsns:relevantProperty  a rdf:Property ;
+    rdfs:label "relevante eigenschap"@nl .
+
+lzsns:technischefiche  a rdf:Property ;
+    rdfs:label "technische fiche"@nl .
+
+lzsns:relevantLZS  a rdf:Property ;
+    rdfs:label "relevant Luchtzuiveringssysteem"@nl .
