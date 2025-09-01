@@ -2,11 +2,12 @@ uri,type,topConceptOf,inScheme,prefLabel,altLabel,notation,definition,scopeNote,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzsp,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem eigenschap,,,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzsm,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem medium,,,,,,,,,,,,,,,,,,,,,,,
-conceptscheme:lzs,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,,,,,,
+conceptscheme:lzstype,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzss,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem status,,,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzsst,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem stalbezetting,, ,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:norm_bandbreedte,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem normbandbreedte,Ranges,,,,,,,,,,,,,,,,,,,,,,
 conceptscheme:lzs-param-norm,skos:ConceptScheme,,,conceptschema luchtzuiveringssysteem parameter specificatie,,,,,,,,,,,,,,,,,,,,,,,
+conceptscheme:bedrijfsklasse,skos:ConceptScheme,,,conceptschema iioa bedrijfsklassen,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 lzs-norm:1,skos:Concept,conceptscheme:norm_bandbreedte,conceptscheme:norm_bandbreedte,Zuurtegraad waswater < 6 (S1 systeem),,,De zuurtegraad van het waswater is kleiner dan 6,< 6,,,,lzs-type:s1,lzsp:zuurtegraadwaswater,,,,,,,Onder minimum grenswaarde,,,,6,,,
 lzs-norm:2,skos:Concept,conceptscheme:norm_bandbreedte,conceptscheme:norm_bandbreedte,"Zuurtegraad waswater > 8,5 (S1 systeem)",,,"De zuurtegraad van het waswater is groter dan 8,5","> 8,5",,,,lzs-type:s1,lzsp:zuurtegraadwaswater,,,,,,,Boven maximum grenswaarde,,,8.5,,,,
@@ -37,16 +38,17 @@ lzsp:waswaterdebietbevloeiing,ssn:Property,conceptscheme:lzsp,conceptscheme:lzsp
 lzsp:waswaterdebietvoorbevochtiging,ssn:Property,conceptscheme:lzsp,conceptscheme:lzsp,Waswaterdebiet van de voorbevochtiging van de ingaande stallucht,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s3,,quantitykind:VolumeFlowRate|quantitykind:VolumePerTime,http://qudt.org/vocab/unit/M3-PER-HR,,https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0053,lzsm:waswater,,,,,,,,,
 lzsp:zuurtegraadwaswater,ssn:Property,conceptscheme:lzsp,conceptscheme:lzsp,Zuurtegraad van het waswater,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s1|lzs-type:s2,,quantitykind:Acidity|quantitykind:Basicity,http://qudt.org/vocab/unit/PH,,https://data.omgeving.vlaanderen.be/id/concept/fysico-chemisch/0076,lzsm:waswater,procedure:WAC_I_A_011,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-lzs-type:luchtzuiveringssysteem,skos:Concept,conceptscheme:lzs,conceptscheme:lzs,Luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,,,,,,
-lzs-type:luchtwassysteem,skos:Concept,,conceptscheme:lzs,Luchtwassysteem ,,,,,lzs-type:luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,
-lzs-type:s2,skos:Concept,,conceptscheme:lzs,Chemisch luchtwassysteem,,S2,,,lzs-type:luchtwassysteem,,,,,,,,,,,,,,,,,,
-lzs-type:s1,skos:Concept,,conceptscheme:lzs,Biologisch luchtwassysteem,,S1,,,lzs-type:luchtwassysteem,,,,,,,,,,,,,,,,,,
-lzs-type:s3,skos:Concept,,conceptscheme:lzs,Biobed,,S3,,,lzs-type:luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,
+lzs-type:luchtzuiveringssysteem,skos:Concept,conceptscheme:lzstype,conceptscheme:lzstype,Luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,,,,,,
+lzs-type:luchtwassysteem,skos:Concept,,conceptscheme:lzstype,Luchtwassysteem ,,,,,lzs-type:luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,
+lzs-type:s2,skos:Concept,,conceptscheme:lzstype,Chemisch luchtwassysteem,,S2,,,lzs-type:luchtwassysteem,,,,,,,,,,,,,,,,,,
+lzs-type:s1,skos:Concept,,conceptscheme:lzstype,Biologisch luchtwassysteem,,S1,,,lzs-type:luchtwassysteem,,,,,,,,,,,,,,,,,,
+lzs-type:s3,skos:Concept,,conceptscheme:lzstype,Biobed,,S3,,,lzs-type:luchtzuiveringssysteem,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 lzss:operationeel,skos:Concept,conceptscheme:lzss,conceptscheme:lzss,Operationeel,,,,,,,,,,,,,,,,,,,,,,,
 lzss:storing,skos:Concept,conceptscheme:lzss,conceptscheme:lzss,Storing,,,,,,,,,,,,,,,,,,,,,,,
 lzss:onderhoud,skos:Concept,conceptscheme:lzss,conceptscheme:lzss,In onderhoud,,,,,,,,,,,,,,,,,,,,,,,
+lzss:gereinigd,skos:Concept,conceptscheme:lzss,conceptscheme:lzss,Gereinigd,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
 lzsst:leeg,skos:Concept,conceptscheme:lzsst,conceptscheme:lzsst,Lege stal,,,,,,,,,,,,,,,,,,,,,,,
@@ -72,18 +74,22 @@ quantitykind:VolumePerTime,qudt:QuantityKind,,,,,,,,,,,,,,,http://qudt.org/vocab
 quantitykind:Basicity,qudt:QuantityKind,,,,,,,,,,,,,,,http://qudt.org/vocab/unit/PH,,,,,,,,,,,
 quantitykind:Count,qudt:QuantityKind,,,,,,,,,,,,,,,http://qudt.org/vocab/unit/NUM,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,
-lzs-param-norm:1,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Zuurtegraad waswater S1 systeem,,,,,,,,lzs-type:s1,lzsp:zuurtegraadwaswater,,,http://qudt.org/vocab/unit/PH,,,,,,,,,,false,
-lzs-param-norm:2,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Geleidbaarheid waswater S1 systeem,,,,,,,,lzs-type:s1,lzsp:geleidbaarheidvanhetwaswater,,,http://qudt.org/vocab/unit/MilliS-PER-CentiM,,,,,,,,,,true,maximum
-lzs-param-norm:3,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet S1 systeem,,,,,,,,lzs-type:s1,lzsp:waswaterdebiet,,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,true,minimum
-lzs-param-norm:4,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Spuiwaterdebiet S1 systeem,,,,,,,,lzs-type:s1,lzsp:spuiwaterproductie,,,http://qudt.org/vocab/unit/M3,,,,,,,,,,true,minimum
-lzs-param-norm:5,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Drukval S1 systeem,,,,,,,,lzs-type:s1,lzsp:drukvaloverhetsysteem,,,http://qudt.org/vocab/unit/PA,,,,,,,,,,true,exact
-lzs-param-norm:6,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Zuurtegraad waswater S2 systeem,,,,,,,,lzs-type:s2,lzsp:zuurtegraadwaswater,,,http://qudt.org/vocab/unit/PH,,,,,,,,,,true,maximum
-lzs-param-norm:7,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Geleidbaarheid waswater S2 systeem,,,,,,,,lzs-type:s2,lzsp:geleidbaarheidvanhetwaswater,,,http://qudt.org/vocab/unit/MilliS-PER-CentiM,,,,,,,,,,true,maximum
-lzs-param-norm:8,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet S2 systeem,,,,,,,,lzs-type:s2,lzsp:waswaterdebiet,,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,true,minimum
-lzs-param-norm:9,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Spuiwaterdebiet S2 systeem,,,,,,,,lzs-type:s2,lzsp:spuiwaterproductie,,,http://qudt.org/vocab/unit/M3,,,,,,,,,,true,minimum
-lzs-param-norm:10,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Drukval S2 systeem,,,,,,,,lzs-type:s2,lzsp:drukvaloverhetsysteem,,,http://qudt.org/vocab/unit/PA,,,,,,,,,,true,exact
-lzs-param-norm:11,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet voorbevochtiging S3 systeem,,,,,,,,lzs-type:s3,lzsp:waswaterdebietvoorbevochtiging,,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,true,minimum
-lzs-param-norm:12,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet bevloeiing S3 systeem,,,,,,,,lzs-type:s3,lzsp:waswaterdebietbevloeiing,,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,true,minimum
-lzs-param-norm:13,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Biobedspuiwaterproductie S3 systeem,,,,,,,,lzs-type:s3,lzsp:biobedspuiwaterproductie,,,http://qudt.org/vocab/unit/M3,,,,,,,,,,true,minimum
-lzs-param-norm:14,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Biobedspoelwaterproductie S3 systeem,,,,,,,,lzs-type:s3,lzsp:biobedspoelwaterproductie,,,http://qudt.org/vocab/unit/M3,,,,,,,,,,true,minimum
-lzs-param-norm:15,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Drukval S3 systeem,,,,,,,,lzs-type:s3,lzsp:drukvaloverhetsysteem,,,http://qudt.org/vocab/unit/PA,,,,,,,,,,true,maximum
+lzs-param-norm:1,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Zuurtegraad waswater S1 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s1,lzsp:zuurtegraadwaswater,,http://qudt.org/vocab/unit/PH,,,,,,,,,,,false,
+lzs-param-norm:2,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Geleidbaarheid waswater S1 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s1,lzsp:geleidbaarheidvanhetwaswater,,http://qudt.org/vocab/unit/MilliS-PER-CentiM,,,,,,,,,,,true,maximum
+lzs-param-norm:3,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet S1 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s1,lzsp:waswaterdebiet,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,,true,minimum
+lzs-param-norm:4,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Spuiwaterdebiet S1 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s1,lzsp:spuiwaterproductie,,http://qudt.org/vocab/unit/M3,,,,,,,,,,,true,minimum
+lzs-param-norm:5,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Drukval S1 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s1,lzsp:drukvaloverhetsysteem,,http://qudt.org/vocab/unit/PA,,,,,,,,,,,true,exact
+lzs-param-norm:6,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Zuurtegraad waswater S2 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s2,lzsp:zuurtegraadwaswater,,http://qudt.org/vocab/unit/PH,,,,,,,,,,,true,maximum
+lzs-param-norm:7,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Geleidbaarheid waswater S2 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s2,lzsp:geleidbaarheidvanhetwaswater,,http://qudt.org/vocab/unit/MilliS-PER-CentiM,,,,,,,,,,,true,maximum
+lzs-param-norm:8,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet S2 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s2,lzsp:waswaterdebiet,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,,true,minimum
+lzs-param-norm:9,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Spuiwaterdebiet S2 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s2,lzsp:spuiwaterproductie,,http://qudt.org/vocab/unit/M3,,,,,,,,,,,true,minimum
+lzs-param-norm:10,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Drukval S2 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s2,lzsp:drukvaloverhetsysteem,,http://qudt.org/vocab/unit/PA,,,,,,,,,,,true,exact
+lzs-param-norm:11,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet voorbevochtiging S3 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s3,lzsp:waswaterdebietvoorbevochtiging,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,,true,minimum
+lzs-param-norm:12,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Waswaterdebiet bevloeiing S3 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s3,lzsp:waswaterdebietbevloeiing,,http://qudt.org/vocab/unit/M3-PER-HR,,,,,,,,,,,true,minimum
+lzs-param-norm:13,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Biobedspuiwaterproductie S3 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s3,lzsp:biobedspuiwaterproductie,,http://qudt.org/vocab/unit/M3,,,,,,,,,,,true,minimum
+lzs-param-norm:14,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Biobedspoelwaterproductie S3 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s3,lzsp:biobedspoelwaterproductie,,http://qudt.org/vocab/unit/M3,,,,,,,,,,,true,minimum
+lzs-param-norm:15,skos:Concept,conceptscheme:lzs-param-norm,conceptscheme:lzs-param-norm,Drukval S3 systeem,,,,,,http://www.w3.org/2001/XMLSchema#decimal,,lzs-type:s3,lzsp:drukvaloverhetsysteem,,http://qudt.org/vocab/unit/PA,,,,,,,,,,,true,maximum
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+klasse:1,skos:Concept,conceptscheme:bedrijfsklasse,conceptscheme:bedrijfsklasse,Klasse 1,,,,,,,,,,,,,,,,,,,,,,,
+klasse:2,skos:Concept,conceptscheme:bedrijfsklasse,conceptscheme:bedrijfsklasse,Klasse 2,,,,,,,,,,,,,,,,,,,,,,,
+klasse:3,skos:Concept,conceptscheme:bedrijfsklasse,conceptscheme:bedrijfsklasse,Klasse 3,,,,,,,,,,,,,,,,,,,,,,,

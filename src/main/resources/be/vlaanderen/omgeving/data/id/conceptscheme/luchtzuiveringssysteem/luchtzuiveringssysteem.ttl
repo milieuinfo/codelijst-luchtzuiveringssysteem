@@ -29,6 +29,7 @@
 @prefix lzss: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/>.
 @prefix lzsst: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/>.
 @prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/>.
+@prefix klasse: <https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/>.
 @prefix metadata: <https://data.omgeving.vlaanderen.be/ns/metadata#>.
 @prefix normatieve_structuur: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/>.
 @prefix omg_catalog_doc: <https://data.omgeving.vlaanderen.be/doc/catalog/>.
@@ -91,6 +92,18 @@ quantitykind:VolumeFlowRate qudt:applicableUnit unit:M3-PER-HR;
     a qudt:QuantityKind.
 quantitykind:VolumePerTime qudt:applicableUnit unit:M3-PER-HR;
     a qudt:QuantityKind.
+<https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/1> a skos:Concept;
+    skos:inScheme conceptscheme:bedrijfsklasse;
+    skos:prefLabel "Klasse 1"@nl;
+    skos:topConceptOf conceptscheme:bedrijfsklasse.
+<https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/2> a skos:Concept;
+    skos:inScheme conceptscheme:bedrijfsklasse;
+    skos:prefLabel "Klasse 2"@nl;
+    skos:topConceptOf conceptscheme:bedrijfsklasse.
+<https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/3> a skos:Concept;
+    skos:inScheme conceptscheme:bedrijfsklasse;
+    skos:prefLabel "Klasse 3"@nl;
+    skos:topConceptOf conceptscheme:bedrijfsklasse.
 lzsp:biobedspoelwaterproductie dct:subject lzsm:waswater;
     qudt:relevantQuantityKind quantitykind:Volume;
     qudt:relevantUnit unit:M3;
@@ -391,137 +404,152 @@ lzsm:waswater a rdfs:Resource, skos:Concept;
     lzsns:relevantLZS lzs-type:s2;
     lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
     schema:minValue "0"^^xsd:decimal.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10> qudt:applicableUnit unit:PA;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10> qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Drukval S2 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "exact";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s2;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11> qudt:applicableUnit unit:M3-PER-HR;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11> qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Waswaterdebiet voorbevochtiging S3 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s3;
     lzsns:relevantProperty lzsp:waswaterdebietvoorbevochtiging;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12> qudt:applicableUnit unit:M3-PER-HR;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12> qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Waswaterdebiet bevloeiing S3 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s3;
     lzsns:relevantProperty lzsp:waswaterdebietbevloeiing;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13> qudt:applicableUnit unit:M3;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13> qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Biobedspuiwaterproductie S3 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s3;
     lzsns:relevantProperty lzsp:biobedspuiwaterproductie;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14> qudt:applicableUnit unit:M3;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14> qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Biobedspoelwaterproductie S3 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s3;
     lzsns:relevantProperty lzsp:biobedspoelwaterproductie;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15> qudt:applicableUnit unit:PA;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15> qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Drukval S3 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "maximum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s3;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1> qudt:applicableUnit unit:PH;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1> qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Zuurtegraad waswater S1 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s1;
     lzsns:relevantProperty lzsp:zuurtegraadwaswater;
     lzsns:technischefiche false.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2> qudt:applicableUnit unit:MilliS-PER-CentiM;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2> qudt:relevantUnit unit:MilliS-PER-CentiM;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Geleidbaarheid waswater S1 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "maximum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s1;
     lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3> qudt:applicableUnit unit:M3-PER-HR;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3> qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Waswaterdebiet S1 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s1;
     lzsns:relevantProperty lzsp:waswaterdebiet;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4> qudt:applicableUnit unit:M3;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4> qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Spuiwaterdebiet S1 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s1;
     lzsns:relevantProperty lzsp:spuiwaterproductie;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5> qudt:applicableUnit unit:PA;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5> qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Drukval S1 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "exact";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s1;
     lzsns:relevantProperty lzsp:drukvaloverhetsysteem;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6> qudt:applicableUnit unit:PH;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6> qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Zuurtegraad waswater S2 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "maximum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s2;
     lzsns:relevantProperty lzsp:zuurtegraadwaswater;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7> qudt:applicableUnit unit:MilliS-PER-CentiM;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7> qudt:relevantUnit unit:MilliS-PER-CentiM;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Geleidbaarheid waswater S2 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "maximum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s2;
     lzsns:relevantProperty lzsp:geleidbaarheidvanhetwaswater;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8> qudt:applicableUnit unit:M3-PER-HR;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8> qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Waswaterdebiet S2 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s2;
     lzsns:relevantProperty lzsp:waswaterdebiet;
     lzsns:technischefiche true.
-<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9> qudt:applicableUnit unit:M3;
+<https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9> qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:lzs-param-norm;
     skos:prefLabel "Spuiwaterdebiet S2 systeem"@nl;
     skos:topConceptOf conceptscheme:lzs-param-norm;
     lzsns:referentiewaardeType "minimum";
+    lzsns:relevantDataType xsd:decimal;
     lzsns:relevantLZS lzs-type:s2;
     lzsns:relevantProperty lzsp:spuiwaterproductie;
     lzsns:technischefiche true.
@@ -533,6 +561,10 @@ lzsst:leeg a skos:Concept;
     skos:inScheme conceptscheme:lzsst;
     skos:prefLabel "Lege stal"@nl;
     skos:topConceptOf conceptscheme:lzsst.
+lzss:gereinigd a skos:Concept;
+    skos:inScheme conceptscheme:lzss;
+    skos:prefLabel "Gereinigd"@nl;
+    skos:topConceptOf conceptscheme:lzss.
 lzss:onderhoud a skos:Concept;
     skos:inScheme conceptscheme:lzss;
     skos:prefLabel "In onderhoud"@nl;
@@ -548,45 +580,48 @@ lzss:storing a skos:Concept;
 lzs-type:luchtwassysteem a skos:Concept;
     skos:broader lzs-type:luchtzuiveringssysteem;
     skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
-    skos:inScheme conceptscheme:lzs;
+    skos:inScheme conceptscheme:lzstype;
     skos:narrower lzs-type:s1, lzs-type:s2;
     skos:narrowerTransitive lzs-type:s1, lzs-type:s2;
     skos:prefLabel "Luchtwassysteem"@nl;
     skos:semanticRelation lzs-type:luchtzuiveringssysteem, lzs-type:s1, lzs-type:s2.
 lzs-type:luchtzuiveringssysteem a skos:Concept;
-    skos:inScheme conceptscheme:lzs;
+    skos:inScheme conceptscheme:lzstype;
     skos:narrower lzs-type:luchtwassysteem, lzs-type:s3;
     skos:narrowerTransitive lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
     skos:prefLabel "Luchtzuiveringssysteem"@nl;
     skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
-    skos:topConceptOf conceptscheme:lzs.
+    skos:topConceptOf conceptscheme:lzstype.
 lzs-type:s1 a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
     skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
-    skos:inScheme conceptscheme:lzs;
+    skos:inScheme conceptscheme:lzstype;
     skos:notation "S1";
     skos:prefLabel "Biologisch luchtwassysteem"@nl;
-    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem.
+    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:zuurtegraadwaswater.
 lzs-type:s2 a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
     skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
-    skos:inScheme conceptscheme:lzs;
+    skos:inScheme conceptscheme:lzstype;
     skos:notation "S2";
     skos:prefLabel "Chemisch luchtwassysteem"@nl;
-    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem.
+    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
+    lzsns:relevantProperty lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:zuurtegraadwaswater.
 lzs-type:s3 a skos:Concept;
     skos:broader lzs-type:luchtzuiveringssysteem;
     skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
-    skos:inScheme conceptscheme:lzs;
+    skos:inScheme conceptscheme:lzstype;
     skos:notation "S3";
     skos:prefLabel "Biobed"@nl;
-    skos:semanticRelation lzs-type:luchtzuiveringssysteem.
+    skos:semanticRelation lzs-type:luchtzuiveringssysteem;
+    lzsns:relevantProperty lzsp:biobedspoelwaterproductie, lzsp:biobedspuiwaterproductie, lzsp:drukvaloverhetsysteem, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebietbevloeiing, lzsp:waswaterdebietvoorbevochtiging.
+conceptscheme:bedrijfsklasse a skos:ConceptScheme;
+    skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/1>, <https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/2>, <https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/3>;
+    skos:prefLabel "conceptschema iioa bedrijfsklassen"@nl.
 conceptscheme:lzs-param-norm a skos:ConceptScheme;
     skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9>;
     skos:prefLabel "conceptschema luchtzuiveringssysteem parameter specificatie"@nl.
-conceptscheme:lzs a skos:ConceptScheme;
-    skos:hasTopConcept lzs-type:luchtzuiveringssysteem;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem"@nl.
 conceptscheme:lzsm a skos:ConceptScheme;
     skos:hasTopConcept lzsm:hetelektronischmonitoringssysteem, lzsm:lucht, lzsm:spuiwater, lzsm:stal, lzsm:waswater;
     skos:prefLabel "conceptschema luchtzuiveringssysteem medium"@nl.
@@ -594,11 +629,14 @@ conceptscheme:lzsp a skos:ConceptScheme;
     skos:hasTopConcept lzsp:biobedspoelwaterproductie, lzsp:biobedspuiwaterproductie, lzsp:drukvaloverhetsysteem, lzsp:geleidbaarheidvanhetwaswater, lzsp:spuiwaterproductie, lzsp:stalbezetting, lzsp:systeemstatus, lzsp:waswaterdebiet, lzsp:waswaterdebietbevloeiing, lzsp:waswaterdebietvoorbevochtiging, lzsp:zuurtegraadwaswater;
     skos:prefLabel "conceptschema luchtzuiveringssysteem eigenschap"@nl.
 conceptscheme:lzss a skos:ConceptScheme;
-    skos:hasTopConcept lzss:onderhoud, lzss:operationeel, lzss:storing;
+    skos:hasTopConcept lzss:gereinigd, lzss:onderhoud, lzss:operationeel, lzss:storing;
     skos:prefLabel "conceptschema luchtzuiveringssysteem status"@nl.
 conceptscheme:lzsst a skos:ConceptScheme;
     skos:hasTopConcept lzsst:in_gebruik, lzsst:leeg;
     skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.
+conceptscheme:lzstype a skos:ConceptScheme;
+    skos:hasTopConcept lzs-type:luchtzuiveringssysteem;
+    skos:prefLabel "conceptschema luchtzuiveringssysteem"@nl.
 conceptscheme:norm_bandbreedte a skos:ConceptScheme;
     skos:altLabel "Ranges"@nl;
     skos:hasTopConcept <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/10>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/11>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/12>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/13>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/14>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/15>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/16>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/1>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/2>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/3>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/4>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/5>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/6>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/7>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/8>, <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9>;
