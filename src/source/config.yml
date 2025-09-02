@@ -144,6 +144,7 @@ prefixes :
   adms: http://www.w3.org/ns/adms#
   assettype: http://purl.org/adms/assettype/
   conceptscheme: https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/
+  conceptscheme-alg: https://data.omgeving.vlaanderen.be/id/conceptscheme/
   country: http://publications.europa.eu/resource/authority/country/
   datasets: https://datasets.omgeving.vlaanderen.be/
   datatheme_be: http://vocab.belgif.be/auth/datatheme/
@@ -169,7 +170,7 @@ prefixes :
   lzss: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/
   lzsst: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/
   lzs-type: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/
-  klasse: https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/
+  vlarem-klasse: https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/
   metadata: https://data.omgeving.vlaanderen.be/ns/metadata#
   normatieve_structuur: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/
   omg_catalog_doc: https://data.omgeving.vlaanderen.be/doc/catalog/

@@ -63,33 +63,6 @@
         "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/1",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse",
-        "prefLabel": "Klasse 1",
-        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse"
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/2",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse",
-        "prefLabel": "Klasse 2",
-        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse"
-    },
-    {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/3",
-        "type": [
-            "http://www.w3.org/2004/02/skos/core#Concept"
-        ],
-        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse",
-        "prefLabel": "Klasse 3",
-        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse"
-    },
-    {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/biobedspoelwaterproductie",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
@@ -639,7 +612,7 @@
         "minValue": "0"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_1",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -651,7 +624,7 @@
         "technischefiche": "false"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_10",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -664,7 +637,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_11",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -677,7 +650,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_12",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -690,7 +663,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_13",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -703,7 +676,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_14",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -716,7 +689,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_15",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -729,7 +702,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_2",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -742,7 +715,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_3",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -755,7 +728,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_4",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -768,7 +741,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_5",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -781,7 +754,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_6",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -794,7 +767,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_7",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -807,7 +780,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_8",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -820,7 +793,7 @@
         "technischefiche": "true"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_9",
         "type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -1012,39 +985,65 @@
         ]
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/bedrijfsklasse",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1",
         "type": [
-            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+            "http://www.w3.org/2004/02/skos/core#Concept"
         ],
-        "hasTopConcept": [
-            "https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/1",
-            "https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/2",
-            "https://data.omgeving.vlaanderen.be/id/concept/bedrijfklasse/3"
+        "altLabel": "VLAREM klasse 1",
+        "definition": "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure).",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
+        "note": "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure).",
+        "prefLabel": "Klasse 1",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
         ],
-        "prefLabel": "conceptschema iioa bedrijfsklassen"
+        "altLabel": "VLAREM klasse 2",
+        "definition": "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
+        "note": "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2.",
+        "prefLabel": "Klasse 2",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k3",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "altLabel": "VLAREM klasse 3",
+        "definition": "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3).",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
+        "note": "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3).",
+        "prefLabel": "Klasse 3",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzs-param-norm",
         "type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
+        "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
         "hasTopConcept": [
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/10",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/11",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/12",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/13",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/14",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/15",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/1",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/2",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/3",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/4",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/5",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/6",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/7",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/8",
-            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/9"
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_10",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_11",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_12",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_13",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_14",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_15",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_1",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_2",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_3",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_4",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_5",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_6",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_7",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_8",
+            "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/_9"
         ],
+        "note": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
         "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
     },
     {
@@ -1140,5 +1139,17 @@
             "https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/9"
         ],
         "prefLabel": "conceptschema luchtzuiveringssysteem normbandbreedte"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
+        "type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "hasTopConcept": [
+            "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1",
+            "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2",
+            "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k3"
+        ],
+        "prefLabel": "VLAREM indelingsklassen"
     }
 ]
