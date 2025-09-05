@@ -3,7 +3,7 @@
 
 
 
-{ ?x par:relevantLZS ?y. ?x skos:inScheme <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsp>. } => { ?y par:relevantProperty ?x} .
+{ ?x par:relevantLZS ?y. ?x skos:inScheme <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter>. } => { ?y par:relevantProperty ?x} .
 
 
 

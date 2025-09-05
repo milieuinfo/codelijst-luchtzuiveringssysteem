@@ -161,18 +161,16 @@ prefixes :
   frequency: http://publications.europa.eu/resource/authority/frequency/
   gemet: http://www.eionet.europa.eu/gemet/concept/
   licence: http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/
-  lzp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/property/
-  lzsm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/medium/
-  lzs-norm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/norm_bandbreedte/
   lzsns: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#
-  lzs-param-norm: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/parameter_norm/
-  lzsp: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/eigenschap/
-  lzss: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/status/
-  lzsst: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/stalgebruik/
-  lzs-type: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/type/
+  lzs-medium: https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/
+  lzs-bandbreedte: https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/
+  lzs-param-norm: https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/
+  lzs-param: https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/
+  lzs-status: https://data.omgeving.vlaanderen.be/id/concept/lzs/status/
+  lzs-stalbezetting: https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/
+  lzs-type: https://data.omgeving.vlaanderen.be/id/concept/lzs/type/
   vlarem-klasse: https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/
   metadata: https://data.omgeving.vlaanderen.be/ns/metadata#
-  normatieve_structuur: https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/
   omg_catalog_doc: https://data.omgeving.vlaanderen.be/doc/catalog/
   omg_catalog: https://data.omgeving.vlaanderen.be/id/catalog/
   omg_collection: https://data.omgeving.vlaanderen.be/id/collection/
