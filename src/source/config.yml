@@ -161,7 +161,7 @@ prefixes :
   frequency: http://publications.europa.eu/resource/authority/frequency/
   gemet: http://www.eionet.europa.eu/gemet/concept/
   licence: http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/
-  lzsns: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#
+  lzs-vocab: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#
   lzs-medium: https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/
   lzs-bandbreedte: https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/
   lzs-param-norm: https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/

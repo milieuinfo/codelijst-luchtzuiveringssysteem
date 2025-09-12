@@ -21,7 +21,7 @@
 @prefix frequency: <http://publications.europa.eu/resource/authority/frequency/>.
 @prefix gemet: <http://www.eionet.europa.eu/gemet/concept/>.
 @prefix licence: <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/>.
-@prefix lzsns: <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#>.
+@prefix lzs-vocab: <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#>.
 @prefix lzs-medium: <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/>.
 @prefix lzs-bandbreedte: <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/>.
 @prefix lzs-param-norm: <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/>.
@@ -31,7 +31,6 @@
 @prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/>.
 @prefix vlarem-klasse: <https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/>.
 @prefix metadata: <https://data.omgeving.vlaanderen.be/ns/metadata#>.
-@prefix normatieve_structuur: <https://data.omgeving.vlaanderen.be/id/concept/luchtzuiveringssysteem/normatieve_structuur/>.
 @prefix omg_catalog_doc: <https://data.omgeving.vlaanderen.be/doc/catalog/>.
 @prefix omg_catalog: <https://data.omgeving.vlaanderen.be/id/catalog/>.
 @prefix omg_collection: <https://data.omgeving.vlaanderen.be/id/collection/>.
@@ -131,9 +130,9 @@ lzs-bandbreedte:_10 a skos:Concept;
     skos:prefLabel "Waswaterdebiet afwijking naar beneden > 20% (S2 systeem)"@nl;
     skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:waswaterdebiet;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
     schema:maxValue 0.8.
 lzs-bandbreedte:_11 a skos:Concept;
     skos:definition "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -142,9 +141,9 @@ lzs-bandbreedte:_11 a skos:Concept;
     skos:prefLabel "Spuiwaterdebiet afwijking naar beneden > 10% (S2 systeem)"@nl;
     skos:scopeNote "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:spuiwaterproductie;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
     schema:maxValue 0.9.
 lzs-bandbreedte:_12 a skos:Concept;
     skos:definition "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -153,9 +152,9 @@ lzs-bandbreedte:_12 a skos:Concept;
     skos:prefLabel "Drukval afwijking naar beneden > 40% (S2 systeem)"@nl;
     skos:scopeNote "< 0,6 x waarde technische fiche (afwijking > 40%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
     schema:maxValue 0.6.
 lzs-bandbreedte:_13 a skos:Concept;
     skos:definition "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -164,9 +163,9 @@ lzs-bandbreedte:_13 a skos:Concept;
     skos:prefLabel "Drukval afwijking naar boven > 40% (S2 systeem)"@nl;
     skos:scopeNote "> 1,4 x waarde technische fiche (afwijking > 40%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
     schema:minValue 1.4.
 lzs-bandbreedte:_14 a skos:Concept;
     skos:definition "Het waswaterdebiet van de voorbevochtiging wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -175,9 +174,9 @@ lzs-bandbreedte:_14 a skos:Concept;
     skos:prefLabel "Waswaterdebiet voorbevochtiging afwijking naar beneden > 20% (S3 systeem)"@nl;
     skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
     schema:maxValue 0.8.
 lzs-bandbreedte:_15 a skos:Concept;
     skos:definition "Het waswaterdebiet van de bevloeiing wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -186,9 +185,9 @@ lzs-bandbreedte:_15 a skos:Concept;
     skos:prefLabel "Waswaterdebiet bevloeiing afwijking naar beneden > 20% (S3 systeem)"@nl;
     skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:waswaterdebietbevloeiing;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietbevloeiing;
     schema:maxValue 0.8.
 lzs-bandbreedte:_16 a skos:Concept;
     skos:definition "De drukval wijkt meer dan 50 Pa naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -197,9 +196,9 @@ lzs-bandbreedte:_16 a skos:Concept;
     skos:prefLabel "Drukval afwijking naar boven > 50 Pa (S3 systeem)"@nl;
     skos:scopeNote "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "som"@nl;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:operatie "som"@nl;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
     schema:minValue "50"^^xsd:decimal.
 lzs-bandbreedte:_1 a skos:Concept;
     skos:definition "De zuurtegraad van het waswater is kleiner dan 6"@nl;
@@ -208,8 +207,8 @@ lzs-bandbreedte:_1 a skos:Concept;
     skos:prefLabel "Zuurtegraad waswater < 6 (S1 systeem)"@nl;
     skos:scopeNote "< 6"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:zuurtegraadwaswater;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
     schema:maxValue "6"^^xsd:decimal.
 lzs-bandbreedte:_2 a skos:Concept;
     skos:definition "De zuurtegraad van het waswater is groter dan 8,5"@nl;
@@ -218,8 +217,8 @@ lzs-bandbreedte:_2 a skos:Concept;
     skos:prefLabel "Zuurtegraad waswater > 8,5 (S1 systeem)"@nl;
     skos:scopeNote "> 8,5"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:zuurtegraadwaswater;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
     schema:minValue 8.5.
 lzs-bandbreedte:_3 a skos:Concept;
     skos:definition "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -228,9 +227,9 @@ lzs-bandbreedte:_3 a skos:Concept;
     skos:prefLabel "Geleidbaarheid waswater > maximale waarde (S1 systeem)"@nl;
     skos:scopeNote "> waarde technische fiche"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "som"@nl;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    lzs-vocab:operatie "som"@nl;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
     schema:minValue "0"^^xsd:decimal.
 lzs-bandbreedte:_4 a skos:Concept;
     skos:definition "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -239,9 +238,9 @@ lzs-bandbreedte:_4 a skos:Concept;
     skos:prefLabel "Waswaterdebiet afwijking naar beneden > 20% (S1 systeem)"@nl;
     skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:waswaterdebiet;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
     schema:maxValue 0.8.
 lzs-bandbreedte:_5 a skos:Concept;
     skos:definition "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -250,9 +249,9 @@ lzs-bandbreedte:_5 a skos:Concept;
     skos:prefLabel "Spuiwaterdebiet afwijking naar beneden > 10% (S1 systeem)"@nl;
     skos:scopeNote "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:spuiwaterproductie;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
     schema:maxValue 0.9.
 lzs-bandbreedte:_6 a skos:Concept;
     skos:definition "De drukval wijkt meer dan 40% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -261,9 +260,9 @@ lzs-bandbreedte:_6 a skos:Concept;
     skos:prefLabel "Drukval afwijking naar beneden > 40% (S1 systeem)"@nl;
     skos:scopeNote "< 0,6 x waarde technische fiche (afwijking > 40%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
     schema:maxValue 0.6.
 lzs-bandbreedte:_7 a skos:Concept;
     skos:definition "De drukval wijkt meer dan 40% naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -272,9 +271,9 @@ lzs-bandbreedte:_7 a skos:Concept;
     skos:prefLabel "Drukval afwijking naar boven > 40% (S1 systeem)"@nl;
     skos:scopeNote "> 1,4 x waarde technische fiche (afwijking > 40%)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "product"@nl;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
     schema:minValue 1.4.
 lzs-bandbreedte:_8 a skos:Concept;
     skos:definition "De zuurtegraad van het waswater wijkt meer dan 1 pH-eenheid naar boven af van de operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -283,9 +282,9 @@ lzs-bandbreedte:_8 a skos:Concept;
     skos:prefLabel "Zuurtegraad waswater afwijking naar boven > 1 pH-eenheid (S2 systeem)"@nl;
     skos:scopeNote "> 1 pH + waarde technische fiche (afwijking > 1pH)"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "som"@nl;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:zuurtegraadwaswater;
+    lzs-vocab:operatie "som"@nl;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
     schema:minValue "1"^^xsd:decimal.
 lzs-bandbreedte:_9 a skos:Concept;
     skos:definition "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
@@ -294,9 +293,9 @@ lzs-bandbreedte:_9 a skos:Concept;
     skos:prefLabel "Geleidbaarheid waswater > maximale waarde (S2 systeem)"@nl;
     skos:scopeNote "> waarde technische fiche"@nl;
     skos:topConceptOf conceptscheme:norm-bandbreedte;
-    lzsns:operatie "som"@nl;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    lzs-vocab:operatie "som"@nl;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
     schema:minValue "0"^^xsd:decimal.
 lzs-param:biobedspoelwaterproductie dct:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:Volume;
@@ -306,8 +305,8 @@ lzs-param:biobedspoelwaterproductie dct:subject lzs-medium:waswater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Biobedspoelwaterproductie"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3.
 lzs-param:biobedspuiwaterproductie dct:subject lzs-medium:spuiwater;
     qudt:relevantQuantityKind quantitykind:Volume;
     qudt:relevantUnit unit:M3;
@@ -316,8 +315,8 @@ lzs-param:biobedspuiwaterproductie dct:subject lzs-medium:spuiwater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Biobedspuiwaterproductie"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3.
 lzs-param:drukvaloverhetsysteem dct:subject lzs-medium:lucht;
     qudt:relevantQuantityKind quantitykind:VaporPressure;
     qudt:relevantUnit unit:PA;
@@ -326,8 +325,8 @@ lzs-param:drukvaloverhetsysteem dct:subject lzs-medium:lucht;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Drukval over het systeem"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:geleidbaarheidvanhetwaswater dct:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:Conductivity;
     qudt:relevantUnit unit:MilliS-PER-CentiM;
@@ -336,9 +335,9 @@ lzs-param:geleidbaarheidvanhetwaswater dct:subject lzs-medium:waswater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Geleidbaarheid van het waswater"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:hasProcedureForProperty procedure:WAC_I_A_011;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:hasProcedureForProperty procedure:WAC_I_A_011;
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
 lzs-param:spuiwaterproductie dct:subject lzs-medium:spuiwater;
     qudt:relevantQuantityKind quantitykind:Volume;
     qudt:relevantUnit unit:M3;
@@ -347,22 +346,22 @@ lzs-param:spuiwaterproductie dct:subject lzs-medium:spuiwater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Spuiwaterproductie"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
 lzs-param:stalbezetting dct:subject lzs-medium:stal;
     a skos:Concept, ssn:Property;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Stalbezetting"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantCodeList conceptscheme:lzsst;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
+    lzs-vocab:relevantCodeList conceptscheme:lzsst;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:systeemstatus dct:subject lzs-medium:hetelektronischmonitoringssysteem;
     a skos:Concept, ssn:Property;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "SysteemStatus"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantCodeList conceptscheme:lzss;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
+    lzs-vocab:relevantCodeList conceptscheme:lzss;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:waswaterdebiet dct:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -371,8 +370,8 @@ lzs-param:waswaterdebiet dct:subject lzs-medium:waswater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Waswaterdebiet over het waspakket"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
 lzs-param:waswaterdebietbevloeiing dct:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -381,8 +380,8 @@ lzs-param:waswaterdebietbevloeiing dct:subject lzs-medium:waswater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Waswaterdebiet van de bevloeiing van het vulmateriaal"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3.
 lzs-param:waswaterdebietvoorbevochtiging dct:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -391,8 +390,8 @@ lzs-param:waswaterdebietvoorbevochtiging dct:subject lzs-medium:waswater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3.
 lzs-param:zuurtegraadwaswater dct:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:Acidity;
     qudt:relevantUnit unit:PH;
@@ -401,158 +400,158 @@ lzs-param:zuurtegraadwaswater dct:subject lzs-medium:waswater;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Zuurtegraad van het waswater"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzsns:hasProcedureForProperty procedure:WAC_I_A_011;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:hasProcedureForProperty procedure:WAC_I_A_011;
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
 lzs-param-norm:_10 qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Drukval S2 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "exact";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "exact";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_11 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Waswaterdebiet voorbevochtiging S3 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_12 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Waswaterdebiet bevloeiing S3 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:waswaterdebietbevloeiing;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietbevloeiing;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_13 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Biobedspuiwaterproductie S3 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:biobedspuiwaterproductie;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:biobedspuiwaterproductie;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_14 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Biobedspoelwaterproductie S3 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:biobedspoelwaterproductie;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:biobedspoelwaterproductie;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_15 qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Drukval S3 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "maximum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s3;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "maximum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s3;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_1 qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Zuurtegraad waswater S1 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:zuurtegraadwaswater;
-    lzsns:technischefiche false.
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
+    lzs-vocab:technischefiche false.
 lzs-param-norm:_2 qudt:relevantUnit unit:MilliS-PER-CentiM;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Geleidbaarheid waswater S1 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "maximum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "maximum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_3 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Waswaterdebiet S1 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:waswaterdebiet;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_4 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Spuiwaterdebiet S1 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:spuiwaterproductie;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_5 qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Drukval S1 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "exact";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s1;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "exact";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s1;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_6 qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Zuurtegraad waswater S2 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "maximum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:zuurtegraadwaswater;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "maximum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_7 qudt:relevantUnit unit:MilliS-PER-CentiM;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Geleidbaarheid waswater S2 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "maximum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "maximum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_8 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Waswaterdebiet S2 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:waswaterdebiet;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
+    lzs-vocab:technischefiche true.
 lzs-param-norm:_9 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Spuiwaterdebiet S2 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
-    lzsns:referentiewaardeType "minimum";
-    lzsns:relevantDataType xsd:decimal;
-    lzsns:relevantLZS lzs-type:s2;
-    lzsns:relevantProperty lzs-param:spuiwaterproductie;
-    lzsns:technischefiche true.
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:s2;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
+    lzs-vocab:technischefiche true.
 lzs-stalbezetting:in_gebruik a skos:Concept;
     skos:inScheme conceptscheme:stalbezetting;
     skos:prefLabel "Stal in gebruik, dieren aanwezig."@nl;
@@ -599,7 +598,7 @@ lzs-type:s1 a skos:Concept;
     skos:notation "S1";
     skos:prefLabel "Biologisch luchtwassysteem"@nl;
     skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:zuurtegraadwaswater.
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:zuurtegraadwaswater.
 lzs-type:s2 a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
     skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
@@ -607,7 +606,7 @@ lzs-type:s2 a skos:Concept;
     skos:notation "S2";
     skos:prefLabel "Chemisch luchtwassysteem"@nl;
     skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzs-param:drukvaloverhetsysteem, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:zuurtegraadwaswater.
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:zuurtegraadwaswater.
 lzs-type:s3 a skos:Concept;
     skos:broader lzs-type:luchtzuiveringssysteem;
     skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
@@ -615,7 +614,7 @@ lzs-type:s3 a skos:Concept;
     skos:notation "S3";
     skos:prefLabel "Biobed"@nl;
     skos:semanticRelation lzs-type:luchtzuiveringssysteem;
-    lzsns:relevantProperty lzs-param:biobedspoelwaterproductie, lzs-param:biobedspuiwaterproductie, lzs-param:drukvaloverhetsysteem, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebietbevloeiing, lzs-param:waswaterdebietvoorbevochtiging.
+    lzs-vocab:relevantProperty lzs-param:biobedspoelwaterproductie, lzs-param:biobedspuiwaterproductie, lzs-param:drukvaloverhetsysteem, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebietbevloeiing, lzs-param:waswaterdebietvoorbevochtiging.
 vlarem-klasse:k1 a skos:Concept;
     skos:altLabel "VLAREM klasse 1"@nl;
     skos:definition "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure)."@nl;
