@@ -62,7 +62,7 @@ metadata :
     contactPoint : https://data.omgeving.vlaanderen.be/id/vcard/helpdesk
     license : http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0
     publisher : http://data.vlaanderen.be/id/organisatie/OVO003323
-    rightsHolder :  http://data.vlaanderen.be/id/organisatie/OVO003749
+    rightsHolder :  http://data.vlaanderen.be/id/organisatie/OVO003323
     theme :
       - http://eurovoc.europa.eu/2407
       - http://publications.europa.eu/resource/authority/data-theme/ENVI
