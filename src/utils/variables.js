@@ -2,7 +2,7 @@
 import yaml from 'js-yaml';
 import fs, {readFileSync} from "fs";
 import rdf from "@zazuko/env-node";
-import {metadataOptions, shapes_dcat, dcat_rules, frame_catalog} from "maven-metadata-generator-npm/src/utils/variables.js";
+import {metadataOptions, shapes_dcat, dcat_rules, frame_catalog} from "@milieuinfo/maven-metadata-generator-npm/src/utils/variables.js";
 
 
 const config = yaml.load(fs.readFileSync('./source/config.yml', 'utf8'));
@@ -169,7 +169,10 @@ const frame_skos_no_prefixes = {
         "@embed": "@never",
         "@omitDefault": true
     },
-
+    "applicableUnit": {
+        "@embed": "@never",
+        "@omitDefault": true
+    },
     "topConceptOf": {
         "@embed": "@never",
         "@omitDefault": true

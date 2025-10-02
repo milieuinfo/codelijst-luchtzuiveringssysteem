@@ -4,13 +4,7 @@
         "type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
-        "applicableUnit": {
-            "id": "http://qudt.org/vocab/unit/PH",
-            "type": [
-                "http://qudt.org/schema/qudt/Unit"
-            ],
-            "altLabel": "Ph"
-        },
+        "applicableUnit": "http://qudt.org/vocab/unit/PH",
         "altLabel": "Zuurtegraad"
     },
     {
@@ -18,13 +12,7 @@
         "type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
-        "applicableUnit": {
-            "id": "http://qudt.org/vocab/unit/MilliS-PER-CentiM",
-            "type": [
-                "http://qudt.org/schema/qudt/Unit"
-            ],
-            "altLabel": "Millisiemens per centimeter"
-        },
+        "applicableUnit": "http://qudt.org/vocab/unit/MilliS-PER-CentiM",
         "altLabel": "Geleidbaarheid"
     },
     {
@@ -32,13 +20,7 @@
         "type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
-        "applicableUnit": {
-            "id": "http://qudt.org/vocab/unit/NUM",
-            "type": [
-                "http://qudt.org/schema/qudt/Unit"
-            ],
-            "altLabel": "Getal"
-        },
+        "applicableUnit": "http://qudt.org/vocab/unit/NUM",
         "altLabel": "Aantal"
     },
     {
@@ -46,13 +28,7 @@
         "type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
-        "applicableUnit": {
-            "id": "http://qudt.org/vocab/unit/PA",
-            "type": [
-                "http://qudt.org/schema/qudt/Unit"
-            ],
-            "altLabel": "Pascal"
-        },
+        "applicableUnit": "http://qudt.org/vocab/unit/PA",
         "altLabel": "Dampdruk"
     },
     {
@@ -60,13 +36,7 @@
         "type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
-        "applicableUnit": {
-            "id": "http://qudt.org/vocab/unit/M3",
-            "type": [
-                "http://qudt.org/schema/qudt/Unit"
-            ],
-            "altLabel": "Kubieke meter"
-        },
+        "applicableUnit": "http://qudt.org/vocab/unit/M3",
         "altLabel": "Volume"
     },
     {
@@ -74,13 +44,7 @@
         "type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
-        "applicableUnit": {
-            "id": "http://qudt.org/vocab/unit/M3-PER-HR",
-            "type": [
-                "http://qudt.org/schema/qudt/Unit"
-            ],
-            "altLabel": "Kubieke meter per uur"
-        },
+        "applicableUnit": "http://qudt.org/vocab/unit/M3-PER-HR",
         "altLabel": "Volume per tijdseenheid"
     },
     {
