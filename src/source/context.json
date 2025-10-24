@@ -282,7 +282,15 @@
     "@id": "http://purl.org/dc/terms/identifier",
     "@type": "@id"
   },
+  "uri": {
+    "@id": "@id",
+    "@type": "@id"
+  },
   "_id": {
+    "@id": "@id",
+    "@type": "@id"
+  },
+  "id": {
     "@id": "@id",
     "@type": "@id"
   },

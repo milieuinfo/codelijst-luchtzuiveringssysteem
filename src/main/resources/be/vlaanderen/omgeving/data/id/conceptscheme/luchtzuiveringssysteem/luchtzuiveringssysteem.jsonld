@@ -283,7 +283,15 @@
             "@id": "http://purl.org/dc/terms/identifier",
             "@type": "@id"
         },
+        "uri": {
+            "@id": "@id",
+            "@type": "@id"
+        },
         "_id": {
+            "@id": "@id",
+            "@type": "@id"
+        },
+        "id": {
             "@id": "@id",
             "@type": "@id"
         },
@@ -814,12 +822,12 @@
     },
     "graph": [
         {
-            "_id": "quantitykind:Acidity",
+            "id": "quantitykind:Acidity",
             "_type": [
                 "qudt:QuantityKind"
             ],
             "applicableUnit": {
-                "_id": "unit:PH",
+                "id": "unit:PH",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -828,12 +836,12 @@
             "altLabel": "Zuurtegraad"
         },
         {
-            "_id": "quantitykind:Conductivity",
+            "id": "quantitykind:Conductivity",
             "_type": [
                 "qudt:QuantityKind"
             ],
             "applicableUnit": {
-                "_id": "unit:MilliS-PER-CentiM",
+                "id": "unit:MilliS-PER-CentiM",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -842,12 +850,12 @@
             "altLabel": "Geleidbaarheid"
         },
         {
-            "_id": "quantitykind:Count",
+            "id": "quantitykind:Count",
             "_type": [
                 "qudt:QuantityKind"
             ],
             "applicableUnit": {
-                "_id": "unit:NUM",
+                "id": "unit:NUM",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -856,12 +864,12 @@
             "altLabel": "Aantal"
         },
         {
-            "_id": "quantitykind:VaporPressure",
+            "id": "quantitykind:VaporPressure",
             "_type": [
                 "qudt:QuantityKind"
             ],
             "applicableUnit": {
-                "_id": "unit:PA",
+                "id": "unit:PA",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -870,12 +878,12 @@
             "altLabel": "Dampdruk"
         },
         {
-            "_id": "quantitykind:Volume",
+            "id": "quantitykind:Volume",
             "_type": [
                 "qudt:QuantityKind"
             ],
             "applicableUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -884,12 +892,12 @@
             "altLabel": "Volume"
         },
         {
-            "_id": "quantitykind:VolumeFlowRate",
+            "id": "quantitykind:VolumeFlowRate",
             "_type": [
                 "qudt:QuantityKind"
             ],
             "applicableUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -898,7 +906,7 @@
             "altLabel": "Volume per tijdseenheid"
         },
         {
-            "_id": "lzs-medium:hetelektronischmonitoringssysteem",
+            "id": "lzs-medium:hetelektronischmonitoringssysteem",
             "_type": [
                 "rdfs:Resource",
                 "skos:Concept"
@@ -908,7 +916,7 @@
             "topConceptOf": "conceptscheme:medium"
         },
         {
-            "_id": "lzs-medium:lucht",
+            "id": "lzs-medium:lucht",
             "_type": [
                 "rdfs:Resource",
                 "skos:Concept"
@@ -918,7 +926,7 @@
             "topConceptOf": "conceptscheme:medium"
         },
         {
-            "_id": "lzs-medium:spuiwater",
+            "id": "lzs-medium:spuiwater",
             "_type": [
                 "rdfs:Resource",
                 "skos:Concept"
@@ -928,7 +936,7 @@
             "topConceptOf": "conceptscheme:medium"
         },
         {
-            "_id": "lzs-medium:stal",
+            "id": "lzs-medium:stal",
             "_type": [
                 "rdfs:Resource",
                 "skos:Concept"
@@ -938,7 +946,7 @@
             "topConceptOf": "conceptscheme:medium"
         },
         {
-            "_id": "lzs-medium:waswater",
+            "id": "lzs-medium:waswater",
             "_type": [
                 "rdfs:Resource",
                 "skos:Concept"
@@ -948,7 +956,7 @@
             "topConceptOf": "conceptscheme:medium"
         },
         {
-            "_id": "lzs-bandbreedte:_1",
+            "id": "lzs-bandbreedte:_1",
             "_type": [
                 "skos:Concept"
             ],
@@ -967,7 +975,7 @@
             "maxValue": "6"
         },
         {
-            "_id": "lzs-bandbreedte:_10",
+            "id": "lzs-bandbreedte:_10",
             "_type": [
                 "skos:Concept"
             ],
@@ -987,7 +995,7 @@
             "maxValue": "0.8"
         },
         {
-            "_id": "lzs-bandbreedte:_11",
+            "id": "lzs-bandbreedte:_11",
             "_type": [
                 "skos:Concept"
             ],
@@ -1007,7 +1015,7 @@
             "maxValue": "0.9"
         },
         {
-            "_id": "lzs-bandbreedte:_12",
+            "id": "lzs-bandbreedte:_12",
             "_type": [
                 "skos:Concept"
             ],
@@ -1027,7 +1035,7 @@
             "maxValue": "0.6"
         },
         {
-            "_id": "lzs-bandbreedte:_13",
+            "id": "lzs-bandbreedte:_13",
             "_type": [
                 "skos:Concept"
             ],
@@ -1047,7 +1055,7 @@
             "minValue": "1.4"
         },
         {
-            "_id": "lzs-bandbreedte:_14",
+            "id": "lzs-bandbreedte:_14",
             "_type": [
                 "skos:Concept"
             ],
@@ -1067,7 +1075,7 @@
             "maxValue": "0.8"
         },
         {
-            "_id": "lzs-bandbreedte:_15",
+            "id": "lzs-bandbreedte:_15",
             "_type": [
                 "skos:Concept"
             ],
@@ -1087,7 +1095,7 @@
             "maxValue": "0.8"
         },
         {
-            "_id": "lzs-bandbreedte:_16",
+            "id": "lzs-bandbreedte:_16",
             "_type": [
                 "skos:Concept"
             ],
@@ -1107,7 +1115,7 @@
             "minValue": "50"
         },
         {
-            "_id": "lzs-bandbreedte:_2",
+            "id": "lzs-bandbreedte:_2",
             "_type": [
                 "skos:Concept"
             ],
@@ -1126,7 +1134,7 @@
             "minValue": "8.5"
         },
         {
-            "_id": "lzs-bandbreedte:_3",
+            "id": "lzs-bandbreedte:_3",
             "_type": [
                 "skos:Concept"
             ],
@@ -1146,7 +1154,7 @@
             "minValue": "0"
         },
         {
-            "_id": "lzs-bandbreedte:_4",
+            "id": "lzs-bandbreedte:_4",
             "_type": [
                 "skos:Concept"
             ],
@@ -1166,7 +1174,7 @@
             "maxValue": "0.8"
         },
         {
-            "_id": "lzs-bandbreedte:_5",
+            "id": "lzs-bandbreedte:_5",
             "_type": [
                 "skos:Concept"
             ],
@@ -1186,7 +1194,7 @@
             "maxValue": "0.9"
         },
         {
-            "_id": "lzs-bandbreedte:_6",
+            "id": "lzs-bandbreedte:_6",
             "_type": [
                 "skos:Concept"
             ],
@@ -1206,7 +1214,7 @@
             "maxValue": "0.6"
         },
         {
-            "_id": "lzs-bandbreedte:_7",
+            "id": "lzs-bandbreedte:_7",
             "_type": [
                 "skos:Concept"
             ],
@@ -1226,7 +1234,7 @@
             "minValue": "1.4"
         },
         {
-            "_id": "lzs-bandbreedte:_8",
+            "id": "lzs-bandbreedte:_8",
             "_type": [
                 "skos:Concept"
             ],
@@ -1246,7 +1254,7 @@
             "minValue": "1"
         },
         {
-            "_id": "lzs-bandbreedte:_9",
+            "id": "lzs-bandbreedte:_9",
             "_type": [
                 "skos:Concept"
             ],
@@ -1266,7 +1274,7 @@
             "minValue": "0"
         },
         {
-            "_id": "lzs-param:biobedspoelwaterproductie",
+            "id": "lzs-param:biobedspoelwaterproductie",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1276,7 +1284,7 @@
                 "quantitykind:Volume"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1290,7 +1298,7 @@
             "relevantLZS": "lzs-type:s3"
         },
         {
-            "_id": "lzs-param:biobedspuiwaterproductie",
+            "id": "lzs-param:biobedspuiwaterproductie",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1300,7 +1308,7 @@
                 "quantitykind:Volume"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1314,7 +1322,7 @@
             "relevantLZS": "lzs-type:s3"
         },
         {
-            "_id": "lzs-param:drukvaloverhetsysteem",
+            "id": "lzs-param:drukvaloverhetsysteem",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1324,7 +1332,7 @@
                 "quantitykind:VaporPressure"
             ],
             "relevantUnit": {
-                "_id": "unit:PA",
+                "id": "unit:PA",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1342,7 +1350,7 @@
             ]
         },
         {
-            "_id": "lzs-param:geleidbaarheidvanhetwaswater",
+            "id": "lzs-param:geleidbaarheidvanhetwaswater",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1352,7 +1360,7 @@
                 "quantitykind:Conductivity"
             ],
             "relevantUnit": {
-                "_id": "unit:MilliS-PER-CentiM",
+                "id": "unit:MilliS-PER-CentiM",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1370,7 +1378,7 @@
             ]
         },
         {
-            "_id": "lzs-param:spuiwaterproductie",
+            "id": "lzs-param:spuiwaterproductie",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1380,7 +1388,7 @@
                 "quantitykind:Volume"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1397,7 +1405,7 @@
             ]
         },
         {
-            "_id": "lzs-param:stalbezetting",
+            "id": "lzs-param:stalbezetting",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1416,7 +1424,7 @@
             ]
         },
         {
-            "_id": "lzs-param:systeemstatus",
+            "id": "lzs-param:systeemstatus",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1435,7 +1443,7 @@
             ]
         },
         {
-            "_id": "lzs-param:waswaterdebiet",
+            "id": "lzs-param:waswaterdebiet",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1445,7 +1453,7 @@
                 "quantitykind:VolumeFlowRate"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1462,7 +1470,7 @@
             ]
         },
         {
-            "_id": "lzs-param:waswaterdebietbevloeiing",
+            "id": "lzs-param:waswaterdebietbevloeiing",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1472,7 +1480,7 @@
                 "quantitykind:VolumeFlowRate"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1486,7 +1494,7 @@
             "relevantLZS": "lzs-type:s3"
         },
         {
-            "_id": "lzs-param:waswaterdebietvoorbevochtiging",
+            "id": "lzs-param:waswaterdebietvoorbevochtiging",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1496,7 +1504,7 @@
                 "quantitykind:VolumeFlowRate"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1510,7 +1518,7 @@
             "relevantLZS": "lzs-type:s3"
         },
         {
-            "_id": "lzs-param:zuurtegraadwaswater",
+            "id": "lzs-param:zuurtegraadwaswater",
             "_type": [
                 "skos:Concept",
                 "ssn:Property"
@@ -1520,7 +1528,7 @@
                 "quantitykind:Acidity"
             ],
             "relevantUnit": {
-                "_id": "unit:PH",
+                "id": "unit:PH",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1538,12 +1546,12 @@
             ]
         },
         {
-            "_id": "lzs-param-norm:_1",
+            "id": "lzs-param-norm:_1",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:PH",
+                "id": "unit:PH",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1558,12 +1566,12 @@
             "technischefiche": "false"
         },
         {
-            "_id": "lzs-param-norm:_10",
+            "id": "lzs-param-norm:_10",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:PA",
+                "id": "unit:PA",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1579,12 +1587,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_11",
+            "id": "lzs-param-norm:_11",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1600,12 +1608,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_12",
+            "id": "lzs-param-norm:_12",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1621,12 +1629,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_13",
+            "id": "lzs-param-norm:_13",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1642,12 +1650,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_14",
+            "id": "lzs-param-norm:_14",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1663,12 +1671,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_15",
+            "id": "lzs-param-norm:_15",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:PA",
+                "id": "unit:PA",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1684,12 +1692,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_2",
+            "id": "lzs-param-norm:_2",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:MilliS-PER-CentiM",
+                "id": "unit:MilliS-PER-CentiM",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1705,12 +1713,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_3",
+            "id": "lzs-param-norm:_3",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1726,12 +1734,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_4",
+            "id": "lzs-param-norm:_4",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1747,12 +1755,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_5",
+            "id": "lzs-param-norm:_5",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:PA",
+                "id": "unit:PA",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1768,12 +1776,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_6",
+            "id": "lzs-param-norm:_6",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:PH",
+                "id": "unit:PH",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1789,12 +1797,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_7",
+            "id": "lzs-param-norm:_7",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:MilliS-PER-CentiM",
+                "id": "unit:MilliS-PER-CentiM",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1810,12 +1818,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_8",
+            "id": "lzs-param-norm:_8",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3-PER-HR",
+                "id": "unit:M3-PER-HR",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1831,12 +1839,12 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-param-norm:_9",
+            "id": "lzs-param-norm:_9",
             "_type": [
                 "skos:Concept"
             ],
             "relevantUnit": {
-                "_id": "unit:M3",
+                "id": "unit:M3",
                 "_type": [
                     "qudt:Unit"
                 ],
@@ -1852,7 +1860,7 @@
             "technischefiche": "true"
         },
         {
-            "_id": "lzs-stalbezetting:in_gebruik",
+            "id": "lzs-stalbezetting:in_gebruik",
             "_type": [
                 "skos:Concept"
             ],
@@ -1861,7 +1869,7 @@
             "topConceptOf": "conceptscheme:stalbezetting"
         },
         {
-            "_id": "lzs-stalbezetting:leeg",
+            "id": "lzs-stalbezetting:leeg",
             "_type": [
                 "skos:Concept"
             ],
@@ -1870,7 +1878,7 @@
             "topConceptOf": "conceptscheme:stalbezetting"
         },
         {
-            "_id": "lzs-status:gereinigd",
+            "id": "lzs-status:gereinigd",
             "_type": [
                 "skos:Concept"
             ],
@@ -1879,7 +1887,7 @@
             "topConceptOf": "conceptscheme:systeemstatus"
         },
         {
-            "_id": "lzs-status:onderhoud",
+            "id": "lzs-status:onderhoud",
             "_type": [
                 "skos:Concept"
             ],
@@ -1888,7 +1896,7 @@
             "topConceptOf": "conceptscheme:systeemstatus"
         },
         {
-            "_id": "lzs-status:operationeel",
+            "id": "lzs-status:operationeel",
             "_type": [
                 "skos:Concept"
             ],
@@ -1897,7 +1905,7 @@
             "topConceptOf": "conceptscheme:systeemstatus"
         },
         {
-            "_id": "lzs-status:storing",
+            "id": "lzs-status:storing",
             "_type": [
                 "skos:Concept"
             ],
@@ -1906,7 +1914,7 @@
             "topConceptOf": "conceptscheme:systeemstatus"
         },
         {
-            "_id": "lzs-type:luchtwassysteem",
+            "id": "lzs-type:luchtwassysteem",
             "_type": [
                 "skos:Concept"
             ],
@@ -1929,7 +1937,7 @@
             ]
         },
         {
-            "_id": "lzs-type:luchtzuiveringssysteem",
+            "id": "lzs-type:luchtzuiveringssysteem",
             "_type": [
                 "skos:Concept"
             ],
@@ -1954,7 +1962,7 @@
             "topConceptOf": "conceptscheme:systeemtype"
         },
         {
-            "_id": "lzs-type:s1",
+            "id": "lzs-type:s1",
             "_type": [
                 "skos:Concept"
             ],
@@ -1981,7 +1989,7 @@
             ]
         },
         {
-            "_id": "lzs-type:s2",
+            "id": "lzs-type:s2",
             "_type": [
                 "skos:Concept"
             ],
@@ -2008,7 +2016,7 @@
             ]
         },
         {
-            "_id": "lzs-type:s3",
+            "id": "lzs-type:s3",
             "_type": [
                 "skos:Concept"
             ],
@@ -2031,7 +2039,7 @@
             ]
         },
         {
-            "_id": "vlarem-klasse:k1",
+            "id": "vlarem-klasse:k1",
             "_type": [
                 "skos:Concept"
             ],
@@ -2043,7 +2051,7 @@
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
         {
-            "_id": "vlarem-klasse:k2",
+            "id": "vlarem-klasse:k2",
             "_type": [
                 "skos:Concept"
             ],
@@ -2055,7 +2063,7 @@
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
         {
-            "_id": "vlarem-klasse:k3",
+            "id": "vlarem-klasse:k3",
             "_type": [
                 "skos:Concept"
             ],
@@ -2067,7 +2075,7 @@
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
         {
-            "_id": "conceptscheme:medium",
+            "id": "conceptscheme:medium",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2081,7 +2089,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem medium"
         },
         {
-            "_id": "conceptscheme:norm-bandbreedte",
+            "id": "conceptscheme:norm-bandbreedte",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2107,7 +2115,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem normbandbreedte"
         },
         {
-            "_id": "conceptscheme:parameter",
+            "id": "conceptscheme:parameter",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2127,7 +2135,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem eigenschap"
         },
         {
-            "_id": "conceptscheme:parameter-norm",
+            "id": "conceptscheme:parameter-norm",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2153,7 +2161,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
         },
         {
-            "_id": "conceptscheme:stalbezetting",
+            "id": "conceptscheme:stalbezetting",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2164,7 +2172,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
         },
         {
-            "_id": "conceptscheme:systeemstatus",
+            "id": "conceptscheme:systeemstatus",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2177,7 +2185,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem status"
         },
         {
-            "_id": "conceptscheme:systeemtype",
+            "id": "conceptscheme:systeemtype",
             "_type": [
                 "skos:ConceptScheme"
             ],
@@ -2187,7 +2195,7 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem"
         },
         {
-            "_id": "conceptscheme-alg:vlarem-klasse",
+            "id": "conceptscheme-alg:vlarem-klasse",
             "_type": [
                 "skos:ConceptScheme"
             ],

@@ -1,6 +1,6 @@
 [
     {
-        "_id": "http://qudt.org/vocab/quantitykind/Acidity",
+        "id": "http://qudt.org/vocab/quantitykind/Acidity",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
@@ -8,7 +8,7 @@
         "altLabel": "Zuurtegraad"
     },
     {
-        "_id": "http://qudt.org/vocab/quantitykind/Conductivity",
+        "id": "http://qudt.org/vocab/quantitykind/Conductivity",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
@@ -16,7 +16,7 @@
         "altLabel": "Geleidbaarheid"
     },
     {
-        "_id": "http://qudt.org/vocab/quantitykind/Count",
+        "id": "http://qudt.org/vocab/quantitykind/Count",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
@@ -24,7 +24,7 @@
         "altLabel": "Aantal"
     },
     {
-        "_id": "http://qudt.org/vocab/quantitykind/VaporPressure",
+        "id": "http://qudt.org/vocab/quantitykind/VaporPressure",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
@@ -32,7 +32,7 @@
         "altLabel": "Dampdruk"
     },
     {
-        "_id": "http://qudt.org/vocab/quantitykind/Volume",
+        "id": "http://qudt.org/vocab/quantitykind/Volume",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
@@ -40,7 +40,7 @@
         "altLabel": "Volume"
     },
     {
-        "_id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate",
+        "id": "http://qudt.org/vocab/quantitykind/VolumeFlowRate",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
         ],
@@ -48,7 +48,7 @@
         "altLabel": "Volume per tijdseenheid"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/hetelektronischmonitoringssysteem",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/hetelektronischmonitoringssysteem",
         "_type": [
             "http://www.w3.org/2000/01/rdf-schema#Resource",
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -58,7 +58,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/lucht",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/lucht",
         "_type": [
             "http://www.w3.org/2000/01/rdf-schema#Resource",
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -68,7 +68,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/spuiwater",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/spuiwater",
         "_type": [
             "http://www.w3.org/2000/01/rdf-schema#Resource",
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -78,7 +78,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/stal",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/stal",
         "_type": [
             "http://www.w3.org/2000/01/rdf-schema#Resource",
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -88,7 +88,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/waswater",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/waswater",
         "_type": [
             "http://www.w3.org/2000/01/rdf-schema#Resource",
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -98,7 +98,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -117,7 +117,7 @@
         "maxValue": "6"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_10",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_10",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -137,7 +137,7 @@
         "maxValue": "0.8"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_11",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_11",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -157,7 +157,7 @@
         "maxValue": "0.9"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_12",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_12",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -177,7 +177,7 @@
         "maxValue": "0.6"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_13",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_13",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -197,7 +197,7 @@
         "minValue": "1.4"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_14",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_14",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -217,7 +217,7 @@
         "maxValue": "0.8"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_15",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_15",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -237,7 +237,7 @@
         "maxValue": "0.8"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -257,7 +257,7 @@
         "minValue": "50"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -276,7 +276,7 @@
         "minValue": "8.5"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_3",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_3",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -296,7 +296,7 @@
         "minValue": "0"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_4",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_4",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -316,7 +316,7 @@
         "maxValue": "0.8"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_5",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_5",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -336,7 +336,7 @@
         "maxValue": "0.9"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_6",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_6",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -356,7 +356,7 @@
         "maxValue": "0.6"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_7",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_7",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -376,7 +376,7 @@
         "minValue": "1.4"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_8",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_8",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -396,7 +396,7 @@
         "minValue": "1"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_9",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_9",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -416,7 +416,7 @@
         "minValue": "0"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -432,7 +432,7 @@
         "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -448,7 +448,7 @@
         "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -468,7 +468,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -487,7 +487,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -506,7 +506,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -522,7 +522,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -538,7 +538,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -557,7 +557,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -573,7 +573,7 @@
         "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -589,7 +589,7 @@
         "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
             "http://www.w3.org/ns/ssn/Property"
@@ -608,7 +608,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_1",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_1",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -620,7 +620,7 @@
         "technischefiche": "false"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_10",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_10",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -633,7 +633,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_11",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_11",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -646,7 +646,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_12",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_12",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -659,7 +659,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_13",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_13",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -672,7 +672,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_14",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_14",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -685,7 +685,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_15",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_15",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -698,7 +698,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_2",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_2",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -711,7 +711,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_3",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_3",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -724,7 +724,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_4",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_4",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -737,7 +737,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_5",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_5",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -750,7 +750,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_6",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_6",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -763,7 +763,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_7",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_7",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -776,7 +776,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_8",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_8",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -789,7 +789,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -802,7 +802,7 @@
         "technischefiche": "true"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -811,7 +811,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -820,7 +820,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -829,7 +829,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -838,7 +838,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -847,7 +847,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -856,7 +856,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -879,7 +879,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -904,7 +904,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -931,7 +931,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -958,7 +958,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -981,7 +981,7 @@
         ]
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -993,7 +993,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -1005,7 +1005,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k3",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k3",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -1017,7 +1017,7 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1031,7 +1031,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem medium"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1057,7 +1057,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem normbandbreedte"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1077,7 +1077,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem eigenschap"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1103,7 +1103,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1114,7 +1114,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1127,7 +1127,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem status"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
@@ -1137,7 +1137,7 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem"
     },
     {
-        "_id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
