@@ -526,7 +526,8 @@
   },
   "relevantLZS": {
     "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS",
-    "@type": "@id"
+    "@type": "@id",
+    "@container": "@set"
   },
   "relevantProperty": {
     "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty",

@@ -112,7 +112,9 @@
         "prefLabel": "Zuurtegraad waswater < 6 (S1 systeem)",
         "scopeNote": "< 6",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "maxValue": "6"
     },
@@ -132,7 +134,9 @@
         "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
         "maxValue": "0.8"
     },
@@ -152,7 +156,9 @@
         "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
         "maxValue": "0.9"
     },
@@ -172,7 +178,9 @@
         "scopeNote": "< 0,6 x waarde technische fiche (afwijking > 40%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "maxValue": "0.6"
     },
@@ -192,7 +200,9 @@
         "scopeNote": "> 1,4 x waarde technische fiche (afwijking > 40%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "minValue": "1.4"
     },
@@ -212,7 +222,9 @@
         "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
         "maxValue": "0.8"
     },
@@ -232,7 +244,9 @@
         "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
         "maxValue": "0.8"
     },
@@ -252,7 +266,9 @@
         "scopeNote": "> 50 Pa + waarde technische fiche (afwijking > 50 Pa)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "som",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "minValue": "50"
     },
@@ -271,7 +287,9 @@
         "prefLabel": "Zuurtegraad waswater > 8,5 (S1 systeem)",
         "scopeNote": "> 8,5",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "minValue": "8.5"
     },
@@ -291,7 +309,9 @@
         "scopeNote": "> waarde technische fiche",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "som",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
         "minValue": "0"
     },
@@ -311,7 +331,9 @@
         "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
         "maxValue": "0.8"
     },
@@ -331,7 +353,9 @@
         "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
         "maxValue": "0.9"
     },
@@ -351,7 +375,9 @@
         "scopeNote": "< 0,6 x waarde technische fiche (afwijking > 40%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "maxValue": "0.6"
     },
@@ -371,7 +397,9 @@
         "scopeNote": "> 1,4 x waarde technische fiche (afwijking > 40%)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "product",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "minValue": "1.4"
     },
@@ -391,7 +419,9 @@
         "scopeNote": "> 1 pH + waarde technische fiche (afwijking > 1pH)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "som",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "minValue": "1"
     },
@@ -411,7 +441,9 @@
         "scopeNote": "> waarde technische fiche",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
         "operatie": "som",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
         "minValue": "0"
     },
@@ -429,7 +461,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "prefLabel": "Biobedspoelwaterproductie",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ]
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
@@ -445,7 +479,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "prefLabel": "Biobedspuiwaterproductie",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ]
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
@@ -576,7 +612,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "prefLabel": "Waswaterdebiet van de bevloeiing van het vulmateriaal",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ]
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
@@ -592,7 +630,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "prefLabel": "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ]
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
@@ -621,7 +661,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "prefLabel": "Zuurtegraad waswater S1 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "technischefiche": "false"
     },
@@ -634,7 +676,9 @@
         "prefLabel": "Drukval S2 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "exact",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "technischefiche": "true"
     },
@@ -647,7 +691,9 @@
         "prefLabel": "Waswaterdebiet voorbevochtiging S3 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
         "technischefiche": "true"
     },
@@ -660,7 +706,9 @@
         "prefLabel": "Waswaterdebiet bevloeiing S3 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
         "technischefiche": "true"
     },
@@ -673,7 +721,9 @@
         "prefLabel": "Biobedspuiwaterproductie S3 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
         "technischefiche": "true"
     },
@@ -686,7 +736,9 @@
         "prefLabel": "Biobedspoelwaterproductie S3 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
         "technischefiche": "true"
     },
@@ -699,7 +751,9 @@
         "prefLabel": "Drukval S3 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "maximum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "technischefiche": "true"
     },
@@ -712,7 +766,9 @@
         "prefLabel": "Geleidbaarheid waswater S1 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "maximum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
         "technischefiche": "true"
     },
@@ -725,7 +781,9 @@
         "prefLabel": "Waswaterdebiet S1 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
         "technischefiche": "true"
     },
@@ -738,7 +796,9 @@
         "prefLabel": "Spuiwaterdebiet S1 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
         "technischefiche": "true"
     },
@@ -751,7 +811,9 @@
         "prefLabel": "Drukval S1 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "exact",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
         "technischefiche": "true"
     },
@@ -764,7 +826,9 @@
         "prefLabel": "Zuurtegraad waswater S2 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "maximum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "technischefiche": "true"
     },
@@ -777,7 +841,9 @@
         "prefLabel": "Geleidbaarheid waswater S2 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "maximum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
         "technischefiche": "true"
     },
@@ -790,7 +856,9 @@
         "prefLabel": "Waswaterdebiet S2 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
         "technischefiche": "true"
     },
@@ -803,7 +871,9 @@
         "prefLabel": "Spuiwaterdebiet S2 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "referentiewaardeType": "minimum",
-        "relevantLZS": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
+        ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
         "technischefiche": "true"
     },
