@@ -259,7 +259,6 @@ const frame_skos_no_prefixes = {
         "@omitDefault": true
     },
     "relevantCodeList":  {
-        "@type": "http://www.w3.org/2004/02/skos/core#Concept",
         "@embed": "@never",
         "@omitDefault": true
     },

@@ -515,6 +515,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "prefLabel": "Stalbezetting",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
+        "relevantCodeList": [
+            "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsst"
+        ],
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
@@ -531,6 +534,9 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "prefLabel": "SysteemStatus",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
+        "relevantCodeList": [
+            "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzss"
+        ],
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
