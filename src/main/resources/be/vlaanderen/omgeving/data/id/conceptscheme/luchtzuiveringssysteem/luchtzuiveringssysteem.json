@@ -516,7 +516,7 @@
         "prefLabel": "Stalbezetting",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantCodeList": [
-            "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzsst"
+            "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting"
         ],
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
@@ -535,7 +535,7 @@
         "prefLabel": "SysteemStatus",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantCodeList": [
-            "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/lzss"
+            "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
         ],
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",

@@ -1415,7 +1415,7 @@
             "prefLabel": "Stalbezetting",
             "topConceptOf": "conceptscheme:parameter",
             "relevantCodeList": [
-                "conceptscheme:lzsst"
+                "conceptscheme:stalbezetting"
             ],
             "relevantLZS": [
                 "lzs-type:s2",
@@ -1434,7 +1434,7 @@
             "prefLabel": "SysteemStatus",
             "topConceptOf": "conceptscheme:parameter",
             "relevantCodeList": [
-                "conceptscheme:lzss"
+                "conceptscheme:systeemstatus"
             ],
             "relevantLZS": [
                 "lzs-type:s2",

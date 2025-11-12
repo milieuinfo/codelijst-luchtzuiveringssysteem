@@ -392,14 +392,14 @@ lzs-param:stalbezetting dcterms:subject lzs-medium:stal;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "Stalbezetting"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzs-vocab:relevantCodeList conceptscheme:lzsst;
+    lzs-vocab:relevantCodeList conceptscheme:stalbezetting;
     lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:systeemstatus dcterms:subject lzs-medium:hetelektronischmonitoringssysteem;
     a skos:Concept, ssn:Property;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "SysteemStatus"@nl;
     skos:topConceptOf conceptscheme:parameter;
-    lzs-vocab:relevantCodeList conceptscheme:lzss;
+    lzs-vocab:relevantCodeList conceptscheme:systeemstatus;
     lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:waswaterdebiet dcterms:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate;
