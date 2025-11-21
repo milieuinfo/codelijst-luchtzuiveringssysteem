@@ -105,6 +105,9 @@ quantitykind:Conductivity qudt:applicableUnit unit:MilliS-PER-CentiM;
 quantitykind:Count qudt:applicableUnit unit:NUM;
     a qudt:QuantityKind;
     skos:altLabel "Aantal"@nl.
+quantitykind:Energy qudt:applicableUnit unit:KiloW-HR;
+    a qudt:QuantityKind;
+    skos:altLabel "Vermogen"@nl.
 quantitykind:VaporPressure qudt:applicableUnit unit:PA;
     a qudt:QuantityKind;
     skos:altLabel "Dampdruk"@nl.
@@ -114,6 +117,8 @@ quantitykind:Volume qudt:applicableUnit unit:M3;
 quantitykind:VolumeFlowRate qudt:applicableUnit unit:M3-PER-HR;
     a qudt:QuantityKind;
     skos:altLabel "Volume per tijdseenheid"@nl.
+unit:KiloW-HR a qudt:Unit;
+    skos:altLabel "Kilowattuur"@nl.
 unit:M3-PER-HR a qudt:Unit;
     skos:altLabel "Kubieke meter per uur"@nl.
 unit:M3 a qudt:Unit;
@@ -366,6 +371,14 @@ lzs-param:drukvaloverhetsysteem dcterms:subject lzs-medium:lucht;
     skos:topConceptOf conceptscheme:parameter;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
+lzs-param:elektriciteitsverbruikwaterpompen qudt:relevantQuantityKind quantitykind:Energy;
+    qudt:relevantUnit unit:KiloW-HR;
+    a skos:Concept, ssn:Property;
+    skos:inScheme conceptscheme:parameter;
+    skos:prefLabel "Elektriciteitsverbruik van de waswaterpomp(en)"@nl;
+    skos:topConceptOf conceptscheme:parameter;
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:lelysphere.
 lzs-param:geleidbaarheidvanhetwaswater dcterms:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:Conductivity;
     qudt:relevantUnit unit:MilliS-PER-CentiM;
@@ -376,7 +389,7 @@ lzs-param:geleidbaarheidvanhetwaswater dcterms:subject lzs-medium:waswater;
     skos:topConceptOf conceptscheme:parameter;
     lzs-vocab:hasProcedureForProperty procedure:WAC_I_A_011;
     lzs-vocab:relevantDataType xsd:decimal;
-    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:relevantLZS lzs-type:lelysphere, lzs-type:s1, lzs-type:s2.
 lzs-param:spuiwaterproductie dcterms:subject lzs-medium:spuiwater;
     qudt:relevantQuantityKind quantitykind:Volume;
     qudt:relevantUnit unit:M3;
@@ -386,7 +399,7 @@ lzs-param:spuiwaterproductie dcterms:subject lzs-medium:spuiwater;
     skos:prefLabel "Spuiwaterproductie"@nl;
     skos:topConceptOf conceptscheme:parameter;
     lzs-vocab:relevantDataType xsd:decimal;
-    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:relevantLZS lzs-type:lelysphere, lzs-type:s1, lzs-type:s2.
 lzs-param:stalbezetting dcterms:subject lzs-medium:stal;
     a skos:Concept, ssn:Property;
     skos:inScheme conceptscheme:parameter;
@@ -410,7 +423,7 @@ lzs-param:waswaterdebiet dcterms:subject lzs-medium:waswater;
     skos:prefLabel "Waswaterdebiet over het waspakket"@nl;
     skos:topConceptOf conceptscheme:parameter;
     lzs-vocab:relevantDataType xsd:decimal;
-    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2.
+    lzs-vocab:relevantLZS lzs-type:lelysphere, lzs-type:s1, lzs-type:s2.
 lzs-param:waswaterdebietbevloeiing dcterms:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -451,7 +464,9 @@ lzs-param-norm:_10 qudt:relevantUnit unit:PA;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s2;
     lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:maxValue "500"^^xsd:decimal;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_11 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -501,16 +516,61 @@ lzs-param-norm:_15 qudt:relevantUnit unit:PA;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s3;
     lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
+    lzs-vocab:technischefiche true;
+    schema:maxValue "500"^^xsd:decimal;
+    schema:minValue "0"^^xsd:decimal.
+lzs-param-norm:_16 qudt:relevantUnit unit:MilliS-PER-CentiM;
+    a skos:Concept;
+    skos:inScheme conceptscheme:parameter-norm;
+    skos:prefLabel "Geleidbaarheid waswater Lely Sphere systeem"@nl;
+    skos:topConceptOf conceptscheme:parameter-norm;
+    lzs-vocab:referentiewaardeType "maximum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    lzs-vocab:technischefiche true.
+lzs-param-norm:_17 qudt:relevantUnit unit:M3-PER-HR;
+    a skos:Concept;
+    skos:inScheme conceptscheme:parameter-norm;
+    skos:prefLabel "Waswaterdebiet Lely Sphere systeem"@nl;
+    skos:topConceptOf conceptscheme:parameter-norm;
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
+    lzs-vocab:technischefiche true.
+lzs-param-norm:_18 qudt:relevantUnit unit:M3;
+    a skos:Concept;
+    skos:inScheme conceptscheme:parameter-norm;
+    skos:prefLabel "Spuiwaterdebiet Lely Sphere systeem"@nl;
+    skos:topConceptOf conceptscheme:parameter-norm;
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
+    lzs-vocab:technischefiche true.
+lzs-param-norm:_19 qudt:relevantUnit unit:KiloW-HR;
+    a skos:Concept;
+    skos:inScheme conceptscheme:parameter-norm;
+    skos:prefLabel "Elektriciteitsverbruik van de waswaterpomp(en) Lely Sphere systeem"@nl;
+    skos:topConceptOf conceptscheme:parameter-norm;
+    lzs-vocab:referentiewaardeType "minimum";
+    lzs-vocab:relevantDataType xsd:decimal;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen;
     lzs-vocab:technischefiche true.
 lzs-param-norm:_1 qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
     skos:prefLabel "Zuurtegraad waswater S1 systeem"@nl;
     skos:topConceptOf conceptscheme:parameter-norm;
+    lzs-vocab:referentiewaardeType "maximum";
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s1;
     lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
-    lzs-vocab:technischefiche false.
+    lzs-vocab:technischefiche true;
+    schema:maxValue 8.5;
+    schema:minValue "6"^^xsd:decimal.
 lzs-param-norm:_2 qudt:relevantUnit unit:MilliS-PER-CentiM;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -520,7 +580,9 @@ lzs-param-norm:_2 qudt:relevantUnit unit:MilliS-PER-CentiM;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s1;
     lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:maxValue "30"^^xsd:decimal;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_3 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -550,7 +612,9 @@ lzs-param-norm:_5 qudt:relevantUnit unit:PA;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s1;
     lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:maxValue "500"^^xsd:decimal;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_6 qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -560,7 +624,9 @@ lzs-param-norm:_6 qudt:relevantUnit unit:PH;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s2;
     lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:maxValue "14"^^xsd:decimal;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_7 qudt:relevantUnit unit:MilliS-PER-CentiM;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -570,7 +636,9 @@ lzs-param-norm:_7 qudt:relevantUnit unit:MilliS-PER-CentiM;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s2;
     lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:maxValue "500"^^xsd:decimal;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_8 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -615,20 +683,28 @@ lzs-status:storing a skos:Concept;
     skos:inScheme conceptscheme:systeemstatus;
     skos:prefLabel "Storing"@nl;
     skos:topConceptOf conceptscheme:systeemstatus.
+lzs-type:lelysphere a skos:Concept;
+    skos:broader lzs-type:luchtwassysteem;
+    skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
+    skos:inScheme conceptscheme:systeemtype;
+    skos:notation "Lelysphere";
+    skos:prefLabel "Lely Sphere"@nl;
+    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
+    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:waswaterdebiet.
 lzs-type:luchtwassysteem a skos:Concept;
     skos:broader lzs-type:luchtzuiveringssysteem;
     skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
     skos:inScheme conceptscheme:systeemtype;
-    skos:narrower lzs-type:s1, lzs-type:s2;
-    skos:narrowerTransitive lzs-type:s1, lzs-type:s2;
+    skos:narrower lzs-type:lelysphere, lzs-type:s1, lzs-type:s2;
+    skos:narrowerTransitive lzs-type:lelysphere, lzs-type:s1, lzs-type:s2;
     skos:prefLabel "Luchtwassysteem"@nl;
-    skos:semanticRelation lzs-type:luchtzuiveringssysteem, lzs-type:s1, lzs-type:s2.
+    skos:semanticRelation lzs-type:lelysphere, lzs-type:luchtzuiveringssysteem, lzs-type:s1, lzs-type:s2.
 lzs-type:luchtzuiveringssysteem a skos:Concept;
     skos:inScheme conceptscheme:systeemtype;
     skos:narrower lzs-type:luchtwassysteem, lzs-type:s3;
-    skos:narrowerTransitive lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
+    skos:narrowerTransitive lzs-type:lelysphere, lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
     skos:prefLabel "Luchtzuiveringssysteem"@nl;
-    skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
+    skos:semanticRelation lzs-type:lelysphere, lzs-type:luchtwassysteem, lzs-type:s1, lzs-type:s2, lzs-type:s3;
     skos:topConceptOf conceptscheme:systeemtype.
 lzs-type:s1 a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
@@ -684,11 +760,11 @@ conceptscheme:norm-bandbreedte a skos:ConceptScheme;
     skos:prefLabel "conceptschema luchtzuiveringssysteem normbandbreedte"@nl.
 conceptscheme:parameter-norm a skos:ConceptScheme;
     skos:definition "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl;
-    skos:hasTopConcept lzs-param-norm:_10, lzs-param-norm:_11, lzs-param-norm:_12, lzs-param-norm:_13, lzs-param-norm:_14, lzs-param-norm:_15, lzs-param-norm:_1, lzs-param-norm:_2, lzs-param-norm:_3, lzs-param-norm:_4, lzs-param-norm:_5, lzs-param-norm:_6, lzs-param-norm:_7, lzs-param-norm:_8, lzs-param-norm:_9;
+    skos:hasTopConcept lzs-param-norm:_10, lzs-param-norm:_11, lzs-param-norm:_12, lzs-param-norm:_13, lzs-param-norm:_14, lzs-param-norm:_15, lzs-param-norm:_16, lzs-param-norm:_17, lzs-param-norm:_18, lzs-param-norm:_19, lzs-param-norm:_1, lzs-param-norm:_2, lzs-param-norm:_3, lzs-param-norm:_4, lzs-param-norm:_5, lzs-param-norm:_6, lzs-param-norm:_7, lzs-param-norm:_8, lzs-param-norm:_9;
     skos:note "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl;
     skos:prefLabel "conceptschema luchtzuiveringssysteem parameter specificatie"@nl.
 conceptscheme:parameter a skos:ConceptScheme;
-    skos:hasTopConcept lzs-param:biobedspoelwaterproductie, lzs-param:biobedspuiwaterproductie, lzs-param:drukvaloverhetsysteem, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:waswaterdebietbevloeiing, lzs-param:waswaterdebietvoorbevochtiging, lzs-param:zuurtegraadwaswater;
+    skos:hasTopConcept lzs-param:biobedspoelwaterproductie, lzs-param:biobedspuiwaterproductie, lzs-param:drukvaloverhetsysteem, lzs-param:elektriciteitsverbruikwaterpompen, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:waswaterdebietbevloeiing, lzs-param:waswaterdebietvoorbevochtiging, lzs-param:zuurtegraadwaswater;
     skos:prefLabel "conceptschema luchtzuiveringssysteem eigenschap"@nl.
 conceptscheme:stalbezetting a skos:ConceptScheme;
     skos:hasTopConcept lzs-stalbezetting:in_gebruik, lzs-stalbezetting:leeg;

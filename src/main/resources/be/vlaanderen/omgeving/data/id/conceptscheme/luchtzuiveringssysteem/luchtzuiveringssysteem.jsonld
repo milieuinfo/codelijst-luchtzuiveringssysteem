@@ -865,6 +865,20 @@
             "altLabel": "Aantal"
         },
         {
+            "id": "quantitykind:Energy",
+            "_type": [
+                "qudt:QuantityKind"
+            ],
+            "applicableUnit": {
+                "id": "unit:KiloW-HR",
+                "_type": [
+                    "qudt:Unit"
+                ],
+                "altLabel": "Kilowattuur"
+            },
+            "altLabel": "Vermogen"
+        },
+        {
             "id": "quantitykind:VaporPressure",
             "_type": [
                 "qudt:QuantityKind"
@@ -1387,6 +1401,30 @@
             ]
         },
         {
+            "id": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "_type": [
+                "skos:Concept",
+                "ssn:Property"
+            ],
+            "relevantQuantityKind": [
+                "quantitykind:Energy"
+            ],
+            "relevantUnit": {
+                "id": "unit:KiloW-HR",
+                "_type": [
+                    "qudt:Unit"
+                ],
+                "altLabel": "Kilowattuur"
+            },
+            "inScheme": "conceptscheme:parameter",
+            "prefLabel": "Elektriciteitsverbruik van de waswaterpomp(en)",
+            "topConceptOf": "conceptscheme:parameter",
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ]
+        },
+        {
             "id": "lzs-param:geleidbaarheidvanhetwaswater",
             "_type": [
                 "skos:Concept",
@@ -1411,7 +1449,8 @@
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s2",
-                "lzs-type:s1"
+                "lzs-type:s1",
+                "lzs-type:lelysphere"
             ]
         },
         {
@@ -1438,7 +1477,8 @@
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s2",
-                "lzs-type:s1"
+                "lzs-type:s1",
+                "lzs-type:lelysphere"
             ]
         },
         {
@@ -1503,7 +1543,8 @@
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s2",
-                "lzs-type:s1"
+                "lzs-type:s1",
+                "lzs-type:lelysphere"
             ]
         },
         {
@@ -1601,12 +1642,15 @@
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Zuurtegraad waswater S1 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
+            "referentiewaardeType": "maximum",
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s1"
             ],
             "relevantProperty": "lzs-param:zuurtegraadwaswater",
-            "technischefiche": "false"
+            "technischefiche": "true",
+            "maxValue": "8.5",
+            "minValue": "6"
         },
         {
             "id": "lzs-param-norm:_10",
@@ -1629,7 +1673,9 @@
                 "lzs-type:s2"
             ],
             "relevantProperty": "lzs-param:drukvaloverhetsysteem",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "maxValue": "500",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_11",
@@ -1744,6 +1790,100 @@
                 "lzs-type:s3"
             ],
             "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "technischefiche": "true",
+            "maxValue": "500",
+            "minValue": "0"
+        },
+        {
+            "id": "lzs-param-norm:_16",
+            "_type": [
+                "skos:Concept"
+            ],
+            "relevantUnit": {
+                "id": "unit:MilliS-PER-CentiM",
+                "_type": [
+                    "qudt:Unit"
+                ],
+                "altLabel": "Millisiemens per centimeter"
+            },
+            "inScheme": "conceptscheme:parameter-norm",
+            "prefLabel": "Geleidbaarheid waswater Lely Sphere systeem",
+            "topConceptOf": "conceptscheme:parameter-norm",
+            "referentiewaardeType": "maximum",
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "technischefiche": "true"
+        },
+        {
+            "id": "lzs-param-norm:_17",
+            "_type": [
+                "skos:Concept"
+            ],
+            "relevantUnit": {
+                "id": "unit:M3-PER-HR",
+                "_type": [
+                    "qudt:Unit"
+                ],
+                "altLabel": "Kubieke meter per uur"
+            },
+            "inScheme": "conceptscheme:parameter-norm",
+            "prefLabel": "Waswaterdebiet Lely Sphere systeem",
+            "topConceptOf": "conceptscheme:parameter-norm",
+            "referentiewaardeType": "minimum",
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:waswaterdebiet",
+            "technischefiche": "true"
+        },
+        {
+            "id": "lzs-param-norm:_18",
+            "_type": [
+                "skos:Concept"
+            ],
+            "relevantUnit": {
+                "id": "unit:M3",
+                "_type": [
+                    "qudt:Unit"
+                ],
+                "altLabel": "Kubieke meter"
+            },
+            "inScheme": "conceptscheme:parameter-norm",
+            "prefLabel": "Spuiwaterdebiet Lely Sphere systeem",
+            "topConceptOf": "conceptscheme:parameter-norm",
+            "referentiewaardeType": "minimum",
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "technischefiche": "true"
+        },
+        {
+            "id": "lzs-param-norm:_19",
+            "_type": [
+                "skos:Concept"
+            ],
+            "relevantUnit": {
+                "id": "unit:KiloW-HR",
+                "_type": [
+                    "qudt:Unit"
+                ],
+                "altLabel": "Kilowattuur"
+            },
+            "inScheme": "conceptscheme:parameter-norm",
+            "prefLabel": "Elektriciteitsverbruik van de waswaterpomp(en) Lely Sphere systeem",
+            "topConceptOf": "conceptscheme:parameter-norm",
+            "referentiewaardeType": "minimum",
+            "relevantDataType": "xsd:decimal",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
             "technischefiche": "true"
         },
         {
@@ -1767,7 +1907,9 @@
                 "lzs-type:s1"
             ],
             "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "maxValue": "30",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_3",
@@ -1836,7 +1978,9 @@
                 "lzs-type:s1"
             ],
             "relevantProperty": "lzs-param:drukvaloverhetsysteem",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "maxValue": "500",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_6",
@@ -1859,7 +2003,9 @@
                 "lzs-type:s2"
             ],
             "relevantProperty": "lzs-param:zuurtegraadwaswater",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "maxValue": "14",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_7",
@@ -1882,7 +2028,9 @@
                 "lzs-type:s2"
             ],
             "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "maxValue": "500",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_8",
@@ -1985,6 +2133,30 @@
             "topConceptOf": "conceptscheme:systeemstatus"
         },
         {
+            "id": "lzs-type:lelysphere",
+            "_type": [
+                "skos:Concept"
+            ],
+            "broader": "lzs-type:luchtwassysteem",
+            "broaderTransitive": [
+                "lzs-type:luchtwassysteem",
+                "lzs-type:luchtzuiveringssysteem"
+            ],
+            "inScheme": "conceptscheme:systeemtype",
+            "code": "Lelysphere",
+            "prefLabel": "Lely Sphere",
+            "semanticRelation": [
+                "lzs-type:luchtwassysteem",
+                "lzs-type:luchtzuiveringssysteem"
+            ],
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet",
+                "lzs-param:spuiwaterproductie",
+                "lzs-param:geleidbaarheidvanhetwaswater",
+                "lzs-param:elektriciteitsverbruikwaterpompen"
+            ]
+        },
+        {
             "id": "lzs-type:luchtwassysteem",
             "_type": [
                 "skos:Concept"
@@ -1994,16 +2166,19 @@
             "inScheme": "conceptscheme:systeemtype",
             "narrower": [
                 "lzs-type:s2",
-                "lzs-type:s1"
+                "lzs-type:s1",
+                "lzs-type:lelysphere"
             ],
             "narrowerTransitive": [
                 "lzs-type:s2",
-                "lzs-type:s1"
+                "lzs-type:s1",
+                "lzs-type:lelysphere"
             ],
             "prefLabel": "Luchtwassysteem",
             "semanticRelation": [
                 "lzs-type:s2",
                 "lzs-type:s1",
+                "lzs-type:lelysphere",
                 "lzs-type:luchtzuiveringssysteem"
             ]
         },
@@ -2021,6 +2196,7 @@
                 "lzs-type:s2",
                 "lzs-type:s3",
                 "lzs-type:s1",
+                "lzs-type:lelysphere",
                 "lzs-type:luchtwassysteem"
             ],
             "prefLabel": "Luchtzuiveringssysteem",
@@ -2028,6 +2204,7 @@
                 "lzs-type:s2",
                 "lzs-type:s3",
                 "lzs-type:s1",
+                "lzs-type:lelysphere",
                 "lzs-type:luchtwassysteem"
             ],
             "topConceptOf": "conceptscheme:systeemtype"
@@ -2200,6 +2377,7 @@
                 "lzs-param:geleidbaarheidvanhetwaswater",
                 "lzs-param:biobedspoelwaterproductie",
                 "lzs-param:biobedspuiwaterproductie",
+                "lzs-param:elektriciteitsverbruikwaterpompen",
                 "lzs-param:stalbezetting",
                 "lzs-param:systeemstatus"
             ],
@@ -2218,6 +2396,10 @@
                 "lzs-param-norm:_13",
                 "lzs-param-norm:_14",
                 "lzs-param-norm:_15",
+                "lzs-param-norm:_16",
+                "lzs-param-norm:_17",
+                "lzs-param-norm:_18",
+                "lzs-param-norm:_19",
                 "lzs-param-norm:_1",
                 "lzs-param-norm:_2",
                 "lzs-param-norm:_3",

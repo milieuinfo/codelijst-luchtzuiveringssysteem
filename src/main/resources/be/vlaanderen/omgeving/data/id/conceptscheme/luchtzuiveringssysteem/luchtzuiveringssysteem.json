@@ -24,6 +24,14 @@
         "altLabel": "Aantal"
     },
     {
+        "id": "http://qudt.org/vocab/quantitykind/Energy",
+        "_type": [
+            "http://qudt.org/schema/qudt/QuantityKind"
+        ],
+        "applicableUnit": "http://qudt.org/vocab/unit/KiloW-HR",
+        "altLabel": "Vermogen"
+    },
+    {
         "id": "http://qudt.org/vocab/quantitykind/VaporPressure",
         "_type": [
             "http://qudt.org/schema/qudt/QuantityKind"
@@ -504,6 +512,22 @@
         ]
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept",
+            "http://www.w3.org/ns/ssn/Property"
+        ],
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/quantitykind/Energy"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
+        "prefLabel": "Elektriciteitsverbruik van de waswaterpomp(en)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ]
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept",
@@ -519,7 +543,8 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ]
     },
     {
@@ -538,7 +563,8 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ]
     },
     {
@@ -595,7 +621,8 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ]
     },
     {
@@ -661,11 +688,14 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
         "prefLabel": "Zuurtegraad waswater S1 systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "referentiewaardeType": "maximum",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
-        "technischefiche": "false"
+        "technischefiche": "true",
+        "maxValue": "8.5",
+        "minValue": "6"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_10",
@@ -680,7 +710,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "maxValue": "500",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_11",
@@ -755,6 +787,68 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "technischefiche": "true",
+        "maxValue": "500",
+        "minValue": "0"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_16",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "prefLabel": "Geleidbaarheid waswater Lely Sphere systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "referentiewaardeType": "maximum",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "technischefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_17",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "prefLabel": "Waswaterdebiet Lely Sphere systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "referentiewaardeType": "minimum",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "technischefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_18",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "prefLabel": "Spuiwaterdebiet Lely Sphere systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "referentiewaardeType": "minimum",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "technischefiche": "true"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_19",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "prefLabel": "Elektriciteitsverbruik van de waswaterpomp(en) Lely Sphere systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
+        "referentiewaardeType": "minimum",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
         "technischefiche": "true"
     },
     {
@@ -770,7 +864,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "maxValue": "30",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_3",
@@ -815,7 +911,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "maxValue": "500",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_6",
@@ -830,7 +928,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "maxValue": "14",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_7",
@@ -845,7 +945,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "maxValue": "500",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_8",
@@ -932,6 +1034,30 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "broader": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem",
+        "broaderTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
+        "code": "Lelysphere",
+        "prefLabel": "Lely Sphere",
+        "semanticRelation": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
+        ],
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen"
+        ]
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -941,16 +1067,19 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
         "narrower": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "narrowerTransitive": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "prefLabel": "Luchtwassysteem",
         "semanticRelation": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
         ]
     },
@@ -968,6 +1097,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem"
         ],
         "prefLabel": "Luchtzuiveringssysteem",
@@ -975,6 +1105,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem"
         ],
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype"
@@ -1147,6 +1278,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
         ],
@@ -1165,6 +1297,10 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_13",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_14",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_15",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_16",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_17",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_18",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_19",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_3",
