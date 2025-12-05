@@ -175,6 +175,8 @@ prefixes :
   lzs-stalbezetting: https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/
   lzs-status: https://data.omgeving.vlaanderen.be/id/concept/lzs/status/
   lzs-type: https://data.omgeving.vlaanderen.be/id/concept/lzs/type/
+  lzs-dl-status: https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/
+  lzs-systeemopstelling: https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/
   lzs-vocab: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#
   metadata: https://data.omgeving.vlaanderen.be/ns/metadata#
   observatie: https://data.lzs.omgeving.vlaanderen.be/id/observation/
