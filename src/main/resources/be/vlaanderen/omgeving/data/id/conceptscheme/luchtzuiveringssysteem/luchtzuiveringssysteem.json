@@ -56,10 +56,50 @@
         "altLabel": "Volume per tijdseenheid"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/gevalideerd",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus",
+        "code": "gevalideerd",
+        "prefLabel": "Gevalideerd",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/geweigerd",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus",
+        "code": "geweigerd",
+        "prefLabel": "Geweigerd",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/ingetrokken",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus",
+        "code": "ingetrokken",
+        "prefLabel": "Ingetrokken",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/nietgevalideerd",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus",
+        "code": "nietgevalideerd",
+        "prefLabel": "Niet gevalideerd",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus"
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/hetelektronischmonitoringssysteem",
         "_type": [
-            "http://www.w3.org/2000/01/rdf-schema#Resource",
-            "http://www.w3.org/2004/02/skos/core#Concept"
+            "http://www.w3.org/2004/02/skos/core#Concept",
+            "http://www.w3.org/2000/01/rdf-schema#Resource"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "prefLabel": "Het elektronisch monitoringssysteem",
@@ -68,8 +108,8 @@
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/lucht",
         "_type": [
-            "http://www.w3.org/2000/01/rdf-schema#Resource",
-            "http://www.w3.org/2004/02/skos/core#Concept"
+            "http://www.w3.org/2004/02/skos/core#Concept",
+            "http://www.w3.org/2000/01/rdf-schema#Resource"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "prefLabel": "Lucht",
@@ -78,8 +118,8 @@
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/spuiwater",
         "_type": [
-            "http://www.w3.org/2000/01/rdf-schema#Resource",
-            "http://www.w3.org/2004/02/skos/core#Concept"
+            "http://www.w3.org/2004/02/skos/core#Concept",
+            "http://www.w3.org/2000/01/rdf-schema#Resource"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "prefLabel": "Spuiwater",
@@ -88,8 +128,8 @@
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/stal",
         "_type": [
-            "http://www.w3.org/2000/01/rdf-schema#Resource",
-            "http://www.w3.org/2004/02/skos/core#Concept"
+            "http://www.w3.org/2004/02/skos/core#Concept",
+            "http://www.w3.org/2000/01/rdf-schema#Resource"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "prefLabel": "Stal",
@@ -98,8 +138,8 @@
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/waswater",
         "_type": [
-            "http://www.w3.org/2000/01/rdf-schema#Resource",
-            "http://www.w3.org/2004/02/skos/core#Concept"
+            "http://www.w3.org/2004/02/skos/core#Concept",
+            "http://www.w3.org/2000/01/rdf-schema#Resource"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "prefLabel": "Waswater",
@@ -727,7 +767,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_12",
@@ -742,7 +783,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_13",
@@ -757,7 +799,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_14",
@@ -772,7 +815,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_15",
@@ -804,7 +848,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_17",
@@ -819,7 +864,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_18",
@@ -834,7 +880,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_19",
@@ -849,7 +896,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_2",
@@ -881,7 +929,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_4",
@@ -896,7 +945,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_5",
@@ -962,7 +1012,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9",
@@ -977,7 +1028,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
-        "technischefiche": "true"
+        "technischefiche": "true",
+        "minValue": "0"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik",
@@ -1032,6 +1084,24 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",
         "prefLabel": "Storing",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/enkelvoudig",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling",
+        "prefLabel": "Enkelvoudige opstelling",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling",
+        "prefLabel": "Gecombineerde opstelling",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
@@ -1224,6 +1294,19 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "hasTopConcept": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/gevalideerd",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/geweigerd",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/ingetrokken",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/nietgevalideerd"
+        ],
+        "prefLabel": "conceptschema dataleverancier status"
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
@@ -1324,6 +1407,17 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg"
         ],
         "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "hasTopConcept": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/enkelvoudig",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd"
+        ],
+        "prefLabel": "conceptschema  luchtzuiveringssysteem opstelingen"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",

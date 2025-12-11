@@ -25,6 +25,7 @@
 @prefix gml: <http://www.opengis.net/ont/gml#>.
 @prefix gsp: <http://www.opengis.net/ont/geosparql#>.
 @prefix iioa: <https://data.lzs.omgeving.vlaanderen.be/id/iioa/>.
+@prefix platform: <https://data.lzs.omgeving.vlaanderen.be/id/platform/>.
 @prefix licence: <http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/>.
 @prefix locn: <http://www.w3.org/ns/locn#>.
 @prefix lzs-bandbreedte: <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/>.
@@ -35,6 +36,8 @@
 @prefix lzs-stalbezetting: <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/>.
 @prefix lzs-status: <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/>.
 @prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/>.
+@prefix lzs-dl-status: <https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/>.
+@prefix lzs-systeemopstelling: <https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/>.
 @prefix lzs-vocab: <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#>.
 @prefix metadata: <https://data.omgeving.vlaanderen.be/ns/metadata#>.
 @prefix observatie: <https://data.lzs.omgeving.vlaanderen.be/id/observation/>.
@@ -131,6 +134,26 @@ unit:PA a qudt:Unit;
     skos:altLabel "Pascal"@nl.
 unit:PH a qudt:Unit;
     skos:altLabel "Ph"@nl.
+lzs-dl-status:gevalideerd a skos:Concept;
+    skos:inScheme conceptscheme:dataleverancierstatus;
+    skos:notation "gevalideerd";
+    skos:prefLabel "Gevalideerd"@nl;
+    skos:topConceptOf conceptscheme:dataleverancierstatus.
+lzs-dl-status:geweigerd a skos:Concept;
+    skos:inScheme conceptscheme:dataleverancierstatus;
+    skos:notation "geweigerd";
+    skos:prefLabel "Geweigerd"@nl;
+    skos:topConceptOf conceptscheme:dataleverancierstatus.
+lzs-dl-status:ingetrokken a skos:Concept;
+    skos:inScheme conceptscheme:dataleverancierstatus;
+    skos:notation "ingetrokken";
+    skos:prefLabel "Ingetrokken"@nl;
+    skos:topConceptOf conceptscheme:dataleverancierstatus.
+lzs-dl-status:nietgevalideerd a skos:Concept;
+    skos:inScheme conceptscheme:dataleverancierstatus;
+    skos:notation "nietgevalideerd";
+    skos:prefLabel "Niet gevalideerd"@nl;
+    skos:topConceptOf conceptscheme:dataleverancierstatus.
 lzs-medium:hetelektronischmonitoringssysteem a rdfs:Resource, skos:Concept;
     skos:inScheme conceptscheme:medium;
     skos:prefLabel "Het elektronisch monitoringssysteem"@nl;
@@ -476,7 +499,8 @@ lzs-param-norm:_11 qudt:relevantUnit unit:M3-PER-HR;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s3;
     lzs-vocab:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_12 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -486,7 +510,8 @@ lzs-param-norm:_12 qudt:relevantUnit unit:M3-PER-HR;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s3;
     lzs-vocab:relevantProperty lzs-param:waswaterdebietbevloeiing;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_13 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -496,7 +521,8 @@ lzs-param-norm:_13 qudt:relevantUnit unit:M3;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s3;
     lzs-vocab:relevantProperty lzs-param:biobedspuiwaterproductie;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_14 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -506,7 +532,8 @@ lzs-param-norm:_14 qudt:relevantUnit unit:M3;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s3;
     lzs-vocab:relevantProperty lzs-param:biobedspoelwaterproductie;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_15 qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -528,7 +555,8 @@ lzs-param-norm:_16 qudt:relevantUnit unit:MilliS-PER-CentiM;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:lelysphere;
     lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_17 qudt:relevantUnit unit:M3-PER-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -538,7 +566,8 @@ lzs-param-norm:_17 qudt:relevantUnit unit:M3-PER-HR;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:lelysphere;
     lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_18 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -548,7 +577,8 @@ lzs-param-norm:_18 qudt:relevantUnit unit:M3;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:lelysphere;
     lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_19 qudt:relevantUnit unit:KiloW-HR;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -558,7 +588,8 @@ lzs-param-norm:_19 qudt:relevantUnit unit:KiloW-HR;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:lelysphere;
     lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_1 qudt:relevantUnit unit:PH;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -592,7 +623,8 @@ lzs-param-norm:_3 qudt:relevantUnit unit:M3-PER-HR;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s1;
     lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_4 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -602,7 +634,8 @@ lzs-param-norm:_4 qudt:relevantUnit unit:M3;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s1;
     lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_5 qudt:relevantUnit unit:PA;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -648,7 +681,8 @@ lzs-param-norm:_8 qudt:relevantUnit unit:M3-PER-HR;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s2;
     lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-param-norm:_9 qudt:relevantUnit unit:M3;
     a skos:Concept;
     skos:inScheme conceptscheme:parameter-norm;
@@ -658,7 +692,8 @@ lzs-param-norm:_9 qudt:relevantUnit unit:M3;
     lzs-vocab:relevantDataType xsd:decimal;
     lzs-vocab:relevantLZS lzs-type:s2;
     lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
-    lzs-vocab:technischefiche true.
+    lzs-vocab:technischefiche true;
+    schema:minValue "0"^^xsd:decimal.
 lzs-stalbezetting:in_gebruik a skos:Concept;
     skos:inScheme conceptscheme:stalbezetting;
     skos:prefLabel "Stal in gebruik, dieren aanwezig."@nl;
@@ -683,6 +718,14 @@ lzs-status:storing a skos:Concept;
     skos:inScheme conceptscheme:systeemstatus;
     skos:prefLabel "Storing"@nl;
     skos:topConceptOf conceptscheme:systeemstatus.
+lzs-systeemopstelling:enkelvoudig a skos:Concept;
+    skos:inScheme conceptscheme:systeemopstelling;
+    skos:prefLabel "Enkelvoudige opstelling"@nl;
+    skos:topConceptOf conceptscheme:systeemopstelling.
+lzs-systeemopstelling:gecombineerd a skos:Concept;
+    skos:inScheme conceptscheme:systeemopstelling;
+    skos:prefLabel "Gecombineerde opstelling"@nl;
+    skos:topConceptOf conceptscheme:systeemopstelling.
 lzs-type:lelysphere a skos:Concept;
     skos:broader lzs-type:luchtwassysteem;
     skos:broaderTransitive lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
@@ -751,6 +794,9 @@ vlarem-klasse:k3 a skos:Concept;
     skos:note "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3)."@nl;
     skos:prefLabel "Klasse 3"@nl;
     skos:topConceptOf conceptscheme-alg:vlarem-klasse.
+conceptscheme:dataleverancierstatus a skos:ConceptScheme;
+    skos:hasTopConcept lzs-dl-status:gevalideerd, lzs-dl-status:geweigerd, lzs-dl-status:ingetrokken, lzs-dl-status:nietgevalideerd;
+    skos:prefLabel "conceptschema dataleverancier status"@nl.
 conceptscheme:medium a skos:ConceptScheme;
     skos:hasTopConcept lzs-medium:hetelektronischmonitoringssysteem, lzs-medium:lucht, lzs-medium:spuiwater, lzs-medium:stal, lzs-medium:waswater;
     skos:prefLabel "conceptschema luchtzuiveringssysteem medium"@nl.
@@ -769,6 +815,9 @@ conceptscheme:parameter a skos:ConceptScheme;
 conceptscheme:stalbezetting a skos:ConceptScheme;
     skos:hasTopConcept lzs-stalbezetting:in_gebruik, lzs-stalbezetting:leeg;
     skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.
+conceptscheme:systeemopstelling a skos:ConceptScheme;
+    skos:hasTopConcept lzs-systeemopstelling:enkelvoudig, lzs-systeemopstelling:gecombineerd;
+    skos:prefLabel "conceptschema  luchtzuiveringssysteem opstelingen"@nl.
 conceptscheme:systeemstatus a skos:ConceptScheme;
     skos:hasTopConcept lzs-status:gereinigd, lzs-status:onderhoud, lzs-status:operationeel, lzs-status:storing;
     skos:prefLabel "conceptschema luchtzuiveringssysteem status"@nl.

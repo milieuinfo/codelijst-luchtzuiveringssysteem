@@ -749,6 +749,7 @@
         "gml": "http://www.opengis.net/ont/gml#",
         "gsp": "http://www.opengis.net/ont/geosparql#",
         "iioa": "https://data.lzs.omgeving.vlaanderen.be/id/iioa/",
+        "platform": "https://data.lzs.omgeving.vlaanderen.be/id/platform/",
         "licence": "http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/",
         "locn": "http://www.w3.org/ns/locn#",
         "lzs-bandbreedte": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/",
@@ -759,6 +760,8 @@
         "lzs-stalbezetting": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/",
         "lzs-status": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/",
         "lzs-type": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/",
+        "lzs-dl-status": "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/",
+        "lzs-systeemopstelling": "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/",
         "lzs-vocab": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#",
         "metadata": "https://data.omgeving.vlaanderen.be/ns/metadata#",
         "observatie": "https://data.lzs.omgeving.vlaanderen.be/id/observation/",
@@ -921,10 +924,50 @@
             "altLabel": "Volume per tijdseenheid"
         },
         {
+            "id": "lzs-dl-status:gevalideerd",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:dataleverancierstatus",
+            "code": "gevalideerd",
+            "prefLabel": "Gevalideerd",
+            "topConceptOf": "conceptscheme:dataleverancierstatus"
+        },
+        {
+            "id": "lzs-dl-status:geweigerd",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:dataleverancierstatus",
+            "code": "geweigerd",
+            "prefLabel": "Geweigerd",
+            "topConceptOf": "conceptscheme:dataleverancierstatus"
+        },
+        {
+            "id": "lzs-dl-status:ingetrokken",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:dataleverancierstatus",
+            "code": "ingetrokken",
+            "prefLabel": "Ingetrokken",
+            "topConceptOf": "conceptscheme:dataleverancierstatus"
+        },
+        {
+            "id": "lzs-dl-status:nietgevalideerd",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:dataleverancierstatus",
+            "code": "nietgevalideerd",
+            "prefLabel": "Niet gevalideerd",
+            "topConceptOf": "conceptscheme:dataleverancierstatus"
+        },
+        {
             "id": "lzs-medium:hetelektronischmonitoringssysteem",
             "_type": [
-                "rdfs:Resource",
-                "skos:Concept"
+                "skos:Concept",
+                "rdfs:Resource"
             ],
             "inScheme": "conceptscheme:medium",
             "prefLabel": "Het elektronisch monitoringssysteem",
@@ -933,8 +976,8 @@
         {
             "id": "lzs-medium:lucht",
             "_type": [
-                "rdfs:Resource",
-                "skos:Concept"
+                "skos:Concept",
+                "rdfs:Resource"
             ],
             "inScheme": "conceptscheme:medium",
             "prefLabel": "Lucht",
@@ -943,8 +986,8 @@
         {
             "id": "lzs-medium:spuiwater",
             "_type": [
-                "rdfs:Resource",
-                "skos:Concept"
+                "skos:Concept",
+                "rdfs:Resource"
             ],
             "inScheme": "conceptscheme:medium",
             "prefLabel": "Spuiwater",
@@ -953,8 +996,8 @@
         {
             "id": "lzs-medium:stal",
             "_type": [
-                "rdfs:Resource",
-                "skos:Concept"
+                "skos:Concept",
+                "rdfs:Resource"
             ],
             "inScheme": "conceptscheme:medium",
             "prefLabel": "Stal",
@@ -963,8 +1006,8 @@
         {
             "id": "lzs-medium:waswater",
             "_type": [
-                "rdfs:Resource",
-                "skos:Concept"
+                "skos:Concept",
+                "rdfs:Resource"
             ],
             "inScheme": "conceptscheme:medium",
             "prefLabel": "Waswater",
@@ -1698,7 +1741,8 @@
                 "lzs-type:s3"
             ],
             "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_12",
@@ -1721,7 +1765,8 @@
                 "lzs-type:s3"
             ],
             "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_13",
@@ -1744,7 +1789,8 @@
                 "lzs-type:s3"
             ],
             "relevantProperty": "lzs-param:biobedspuiwaterproductie",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_14",
@@ -1767,7 +1813,8 @@
                 "lzs-type:s3"
             ],
             "relevantProperty": "lzs-param:biobedspoelwaterproductie",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_15",
@@ -1815,7 +1862,8 @@
                 "lzs-type:lelysphere"
             ],
             "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_17",
@@ -1838,7 +1886,8 @@
                 "lzs-type:lelysphere"
             ],
             "relevantProperty": "lzs-param:waswaterdebiet",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_18",
@@ -1861,7 +1910,8 @@
                 "lzs-type:lelysphere"
             ],
             "relevantProperty": "lzs-param:spuiwaterproductie",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_19",
@@ -1884,7 +1934,8 @@
                 "lzs-type:lelysphere"
             ],
             "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_2",
@@ -1932,7 +1983,8 @@
                 "lzs-type:s1"
             ],
             "relevantProperty": "lzs-param:waswaterdebiet",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_4",
@@ -1955,7 +2007,8 @@
                 "lzs-type:s1"
             ],
             "relevantProperty": "lzs-param:spuiwaterproductie",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_5",
@@ -2053,7 +2106,8 @@
                 "lzs-type:s2"
             ],
             "relevantProperty": "lzs-param:waswaterdebiet",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-param-norm:_9",
@@ -2076,7 +2130,8 @@
                 "lzs-type:s2"
             ],
             "relevantProperty": "lzs-param:spuiwaterproductie",
-            "technischefiche": "true"
+            "technischefiche": "true",
+            "minValue": "0"
         },
         {
             "id": "lzs-stalbezetting:in_gebruik",
@@ -2131,6 +2186,24 @@
             "inScheme": "conceptscheme:systeemstatus",
             "prefLabel": "Storing",
             "topConceptOf": "conceptscheme:systeemstatus"
+        },
+        {
+            "id": "lzs-systeemopstelling:enkelvoudig",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:systeemopstelling",
+            "prefLabel": "Enkelvoudige opstelling",
+            "topConceptOf": "conceptscheme:systeemopstelling"
+        },
+        {
+            "id": "lzs-systeemopstelling:gecombineerd",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:systeemopstelling",
+            "prefLabel": "Gecombineerde opstelling",
+            "topConceptOf": "conceptscheme:systeemopstelling"
         },
         {
             "id": "lzs-type:lelysphere",
@@ -2323,6 +2396,19 @@
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
         {
+            "id": "conceptscheme:dataleverancierstatus",
+            "_type": [
+                "skos:ConceptScheme"
+            ],
+            "hasTopConcept": [
+                "lzs-dl-status:gevalideerd",
+                "lzs-dl-status:geweigerd",
+                "lzs-dl-status:ingetrokken",
+                "lzs-dl-status:nietgevalideerd"
+            ],
+            "prefLabel": "conceptschema dataleverancier status"
+        },
+        {
             "id": "conceptscheme:medium",
             "_type": [
                 "skos:ConceptScheme"
@@ -2423,6 +2509,17 @@
                 "lzs-stalbezetting:leeg"
             ],
             "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
+        },
+        {
+            "id": "conceptscheme:systeemopstelling",
+            "_type": [
+                "skos:ConceptScheme"
+            ],
+            "hasTopConcept": [
+                "lzs-systeemopstelling:enkelvoudig",
+                "lzs-systeemopstelling:gecombineerd"
+            ],
+            "prefLabel": "conceptschema  luchtzuiveringssysteem opstelingen"
         },
         {
             "id": "conceptscheme:systeemstatus",

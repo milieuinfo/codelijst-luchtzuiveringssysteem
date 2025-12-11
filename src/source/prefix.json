@@ -24,6 +24,7 @@
   "gml": "http://www.opengis.net/ont/gml#",
   "gsp": "http://www.opengis.net/ont/geosparql#",
   "iioa": "https://data.lzs.omgeving.vlaanderen.be/id/iioa/",
+  "platform": "https://data.lzs.omgeving.vlaanderen.be/id/platform/",
   "licence": "http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/",
   "locn": "http://www.w3.org/ns/locn#",
   "lzs-bandbreedte": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/",
