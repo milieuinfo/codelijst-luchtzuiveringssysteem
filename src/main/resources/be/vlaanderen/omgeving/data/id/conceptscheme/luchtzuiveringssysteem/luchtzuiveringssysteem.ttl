@@ -702,9 +702,13 @@ lzs-stalbezetting:leeg a skos:Concept;
     skos:inScheme conceptscheme:stalbezetting;
     skos:prefLabel "Lege stal"@nl;
     skos:topConceptOf conceptscheme:stalbezetting.
-lzs-status:gereinigd a skos:Concept;
+lzs-status:buiten_gebruik a skos:Concept;
     skos:inScheme conceptscheme:systeemstatus;
-    skos:prefLabel "Gereinigd"@nl;
+    skos:prefLabel "Buiten gebruik"@nl;
+    skos:topConceptOf conceptscheme:systeemstatus.
+lzs-status:in_reiniging a skos:Concept;
+    skos:inScheme conceptscheme:systeemstatus;
+    skos:prefLabel "In reiniging"@nl;
     skos:topConceptOf conceptscheme:systeemstatus.
 lzs-status:onderhoud a skos:Concept;
     skos:inScheme conceptscheme:systeemstatus;
@@ -819,7 +823,7 @@ conceptscheme:systeemopstelling a skos:ConceptScheme;
     skos:hasTopConcept lzs-systeemopstelling:enkelvoudig, lzs-systeemopstelling:gecombineerd;
     skos:prefLabel "conceptschema  luchtzuiveringssysteem opstelingen"@nl.
 conceptscheme:systeemstatus a skos:ConceptScheme;
-    skos:hasTopConcept lzs-status:gereinigd, lzs-status:onderhoud, lzs-status:operationeel, lzs-status:storing;
+    skos:hasTopConcept lzs-status:buiten_gebruik, lzs-status:in_reiniging, lzs-status:onderhoud, lzs-status:operationeel, lzs-status:storing;
     skos:prefLabel "conceptschema luchtzuiveringssysteem status"@nl.
 conceptscheme:systeemtype a skos:ConceptScheme;
     skos:hasTopConcept lzs-type:luchtzuiveringssysteem;

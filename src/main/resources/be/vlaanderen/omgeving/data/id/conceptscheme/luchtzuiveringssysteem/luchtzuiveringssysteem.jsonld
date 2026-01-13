@@ -2152,12 +2152,21 @@
             "topConceptOf": "conceptscheme:stalbezetting"
         },
         {
-            "id": "lzs-status:gereinigd",
+            "id": "lzs-status:buiten_gebruik",
             "_type": [
                 "skos:Concept"
             ],
             "inScheme": "conceptscheme:systeemstatus",
-            "prefLabel": "Gereinigd",
+            "prefLabel": "Buiten gebruik",
+            "topConceptOf": "conceptscheme:systeemstatus"
+        },
+        {
+            "id": "lzs-status:in_reiniging",
+            "_type": [
+                "skos:Concept"
+            ],
+            "inScheme": "conceptscheme:systeemstatus",
+            "prefLabel": "In reiniging",
             "topConceptOf": "conceptscheme:systeemstatus"
         },
         {
@@ -2527,7 +2536,8 @@
                 "skos:ConceptScheme"
             ],
             "hasTopConcept": [
-                "lzs-status:gereinigd",
+                "lzs-status:buiten_gebruik",
+                "lzs-status:in_reiniging",
                 "lzs-status:onderhoud",
                 "lzs-status:operationeel",
                 "lzs-status:storing"

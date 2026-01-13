@@ -1050,12 +1050,21 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting"
     },
     {
-        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd",
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",
-        "prefLabel": "Gereinigd",
+        "prefLabel": "Buiten gebruik",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",
+        "prefLabel": "In reiniging",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus"
     },
     {
@@ -1425,7 +1434,8 @@
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
         "hasTopConcept": [
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing"

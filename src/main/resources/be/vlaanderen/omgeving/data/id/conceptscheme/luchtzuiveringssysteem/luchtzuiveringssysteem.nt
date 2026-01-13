@@ -647,10 +647,14 @@
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg> <http://www.w3.org/2004/02/skos/core#prefLabel> "Lege stal"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> .
-<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
-<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd> <http://www.w3.org/2004/02/skos/core#prefLabel> "Gereinigd"@nl .
-<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> <http://www.w3.org/2004/02/skos/core#prefLabel> "Buiten gebruik"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> <http://www.w3.org/2004/02/skos/core#prefLabel> "In reiniging"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud> <http://www.w3.org/2004/02/skos/core#prefLabel> "In onderhoud"@nl .
@@ -860,7 +864,8 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema  luchtzuiveringssysteem opstelingen"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/gereinigd> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing> .
