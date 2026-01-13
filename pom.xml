@@ -9,14 +9,14 @@
   <packaging>jar</packaging>
   <groupId>be.vlaanderen.omgeving.data.id.graph</groupId>
   <artifactId>codelijst-luchtzuiveringssysteem</artifactId>
-  <version>0.1.8-SNAPSHOT</version>
+  <version>0.1.8</version>
   <name>codelijst-luchtzuiveringssysteem</name>
   <description />
   <scm>
     <connection>scm:git:https://github.com/milieuinfo/codelijst-luchtzuiveringssysteem.git</connection>
     <developerConnection>scm:git:https://github.com/milieuinfo/codelijst-luchtzuiveringssysteem.git</developerConnection>
     <url>https://github.com/milieuinfo/codelijst-luchtzuiveringssysteem.git</url>
-    <tag>HEAD</tag>
+    <tag>codelijst-luchtzuiveringssysteem-0.1.8</tag>
   </scm>
   <build>
     <plugins>
