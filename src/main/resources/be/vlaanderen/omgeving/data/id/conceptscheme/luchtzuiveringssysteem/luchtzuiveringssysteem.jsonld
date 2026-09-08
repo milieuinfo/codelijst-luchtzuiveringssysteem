@@ -1189,6 +1189,71 @@
             "minValue": "50"
         },
         {
+            "id": "lzs-bandbreedte:_17",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "Boven maximum grenswaarde",
+            "definition": "De geleidbaarheid is groter dan 280mS/cm",
+            "inScheme": "conceptscheme:norm-bandbreedte",
+            "note": [
+                "De geleidbaarheid is groter dan 280mS/cm",
+                "> 280"
+            ],
+            "prefLabel": "Geleidbaarheid waswater > 280mS/cm (lelysphere)",
+            "scopeNote": "> 280",
+            "topConceptOf": "conceptscheme:norm-bandbreedte",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "minValue": "280"
+        },
+        {
+            "id": "lzs-bandbreedte:_18",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "Boven maximum grenswaarde",
+            "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
+            "inScheme": "conceptscheme:norm-bandbreedte",
+            "note": [
+                "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
+                "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)"
+            ],
+            "prefLabel": "Geleidbaarheid waswater afwijking naar boven > 40mS/cm (lelysphere)",
+            "scopeNote": "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)",
+            "topConceptOf": "conceptscheme:norm-bandbreedte",
+            "operatie": "som",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "minValue": "40"
+        },
+        {
+            "id": "lzs-bandbreedte:_19",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "Onder minimum grenswaarde",
+            "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "inScheme": "conceptscheme:norm-bandbreedte",
+            "note": [
+                "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+                "< 0,8 x waarde technische fiche (afwijking > 20%)"
+            ],
+            "prefLabel": "Waswaterdebiet afwijking naar beneden > 20% (lelysphere)",
+            "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
+            "topConceptOf": "conceptscheme:norm-bandbreedte",
+            "operatie": "product",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:waswaterdebiet",
+            "maxValue": "0,8"
+        },
+        {
             "id": "lzs-bandbreedte:_2",
             "_type": [
                 "skos:Concept"
@@ -1208,6 +1273,49 @@
             ],
             "relevantProperty": "lzs-param:zuurtegraadwaswater",
             "minValue": "8.5"
+        },
+        {
+            "id": "lzs-bandbreedte:_20",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "Onder minimum grenswaarde",
+            "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "inScheme": "conceptscheme:norm-bandbreedte",
+            "note": [
+                "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+                "< 0,9 x waarde technische fiche (afwijking > 10%)"
+            ],
+            "prefLabel": "Spuiwaterdebiet afwijking naar beneden > 10% (lelysphere)",
+            "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
+            "topConceptOf": "conceptscheme:norm-bandbreedte",
+            "operatie": "product",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "maxValue": "0,9"
+        },
+        {
+            "id": "lzs-bandbreedte:_21",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "Onder minimum grenswaarde",
+            "definition": "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh",
+            "inScheme": "conceptscheme:norm-bandbreedte",
+            "note": [
+                "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh",
+                "< 1"
+            ],
+            "prefLabel": "Elektriciteitsverbruik van de waswaterpomp < 1 kWh (lelysphere)",
+            "scopeNote": "< 1",
+            "topConceptOf": "conceptscheme:norm-bandbreedte",
+            "relevantLZS": [
+                "lzs-type:lelysphere"
+            ],
+            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "maxValue": "1"
         },
         {
             "id": "lzs-bandbreedte:_3",
@@ -1492,8 +1600,8 @@
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s2",
-                "lzs-type:s1",
-                "lzs-type:lelysphere"
+                "lzs-type:lelysphere",
+                "lzs-type:s1"
             ]
         },
         {
@@ -1520,8 +1628,8 @@
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s2",
-                "lzs-type:s1",
-                "lzs-type:lelysphere"
+                "lzs-type:lelysphere",
+                "lzs-type:s1"
             ]
         },
         {
@@ -1586,8 +1694,8 @@
             "relevantDataType": "xsd:decimal",
             "relevantLZS": [
                 "lzs-type:s2",
-                "lzs-type:s1",
-                "lzs-type:lelysphere"
+                "lzs-type:lelysphere",
+                "lzs-type:s1"
             ]
         },
         {
@@ -2248,19 +2356,19 @@
             "inScheme": "conceptscheme:systeemtype",
             "narrower": [
                 "lzs-type:s2",
-                "lzs-type:s1",
-                "lzs-type:lelysphere"
+                "lzs-type:lelysphere",
+                "lzs-type:s1"
             ],
             "narrowerTransitive": [
                 "lzs-type:s2",
-                "lzs-type:s1",
-                "lzs-type:lelysphere"
+                "lzs-type:lelysphere",
+                "lzs-type:s1"
             ],
             "prefLabel": "Luchtwassysteem",
             "semanticRelation": [
                 "lzs-type:s2",
-                "lzs-type:s1",
                 "lzs-type:lelysphere",
+                "lzs-type:s1",
                 "lzs-type:luchtzuiveringssysteem"
             ]
         },
@@ -2277,16 +2385,16 @@
             "narrowerTransitive": [
                 "lzs-type:s2",
                 "lzs-type:s3",
-                "lzs-type:s1",
                 "lzs-type:lelysphere",
+                "lzs-type:s1",
                 "lzs-type:luchtwassysteem"
             ],
             "prefLabel": "Luchtzuiveringssysteem",
             "semanticRelation": [
                 "lzs-type:s2",
                 "lzs-type:s3",
-                "lzs-type:s1",
                 "lzs-type:lelysphere",
+                "lzs-type:s1",
                 "lzs-type:luchtwassysteem"
             ],
             "topConceptOf": "conceptscheme:systeemtype"
@@ -2312,8 +2420,8 @@
                 "lzs-param:waswaterdebiet",
                 "lzs-param:spuiwaterproductie",
                 "lzs-param:drukvaloverhetsysteem",
-                "lzs-param:zuurtegraadwaswater",
                 "lzs-param:geleidbaarheidvanhetwaswater",
+                "lzs-param:zuurtegraadwaswater",
                 "lzs-param:stalbezetting",
                 "lzs-param:systeemstatus"
             ]
@@ -2339,8 +2447,8 @@
                 "lzs-param:waswaterdebiet",
                 "lzs-param:spuiwaterproductie",
                 "lzs-param:drukvaloverhetsysteem",
-                "lzs-param:zuurtegraadwaswater",
                 "lzs-param:geleidbaarheidvanhetwaswater",
+                "lzs-param:zuurtegraadwaswater",
                 "lzs-param:stalbezetting",
                 "lzs-param:systeemstatus"
             ]
@@ -2445,7 +2553,12 @@
                 "lzs-bandbreedte:_14",
                 "lzs-bandbreedte:_15",
                 "lzs-bandbreedte:_16",
+                "lzs-bandbreedte:_17",
+                "lzs-bandbreedte:_18",
+                "lzs-bandbreedte:_19",
                 "lzs-bandbreedte:_1",
+                "lzs-bandbreedte:_20",
+                "lzs-bandbreedte:_21",
                 "lzs-bandbreedte:_2",
                 "lzs-bandbreedte:_3",
                 "lzs-bandbreedte:_4",
@@ -2468,11 +2581,11 @@
                 "lzs-param:drukvaloverhetsysteem",
                 "lzs-param:waswaterdebietvoorbevochtiging",
                 "lzs-param:waswaterdebietbevloeiing",
-                "lzs-param:zuurtegraadwaswater",
                 "lzs-param:geleidbaarheidvanhetwaswater",
+                "lzs-param:zuurtegraadwaswater",
+                "lzs-param:elektriciteitsverbruikwaterpompen",
                 "lzs-param:biobedspoelwaterproductie",
                 "lzs-param:biobedspuiwaterproductie",
-                "lzs-param:elektriciteitsverbruikwaterpompen",
                 "lzs-param:stalbezetting",
                 "lzs-param:systeemstatus"
             ],

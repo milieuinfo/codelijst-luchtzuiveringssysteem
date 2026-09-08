@@ -321,6 +321,71 @@
         "minValue": "50"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "Boven maximum grenswaarde",
+        "definition": "De geleidbaarheid is groter dan 280mS/cm",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "note": [
+            "De geleidbaarheid is groter dan 280mS/cm",
+            "> 280"
+        ],
+        "prefLabel": "Geleidbaarheid waswater > 280mS/cm (lelysphere)",
+        "scopeNote": "> 280",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "minValue": "280"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "Boven maximum grenswaarde",
+        "definition": "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "note": [
+            "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat.",
+            "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)"
+        ],
+        "prefLabel": "Geleidbaarheid waswater afwijking naar boven > 40mS/cm (lelysphere)",
+        "scopeNote": "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "operatie": "som",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "minValue": "40"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "Onder minimum grenswaarde",
+        "definition": "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "note": [
+            "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,8 x waarde technische fiche (afwijking > 20%)"
+        ],
+        "prefLabel": "Waswaterdebiet afwijking naar beneden > 20% (lelysphere)",
+        "scopeNote": "< 0,8 x waarde technische fiche (afwijking > 20%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "operatie": "product",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "maxValue": "0,8"
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -340,6 +405,49 @@
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
         "minValue": "8.5"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "Onder minimum grenswaarde",
+        "definition": "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "note": [
+            "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat.",
+            "< 0,9 x waarde technische fiche (afwijking > 10%)"
+        ],
+        "prefLabel": "Spuiwaterdebiet afwijking naar beneden > 10% (lelysphere)",
+        "scopeNote": "< 0,9 x waarde technische fiche (afwijking > 10%)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "operatie": "product",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "maxValue": "0,9"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "Onder minimum grenswaarde",
+        "definition": "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "note": [
+            "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh",
+            "< 1"
+        ],
+        "prefLabel": "Elektriciteitsverbruik van de waswaterpomp < 1 kWh (lelysphere)",
+        "scopeNote": "< 1",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
+        "relevantLZS": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+        ],
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "maxValue": "1"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_3",
@@ -583,8 +691,8 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ]
     },
     {
@@ -603,8 +711,8 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ]
     },
     {
@@ -661,8 +769,8 @@
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ]
     },
     {
@@ -1146,19 +1254,19 @@
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
         "narrower": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "narrowerTransitive": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
         "prefLabel": "Luchtwassysteem",
         "semanticRelation": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
         ]
     },
@@ -1175,16 +1283,16 @@
         "narrowerTransitive": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem"
         ],
         "prefLabel": "Luchtzuiveringssysteem",
         "semanticRelation": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtwassysteem"
         ],
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype"
@@ -1210,8 +1318,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
         ]
@@ -1237,8 +1345,8 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
         ]
@@ -1343,7 +1451,12 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_14",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_15",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_3",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_4",
@@ -1366,11 +1479,11 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
         ],

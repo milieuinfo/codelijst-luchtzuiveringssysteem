@@ -258,6 +258,41 @@ lzs-bandbreedte:_16 dc:type "Boven maximum grenswaarde";
     lzs-vocab:relevantLZS lzs-type:s3;
     lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
     schema:minValue "50"^^xsd:decimal.
+lzs-bandbreedte:_17 dc:type "Boven maximum grenswaarde";
+    a skos:Concept;
+    skos:definition "De geleidbaarheid is groter dan 280mS/cm"@nl;
+    skos:inScheme conceptscheme:norm-bandbreedte;
+    skos:note "> 280"@nl, "De geleidbaarheid is groter dan 280mS/cm"@nl;
+    skos:prefLabel "Geleidbaarheid waswater > 280mS/cm (lelysphere)"@nl;
+    skos:scopeNote "> 280"@nl;
+    skos:topConceptOf conceptscheme:norm-bandbreedte;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    schema:minValue "280"^^xsd:decimal.
+lzs-bandbreedte:_18 dc:type "Boven maximum grenswaarde";
+    a skos:Concept;
+    skos:definition "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm-bandbreedte;
+    skos:note "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)"@nl, "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Geleidbaarheid waswater afwijking naar boven > 40mS/cm (lelysphere)"@nl;
+    skos:scopeNote "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)"@nl;
+    skos:topConceptOf conceptscheme:norm-bandbreedte;
+    lzs-vocab:operatie "som"@nl;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    schema:minValue "40"^^xsd:decimal.
+lzs-bandbreedte:_19 dc:type "Onder minimum grenswaarde";
+    a skos:Concept;
+    skos:definition "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm-bandbreedte;
+    skos:note "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl, "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Waswaterdebiet afwijking naar beneden > 20% (lelysphere)"@nl;
+    skos:scopeNote "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl;
+    skos:topConceptOf conceptscheme:norm-bandbreedte;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
+    schema:maxValue "0,8"^^xsd:decimal.
 lzs-bandbreedte:_1 dc:type "Onder minimum grenswaarde";
     a skos:Concept;
     skos:definition "De zuurtegraad van het waswater is kleiner dan 6"@nl;
@@ -269,6 +304,29 @@ lzs-bandbreedte:_1 dc:type "Onder minimum grenswaarde";
     lzs-vocab:relevantLZS lzs-type:s1;
     lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
     schema:maxValue "6"^^xsd:decimal.
+lzs-bandbreedte:_20 dc:type "Onder minimum grenswaarde";
+    a skos:Concept;
+    skos:definition "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:inScheme conceptscheme:norm-bandbreedte;
+    skos:note "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl, "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl;
+    skos:prefLabel "Spuiwaterdebiet afwijking naar beneden > 10% (lelysphere)"@nl;
+    skos:scopeNote "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl;
+    skos:topConceptOf conceptscheme:norm-bandbreedte;
+    lzs-vocab:operatie "product"@nl;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
+    schema:maxValue "0,9"^^xsd:decimal.
+lzs-bandbreedte:_21 dc:type "Onder minimum grenswaarde";
+    a skos:Concept;
+    skos:definition "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh"@nl;
+    skos:inScheme conceptscheme:norm-bandbreedte;
+    skos:note "< 1"@nl, "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh"@nl;
+    skos:prefLabel "Elektriciteitsverbruik van de waswaterpomp < 1 kWh (lelysphere)"@nl;
+    skos:scopeNote "< 1"@nl;
+    skos:topConceptOf conceptscheme:norm-bandbreedte;
+    lzs-vocab:relevantLZS lzs-type:lelysphere;
+    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen;
+    schema:maxValue "1"^^xsd:decimal.
 lzs-bandbreedte:_2 dc:type "Boven maximum grenswaarde";
     a skos:Concept;
     skos:definition "De zuurtegraad van het waswater is groter dan 8,5"@nl;
@@ -806,7 +864,7 @@ conceptscheme:medium a skos:ConceptScheme;
     skos:prefLabel "conceptschema luchtzuiveringssysteem medium"@nl.
 conceptscheme:norm-bandbreedte a skos:ConceptScheme;
     skos:altLabel "Ranges"@nl;
-    skos:hasTopConcept lzs-bandbreedte:_10, lzs-bandbreedte:_11, lzs-bandbreedte:_12, lzs-bandbreedte:_13, lzs-bandbreedte:_14, lzs-bandbreedte:_15, lzs-bandbreedte:_16, lzs-bandbreedte:_1, lzs-bandbreedte:_2, lzs-bandbreedte:_3, lzs-bandbreedte:_4, lzs-bandbreedte:_5, lzs-bandbreedte:_6, lzs-bandbreedte:_7, lzs-bandbreedte:_8, lzs-bandbreedte:_9;
+    skos:hasTopConcept lzs-bandbreedte:_10, lzs-bandbreedte:_11, lzs-bandbreedte:_12, lzs-bandbreedte:_13, lzs-bandbreedte:_14, lzs-bandbreedte:_15, lzs-bandbreedte:_16, lzs-bandbreedte:_17, lzs-bandbreedte:_18, lzs-bandbreedte:_19, lzs-bandbreedte:_1, lzs-bandbreedte:_20, lzs-bandbreedte:_21, lzs-bandbreedte:_2, lzs-bandbreedte:_3, lzs-bandbreedte:_4, lzs-bandbreedte:_5, lzs-bandbreedte:_6, lzs-bandbreedte:_7, lzs-bandbreedte:_8, lzs-bandbreedte:_9;
     skos:prefLabel "conceptschema luchtzuiveringssysteem normbandbreedte"@nl.
 conceptscheme:parameter-norm a skos:ConceptScheme;
     skos:definition "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl;

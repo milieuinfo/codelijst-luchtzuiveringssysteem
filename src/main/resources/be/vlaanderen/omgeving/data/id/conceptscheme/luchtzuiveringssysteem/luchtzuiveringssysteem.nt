@@ -169,6 +169,44 @@
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16> <https://schema.org/minValue> "50"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://purl.org/dc/elements/1.1/type> "Boven maximum grenswaarde" .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#definition> "De geleidbaarheid is groter dan 280mS/cm"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#note> "> 280"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#note> "De geleidbaarheid is groter dan 280mS/cm"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geleidbaarheid waswater > 280mS/cm (lelysphere)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#scopeNote> "> 280"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> <https://schema.org/minValue> "280"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://purl.org/dc/elements/1.1/type> "Boven maximum grenswaarde" .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#definition> "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#note> "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#note> "De geleidbaarheid is groter dan de maximale operationele waarde die op de technische fiche vermeld staat."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geleidbaarheid waswater afwijking naar boven > 40mS/cm (lelysphere)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#scopeNote> "> 40mS/cm + waarde technische fiche (afwijking > 40mS/cm)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie> "som"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> <https://schema.org/minValue> "40"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://purl.org/dc/elements/1.1/type> "Onder minimum grenswaarde" .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#definition> "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#note> "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#note> "Het waswaterdebiet wijkt meer dan 20% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#prefLabel> "Waswaterdebiet afwijking naar beneden > 20% (lelysphere)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#scopeNote> "< 0,8 x waarde technische fiche (afwijking > 20%)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie> "product"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://schema.org/maxValue> "0,8"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <http://purl.org/dc/elements/1.1/type> "Onder minimum grenswaarde" .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <http://www.w3.org/2004/02/skos/core#definition> "De zuurtegraad van het waswater is kleiner dan 6"@nl .
@@ -181,6 +219,31 @@
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <https://schema.org/maxValue> "6"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://purl.org/dc/elements/1.1/type> "Onder minimum grenswaarde" .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#definition> "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#note> "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#note> "Het spuiwaterdebiet wijkt meer dan 10% naar beneden af van de operationele waarde die op de technische fiche vermeld staat."@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#prefLabel> "Spuiwaterdebiet afwijking naar beneden > 10% (lelysphere)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#scopeNote> "< 0,9 x waarde technische fiche (afwijking > 10%)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie> "product"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://schema.org/maxValue> "0,9"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://purl.org/dc/elements/1.1/type> "Onder minimum grenswaarde" .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#definition> "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#inScheme> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#note> "< 1"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#note> "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#prefLabel> "Elektriciteitsverbruik van de waswaterpomp < 1 kWh (lelysphere)"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#scopeNote> "< 1"@nl .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#topConceptOf> <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <https://schema.org/maxValue> "1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2> <http://purl.org/dc/elements/1.1/type> "Boven maximum grenswaarde" .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2> <http://www.w3.org/2004/02/skos/core#definition> "De zuurtegraad van het waswater is groter dan 8,5"@nl .
@@ -808,7 +871,12 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_14> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_15> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_16> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_18> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_3> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_4> .
