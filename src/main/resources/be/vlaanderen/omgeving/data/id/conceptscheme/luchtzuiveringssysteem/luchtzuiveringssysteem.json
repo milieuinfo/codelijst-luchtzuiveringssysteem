@@ -731,6 +731,7 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ]
     },
@@ -750,6 +751,7 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ]
     },
@@ -1241,7 +1243,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
         ]
     },
     {

@@ -1648,6 +1648,7 @@
             "relevantLZS": [
                 "lzs-type:s2",
                 "lzs-type:s3",
+                "lzs-type:lelysphere",
                 "lzs-type:s1"
             ]
         },
@@ -1667,6 +1668,7 @@
             "relevantLZS": [
                 "lzs-type:s2",
                 "lzs-type:s3",
+                "lzs-type:lelysphere",
                 "lzs-type:s1"
             ]
         },
@@ -2343,7 +2345,9 @@
                 "lzs-param:waswaterdebiet",
                 "lzs-param:spuiwaterproductie",
                 "lzs-param:geleidbaarheidvanhetwaswater",
-                "lzs-param:elektriciteitsverbruikwaterpompen"
+                "lzs-param:elektriciteitsverbruikwaterpompen",
+                "lzs-param:stalbezetting",
+                "lzs-param:systeemstatus"
             ]
         },
         {

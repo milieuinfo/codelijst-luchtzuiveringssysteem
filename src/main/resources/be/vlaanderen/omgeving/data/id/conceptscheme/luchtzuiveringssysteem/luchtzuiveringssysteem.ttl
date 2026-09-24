@@ -487,14 +487,14 @@ lzs-param:stalbezetting dcterms:subject lzs-medium:stal;
     skos:prefLabel "Stalbezetting"@nl;
     skos:topConceptOf conceptscheme:parameter;
     lzs-vocab:relevantCodeList conceptscheme:stalbezetting;
-    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
+    lzs-vocab:relevantLZS lzs-type:lelysphere, lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:systeemstatus dcterms:subject lzs-medium:hetelektronischmonitoringssysteem;
     a skos:Concept, ssn:Property;
     skos:inScheme conceptscheme:parameter;
     skos:prefLabel "SysteemStatus"@nl;
     skos:topConceptOf conceptscheme:parameter;
     lzs-vocab:relevantCodeList conceptscheme:systeemstatus;
-    lzs-vocab:relevantLZS lzs-type:s1, lzs-type:s2, lzs-type:s3.
+    lzs-vocab:relevantLZS lzs-type:lelysphere, lzs-type:s1, lzs-type:s2, lzs-type:s3.
 lzs-param:waswaterdebiet dcterms:subject lzs-medium:waswater;
     qudt:relevantQuantityKind quantitykind:VolumeFlowRate;
     qudt:relevantUnit unit:M3-PER-HR;
@@ -795,7 +795,7 @@ lzs-type:lelysphere a skos:Concept;
     skos:notation "Lelysphere";
     skos:prefLabel "Lely Sphere"@nl;
     skos:semanticRelation lzs-type:luchtwassysteem, lzs-type:luchtzuiveringssysteem;
-    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:waswaterdebiet.
+    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet.
 lzs-type:luchtwassysteem a skos:Concept;
     skos:broader lzs-type:luchtzuiveringssysteem;
     skos:broaderTransitive lzs-type:luchtzuiveringssysteem;
