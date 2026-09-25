@@ -8,7 +8,7 @@
 lzs-vocab:hasProcedureForProperty a rdf:Property ;
     rdfs:label "has procedure for property"@en ;
     owl:propertyChainAxiom (
-^sosa:observedProperty   # Stap 1: Ga van de property naar de observation
+sosa:observedProperty   # Stap 1: Ga van de property naar de observation
 sosa:usedProcedure       # Stap 2: Ga van de observation naar de procedure
 ) .
 
