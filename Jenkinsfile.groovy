@@ -3,7 +3,7 @@ pipeline {
     agent {
         kubernetes {
             inheritFrom 'jenkins-jenkins-agent'
-            yaml podBuilder.from([maven.podSpec(25), dind, sonar, trivy])
+            yaml podBuilder.from([maven.podSpec(25, 'ubuntu'), dind, sonar, trivy])
         }
     }
     environment {
