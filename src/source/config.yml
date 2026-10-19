@@ -173,6 +173,7 @@ prefixes :
   lzs-medium: https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/
   lzs-param: https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/
   lzs-param-norm: https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/
+  lzs-sec: https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/
   lzs-stalbezetting: https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/
   lzs-status: https://data.omgeving.vlaanderen.be/id/concept/lzs/status/
   lzs-type: https://data.omgeving.vlaanderen.be/id/concept/lzs/type/

@@ -33,6 +33,7 @@
 @prefix lzs-medium: <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/>.
 @prefix lzs-param: <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/>.
 @prefix lzs-param-norm: <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/>.
+@prefix lzs-sec: <https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/>.
 @prefix lzs-stalbezetting: <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/>.
 @prefix lzs-status: <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/>.
 @prefix lzs-type: <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/>.
@@ -752,6 +753,325 @@ lzs-param-norm:_9 qudt:relevantUnit unit:M3;
     lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
     lzs-vocab:technischefiche true;
     schema:minValue "0"^^xsd:decimal.
+lzs-sec:alarmdrempel_10 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor elektriciteitsverbruik = 0 bij aanwezige stalbezetting (Lely Sphere)."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor elektriciteitsverbruik = 0 bij aanwezige stalbezetting (Lely Sphere)."@nl;
+    skos:prefLabel "Alarmdrempel elektriciteitsverbruik waswaterpomp = 0 Lely Sphere (3 dagen)"@nl;
+    skos:scopeNote "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen;
+    schema:value "3"^^xsd:decimal.
+lzs-sec:alarmdrempel_11 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus storing."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "15 opeenvolgende afwijkende dagen."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus storing."@nl;
+    skos:prefLabel "Alarmdrempel systeemstatus = storing (15 dagen)"@nl;
+    skos:scopeNote "15 opeenvolgende afwijkende dagen."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:systeemstatus;
+    lzs-vocab:relevantValue lzs-status:storing;
+    schema:value "15"^^xsd:decimal.
+lzs-sec:alarmdrempel_12 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus onderhoud."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "2 opeenvolgende afwijkende dagen."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus onderhoud."@nl;
+    skos:prefLabel "Alarmdrempel systeemstatus = onderhoud (2 dagen)"@nl;
+    skos:scopeNote "2 opeenvolgende afwijkende dagen."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:systeemstatus;
+    lzs-vocab:relevantValue lzs-status:onderhoud;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:alarmdrempel_13 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus in_reiniging."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "2 opeenvolgende afwijkende dagen."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus in_reiniging."@nl;
+    skos:prefLabel "Alarmdrempel systeemstatus = in_reiniging (2 dagen)"@nl;
+    skos:scopeNote "2 opeenvolgende afwijkende dagen."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:systeemstatus;
+    lzs-vocab:relevantValue lzs-status:in_reiniging;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:alarmdrempel_15 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor stalbezetting leeg."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "15 opeenvolgende afwijkende dagen."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor stalbezetting leeg."@nl;
+    skos:prefLabel "Alarmdrempel stalbezetting = leeg (15 dagen)"@nl;
+    skos:scopeNote "15 opeenvolgende afwijkende dagen."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:stalbezetting;
+    lzs-vocab:relevantValue lzs-stalbezetting:leeg;
+    schema:value "15"^^xsd:decimal.
+lzs-sec:alarmdrempel_1 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor zuurtegraad waswater."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor zuurtegraad waswater."@nl;
+    skos:prefLabel "Alarmdrempel zuurtegraad waswater (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_2 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid van het waswater."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid van het waswater."@nl;
+    skos:prefLabel "Alarmdrempel geleidbaarheid van het waswater (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_2a dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid > 280 mS/cm (regelgeving Lely Sphere). Override op parameterniveau alarmdrempel_2."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid > 280 mS/cm (regelgeving Lely Sphere). Override op parameterniveau alarmdrempel_2."@nl;
+    skos:prefLabel "Alarmdrempel geleidbaarheid waswater > 280 mS/cm Lely Sphere (3 dagen)"@nl;
+    skos:scopeNote "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantNormBandbreedte lzs-bandbreedte:_17;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    schema:value "3"^^xsd:decimal.
+lzs-sec:alarmdrempel_3 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet."@nl;
+    skos:prefLabel "Alarmdrempel waswaterdebiet (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_4 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor spuiwaterproductie."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor spuiwaterproductie."@nl;
+    skos:prefLabel "Alarmdrempel spuiwaterproductie (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_5 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor drukval over het systeem."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor drukval over het systeem."@nl;
+    skos:prefLabel "Alarmdrempel drukval over het systeem (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_6 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de voorbevochtiging."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de voorbevochtiging."@nl;
+    skos:prefLabel "Alarmdrempel waswaterdebiet voorbevochtiging (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_7 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de bevloeiing."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de bevloeiing."@nl;
+    skos:prefLabel "Alarmdrempel waswaterdebiet bevloeiing (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietbevloeiing;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_8 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspuiwaterproductie."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspuiwaterproductie."@nl;
+    skos:prefLabel "Alarmdrempel biobedspuiwaterproductie (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:biobedspuiwaterproductie;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:alarmdrempel_9 dc:type "alarmdrempel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspoelwaterproductie."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl, "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspoelwaterproductie."@nl;
+    skos:prefLabel "Alarmdrempel biobedspoelwaterproductie (7 dagen)"@nl;
+    skos:scopeNote "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:alarmdrempel;
+    lzs-vocab:relevantProperty lzs-param:biobedspoelwaterproductie;
+    schema:value "7"^^xsd:decimal.
+lzs-sec:dagbeoordeling_10 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en)."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en)."@nl;
+    skos:prefLabel "Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:elektriciteitsverbruikwaterpompen;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_11 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."@nl;
+    skos:prefLabel "Dagbeoordelingsregel systeemstatus"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:systeemstatus;
+    lzs-vocab:relevantValue lzs-status:in_reiniging, lzs-status:onderhoud, lzs-status:storing;
+    schema:value "1"^^xsd:decimal.
+lzs-sec:dagbeoordeling_12 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."@nl;
+    skos:prefLabel "Dagbeoordelingsregel stalbezetting"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:stalbezetting;
+    lzs-vocab:relevantValue lzs-stalbezetting:leeg;
+    schema:value "1"^^xsd:decimal.
+lzs-sec:dagbeoordeling_1 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater."@nl;
+    skos:prefLabel "Dagbeoordelingsregel zuurtegraad waswater"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:zuurtegraadwaswater;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_2 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater."@nl;
+    skos:prefLabel "Dagbeoordelingsregel geleidbaarheid van het waswater"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:geleidbaarheidvanhetwaswater;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_3 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet."@nl;
+    skos:prefLabel "Dagbeoordelingsregel waswaterdebiet"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_4 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie."@nl;
+    skos:prefLabel "Dagbeoordelingsregel spuiwaterproductie"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_5 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem."@nl;
+    skos:prefLabel "Dagbeoordelingsregel drukval over het systeem"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:drukvaloverhetsysteem;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_6 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging."@nl;
+    skos:prefLabel "Dagbeoordelingsregel waswaterdebiet voorbevochtiging"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietvoorbevochtiging;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_7 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing."@nl;
+    skos:prefLabel "Dagbeoordelingsregel waswaterdebiet bevloeiing"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:waswaterdebietbevloeiing;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_8 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie."@nl;
+    skos:prefLabel "Dagbeoordelingsregel biobedspuiwaterproductie"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:biobedspuiwaterproductie;
+    schema:value "2"^^xsd:decimal.
+lzs-sec:dagbeoordeling_9 dc:type "dagbeoordelingsregel";
+    qudt:relevantQuantityKind unit:NUM;
+    a skos:Concept;
+    skos:definition "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie."@nl;
+    skos:inScheme conceptscheme:secundaire-alarmen;
+    skos:note "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie."@nl;
+    skos:prefLabel "Dagbeoordelingsregel biobedspoelwaterproductie"@nl;
+    skos:topConceptOf conceptscheme:secundaire-alarmen;
+    lzs-vocab:hasProcedureForProperty concept:dagbeoordelingsregel;
+    lzs-vocab:relevantProperty lzs-param:biobedspoelwaterproductie;
+    schema:value "2"^^xsd:decimal.
 lzs-stalbezetting:in_gebruik a skos:Concept;
     skos:inScheme conceptscheme:stalbezetting;
     skos:prefLabel "Stal in gebruik, dieren aanwezig."@nl;
@@ -874,6 +1194,13 @@ conceptscheme:parameter-norm a skos:ConceptScheme;
 conceptscheme:parameter a skos:ConceptScheme;
     skos:hasTopConcept lzs-param:biobedspoelwaterproductie, lzs-param:biobedspuiwaterproductie, lzs-param:drukvaloverhetsysteem, lzs-param:elektriciteitsverbruikwaterpompen, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:waswaterdebietbevloeiing, lzs-param:waswaterdebietvoorbevochtiging, lzs-param:zuurtegraadwaswater;
     skos:prefLabel "conceptschema luchtzuiveringssysteem eigenschap"@nl.
+conceptscheme:secundaire-alarmen a skos:ConceptScheme;
+    skos:altLabel "Dagbeoordelingsregels en alarmdrempels"@nl;
+    skos:definition "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl;
+    skos:hasTopConcept lzs-sec:alarmdrempel_10, lzs-sec:alarmdrempel_11, lzs-sec:alarmdrempel_12, lzs-sec:alarmdrempel_13, lzs-sec:alarmdrempel_15, lzs-sec:alarmdrempel_1, lzs-sec:alarmdrempel_2, lzs-sec:alarmdrempel_2a, lzs-sec:alarmdrempel_3, lzs-sec:alarmdrempel_4, lzs-sec:alarmdrempel_5, lzs-sec:alarmdrempel_6, lzs-sec:alarmdrempel_7, lzs-sec:alarmdrempel_8, lzs-sec:alarmdrempel_9, lzs-sec:dagbeoordeling_10, lzs-sec:dagbeoordeling_11, lzs-sec:dagbeoordeling_12, lzs-sec:dagbeoordeling_1, lzs-sec:dagbeoordeling_2, lzs-sec:dagbeoordeling_3, lzs-sec:dagbeoordeling_4, lzs-sec:dagbeoordeling_5, lzs-sec:dagbeoordeling_6, lzs-sec:dagbeoordeling_7, lzs-sec:dagbeoordeling_8, lzs-sec:dagbeoordeling_9;
+    skos:note "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl, "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl;
+    skos:prefLabel "Conceptschema secundaire alarmen luchtzuiveringssysteem"@nl;
+    skos:scopeNote "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl.
 conceptscheme:stalbezetting a skos:ConceptScheme;
     skos:hasTopConcept lzs-stalbezetting:in_gebruik, lzs-stalbezetting:leeg;
     skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.

@@ -306,6 +306,14 @@
             "@type": "https://data.lzs.omgeving.vlaanderen.be/id/datatype/inrichtingsnummer",
             "@id": "http://www.w3.org/2004/02/skos/core#notation"
         },
+        "relevantValue": {
+            "@type": "@id",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue"
+        },
+        "relevantNormBandbreedte": {
+            "@type": "@id",
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantNormBandbreedte"
+        },
         "integer_value": {
             "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
             "@type": "http://www.w3.org/2001/XMLSchema#integer"
@@ -757,6 +765,7 @@
         "lzs-medium": "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/",
         "lzs-param": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/",
         "lzs-param-norm": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/",
+        "lzs-sec": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/",
         "lzs-stalbezetting": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/",
         "lzs-status": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/",
         "lzs-type": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/",
@@ -2244,6 +2253,563 @@
             "minValue": "0"
         },
         {
+            "id": "lzs-sec:alarmdrempel_1",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor zuurtegraad waswater.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor zuurtegraad waswater.",
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."
+            ],
+            "prefLabel": "Alarmdrempel zuurtegraad waswater (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_10",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor elektriciteitsverbruik = 0 bij aanwezige stalbezetting (Lely Sphere).",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor elektriciteitsverbruik = 0 bij aanwezige stalbezetting (Lely Sphere).",
+                "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."
+            ],
+            "prefLabel": "Alarmdrempel elektriciteitsverbruik waswaterpomp = 0 Lely Sphere (3 dagen)",
+            "scopeNote": "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "value": "3"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_11",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus storing.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus storing.",
+                "15 opeenvolgende afwijkende dagen."
+            ],
+            "prefLabel": "Alarmdrempel systeemstatus = storing (15 dagen)",
+            "scopeNote": "15 opeenvolgende afwijkende dagen.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:systeemstatus",
+            "relevantValue": "lzs-status:storing",
+            "value": "15"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_12",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus onderhoud.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus onderhoud.",
+                "2 opeenvolgende afwijkende dagen."
+            ],
+            "prefLabel": "Alarmdrempel systeemstatus = onderhoud (2 dagen)",
+            "scopeNote": "2 opeenvolgende afwijkende dagen.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:systeemstatus",
+            "relevantValue": "lzs-status:onderhoud",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_13",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus in_reiniging.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "2 opeenvolgende afwijkende dagen.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus in_reiniging."
+            ],
+            "prefLabel": "Alarmdrempel systeemstatus = in_reiniging (2 dagen)",
+            "scopeNote": "2 opeenvolgende afwijkende dagen.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:systeemstatus",
+            "relevantValue": "lzs-status:in_reiniging",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_15",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor stalbezetting leeg.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "15 opeenvolgende afwijkende dagen.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor stalbezetting leeg."
+            ],
+            "prefLabel": "Alarmdrempel stalbezetting = leeg (15 dagen)",
+            "scopeNote": "15 opeenvolgende afwijkende dagen.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:stalbezetting",
+            "relevantValue": "lzs-stalbezetting:leeg",
+            "value": "15"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_2",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid van het waswater.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid van het waswater."
+            ],
+            "prefLabel": "Alarmdrempel geleidbaarheid van het waswater (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_2a",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid > 280 mS/cm (regelgeving Lely Sphere). Override op parameterniveau alarmdrempel_2.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid > 280 mS/cm (regelgeving Lely Sphere). Override op parameterniveau alarmdrempel_2.",
+                "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2."
+            ],
+            "prefLabel": "Alarmdrempel geleidbaarheid waswater > 280 mS/cm Lely Sphere (3 dagen)",
+            "scopeNote": "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantNormBandbreedte": "lzs-bandbreedte:_17",
+            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "value": "3"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_3",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet."
+            ],
+            "prefLabel": "Alarmdrempel waswaterdebiet (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:waswaterdebiet",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_4",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor spuiwaterproductie.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor spuiwaterproductie."
+            ],
+            "prefLabel": "Alarmdrempel spuiwaterproductie (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_5",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor drukval over het systeem.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor drukval over het systeem."
+            ],
+            "prefLabel": "Alarmdrempel drukval over het systeem (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_6",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de voorbevochtiging.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de voorbevochtiging."
+            ],
+            "prefLabel": "Alarmdrempel waswaterdebiet voorbevochtiging (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_7",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de bevloeiing.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de bevloeiing."
+            ],
+            "prefLabel": "Alarmdrempel waswaterdebiet bevloeiing (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_8",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspuiwaterproductie.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspuiwaterproductie."
+            ],
+            "prefLabel": "Alarmdrempel biobedspuiwaterproductie (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:biobedspuiwaterproductie",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:alarmdrempel_9",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "alarmdrempel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspoelwaterproductie.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": [
+                "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+                "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspoelwaterproductie."
+            ],
+            "prefLabel": "Alarmdrempel biobedspoelwaterproductie (7 dagen)",
+            "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:alarmdrempel",
+            "relevantProperty": "lzs-param:biobedspoelwaterproductie",
+            "value": "7"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_1",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
+            "prefLabel": "Dagbeoordelingsregel zuurtegraad waswater",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_10",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
+            "prefLabel": "Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_11",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+            "prefLabel": "Dagbeoordelingsregel systeemstatus",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:systeemstatus",
+            "relevantValue": [
+                "lzs-status:storing",
+                "lzs-status:onderhoud",
+                "lzs-status:in_reiniging"
+            ],
+            "value": "1"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_12",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+            "prefLabel": "Dagbeoordelingsregel stalbezetting",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:stalbezetting",
+            "relevantValue": "lzs-stalbezetting:leeg",
+            "value": "1"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_2",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
+            "prefLabel": "Dagbeoordelingsregel geleidbaarheid van het waswater",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_3",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
+            "prefLabel": "Dagbeoordelingsregel waswaterdebiet",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:waswaterdebiet",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_4",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
+            "prefLabel": "Dagbeoordelingsregel spuiwaterproductie",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_5",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
+            "prefLabel": "Dagbeoordelingsregel drukval over het systeem",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_6",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
+            "prefLabel": "Dagbeoordelingsregel waswaterdebiet voorbevochtiging",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_7",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
+            "prefLabel": "Dagbeoordelingsregel waswaterdebiet bevloeiing",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_8",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
+            "prefLabel": "Dagbeoordelingsregel biobedspuiwaterproductie",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:biobedspuiwaterproductie",
+            "value": "2"
+        },
+        {
+            "id": "lzs-sec:dagbeoordeling_9",
+            "_type": [
+                "skos:Concept"
+            ],
+            "dc_type": "dagbeoordelingsregel",
+            "relevantQuantityKind": [
+                "unit:NUM"
+            ],
+            "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
+            "inScheme": "conceptscheme:secundaire-alarmen",
+            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
+            "prefLabel": "Dagbeoordelingsregel biobedspoelwaterproductie",
+            "topConceptOf": "conceptscheme:secundaire-alarmen",
+            "hasProcedureForProperty": "concept:dagbeoordelingsregel",
+            "relevantProperty": "lzs-param:biobedspoelwaterproductie",
+            "value": "2"
+        },
+        {
             "id": "lzs-stalbezetting:in_gebruik",
             "_type": [
                 "skos:Concept"
@@ -2626,13 +3192,56 @@
             "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
         },
         {
+            "id": "conceptscheme:secundaire-alarmen",
+            "_type": [
+                "skos:ConceptScheme"
+            ],
+            "altLabel": "Dagbeoordelingsregels en alarmdrempels",
+            "definition": "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
+            "hasTopConcept": [
+                "lzs-sec:alarmdrempel_10",
+                "lzs-sec:alarmdrempel_11",
+                "lzs-sec:alarmdrempel_12",
+                "lzs-sec:alarmdrempel_13",
+                "lzs-sec:alarmdrempel_15",
+                "lzs-sec:alarmdrempel_1",
+                "lzs-sec:alarmdrempel_2",
+                "lzs-sec:alarmdrempel_2a",
+                "lzs-sec:alarmdrempel_3",
+                "lzs-sec:alarmdrempel_4",
+                "lzs-sec:alarmdrempel_5",
+                "lzs-sec:alarmdrempel_6",
+                "lzs-sec:alarmdrempel_7",
+                "lzs-sec:alarmdrempel_8",
+                "lzs-sec:alarmdrempel_9",
+                "lzs-sec:dagbeoordeling_10",
+                "lzs-sec:dagbeoordeling_11",
+                "lzs-sec:dagbeoordeling_12",
+                "lzs-sec:dagbeoordeling_1",
+                "lzs-sec:dagbeoordeling_2",
+                "lzs-sec:dagbeoordeling_3",
+                "lzs-sec:dagbeoordeling_4",
+                "lzs-sec:dagbeoordeling_5",
+                "lzs-sec:dagbeoordeling_6",
+                "lzs-sec:dagbeoordeling_7",
+                "lzs-sec:dagbeoordeling_8",
+                "lzs-sec:dagbeoordeling_9"
+            ],
+            "note": [
+                "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
+                "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
+            ],
+            "prefLabel": "Conceptschema secundaire alarmen luchtzuiveringssysteem",
+            "scopeNote": "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
+        },
+        {
             "id": "conceptscheme:stalbezetting",
             "_type": [
                 "skos:ConceptScheme"
             ],
             "hasTopConcept": [
-                "lzs-stalbezetting:in_gebruik",
-                "lzs-stalbezetting:leeg"
+                "lzs-stalbezetting:leeg",
+                "lzs-stalbezetting:in_gebruik"
             ],
             "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
         },
@@ -2653,11 +3262,11 @@
                 "skos:ConceptScheme"
             ],
             "hasTopConcept": [
-                "lzs-status:buiten_gebruik",
-                "lzs-status:in_reiniging",
+                "lzs-status:storing",
                 "lzs-status:onderhoud",
-                "lzs-status:operationeel",
-                "lzs-status:storing"
+                "lzs-status:in_reiniging",
+                "lzs-status:buiten_gebruik",
+                "lzs-status:operationeel"
             ],
             "prefLabel": "conceptschema luchtzuiveringssysteem status"
         },

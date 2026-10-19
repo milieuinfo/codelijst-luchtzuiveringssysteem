@@ -305,6 +305,14 @@
     "@type": "https://data.lzs.omgeving.vlaanderen.be/id/datatype/inrichtingsnummer",
     "@id": "http://www.w3.org/2004/02/skos/core#notation"
   },
+  "relevantValue": {
+    "@type": "@id",
+    "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue"
+  },
+  "relevantNormBandbreedte": {
+    "@type": "@id",
+    "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantNormBandbreedte"
+  },
   "integer_value": {
     "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
     "@type": "http://www.w3.org/2001/XMLSchema#integer"

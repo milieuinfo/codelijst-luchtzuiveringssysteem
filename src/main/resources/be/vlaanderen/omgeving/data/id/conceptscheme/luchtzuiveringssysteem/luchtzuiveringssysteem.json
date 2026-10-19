@@ -1142,6 +1142,536 @@
         "minValue": "0"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_1",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor zuurtegraad waswater.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor zuurtegraad waswater.",
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."
+        ],
+        "prefLabel": "Alarmdrempel zuurtegraad waswater (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_10",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor elektriciteitsverbruik = 0 bij aanwezige stalbezetting (Lely Sphere).",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor elektriciteitsverbruik = 0 bij aanwezige stalbezetting (Lely Sphere).",
+            "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter."
+        ],
+        "prefLabel": "Alarmdrempel elektriciteitsverbruik waswaterpomp = 0 Lely Sphere (3 dagen)",
+        "scopeNote": "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "value": "3"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_11",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus storing.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus storing.",
+            "15 opeenvolgende afwijkende dagen."
+        ],
+        "prefLabel": "Alarmdrempel systeemstatus = storing (15 dagen)",
+        "scopeNote": "15 opeenvolgende afwijkende dagen.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
+        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
+        "value": "15"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_12",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus onderhoud.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus onderhoud.",
+            "2 opeenvolgende afwijkende dagen."
+        ],
+        "prefLabel": "Alarmdrempel systeemstatus = onderhoud (2 dagen)",
+        "scopeNote": "2 opeenvolgende afwijkende dagen.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
+        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_13",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus in_reiniging.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "2 opeenvolgende afwijkende dagen.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor systeemstatus in_reiniging."
+        ],
+        "prefLabel": "Alarmdrempel systeemstatus = in_reiniging (2 dagen)",
+        "scopeNote": "2 opeenvolgende afwijkende dagen.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
+        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_15",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor stalbezetting leeg.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "15 opeenvolgende afwijkende dagen.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor stalbezetting leeg."
+        ],
+        "prefLabel": "Alarmdrempel stalbezetting = leeg (15 dagen)",
+        "scopeNote": "15 opeenvolgende afwijkende dagen.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
+        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
+        "value": "15"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_2",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid van het waswater.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid van het waswater."
+        ],
+        "prefLabel": "Alarmdrempel geleidbaarheid van het waswater (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_2a",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid > 280 mS/cm (regelgeving Lely Sphere). Override op parameterniveau alarmdrempel_2.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor geleidbaarheid > 280 mS/cm (regelgeving Lely Sphere). Override op parameterniveau alarmdrempel_2.",
+            "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2."
+        ],
+        "prefLabel": "Alarmdrempel geleidbaarheid waswater > 280 mS/cm Lely Sphere (3 dagen)",
+        "scopeNote": "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantNormBandbreedte": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "value": "3"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_3",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet."
+        ],
+        "prefLabel": "Alarmdrempel waswaterdebiet (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_4",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor spuiwaterproductie.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor spuiwaterproductie."
+        ],
+        "prefLabel": "Alarmdrempel spuiwaterproductie (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_5",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor drukval over het systeem.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor drukval over het systeem."
+        ],
+        "prefLabel": "Alarmdrempel drukval over het systeem (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_6",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de voorbevochtiging.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de voorbevochtiging."
+        ],
+        "prefLabel": "Alarmdrempel waswaterdebiet voorbevochtiging (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_7",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de bevloeiing.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor waswaterdebiet van de bevloeiing."
+        ],
+        "prefLabel": "Alarmdrempel waswaterdebiet bevloeiing (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_8",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspuiwaterproductie.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspuiwaterproductie."
+        ],
+        "prefLabel": "Alarmdrempel biobedspuiwaterproductie (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_9",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "alarmdrempel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspoelwaterproductie.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": [
+            "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+            "Minimaal aantal opeenvolgende afwijkende dagen waarna een handhavingsalarm getriggerd wordt voor biobedspoelwaterproductie."
+        ],
+        "prefLabel": "Alarmdrempel biobedspoelwaterproductie (7 dagen)",
+        "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
+        "value": "7"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_1",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
+        "prefLabel": "Dagbeoordelingsregel zuurtegraad waswater",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_10",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
+        "prefLabel": "Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_11",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+        "prefLabel": "Dagbeoordelingsregel systeemstatus",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
+        "relevantValue": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging"
+        ],
+        "value": "1"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_12",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+        "prefLabel": "Dagbeoordelingsregel stalbezetting",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
+        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
+        "value": "1"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_2",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
+        "prefLabel": "Dagbeoordelingsregel geleidbaarheid van het waswater",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_3",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
+        "prefLabel": "Dagbeoordelingsregel waswaterdebiet",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_4",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
+        "prefLabel": "Dagbeoordelingsregel spuiwaterproductie",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_5",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
+        "prefLabel": "Dagbeoordelingsregel drukval over het systeem",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_6",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
+        "prefLabel": "Dagbeoordelingsregel waswaterdebiet voorbevochtiging",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_7",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
+        "prefLabel": "Dagbeoordelingsregel waswaterdebiet bevloeiing",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_8",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
+        "prefLabel": "Dagbeoordelingsregel biobedspuiwaterproductie",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+        "value": "2"
+    },
+    {
+        "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_9",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "dc_type": "dagbeoordelingsregel",
+        "relevantQuantityKind": [
+            "http://qudt.org/vocab/unit/NUM"
+        ],
+        "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
+        "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
+        "prefLabel": "Dagbeoordelingsregel biobedspoelwaterproductie",
+        "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
+        "value": "2"
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1524,13 +2054,56 @@
         "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
     },
     {
+        "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
+        "_type": [
+            "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+        ],
+        "altLabel": "Dagbeoordelingsregels en alarmdrempels",
+        "definition": "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
+        "hasTopConcept": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_10",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_11",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_12",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_13",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_15",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_2",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_2a",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_3",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_4",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_5",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_6",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_7",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_8",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/alarmdrempel_9",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_10",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_11",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_12",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_1",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_2",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_3",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_4",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_5",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_6",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_7",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_8",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_9"
+        ],
+        "note": [
+            "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
+            "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
+        ],
+        "prefLabel": "Conceptschema secundaire alarmen luchtzuiveringssysteem",
+        "scopeNote": "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
+    },
+    {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting",
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
         "hasTopConcept": [
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik"
         ],
         "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
     },
@@ -1551,11 +2124,11 @@
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
         "hasTopConcept": [
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel",
-            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing"
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik",
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel"
         ],
         "prefLabel": "conceptschema luchtzuiveringssysteem status"
     },
