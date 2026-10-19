@@ -293,7 +293,7 @@ lzs-bandbreedte:_19 dc:type "Onder minimum grenswaarde";
     lzs-vocab:operatie "product"@nl;
     lzs-vocab:relevantLZS lzs-type:lelysphere;
     lzs-vocab:relevantProperty lzs-param:waswaterdebiet;
-    schema:maxValue "0,8"^^xsd:decimal.
+    schema:maxValue 0.8.
 lzs-bandbreedte:_1 dc:type "Onder minimum grenswaarde";
     a skos:Concept;
     skos:definition "De zuurtegraad van het waswater is kleiner dan 6"@nl;
@@ -316,7 +316,7 @@ lzs-bandbreedte:_20 dc:type "Onder minimum grenswaarde";
     lzs-vocab:operatie "product"@nl;
     lzs-vocab:relevantLZS lzs-type:lelysphere;
     lzs-vocab:relevantProperty lzs-param:spuiwaterproductie;
-    schema:maxValue "0,9"^^xsd:decimal.
+    schema:maxValue 0.9.
 lzs-bandbreedte:_21 dc:type "Onder minimum grenswaarde";
     a skos:Concept;
     skos:definition "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh"@nl;

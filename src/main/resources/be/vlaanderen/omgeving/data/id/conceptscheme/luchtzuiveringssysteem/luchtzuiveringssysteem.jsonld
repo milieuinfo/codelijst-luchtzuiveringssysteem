@@ -1260,7 +1260,7 @@
                 "lzs-type:lelysphere"
             ],
             "relevantProperty": "lzs-param:waswaterdebiet",
-            "maxValue": "0,8"
+            "maxValue": "0.8"
         },
         {
             "id": "lzs-bandbreedte:_2",
@@ -1303,7 +1303,7 @@
                 "lzs-type:lelysphere"
             ],
             "relevantProperty": "lzs-param:spuiwaterproductie",
-            "maxValue": "0,9"
+            "maxValue": "0.9"
         },
         {
             "id": "lzs-bandbreedte:_21",

@@ -383,7 +383,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
-        "maxValue": "0,8"
+        "maxValue": "0.8"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_2",
@@ -426,7 +426,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
         "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
-        "maxValue": "0,9"
+        "maxValue": "0.9"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21",

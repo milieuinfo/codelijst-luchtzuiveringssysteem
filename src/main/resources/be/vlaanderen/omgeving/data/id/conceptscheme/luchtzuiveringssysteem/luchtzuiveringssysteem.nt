@@ -206,7 +206,7 @@
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie> "product"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet> .
-<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://schema.org/maxValue> "0,8"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_19> <https://schema.org/maxValue> "0.8"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <http://purl.org/dc/elements/1.1/type> "Onder minimum grenswaarde" .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_1> <http://www.w3.org/2004/02/skos/core#definition> "De zuurtegraad van het waswater is kleiner dan 6"@nl .
@@ -231,7 +231,7 @@
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie> "product"@nl .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie> .
-<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://schema.org/maxValue> "0,9"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_20> <https://schema.org/maxValue> "0.9"^^<http://www.w3.org/2001/XMLSchema#decimal> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://purl.org/dc/elements/1.1/type> "Onder minimum grenswaarde" .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#Concept> .
 <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_21> <http://www.w3.org/2004/02/skos/core#definition> "Het elektriciteitsverbruik van de waswaterpomp is kleiner dan  1 kWh"@nl .
