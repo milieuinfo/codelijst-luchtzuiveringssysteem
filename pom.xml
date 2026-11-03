@@ -51,27 +51,43 @@
         <version>2.0.2</version>
         <configuration>
           <nodeVersion>v26.10.0</nodeVersion>
+          <pnpmVersion>9.15.9</pnpmVersion>
           <nodeDownloadRoot>${acd.repository.node.dist.url}</nodeDownloadRoot>
+          <pnpmDownloadRoot>${acd.repository.pnpm.dist.url}</pnpmDownloadRoot>
           <serverId>repo.omgeving.vlaanderen.be</serverId>
           <installDirectory>target/</installDirectory>
         </configuration>
         <executions>
           <execution>
-            <id>install node and npm</id>
+            <id>install node and pnpm</id>
             <goals>
-              <goal>install-node-and-npm</goal>
+              <goal>install-node-and-pnpm</goal>
             </goals>
           </execution>
           <execution>
-            <id>npm install</id>
+            <id>pnpm install</id>
             <goals>
-              <goal>npm</goal>
+              <goal>pnpm</goal>
             </goals>
+            <configuration>
+              <arguments>install --frozen-lockfile</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- genereert de SKOS-bestanden opnieuw uit src/source; Jenkins controleert
+                 daarna dat ze identiek zijn aan de gecommitte versie -->
+            <id>create skos</id>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run create_skos</arguments>
+            </configuration>
           </execution>
           <execution>
             <id>create metadata</id>
             <goals>
-              <goal>npm</goal>
+              <goal>pnpm</goal>
             </goals>
             <configuration>
               <arguments>run create_metadata</arguments>

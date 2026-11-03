@@ -163,7 +163,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "maxValue": "6"
     },
     {
@@ -185,7 +187,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "maxValue": "0.8"
     },
     {
@@ -207,7 +211,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "maxValue": "0.9"
     },
     {
@@ -229,7 +235,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "maxValue": "0.6"
     },
     {
@@ -251,7 +259,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "minValue": "1.4"
     },
     {
@@ -273,7 +283,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging"
+        ],
         "maxValue": "0.8"
     },
     {
@@ -295,7 +307,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing"
+        ],
         "maxValue": "0.8"
     },
     {
@@ -317,7 +331,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "minValue": "50"
     },
     {
@@ -338,7 +354,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "minValue": "280"
     },
     {
@@ -360,7 +378,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "minValue": "40"
     },
     {
@@ -382,7 +402,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "maxValue": "0.8"
     },
     {
@@ -403,7 +425,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "minValue": "8.5"
     },
     {
@@ -425,7 +449,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "maxValue": "0.9"
     },
     {
@@ -446,7 +472,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen"
+        ],
         "maxValue": "1"
     },
     {
@@ -468,7 +496,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "minValue": "0"
     },
     {
@@ -490,7 +520,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "maxValue": "0.8"
     },
     {
@@ -512,7 +544,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "maxValue": "0.9"
     },
     {
@@ -534,7 +568,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "maxValue": "0.6"
     },
     {
@@ -556,7 +592,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "minValue": "1.4"
     },
     {
@@ -578,7 +616,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "minValue": "1"
     },
     {
@@ -600,7 +640,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "minValue": "0"
     },
     {
@@ -842,7 +884,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "technischefiche": "true",
         "maxValue": "8.5",
         "minValue": "6"
@@ -859,7 +903,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "technischefiche": "true",
         "maxValue": "500",
         "minValue": "0"
@@ -876,7 +922,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -892,7 +940,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -908,7 +958,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -924,7 +976,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -940,7 +994,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s3"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "technischefiche": "true",
         "maxValue": "500",
         "minValue": "0"
@@ -957,7 +1013,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -973,7 +1031,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -989,7 +1049,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -1005,7 +1067,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/lelysphere"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -1021,7 +1085,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "technischefiche": "true",
         "maxValue": "30",
         "minValue": "0"
@@ -1038,7 +1104,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -1054,7 +1122,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -1070,7 +1140,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s1"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "technischefiche": "true",
         "maxValue": "500",
         "minValue": "0"
@@ -1087,7 +1159,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "technischefiche": "true",
         "maxValue": "14",
         "minValue": "0"
@@ -1104,7 +1178,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "technischefiche": "true",
         "maxValue": "500",
         "minValue": "0"
@@ -1121,7 +1197,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -1137,7 +1215,9 @@
         "relevantLZS": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2"
         ],
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "technischefiche": "true",
         "minValue": "0"
     },
@@ -1159,7 +1239,9 @@
         "prefLabel": "Alarmdrempel zuurtegraad waswater (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "value": "7"
     },
     {
@@ -1180,7 +1262,9 @@
         "prefLabel": "Alarmdrempel elektriciteitsverbruik waswaterpomp = 0 Lely Sphere (3 dagen)",
         "scopeNote": "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen"
+        ],
         "value": "3"
     },
     {
@@ -1201,8 +1285,12 @@
         "prefLabel": "Alarmdrempel systeemstatus = storing (15 dagen)",
         "scopeNote": "15 opeenvolgende afwijkende dagen.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
-        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
+        ],
+        "relevantValue": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing"
+        ],
         "value": "15"
     },
     {
@@ -1223,8 +1311,12 @@
         "prefLabel": "Alarmdrempel systeemstatus = onderhoud (2 dagen)",
         "scopeNote": "2 opeenvolgende afwijkende dagen.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
-        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
+        ],
+        "relevantValue": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud"
+        ],
         "value": "2"
     },
     {
@@ -1245,8 +1337,12 @@
         "prefLabel": "Alarmdrempel systeemstatus = in_reiniging (2 dagen)",
         "scopeNote": "2 opeenvolgende afwijkende dagen.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
-        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
+        ],
+        "relevantValue": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging"
+        ],
         "value": "2"
     },
     {
@@ -1267,8 +1363,12 @@
         "prefLabel": "Alarmdrempel stalbezetting = leeg (15 dagen)",
         "scopeNote": "15 opeenvolgende afwijkende dagen.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
-        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting"
+        ],
+        "relevantValue": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg"
+        ],
         "value": "15"
     },
     {
@@ -1289,7 +1389,9 @@
         "prefLabel": "Alarmdrempel geleidbaarheid van het waswater (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "value": "7"
     },
     {
@@ -1311,7 +1413,9 @@
         "scopeNote": "3 opeenvolgende afwijkende dagen. Specifiek voor norm_bandbreedte _17 (regelgevingsgrens >280 mS/cm Lely Sphere). Heeft voorrang op alarmdrempel_2.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
         "relevantNormBandbreedte": "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_17",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "value": "3"
     },
     {
@@ -1332,7 +1436,9 @@
         "prefLabel": "Alarmdrempel waswaterdebiet (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "value": "7"
     },
     {
@@ -1353,7 +1459,9 @@
         "prefLabel": "Alarmdrempel spuiwaterproductie (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "value": "7"
     },
     {
@@ -1374,7 +1482,9 @@
         "prefLabel": "Alarmdrempel drukval over het systeem (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "value": "7"
     },
     {
@@ -1395,7 +1505,9 @@
         "prefLabel": "Alarmdrempel waswaterdebiet voorbevochtiging (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging"
+        ],
         "value": "7"
     },
     {
@@ -1416,7 +1528,9 @@
         "prefLabel": "Alarmdrempel waswaterdebiet bevloeiing (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing"
+        ],
         "value": "7"
     },
     {
@@ -1437,7 +1551,9 @@
         "prefLabel": "Alarmdrempel biobedspuiwaterproductie (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie"
+        ],
         "value": "7"
     },
     {
@@ -1458,7 +1574,9 @@
         "prefLabel": "Alarmdrempel biobedspoelwaterproductie (7 dagen)",
         "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie"
+        ],
         "value": "7"
     },
     {
@@ -1472,10 +1590,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater."
+        ],
         "prefLabel": "Dagbeoordelingsregel zuurtegraad waswater",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater"
+        ],
         "value": "2"
     },
     {
@@ -1489,10 +1611,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en)."
+        ],
         "prefLabel": "Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/elektriciteitsverbruikwaterpompen"
+        ],
         "value": "2"
     },
     {
@@ -1506,10 +1632,14 @@
         ],
         "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+        "note": [
+            "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."
+        ],
         "prefLabel": "Dagbeoordelingsregel systeemstatus",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
+        ],
         "relevantValue": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud",
@@ -1528,11 +1658,17 @@
         ],
         "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+        "note": [
+            "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."
+        ],
         "prefLabel": "Dagbeoordelingsregel stalbezetting",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
-        "relevantValue": "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting"
+        ],
+        "relevantValue": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg"
+        ],
         "value": "1"
     },
     {
@@ -1546,10 +1682,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater."
+        ],
         "prefLabel": "Dagbeoordelingsregel geleidbaarheid van het waswater",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/geleidbaarheidvanhetwaswater"
+        ],
         "value": "2"
     },
     {
@@ -1563,10 +1703,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet."
+        ],
         "prefLabel": "Dagbeoordelingsregel waswaterdebiet",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebiet"
+        ],
         "value": "2"
     },
     {
@@ -1580,10 +1724,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie."
+        ],
         "prefLabel": "Dagbeoordelingsregel spuiwaterproductie",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/spuiwaterproductie"
+        ],
         "value": "2"
     },
     {
@@ -1597,10 +1745,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem."
+        ],
         "prefLabel": "Dagbeoordelingsregel drukval over het systeem",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/drukvaloverhetsysteem"
+        ],
         "value": "2"
     },
     {
@@ -1614,10 +1766,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging."
+        ],
         "prefLabel": "Dagbeoordelingsregel waswaterdebiet voorbevochtiging",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging"
+        ],
         "value": "2"
     },
     {
@@ -1631,10 +1787,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing."
+        ],
         "prefLabel": "Dagbeoordelingsregel waswaterdebiet bevloeiing",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing"
+        ],
         "value": "2"
     },
     {
@@ -1648,10 +1808,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie."
+        ],
         "prefLabel": "Dagbeoordelingsregel biobedspuiwaterproductie",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie"
+        ],
         "value": "2"
     },
     {
@@ -1665,10 +1829,14 @@
         ],
         "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
+        "note": [
+            "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie."
+        ],
         "prefLabel": "Dagbeoordelingsregel biobedspoelwaterproductie",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
-        "relevantProperty": "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie",
+        "relevantProperty": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie"
+        ],
         "value": "2"
     },
     {
@@ -1784,7 +1952,9 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "broader": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem",
-        "broaderTransitive": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem",
+        "broaderTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
+        ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
         "narrower": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/s2",
@@ -1891,7 +2061,9 @@
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
         "broader": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem",
-        "broaderTransitive": "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem",
+        "broaderTransitive": [
+            "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
+        ],
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
         "code": "S3",
         "prefLabel": "Biobed",
@@ -1916,7 +2088,9 @@
         "altLabel": "VLAREM klasse 1",
         "definition": "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure).",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
-        "note": "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure).",
+        "note": [
+            "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure)."
+        ],
         "prefLabel": "Klasse 1",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
@@ -1928,7 +2102,9 @@
         "altLabel": "VLAREM klasse 2",
         "definition": "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2.",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
-        "note": "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2.",
+        "note": [
+            "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2."
+        ],
         "prefLabel": "Klasse 2",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
@@ -1940,7 +2116,9 @@
         "altLabel": "VLAREM klasse 3",
         "definition": "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3).",
         "inScheme": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",
-        "note": "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3).",
+        "note": [
+            "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3)."
+        ],
         "prefLabel": "Klasse 3",
         "topConceptOf": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse"
     },
@@ -2050,7 +2228,9 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_8",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9"
         ],
-        "note": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
+        "note": [
+            "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
+        ],
         "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
     },
     {

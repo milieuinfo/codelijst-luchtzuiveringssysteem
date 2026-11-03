@@ -71,7 +71,8 @@
   },
   "broaderTransitive": {
     "@id": "http://www.w3.org/2004/02/skos/core#broaderTransitive",
-    "@type": "@id"
+    "@type": "@id",
+    "@container" : "@set"
   },
   "broadMatch": {
     "@id": "http://www.w3.org/2004/02/skos/core#broadMatch",
@@ -307,7 +308,8 @@
   },
   "relevantValue": {
     "@type": "@id",
-    "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue"
+    "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue",
+    "@container" : "@set"
   },
   "relevantNormBandbreedte": {
     "@type": "@id",
@@ -433,7 +435,8 @@
   },
   "note": {
     "@id": "http://www.w3.org/2004/02/skos/core#note",
-    "@language": "nl"
+    "@language": "nl",
+    "@container" : "@set"
   },
   "numerieke_waarde": {
     "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
@@ -539,7 +542,8 @@
   },
   "relevantProperty": {
     "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty",
-    "@type": "@id"
+    "@type": "@id",
+    "@container" : "@set"
   },
   "relevantQuantityKind": {
     "@id": "http://qudt.org/schema/qudt/relevantQuantityKind",

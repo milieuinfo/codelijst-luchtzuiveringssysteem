@@ -72,7 +72,8 @@
         },
         "broaderTransitive": {
             "@id": "http://www.w3.org/2004/02/skos/core#broaderTransitive",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "broadMatch": {
             "@id": "http://www.w3.org/2004/02/skos/core#broadMatch",
@@ -308,7 +309,8 @@
         },
         "relevantValue": {
             "@type": "@id",
-            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue"
+            "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue",
+            "@container": "@set"
         },
         "relevantNormBandbreedte": {
             "@type": "@id",
@@ -434,7 +436,8 @@
         },
         "note": {
             "@id": "http://www.w3.org/2004/02/skos/core#note",
-            "@language": "nl"
+            "@language": "nl",
+            "@container": "@set"
         },
         "numerieke_waarde": {
             "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#value",
@@ -540,7 +543,8 @@
         },
         "relevantProperty": {
             "@id": "https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty",
-            "@type": "@id"
+            "@type": "@id",
+            "@container": "@set"
         },
         "relevantQuantityKind": {
             "@id": "http://qudt.org/schema/qudt/relevantQuantityKind",
@@ -839,13 +843,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:PH",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Ph"
-            },
+            "applicableUnit": "unit:PH",
             "altLabel": "Zuurtegraad"
         },
         {
@@ -853,13 +851,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:MilliS-PER-CentiM",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Millisiemens per centimeter"
-            },
+            "applicableUnit": "unit:MilliS-PER-CentiM",
             "altLabel": "Geleidbaarheid"
         },
         {
@@ -867,13 +859,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:NUM",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Getal"
-            },
+            "applicableUnit": "unit:NUM",
             "altLabel": "Aantal"
         },
         {
@@ -881,13 +867,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:KiloW-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kilowattuur"
-            },
+            "applicableUnit": "unit:KiloW-HR",
             "altLabel": "Vermogen"
         },
         {
@@ -895,13 +875,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:PA",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Pascal"
-            },
+            "applicableUnit": "unit:PA",
             "altLabel": "Dampdruk"
         },
         {
@@ -909,13 +883,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "applicableUnit": "unit:M3",
             "altLabel": "Volume"
         },
         {
@@ -923,13 +891,7 @@
             "_type": [
                 "qudt:QuantityKind"
             ],
-            "applicableUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "applicableUnit": "unit:M3-PER-HR",
             "altLabel": "Volume per tijdseenheid"
         },
         {
@@ -1040,7 +1002,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "maxValue": "6"
         },
         {
@@ -1062,7 +1026,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "maxValue": "0.8"
         },
         {
@@ -1084,7 +1050,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "maxValue": "0.9"
         },
         {
@@ -1106,7 +1074,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "maxValue": "0.6"
         },
         {
@@ -1128,7 +1098,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "minValue": "1.4"
         },
         {
@@ -1150,7 +1122,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietvoorbevochtiging"
+            ],
             "maxValue": "0.8"
         },
         {
@@ -1172,7 +1146,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietbevloeiing"
+            ],
             "maxValue": "0.8"
         },
         {
@@ -1194,7 +1170,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "minValue": "50"
         },
         {
@@ -1215,7 +1193,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "minValue": "280"
         },
         {
@@ -1237,7 +1217,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "minValue": "40"
         },
         {
@@ -1259,7 +1241,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "maxValue": "0.8"
         },
         {
@@ -1280,7 +1264,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "minValue": "8.5"
         },
         {
@@ -1302,7 +1288,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "maxValue": "0.9"
         },
         {
@@ -1323,7 +1311,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "relevantProperty": [
+                "lzs-param:elektriciteitsverbruikwaterpompen"
+            ],
             "maxValue": "1"
         },
         {
@@ -1345,7 +1335,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "minValue": "0"
         },
         {
@@ -1367,7 +1359,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "maxValue": "0.8"
         },
         {
@@ -1389,7 +1383,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "maxValue": "0.9"
         },
         {
@@ -1411,7 +1407,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "maxValue": "0.6"
         },
         {
@@ -1433,7 +1431,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "minValue": "1.4"
         },
         {
@@ -1455,7 +1455,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "minValue": "1"
         },
         {
@@ -1477,7 +1479,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "minValue": "0"
         },
         {
@@ -1490,13 +1494,7 @@
             "relevantQuantityKind": [
                 "quantitykind:Volume"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Biobedspoelwaterproductie",
@@ -1516,13 +1514,7 @@
             "relevantQuantityKind": [
                 "quantitykind:Volume"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "seeAlso": "omg_id:concept/fysico-chemisch/0050",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Biobedspuiwaterproductie",
@@ -1542,13 +1534,7 @@
             "relevantQuantityKind": [
                 "quantitykind:VaporPressure"
             ],
-            "relevantUnit": {
-                "id": "unit:PA",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Pascal"
-            },
+            "relevantUnit": "unit:PA",
             "seeAlso": "omg_id:concept/fysico-chemisch/0329",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Drukval over het systeem",
@@ -1569,13 +1555,7 @@
             "relevantQuantityKind": [
                 "quantitykind:Energy"
             ],
-            "relevantUnit": {
-                "id": "unit:KiloW-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kilowattuur"
-            },
+            "relevantUnit": "unit:KiloW-HR",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Elektriciteitsverbruik van de waswaterpomp(en)",
             "topConceptOf": "conceptscheme:parameter",
@@ -1594,13 +1574,7 @@
             "relevantQuantityKind": [
                 "quantitykind:Conductivity"
             ],
-            "relevantUnit": {
-                "id": "unit:MilliS-PER-CentiM",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Millisiemens per centimeter"
-            },
+            "relevantUnit": "unit:MilliS-PER-CentiM",
             "seeAlso": "omg_id:concept/fysico-chemisch/0010",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Geleidbaarheid van het waswater",
@@ -1623,13 +1597,7 @@
             "relevantQuantityKind": [
                 "quantitykind:Volume"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "seeAlso": "omg_id:concept/fysico-chemisch/0050",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Spuiwaterproductie",
@@ -1691,13 +1659,7 @@
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Waswaterdebiet over het waspakket",
@@ -1719,13 +1681,7 @@
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Waswaterdebiet van de bevloeiing van het vulmateriaal",
@@ -1745,13 +1701,7 @@
             "relevantQuantityKind": [
                 "quantitykind:VolumeFlowRate"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "seeAlso": "omg_id:concept/fysico-chemisch/0053",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Waswaterdebiet van de voorbevochtiging van de ingaande stallucht",
@@ -1771,13 +1721,7 @@
             "relevantQuantityKind": [
                 "quantitykind:Acidity"
             ],
-            "relevantUnit": {
-                "id": "unit:PH",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Ph"
-            },
+            "relevantUnit": "unit:PH",
             "seeAlso": "omg_id:concept/fysico-chemisch/0076",
             "inScheme": "conceptscheme:parameter",
             "prefLabel": "Zuurtegraad van het waswater",
@@ -1794,13 +1738,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:PH",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Ph"
-            },
+            "relevantUnit": "unit:PH",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Zuurtegraad waswater S1 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1809,7 +1747,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "technischefiche": "true",
             "maxValue": "8.5",
             "minValue": "6"
@@ -1819,13 +1759,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:PA",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Pascal"
-            },
+            "relevantUnit": "unit:PA",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Drukval S2 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1834,7 +1768,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "technischefiche": "true",
             "maxValue": "500",
             "minValue": "0"
@@ -1844,13 +1780,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Waswaterdebiet voorbevochtiging S3 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1859,7 +1789,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietvoorbevochtiging"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -1868,13 +1800,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Waswaterdebiet bevloeiing S3 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1883,7 +1809,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietbevloeiing"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -1892,13 +1820,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Biobedspuiwaterproductie S3 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1907,7 +1829,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:biobedspuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:biobedspuiwaterproductie"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -1916,13 +1840,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Biobedspoelwaterproductie S3 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1931,7 +1849,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:biobedspoelwaterproductie",
+            "relevantProperty": [
+                "lzs-param:biobedspoelwaterproductie"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -1940,13 +1860,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:PA",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Pascal"
-            },
+            "relevantUnit": "unit:PA",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Drukval S3 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1955,7 +1869,9 @@
             "relevantLZS": [
                 "lzs-type:s3"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "technischefiche": "true",
             "maxValue": "500",
             "minValue": "0"
@@ -1965,13 +1881,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:MilliS-PER-CentiM",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Millisiemens per centimeter"
-            },
+            "relevantUnit": "unit:MilliS-PER-CentiM",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Geleidbaarheid waswater Lely Sphere systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -1980,7 +1890,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -1989,13 +1901,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Waswaterdebiet Lely Sphere systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2004,7 +1910,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2013,13 +1921,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Spuiwaterdebiet Lely Sphere systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2028,7 +1930,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2037,13 +1941,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:KiloW-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kilowattuur"
-            },
+            "relevantUnit": "unit:KiloW-HR",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Elektriciteitsverbruik van de waswaterpomp(en) Lely Sphere systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2052,7 +1950,9 @@
             "relevantLZS": [
                 "lzs-type:lelysphere"
             ],
-            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "relevantProperty": [
+                "lzs-param:elektriciteitsverbruikwaterpompen"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2061,13 +1961,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:MilliS-PER-CentiM",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Millisiemens per centimeter"
-            },
+            "relevantUnit": "unit:MilliS-PER-CentiM",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Geleidbaarheid waswater S1 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2076,7 +1970,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "technischefiche": "true",
             "maxValue": "30",
             "minValue": "0"
@@ -2086,13 +1982,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Waswaterdebiet S1 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2101,7 +1991,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2110,13 +2002,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Spuiwaterdebiet S1 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2125,7 +2011,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2134,13 +2022,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:PA",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Pascal"
-            },
+            "relevantUnit": "unit:PA",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Drukval S1 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2149,7 +2031,9 @@
             "relevantLZS": [
                 "lzs-type:s1"
             ],
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "technischefiche": "true",
             "maxValue": "500",
             "minValue": "0"
@@ -2159,13 +2043,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:PH",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Ph"
-            },
+            "relevantUnit": "unit:PH",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Zuurtegraad waswater S2 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2174,7 +2052,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "technischefiche": "true",
             "maxValue": "14",
             "minValue": "0"
@@ -2184,13 +2064,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:MilliS-PER-CentiM",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Millisiemens per centimeter"
-            },
+            "relevantUnit": "unit:MilliS-PER-CentiM",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Geleidbaarheid waswater S2 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2199,7 +2073,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "technischefiche": "true",
             "maxValue": "500",
             "minValue": "0"
@@ -2209,13 +2085,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3-PER-HR",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter per uur"
-            },
+            "relevantUnit": "unit:M3-PER-HR",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Waswaterdebiet S2 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2224,7 +2094,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2233,13 +2105,7 @@
             "_type": [
                 "skos:Concept"
             ],
-            "relevantUnit": {
-                "id": "unit:M3",
-                "_type": [
-                    "qudt:Unit"
-                ],
-                "altLabel": "Kubieke meter"
-            },
+            "relevantUnit": "unit:M3",
             "inScheme": "conceptscheme:parameter-norm",
             "prefLabel": "Spuiwaterdebiet S2 systeem",
             "topConceptOf": "conceptscheme:parameter-norm",
@@ -2248,7 +2114,9 @@
             "relevantLZS": [
                 "lzs-type:s2"
             ],
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "technischefiche": "true",
             "minValue": "0"
         },
@@ -2271,7 +2139,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "value": "7"
         },
         {
@@ -2293,7 +2163,9 @@
             "scopeNote": "3 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "relevantProperty": [
+                "lzs-param:elektriciteitsverbruikwaterpompen"
+            ],
             "value": "3"
         },
         {
@@ -2315,8 +2187,12 @@
             "scopeNote": "15 opeenvolgende afwijkende dagen.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:systeemstatus",
-            "relevantValue": "lzs-status:storing",
+            "relevantProperty": [
+                "lzs-param:systeemstatus"
+            ],
+            "relevantValue": [
+                "lzs-status:storing"
+            ],
             "value": "15"
         },
         {
@@ -2338,8 +2214,12 @@
             "scopeNote": "2 opeenvolgende afwijkende dagen.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:systeemstatus",
-            "relevantValue": "lzs-status:onderhoud",
+            "relevantProperty": [
+                "lzs-param:systeemstatus"
+            ],
+            "relevantValue": [
+                "lzs-status:onderhoud"
+            ],
             "value": "2"
         },
         {
@@ -2361,8 +2241,12 @@
             "scopeNote": "2 opeenvolgende afwijkende dagen.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:systeemstatus",
-            "relevantValue": "lzs-status:in_reiniging",
+            "relevantProperty": [
+                "lzs-param:systeemstatus"
+            ],
+            "relevantValue": [
+                "lzs-status:in_reiniging"
+            ],
             "value": "2"
         },
         {
@@ -2384,8 +2268,12 @@
             "scopeNote": "15 opeenvolgende afwijkende dagen.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:stalbezetting",
-            "relevantValue": "lzs-stalbezetting:leeg",
+            "relevantProperty": [
+                "lzs-param:stalbezetting"
+            ],
+            "relevantValue": [
+                "lzs-stalbezetting:leeg"
+            ],
             "value": "15"
         },
         {
@@ -2407,7 +2295,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "value": "7"
         },
         {
@@ -2430,7 +2320,9 @@
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
             "relevantNormBandbreedte": "lzs-bandbreedte:_17",
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "value": "3"
         },
         {
@@ -2452,7 +2344,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "value": "7"
         },
         {
@@ -2474,7 +2368,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "value": "7"
         },
         {
@@ -2496,7 +2392,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "value": "7"
         },
         {
@@ -2518,7 +2416,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietvoorbevochtiging"
+            ],
             "value": "7"
         },
         {
@@ -2540,7 +2440,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietbevloeiing"
+            ],
             "value": "7"
         },
         {
@@ -2562,7 +2464,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:biobedspuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:biobedspuiwaterproductie"
+            ],
             "value": "7"
         },
         {
@@ -2584,7 +2488,9 @@
             "scopeNote": "7 opeenvolgende afwijkende dagen. Default voor alle norm_bandbreedtes van deze parameter.",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:alarmdrempel",
-            "relevantProperty": "lzs-param:biobedspoelwaterproductie",
+            "relevantProperty": [
+                "lzs-param:biobedspoelwaterproductie"
+            ],
             "value": "7"
         },
         {
@@ -2598,11 +2504,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor zuurtegraad waswater."
+            ],
             "prefLabel": "Dagbeoordelingsregel zuurtegraad waswater",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:zuurtegraadwaswater",
+            "relevantProperty": [
+                "lzs-param:zuurtegraadwaswater"
+            ],
             "value": "2"
         },
         {
@@ -2616,11 +2526,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en).",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor elektriciteitsverbruik van de waswaterpomp(en)."
+            ],
             "prefLabel": "Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:elektriciteitsverbruikwaterpompen",
+            "relevantProperty": [
+                "lzs-param:elektriciteitsverbruikwaterpompen"
+            ],
             "value": "2"
         },
         {
@@ -2634,11 +2548,15 @@
             ],
             "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+            "note": [
+                "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de systeemstatus. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."
+            ],
             "prefLabel": "Dagbeoordelingsregel systeemstatus",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:systeemstatus",
+            "relevantProperty": [
+                "lzs-param:systeemstatus"
+            ],
             "relevantValue": [
                 "lzs-status:storing",
                 "lzs-status:onderhoud",
@@ -2657,12 +2575,18 @@
             ],
             "definition": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag.",
+            "note": [
+                "Maximaal aantal afwijkende kwalitatieve observaties per dag waarboven een dag als afwijkend wordt beschouwd voor de stalbezetting. Waarde 1: elke afwijkende observatie telt onmiddellijk als afwijkende dag."
+            ],
             "prefLabel": "Dagbeoordelingsregel stalbezetting",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:stalbezetting",
-            "relevantValue": "lzs-stalbezetting:leeg",
+            "relevantProperty": [
+                "lzs-param:stalbezetting"
+            ],
+            "relevantValue": [
+                "lzs-stalbezetting:leeg"
+            ],
             "value": "1"
         },
         {
@@ -2676,11 +2600,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor geleidbaarheid van het waswater."
+            ],
             "prefLabel": "Dagbeoordelingsregel geleidbaarheid van het waswater",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:geleidbaarheidvanhetwaswater",
+            "relevantProperty": [
+                "lzs-param:geleidbaarheidvanhetwaswater"
+            ],
             "value": "2"
         },
         {
@@ -2694,11 +2622,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet."
+            ],
             "prefLabel": "Dagbeoordelingsregel waswaterdebiet",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:waswaterdebiet",
+            "relevantProperty": [
+                "lzs-param:waswaterdebiet"
+            ],
             "value": "2"
         },
         {
@@ -2712,11 +2644,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor spuiwaterproductie."
+            ],
             "prefLabel": "Dagbeoordelingsregel spuiwaterproductie",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:spuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:spuiwaterproductie"
+            ],
             "value": "2"
         },
         {
@@ -2730,11 +2666,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor drukval over het systeem."
+            ],
             "prefLabel": "Dagbeoordelingsregel drukval over het systeem",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:drukvaloverhetsysteem",
+            "relevantProperty": [
+                "lzs-param:drukvaloverhetsysteem"
+            ],
             "value": "2"
         },
         {
@@ -2748,11 +2688,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de voorbevochtiging."
+            ],
             "prefLabel": "Dagbeoordelingsregel waswaterdebiet voorbevochtiging",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:waswaterdebietvoorbevochtiging",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietvoorbevochtiging"
+            ],
             "value": "2"
         },
         {
@@ -2766,11 +2710,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor waswaterdebiet van de bevloeiing."
+            ],
             "prefLabel": "Dagbeoordelingsregel waswaterdebiet bevloeiing",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:waswaterdebietbevloeiing",
+            "relevantProperty": [
+                "lzs-param:waswaterdebietbevloeiing"
+            ],
             "value": "2"
         },
         {
@@ -2784,11 +2732,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspuiwaterproductie."
+            ],
             "prefLabel": "Dagbeoordelingsregel biobedspuiwaterproductie",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:biobedspuiwaterproductie",
+            "relevantProperty": [
+                "lzs-param:biobedspuiwaterproductie"
+            ],
             "value": "2"
         },
         {
@@ -2802,11 +2754,15 @@
             ],
             "definition": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
             "inScheme": "conceptscheme:secundaire-alarmen",
-            "note": "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie.",
+            "note": [
+                "Maximaal aantal afwijkende metingen per dag waarboven een dag als afwijkend wordt beschouwd voor biobedspoelwaterproductie."
+            ],
             "prefLabel": "Dagbeoordelingsregel biobedspoelwaterproductie",
             "topConceptOf": "conceptscheme:secundaire-alarmen",
             "hasProcedureForProperty": "concept:dagbeoordelingsregel",
-            "relevantProperty": "lzs-param:biobedspoelwaterproductie",
+            "relevantProperty": [
+                "lzs-param:biobedspoelwaterproductie"
+            ],
             "value": "2"
         },
         {
@@ -2922,7 +2878,9 @@
                 "skos:Concept"
             ],
             "broader": "lzs-type:luchtzuiveringssysteem",
-            "broaderTransitive": "lzs-type:luchtzuiveringssysteem",
+            "broaderTransitive": [
+                "lzs-type:luchtzuiveringssysteem"
+            ],
             "inScheme": "conceptscheme:systeemtype",
             "narrower": [
                 "lzs-type:s2",
@@ -3029,7 +2987,9 @@
                 "skos:Concept"
             ],
             "broader": "lzs-type:luchtzuiveringssysteem",
-            "broaderTransitive": "lzs-type:luchtzuiveringssysteem",
+            "broaderTransitive": [
+                "lzs-type:luchtzuiveringssysteem"
+            ],
             "inScheme": "conceptscheme:systeemtype",
             "code": "S3",
             "prefLabel": "Biobed",
@@ -3054,7 +3014,9 @@
             "altLabel": "VLAREM klasse 1",
             "definition": "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure).",
             "inScheme": "conceptscheme-alg:vlarem-klasse",
-            "note": "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure).",
+            "note": [
+                "Indelingsklasse voor inrichtingen met de grootste milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 1 (zwaarste procedure)."
+            ],
             "prefLabel": "Klasse 1",
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
@@ -3066,7 +3028,9 @@
             "altLabel": "VLAREM klasse 2",
             "definition": "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2.",
             "inScheme": "conceptscheme-alg:vlarem-klasse",
-            "note": "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2.",
+            "note": [
+                "Indelingsklasse voor inrichtingen met een middelgrote milieu-impact. Voor deze activiteiten geldt een omgevingsvergunning klasse 2."
+            ],
             "prefLabel": "Klasse 2",
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
@@ -3078,7 +3042,9 @@
             "altLabel": "VLAREM klasse 3",
             "definition": "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3).",
             "inScheme": "conceptscheme-alg:vlarem-klasse",
-            "note": "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3).",
+            "note": [
+                "Indelingsklasse voor inrichtingen met een beperkte milieu-impact. Voor deze activiteiten geldt een meldingsplicht (klasse 3)."
+            ],
             "prefLabel": "Klasse 3",
             "topConceptOf": "conceptscheme-alg:vlarem-klasse"
         },
@@ -3188,7 +3154,9 @@
                 "lzs-param-norm:_8",
                 "lzs-param-norm:_9"
             ],
-            "note": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
+            "note": [
+                "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
+            ],
             "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
         },
         {
