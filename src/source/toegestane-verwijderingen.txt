@@ -1,4 +1,4 @@
-# Bewuste verwijderingen t.o.v. de vorige release, gelezen door 03_vergelijk_vorige_release.js.
+# Bewuste verwijderingen t.o.v. de vorige release, gelezen door 03_validate_against_previous_release.js.
 # Een verwijdering is een breaking change voor afnemers: vermeld ze in de PR.
 #
 # Eén regel per verwijdering, in een van deze vormen (IRI als <...> of als CURIE uit config.yml):

@@ -8,7 +8,7 @@
   "scripts": {
     "create_skos": "cd src && node 01_codelijst_skos_from_csv.js",
     "create_metadata": "cd src && node 02_metadata.js",
-    "validate_release": "cd src && node 03_vergelijk_vorige_release.js"
+    "validate_release": "cd src && node 03_validate_against_previous_release.js"
   },
   "keywords": [
     "milieuinfo",

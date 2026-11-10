@@ -38,6 +38,8 @@ Edit these (sources):
 | `src/source/toegestane-verwijderingen.txt` | Allowlist of intentional removals vs. the previous release, read by `validate_release` |
 | `src/n3/luchtzuivering-rules.n3` | Project-specific N3 inference rules |
 | `src/utils/variables.js` | Wires config into the generator; holds the JSON-LD frames |
+| `src/utils/git.js` | Small git library: one function per git command (`show`, `tag`, `commit`, ...), same arguments as the CLI, returns stdout. Never call git directly from a script |
+| `src/utils/git-utils.js` | Logic built on `git.js` (latest release tag, file contents at a tag) |
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary and the SHACL shapes (AP constraints) |
 | `src/main/resources/be/vlaanderen/omgeving/lzs/data/id/graph/*.json` | Published copies of context/prefixes for consumers; maintained by hand, not read by any script |
 
@@ -100,7 +102,7 @@ Workflow for every code list change:
 
 1. **Regenerate and commit together.** Jenkins regenerates the SKOS files and fails the build when
    `git status -- src/main/resources` is not clean.
-2. **Nothing may disappear silently.** Jenkins runs `03_vergelijk_vorige_release.js` and fails when concepts
+2. **Nothing may disappear silently.** Jenkins runs `03_validate_against_previous_release.js` and fails when concepts
    or values from the previous release tag are missing and not listed in `toegestane-verwijderingen.txt`.
 3. **SHACL must pass.** Do not loosen the shapes to make data pass unless that is the actual intent.
 4. **CSV conventions.**

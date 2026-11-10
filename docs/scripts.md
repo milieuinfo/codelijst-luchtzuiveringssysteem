@@ -111,7 +111,7 @@ dus pas daarna geschreven worden. Omdat `create_odcs` het Parquet-bestand leest,
 Dit script heeft **netwerktoegang tot Artifactory** nodig. Zonder die toegang faalt het, maar dat heeft
 geen invloed op de SKOS-bestanden.
 
-## `03_vergelijk_vorige_release.js`
+## `03_validate_against_previous_release.js`
 
 ```bash
 pnpm run validate_release
@@ -154,6 +154,11 @@ lzs-param-norm:_1 lzs-vocab:technischefiche   alle waarden van dit predicaat bij
 Een verwijdering blijft een breaking change voor afnemers: vermeld ze in de PR. Na de release zit de
 verwijdering in de nieuwe tag. Het script meldt dan dat die regels geen effect meer hebben, en je
 mag ze weghalen.
+
+Het script roept git niet zelf aan. `utils/git.js` is een kleine git-bibliotheek met één functie per
+git-commando (`show`, `tag`, `mergeBase`, `commit`, ...), met dezelfde argumenten als op de command line.
+Wat die commando's combineert (de laatste release-tag bepalen, een bestand uit een tag lezen), staat in
+`utils/git-utils.js`.
 
 Dit script heeft geen netwerktoegang nodig, wel de git-tags.
 

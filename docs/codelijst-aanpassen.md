@@ -72,7 +72,7 @@ Een concept wijzigen of verwijderen gaat op dezelfde manier. Hou er wel rekening
 naar de IRI van een concept kunnen verwijzen. Een bestaande `_id` aanpassen of verwijderen is dus
 een breaking change voor wie dat concept gebruikt. Jenkins laat zo'n verwijdering enkel door als ze in
 `src/source/toegestane-verwijderingen.txt` staat, zie
-[Node.js-scripts](scripts.md#03_vergelijk_vorige_releasejs).
+[Node.js-scripts](scripts.md#03_validate_against_previous_releasejs).
 
 ## Een nieuw prefix gebruiken
 

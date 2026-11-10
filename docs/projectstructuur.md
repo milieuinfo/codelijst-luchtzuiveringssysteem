@@ -18,6 +18,8 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/source/toegestane-verwijderingen.txt` | ★ bron | jij | `validate_release` | ja | nee |
 | `src/n3/luchtzuivering-rules.n3` | ★ bron | jij | `create_skos` | ja | nee |
 | `src/utils/variables.js` | ★ bron (code) | jij | `01_…`, `02_…` en `03_…` | ja | nee |
+| `src/utils/git.js` | ★ bron (code) | jij | `utils/git-utils.js` | ja | nee |
+| `src/utils/git-utils.js` | ★ bron (code) | jij | `03_…` | ja | nee |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl` | ★ bron | jij | geen enkel script, enkel afnemers | ja | ja |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron | jij | `create_skos` (SHACL), `create_odcs` | ja | ja |
 | `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json` | ★ bron (gepubliceerde kopie) | jij | geen enkel script, enkel afnemers | ja | ja |
@@ -53,9 +55,11 @@ codelijst-luchtzuiveringssysteem/
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS
 │   ├── 02_metadata.js                   script: DCAT-metadata + ODCS data contract
-│   ├── 03_vergelijk_vorige_release.js   script: SHACL + controle op verwijderingen t.o.v. vorige release
+│   ├── 03_validate_against_previous_release.js  script: SHACL + controle op verwijderingen t.o.v. vorige release
 │   ├── 99_deploy_latest.js              script: laatste release naar Virtuoso (manueel)
 │   ├── utils/variables.js               configuratie voor de scripts, JSON-LD frames
+│   ├── utils/git.js                     git-bibliotheek: één functie per git-commando
+│   ├── utils/git-utils.js               git-hulpfuncties (release-tag, bestand uit een tag)
 │   ├── source/                          ★ brondata
 │   │   ├── codelijst-source.csv
 │   │   ├── config.yml
