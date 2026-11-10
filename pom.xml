@@ -93,6 +93,18 @@
               <arguments>run create_metadata</arguments>
             </configuration>
           </execution>
+          <execution>
+            <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
+                 'frontend:pnpm@validate-previous-release', zodat node in de Maven-container draait -->
+            <id>validate-previous-release</id>
+            <phase>none</phase>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run validate_release</arguments>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
