@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Guidance for AI coding agents (and humans) working in this repository.
-Detailed background, in Dutch, lives in [`docs/`](docs/README.md). Read the relevant doc before
+Detailed background, in Flemish, lives in [`docs/`](docs/README.md). Read the relevant doc before
 making a change; this file is the short version.
 
 ## What this project is
@@ -40,6 +40,7 @@ Edit these (sources):
 | `src/utils/variables.js` | Wires config into the generator; holds the JSON-LD frames |
 | `src/utils/git.js` | Small git library: one function per git command (`show`, `tag`, `commit`, ...), same arguments as the CLI, returns stdout. Never call git directly from a script |
 | `src/utils/git-utils.js` | Logic built on `git.js` (latest release tag, file contents at a tag) |
+| `src/utils/console.js` | Generic console helpers: `style` (colours, bold, chainable), `symbol` (✔ ✖ ⚠ ℹ →), `print` (title, success, warning, error, ...). Honours `NO_COLOR` / `FORCE_COLOR`. Use it for script output |
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary and the SHACL shapes (AP constraints) |
 | `src/main/resources/be/vlaanderen/omgeving/lzs/data/id/graph/*.json` | Published copies of context/prefixes for consumers; maintained by hand, not read by any script |
 
@@ -126,10 +127,58 @@ Workflow for every code list change:
 
 ## Conventions
 
-- Commit messages are in Dutch (Flemish), brief and to the point: one line, prefixed with a ticket id
+- Commit messages are in Flemish, brief and to the point: one line, prefixed with a ticket id
   when there is one (`ARMOS-131 Nieuwe systeemstatus`). Never add `Co-authored-by` or any other
   attribution trailer, not in commits and not in PR descriptions.
-- Code comments are in Dutch.
-- Documentation in `docs/` is in Dutch (Flemish), with technical terms kept in English. This file stays in English.
+- Documentation in `docs/` is in Flemish, with technical terms kept in English. This file stays in English.
 - When a change alters how the project works (new file, new script, new step), update the matching doc in `docs/` as well.
-- JavaScript is ES modules (`"type": "module"`), with top-level `await`.
+
+### Language per kind of text
+
+"Flemish" means Dutch as it is written in Flanders (Belgian Dutch): standard Dutch spelling, with Flemish
+word choice and phrasing (e.g. *afnemers*, *t.o.v.*, *vermelden*), not usage from the Netherlands.
+
+| Text | Language |
+| --- | --- |
+| Commit messages, PR descriptions | Flemish |
+| `docs/`, the comment header of `src/source/toegestane-verwijderingen.txt` | Flemish |
+| Code comments in project scripts and repo-specific utils (`01_…`, `03_…`, `variables.js`, `git-utils.js`) | Flemish |
+| Generic, repo-independent utils (`src/utils/git.js`, `src/utils/console.js`) | English: names, comments and JSDoc, so they can be reused elsewhere |
+| Console output of the Node.js scripts (messages, errors) | English. The scripts' own output must match the generator, which logs in English (`skos generation: csv to jsonld`, `Validation succeeded.`) |
+| `echo` messages in `Jenkinsfile.groovy` | Flemish, like the existing ones |
+| This file | English |
+
+### File names
+
+- Scripts in `src/` are `NN_english_snake_case.js`. The number gives the order: `01`/`02` are build steps,
+  `03` is a check Jenkins runs afterwards, `99` is a manual step.
+- Utils in `src/utils/` have short, lowercase English names (`git.js`, `git-utils.js`, `console.js`).
+- Data files in `src/source/` keep their Flemish names (`codelijst-source.csv`, `toegestane-verwijderingen.txt`).
+
+### JavaScript
+
+- ES modules (`"type": "module"`). Start a new file with `'use strict';`, like `01_…` and `variables.js`.
+- 4-space indent, single quotes, semicolons, camelCase for new names. Existing code mixes camelCase and
+  snake_case (`skosOptions`, `frame_skos_prefixes`); do not rename it.
+- New code is asynchronous with Promise chains (`Promise.resolve().then(...).then(...)`), not top-level
+  `await`. `02_metadata.js` and `utils/variables.js` still use top-level `await`; leave them unless asked.
+- New modules export inline (`export const`, `export function`). `variables.js` uses an export list; leave it.
+- Only import packages listed in `package.json`. pnpm is strict, so a dependency of the generator (for example
+  `rdf-validate-shacl`) is not importable. Importing a file from the generator's `src/` is fine; `variables.js`
+  already does it, and `03_…` uses its `src/utils/shacl_validation.js`.
+- Set `process.exitCode = 1` on failure instead of calling `process.exit()`, so pending output is flushed.
+
+### Utils
+
+- **Git:** never call git directly from a script. `src/utils/git.js` has one function per git command
+  (`show`, `tag`, `mergeBase`, `commit`, ...), taking the same arguments as the CLI with an optional options
+  object last (`{ cwd }`), and returns a Promise with stdout. Add missing commands there with
+  `command('name')`. Logic that combines commands or parses their output goes in `src/utils/git-utils.js`.
+- **Console output:** use `src/utils/console.js`. `print.success` / `print.error` / `print.warning` /
+  `print.info` prefix ✔ / ✖ / ⚠ / ℹ; errors and warnings go to stderr. `style` gives chainable colours
+  (`style.red.bold(...)`), `symbol` the symbols (`→`, `•`, ...).
+- **Colours:** on only when stdout is a terminal. `NO_COLOR` turns them off (it wins), `FORCE_COLOR` turns
+  them on. Jenkins writes to a log, not a terminal, so its output is plain text with the symbols. Do not set
+  `FORCE_COLOR` in the Jenkinsfile unless the AnsiColor plugin is known to be installed.
+- The generator prints its own lines (for example `Validation succeeded.` from its SHACL step). They cannot be
+  changed from this repo.

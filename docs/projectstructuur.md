@@ -20,6 +20,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/utils/variables.js` | ★ bron (code) | jij | `01_…`, `02_…` en `03_…` | ja | nee |
 | `src/utils/git.js` | ★ bron (code) | jij | `utils/git-utils.js` | ja | nee |
 | `src/utils/git-utils.js` | ★ bron (code) | jij | `03_…` | ja | nee |
+| `src/utils/console.js` | ★ bron (code) | jij | `03_…` | ja | nee |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl` | ★ bron | jij | geen enkel script, enkel afnemers | ja | ja |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron | jij | `create_skos` (SHACL), `create_odcs` | ja | ja |
 | `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json` | ★ bron (gepubliceerde kopie) | jij | geen enkel script, enkel afnemers | ja | ja |
@@ -60,6 +61,7 @@ codelijst-luchtzuiveringssysteem/
 │   ├── utils/variables.js               configuratie voor de scripts, JSON-LD frames
 │   ├── utils/git.js                     git-bibliotheek: één functie per git-commando
 │   ├── utils/git-utils.js               git-hulpfuncties (release-tag, bestand uit een tag)
+│   ├── utils/console.js                 console-uitvoer met kleuren, vet en symbolen
 │   ├── source/                          ★ brondata
 │   │   ├── codelijst-source.csv
 │   │   ├── config.yml

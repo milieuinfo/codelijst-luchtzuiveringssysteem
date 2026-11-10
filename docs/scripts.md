@@ -160,6 +160,10 @@ git-commando (`show`, `tag`, `mergeBase`, `commit`, ...), met dezelfde argumente
 Wat die commando's combineert (de laatste release-tag bepalen, een bestand uit een tag lezen), staat in
 `utils/git-utils.js`.
 
+De uitvoer gebruikt kleuren en symbolen (✔ ✖ ⚠ ℹ) uit `utils/console.js`. Kleuren staan enkel aan in
+een terminal. Met `NO_COLOR=1` zet je ze uit, met `FORCE_COLOR=1` dwing je ze af (bv. in een CI-log die
+ANSI-kleuren toont).
+
 Dit script heeft geen netwerktoegang nodig, wel de git-tags.
 
 ## `99_deploy_latest.js`

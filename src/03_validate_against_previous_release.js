@@ -15,11 +15,13 @@
 // Exit code 1 bij een SHACL-fout of een niet-toegestane verwijdering.
 
 import fs from 'node:fs';
+import path from 'node:path';
 import { Readable } from 'node:stream';
 import rdf from '@zazuko/env-node';
 import validate from '@milieuinfo/maven-metadata-generator-npm/src/utils/shacl_validation.js';
 import { skosOptions, skosSource, metadataOptions } from './utils/variables.js';
 import { laatsteReleaseTag, bestandInRevisie } from './utils/git-utils.js';
+import { style, symbol, print } from './utils/console.js';
 
 const TOEGESTAAN_PAD = './source/toegestane-verwijderingen.txt';
 const prefixes = skosSource.prefixes;
@@ -69,7 +71,7 @@ function expandeer(token, regelnr) {
     if (token.startsWith('<') && token.endsWith('>')) return token;
     const i = token.indexOf(':');
     if (i > 0 && prefixes[token.slice(0, i)]) return `<${prefixes[token.slice(0, i)]}${token.slice(i + 1)}>`;
-    throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: '${token}' is geen IRI of gekende CURIE.`);
+    throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: '${token}' is not an IRI or known CURIE.`);
 }
 
 function leesRegel(tekst, regelnr) {
@@ -78,13 +80,13 @@ function leesRegel(tekst, regelnr) {
         return parseNTriples(tekst + '\n')
             .catch(() => [])
             .then(triples => {
-                if (triples.length !== 1) throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: geen geldige N-Triples-regel.`);
+                if (triples.length !== 1) throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: not a valid N-Triples line.`);
                 return { ...regel, triple: sleutel(triples[0]) };
             });
     }
     return Promise.resolve(tekst.split(/\s+/)).then(tokens => {
-        if (tokens.length > 2) throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: verwacht een subject, `
-            + `een subject en predicaat, of een volledige N-Triples-regel die eindigt op ' .'.`);
+        if (tokens.length > 2) throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: expected a subject, `
+            + `a subject and predicate, or a complete N-Triples line ending in ' .'.`);
         return {
             ...regel,
             subject: expandeer(tokens[0], regelnr),
@@ -136,8 +138,6 @@ function vergelijk({ tag, huidig, vorige, regels }) {
     const toegevoegd = huidig.filter(q => !vorigeSleutels.has(sleutel(q)));
     const toegevoegdPerSP = groepeer(toegevoegd, q => `${nt(q.subject)} ${nt(q.predicate)}`);
 
-    console.log(`Triples: ${vorige.length} in ${tag}, ${huidig.length} nu (+${toegevoegd.length}, -${verwijderd.length})`);
-
     const toegestaan = [];
     const teBeoordelen = [];
     for (const q of verwijderd) {
@@ -172,49 +172,77 @@ function vergelijk({ tag, huidig, vorige, regels }) {
         }
     }
 
-    return { tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd };
+    return {
+        tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd,
+        aantallen: { vorige: vorige.length, huidig: huidig.length, toegevoegd: toegevoegd.length, verwijderd: verwijderd.length }
+    };
+}
+
+// '1 concept' of '3 concepts'
+function meervoud(n, enkelvoud, meervoudsvorm) {
+    return `${n} ${n === 1 ? enkelvoud : meervoudsvorm}`;
+}
+
+// Zoals meervoud, met het getal in het vet
+function aantal(n, enkelvoud, meervoudsvorm) {
+    return `${style.bold(n)} ${n === 1 ? enkelvoud : meervoudsvorm}`;
 }
 
 // Schrijft het resultaat uit; geeft het aantal fouten terug
-function rapporteer({ tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd }) {
+function rapporteer({ tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd, aantallen }) {
     let fouten = 0;
+
+    print.title('Comparison with the previous release');
+    print.keyValue({
+        Triples: `${aantallen.vorige} ${style.gray(symbol.arrow)} ${aantallen.huidig}   `
+            + `${style.green(`+${aantallen.toegevoegd}`)}  ${style.red(`-${aantallen.verwijderd}`)}`
+    });
+    print.blank();
 
     if (verwijderdeConcepten.size) {
         fouten += verwijderdeConcepten.size;
-        console.error(`\nFOUT: ${verwijderdeConcepten.size} concept(en) verwijderd:`);
+        print.error(`${aantal(verwijderdeConcepten.size, 'concept', 'concepts')} removed`);
         for (const { subject, triples, verwijzingen } of verwijderdeConcepten.values()) {
             const label = triples.find(t => t.subject.equals(subject)
                 && t.predicate.value === 'http://www.w3.org/2004/02/skos/core#prefLabel');
-            console.error(`  ${kort(subject)}${label ? ` (${label.object.value})` : ''}: `
-                + `${triples.length - verwijzingen} triple(s), ${verwijzingen} verwijzing(en) vanuit andere concepten`);
+            print.detail(`${style.red(symbol.bullet)} ${style.bold(kort(subject))}${label ? ` ${style.italic(label.object.value)}` : ''} `
+                + style.gray(`(${meervoud(triples.length - verwijzingen, 'triple', 'triples')}, `
+                    + `${meervoud(verwijzingen, 'reference', 'references')} from other concepts)`));
         }
     }
 
     if (verwijderdeWaarden.length) {
         fouten += verwijderdeWaarden.length;
-        console.error(`\nFOUT: ${verwijderdeWaarden.length} waarde(n) verwijderd:`);
-        for (const q of verwijderdeWaarden) console.error(`  ${kort(q.subject)} ${kort(q.predicate)} ${kort(q.object)}`);
+        print.error(`${aantal(verwijderdeWaarden.length, 'value', 'values')} removed`);
+        for (const q of verwijderdeWaarden) {
+            print.detail(`${style.red(symbol.bullet)} ${style.bold(kort(q.subject))} ${style.gray(kort(q.predicate))} ${style.red(kort(q.object))}`);
+        }
     }
 
     if (gewijzigd.size) {
-        console.warn(`\nWAARSCHUWING: ${gewijzigd.size} eigenschap(pen) met een gewijzigde waarde:`);
+        print.warning(`${aantal(gewijzigd.size, 'property', 'properties')} with a changed value`);
         for (const { q, oud, nieuw } of gewijzigd.values()) {
-            console.warn(`  ${kort(q.subject)} ${kort(q.predicate)}: ${oud.map(kort).join(', ')} -> ${nieuw.map(kort).join(', ')}`);
+            print.detail(`${style.yellow(symbol.bullet)} ${style.bold(kort(q.subject))} ${style.gray(kort(q.predicate))}`);
+            print.detail(`${style.red(oud.map(kort).join(', '))} ${style.gray(symbol.arrow)} ${style.green(nieuw.map(kort).join(', '))}`, 2);
         }
     }
 
     if (toegestaan.length) {
-        console.log(`\n${toegestaan.length} verwijderde triple(s) toegestaan via ${TOEGESTAAN_PAD}.`);
+        print.info(`${aantal(toegestaan.length, 'removed triple', 'removed triples')} allowed by ${style.cyan(TOEGESTAAN_PAD)}`);
     }
 
     const ongebruikt = regels.filter(r => !r.gebruikt);
     if (ongebruikt.length) {
-        console.warn(`\nWAARSCHUWING: regels in ${TOEGESTAAN_PAD} zonder effect t.o.v. ${tag} (mogen weg na de release):`);
-        for (const r of ongebruikt) console.warn(`  regel ${r.regelnr}: ${r.tekst}`);
+        print.warning(`${aantal(ongebruikt.length, 'line', 'lines')} in ${TOEGESTAAN_PAD} without effect against ${tag} (can be removed after the release)`);
+        for (const r of ongebruikt) print.detail(`${style.yellow(symbol.bullet)} ${style.gray(`line ${r.regelnr}:`)} ${r.tekst}`);
     }
 
-    if (fouten && (verwijderdeConcepten.size || verwijderdeWaarden.length)) {
-        console.error(`\nIs de verwijdering bewust? Voeg ze toe aan ${TOEGESTAAN_PAD}; dit is een breaking change voor afnemers.`);
+    if (!verwijderdeConcepten.size && !verwijderdeWaarden.length) {
+        print.success('No concepts or values removed');
+    } else {
+        print.blank();
+        print.detail(`${style.yellow('Is the removal intentional?')} Add it to ${style.cyan(TOEGESTAAN_PAD)}.`, 0);
+        print.detail(style.gray('This is a breaking change for consumers: mention it in the PR.'), 0);
     }
     return fouten;
 }
@@ -224,14 +252,21 @@ const ntPad = skosOptions.ntriplesPath;
 Promise.resolve()
     .then(bepaalTag)
     .then(tag => {
-        console.log(`Vergelijking van ${ntPad} met release ${tag}`);
+        print.title('Validation against the previous release');
+        print.keyValue({ File: style.cyan(path.basename(ntPad)), Release: style.bold(tag) });
+        print.title('SHACL validation');
         return { tag };
     })
     // 1. SHACL-validatie van de huidige gegenereerde bestanden
     .then(ctx => parseNTriples(fs.readFileSync(ntPad, 'utf8'))
         .then(huidig => validate(skosSource.shapesDataset, rdf.dataset(huidig))
             .then(report => {
-                if (!report.conforms) console.error('FOUT: SHACL-validatie faalt, zie ../validation/validation_result.json');
+                if (report.conforms) {
+                    print.success('The code list conforms to the AP constraints');
+                } else {
+                    print.error('The code list does not conform to the AP constraints');
+                    print.detail(`See ${style.cyan('../validation/validation_result.json')}`);
+                }
                 return { ...ctx, huidig, shaclFouten: report.conforms ? 0 : 1 };
             })))
     // 2. Vergelijking met de vorige release
@@ -241,14 +276,15 @@ Promise.resolve()
     .then(ctx => leesToegestaan().then(regels => ({ ...ctx, regels })))
     .then(ctx => ({ ...ctx, fouten: ctx.shaclFouten + rapporteer(vergelijk(ctx)) }))
     .then(({ tag, fouten }) => {
+        print.blank();
         if (fouten) {
-            console.error(`\nVergelijking met ${tag} mislukt.`);
+            print.error(`Validation against ${tag} failed`);
             process.exitCode = 1;
         } else {
-            console.log(`\nVergelijking met ${tag} geslaagd: er ging geen informatie verloren.`);
+            print.success(style.green.bold(`Validation against ${tag} passed: no information was lost`));
         }
     })
     .catch(err => {
-        console.error(`FOUT: ${err.message}`);
+        print.error(err.message);
         process.exitCode = 1;
     });
