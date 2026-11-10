@@ -35,6 +35,7 @@ Edit these (sources):
 | `src/source/config.yml` | Paths, output formats, prefixes (the ones actually used), DCAT metadata texts |
 | `src/source/context.json` | JSON-LD context: maps CSV column names to RDF predicates (read by the scripts) |
 | `src/source/prefix.json` | Reference list of prefixes; **not** read by any script |
+| `src/source/toegestane-verwijderingen.txt` | Allowlist of intentional removals vs. the previous release, read by `validate_release` |
 | `src/n3/luchtzuivering-rules.n3` | Project-specific N3 inference rules |
 | `src/utils/variables.js` | Wires config into the generator; holds the JSON-LD frames |
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary and the SHACL shapes (AP constraints) |
@@ -62,6 +63,7 @@ so do not use `npm install`.
 pnpm install --frozen-lockfile
 pnpm run create_skos        # CSV -> SKOS files in src/main/resources/.../conceptscheme/
 pnpm run create_metadata    # DCAT + ODCS into temp/ (needs network access to repo.omgeving.vlaanderen.be)
+pnpm run validate_release   # SHACL + fail on information removed vs. the previous release tag (needs git tags)
 mvn verify                  # full build: installs Node/pnpm in target/, runs both scripts, builds the jar
 ```
 
@@ -74,7 +76,7 @@ Full guide with examples: [`docs/codelijst-aanpassen.md`](docs/codelijst-aanpass
 | Change | Files to touch |
 | --- | --- |
 | Add / edit a concept (label, definition, notation, relations) | `src/source/codelijst-source.csv` only |
-| Remove a concept or change its `_id` | CSV. This is a breaking change for consumers, so flag it to the user |
+| Remove a concept or value, or change an `_id` | CSV + an entry in `src/source/toegestane-verwijderingen.txt`. This is a breaking change for consumers, so flag it to the user |
 | Concept in a new namespace | CSV + `prefixes:` in `config.yml` + both `prefix.json` files |
 | New concept scheme | CSV (a `skos:ConceptScheme` row + its concepts) + a prefix in `config.yml` |
 | New column / property | CSV header (append at the end) + `src/source/context.json` + **both** frames in `src/utils/variables.js` (if IRI-valued) + `lzs-vocab:` term in the ontology `.ttl` (if new) + optionally SHACL shapes and the published `context.json` |
@@ -90,29 +92,33 @@ Workflow for every code list change:
 3. Run `pnpm run create_skos`. If SHACL validation fails, nothing is written. Read
    `validation/validation_result.json`, then fix the data, not the shapes (unless changing the shapes is the intent).
 4. Review the effect with `git diff -- '*.nt'`. It is sorted, one triple per line.
+   Run `pnpm run validate_release`: it fails when anything from the previous release tag went missing.
+   Only allowlist a removal when the user intends it.
 5. Commit the source change **and** all regenerated files together.
 
 ## Rules
 
 1. **Regenerate and commit together.** Jenkins regenerates the SKOS files and fails the build when
    `git status -- src/main/resources` is not clean.
-2. **SHACL must pass.** Do not loosen the shapes to make data pass unless that is the actual intent.
-3. **CSV conventions.**
+2. **Nothing may disappear silently.** Jenkins runs `03_vergelijk_vorige_release.js` and fails when concepts
+   or values from the previous release tag are missing and not listed in `toegestane-verwijderingen.txt`.
+3. **SHACL must pass.** Do not loosen the shapes to make data pass unless that is the actual intent.
+4. **CSV conventions.**
    - The first column `_id` holds the IRI, usually as a CURIE (`lzs-param:...`). Every prefix used
      must exist under `prefixes:` in `config.yml`.
    - Separate multiple values in one cell with `|` (for example `lzs-type:s1|lzs-type:s2`).
    - Leave unused cells empty. Empty cells and empty rows are ignored.
    - Keep the existing column order. Append new columns at the end.
    - Keep the file UTF-8, comma-separated, LF. Do not let a spreadsheet tool add quoting or columns.
-4. **Do not fill in what the rules derive.** `narrower`, `hasTopConcept`, the `*Transitive` variants,
+5. **Do not fill in what the rules derive.** `narrower`, `hasTopConcept`, the `*Transitive` variants,
    `semanticRelation` and `relevantProperty` (from a parameter's `relevantLZS`) are inferred. Only
    fill in the forward relation.
-5. **Versions are managed by the release process.** Do not change `<version>` in `pom.xml` or
+6. **Versions are managed by the release process.** Do not change `<version>` in `pom.xml` or
    create commits starting with `[Maven skip ci]`; Jenkins and the maven-release-plugin do that.
-6. **No secrets in git.** `src/.env` and `src/utils/setenv*.js` hold credentials and are git-ignored.
+7. **No secrets in git.** `src/.env` and `src/utils/setenv*.js` hold credentials and are git-ignored.
    Never commit, print, copy or document their contents. Do not run the `99_*` deploy scripts:
    they overwrite graphs on shared triple stores.
-7. **Formatting** follows [`.editorconfig`](.editorconfig): UTF-8, LF, final newline, 4-space indent
+8. **Formatting** follows [`.editorconfig`](.editorconfig): UTF-8, LF, final newline, 4-space indent
    (2 for JSON/YAML/XML). Do not reformat files you are not otherwise changing, and never reformat
    generated files.
 

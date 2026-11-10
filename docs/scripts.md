@@ -17,7 +17,8 @@ daarom eerst een `cd src`:
 Start je een script met de hand, doe dat dan ook vanuit `src/`. Anders kloppen de relatieve paden uit
 `config.yml` niet.
 
-De nummering geeft de volgorde aan: `01` en `02` horen bij de build, `99` is een manuele stap achteraf.
+De nummering geeft de volgorde aan: `01` en `02` horen bij de build, `03` is een controle die Jenkins
+nadien draait (en die je ook lokaal kan draaien), `99` is een manuele stap achteraf.
 
 ## `utils/variables.js`
 
@@ -109,6 +110,52 @@ dus pas daarna geschreven worden. Omdat `create_odcs` het Parquet-bestand leest,
 
 Dit script heeft **netwerktoegang tot Artifactory** nodig. Zonder die toegang faalt het, maar dat heeft
 geen invloed op de SKOS-bestanden.
+
+## `03_vergelijk_vorige_release.js`
+
+```bash
+pnpm run validate_release
+pnpm run validate_release --tag codelijst-luchtzuiveringssysteem-0.2.0   # andere baseline
+```
+
+Vergelijkt de gegenereerde codelijst met die van de vorige release. Zo kan er bij een release geen
+informatie verdwijnen zonder dat iemand het bewust beslist heeft. Het script:
+
+1. **Bepaalt de vorige release.** Dat is de hoogste tag `codelijst-luchtzuiveringssysteem-x.y.z` die in
+   de geschiedenis van `HEAD` ligt. Met `--tag` of de omgevingsvariabele `VORIGE_RELEASE_TAG` kies je
+   zelf een tag. Zonder lokale tags faalt het script; haal ze dan op met `git fetch --tags`.
+2. **Valideert de huidige `.nt` met SHACL** tegen de AP-constraints, net als `create_skos`. Bij een
+   fout komt het rapport in `validation/`.
+3. **Vergelijkt de `.nt` met die uit de tag** (`git show <tag>:...`). Enkel de RDF-graaf telt: de andere
+   formaten zijn serialisaties van dezelfde graaf. Elke triple uit de tag die nu ontbreekt, valt in
+   een van deze groepen:
+
+   | Groep | Wanneer | Resultaat |
+   | --- | --- | --- |
+   | Verwijderd concept | Het subject komt nergens meer voor. Verwijzingen ernaar vanuit andere concepten (bv. `hasTopConcept`) tellen mee. | fout |
+   | Verwijderde waarde | Een subject + predicaat verloor een waarde, zonder dat er een nieuwe waarde bij kwam | fout |
+   | Gewijzigde waarde | Een subject + predicaat kreeg een andere waarde (bv. `"0,8"` → `"0.8"`) | waarschuwing |
+
+   Toegevoegde triples zijn altijd goed.
+
+Bij een SHACL-fout of een verwijdering die niet toegestaan is, stopt het script met exit code 1.
+
+### Bewuste verwijderingen
+
+Wil je echt iets verwijderen, zet het dan in `src/source/toegestane-verwijderingen.txt`. Eén regel per
+verwijdering, met IRI's als `<...>` of als CURIE uit `config.yml`:
+
+```
+lzs-status:gereinigd                          alle triples van dit concept, en verwijzingen ernaar
+lzs-param-norm:_1 lzs-vocab:technischefiche   alle waarden van dit predicaat bij dit concept
+<https://...> <https://...> "waarde"@nl .     precies deze triple (N-Triples)
+```
+
+Een verwijdering blijft een breaking change voor afnemers: vermeld ze in de PR. Na de release zit de
+verwijdering in de nieuwe tag. Het script meldt dan dat die regels geen effect meer hebben, en je
+mag ze weghalen.
+
+Dit script heeft geen netwerktoegang nodig, wel de git-tags.
 
 ## `99_deploy_latest.js`
 

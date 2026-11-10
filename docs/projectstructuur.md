@@ -15,8 +15,9 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/source/config.yml` | ★ bron | jij | alle scripts | ja | nee |
 | `src/source/context.json` | ★ bron | jij | `create_skos`, `create_metadata`, `create_odcs` | ja | nee |
 | `src/source/prefix.json` | ★ bron (referentie) | jij | geen enkel script | ja | nee |
+| `src/source/toegestane-verwijderingen.txt` | ★ bron | jij | `validate_release` | ja | nee |
 | `src/n3/luchtzuivering-rules.n3` | ★ bron | jij | `create_skos` | ja | nee |
-| `src/utils/variables.js` | ★ bron (code) | jij | `01_…` en `02_…` | ja | nee |
+| `src/utils/variables.js` | ★ bron (code) | jij | `01_…`, `02_…` en `03_…` | ja | nee |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl` | ★ bron | jij | geen enkel script, enkel afnemers | ja | ja |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron | jij | `create_skos` (SHACL), `create_odcs` | ja | ja |
 | `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json` | ★ bron (gepubliceerde kopie) | jij | geen enkel script, enkel afnemers | ja | ja |
@@ -24,7 +25,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `temp/…/dataset/…/dataset.{ttl,jsonld}` | ⚙ gegenereerd | `create_metadata` | afnemers | nee | ja |
 | `temp/…/dataset/…/dataset.odcs.yaml` | ⚙ gegenereerd | `create_odcs` | afnemers | nee | ja |
 | `temp/…/catalog/…/catalog.{ttl,jsonld}` | ⚙ gegenereerd | `create_metadata` | afnemers | nee | ja |
-| `validation/` | ⚙ gegenereerd | SHACL-validatie, enkel bij een fout | jij, om de fout te vinden | nee | nee |
+| `validation/` | ⚙ gegenereerd | SHACL-validatie (`create_skos`, `validate_release`), enkel bij een fout | jij, om de fout te vinden | nee | nee |
 | `pom.xml` | ★ bron | jij, de versie door de release-plugin | Maven, `create_metadata`, `create_odcs` | ja | — |
 | `package.json` | ★ bron | jij | pnpm | ja | nee |
 | `pnpm-lock.yaml` | ⚙ gegenereerd | pnpm | pnpm | ja | nee |
@@ -46,19 +47,21 @@ Twee dingen vallen op:
 
 ```
 codelijst-luchtzuiveringssysteem/
-├── package.json, pnpm-lock.yaml     Node.js-dependencies en de twee npm scripts
+├── package.json, pnpm-lock.yaml     Node.js-dependencies en de npm scripts
 ├── pom.xml                          Maven-build: installeert Node/pnpm en draait de scripts
 ├── Jenkinsfile.groovy               CI/CD-pipeline
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS
 │   ├── 02_metadata.js                   script: DCAT-metadata + ODCS data contract
+│   ├── 03_vergelijk_vorige_release.js   script: SHACL + controle op verwijderingen t.o.v. vorige release
 │   ├── 99_deploy_latest.js              script: laatste release naar Virtuoso (manueel)
 │   ├── utils/variables.js               configuratie voor de scripts, JSON-LD frames
 │   ├── source/                          ★ brondata
 │   │   ├── codelijst-source.csv
 │   │   ├── config.yml
 │   │   ├── context.json
-│   │   └── prefix.json
+│   │   ├── prefix.json
+│   │   └── toegestane-verwijderingen.txt
 │   ├── n3/luchtzuivering-rules.n3       ★ projectspecifieke afleidingsregels
 │   └── main/resources/be/vlaanderen/omgeving/
 │       ├── data/id/ontology/            ★ vocabularium en SHACL-shapes

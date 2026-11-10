@@ -57,6 +57,16 @@ De oplossing: `pnpm install --frozen-lockfile`, `pnpm run create_skos`, en het r
 Deze controle gebeurt vóór er een release-tag gemaakt wordt. Zo bevat elke tag gegarandeerd
 SKOS-bestanden die overeenkomen met de bron.
 
+### Vergelijking met vorige release
+
+Daarna haalt Jenkins de git-tags op en draait `03_vergelijk_vorige_release.js` met de Node.js uit
+`target/`. De build faalt als de SKOS niet meer voldoet aan de AP-constraints, of als er t.o.v. de
+vorige release-tag concepten of waarden verdwenen zijn die niet in
+`src/source/toegestane-verwijderingen.txt` staan. Gewijzigde waarden geven enkel een waarschuwing in
+de log. Meer uitleg vind je in [Node.js-scripts](scripts.md#03_vergelijk_vorige_releasejs).
+
+Ook deze controle gebeurt vóór `release:prepare` de nieuwe tag maakt.
+
 ### Andere branches
 
 Op een feature branch draait Jenkins een Trivy-scan en `mvn verify`. Wil je toch een snapshot

@@ -55,6 +55,21 @@ pipeline {
                 }
             }
         }
+        stage("Vergelijking met vorige release") {
+            // Valideert de gegenereerde SKOS tegen de AP-constraints en faalt als er t.o.v. de
+            // vorige release-tag informatie verdwenen is (zie src/03_vergelijk_vorige_release.js).
+            // Node staat in target/node, geïnstalleerd door 'generate-resources' in de vorige stap.
+            when {
+                expression { git.notSkipCi() }
+            }
+            steps {
+                sh '''
+                    git -c safe.directory="$WORKSPACE" fetch --tags --force --quiet origin \
+                        || echo "Tags ophalen mislukt, de lokale tags worden gebruikt."
+                    cd src && ../target/node/node 03_vergelijk_vorige_release.js
+                '''
+            }
+        }
         stage("Non-primary branch") {
             when {
                 allOf {

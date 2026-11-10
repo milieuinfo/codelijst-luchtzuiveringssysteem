@@ -9,7 +9,7 @@ je in [Projectstructuur](projectstructuur.md).
 | --- | --- | --- |
 | Label, definitie of code van een concept wijzigen | CSV | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
 | Concept toevoegen | CSV | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
-| Concept verwijderen of zijn `_id` wijzigen | CSV, en afnemers verwittigen | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
+| Concept of waarde verwijderen, of een `_id` wijzigen | CSV, `toegestane-verwijderingen.txt`, en afnemers verwittigen | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
 | Parameter koppelen aan een systeemtype | CSV (kolom `relevantLZS` van de parameter) | `relevantProperty` op het systeemtype wordt automatisch afgeleid |
 | Concept in een nieuwe namespace | CSV, `config.yml`, beide `prefix.json` | [Nieuw prefix](#een-nieuw-prefix-gebruiken) |
 | Nieuw concept scheme | CSV, `config.yml` | [Nieuw concept scheme](#een-nieuw-concept-scheme-toevoegen) |
@@ -70,7 +70,9 @@ Dit is veruit de meest voorkomende wijziging, en daarvoor pas je enkel de CSV aa
 
 Een concept wijzigen of verwijderen gaat op dezelfde manier. Hou er wel rekening mee dat afnemers
 naar de IRI van een concept kunnen verwijzen. Een bestaande `_id` aanpassen of verwijderen is dus
-een breaking change voor wie dat concept gebruikt.
+een breaking change voor wie dat concept gebruikt. Jenkins laat zo'n verwijdering enkel door als ze in
+`src/source/toegestane-verwijderingen.txt` staat, zie
+[Node.js-scripts](scripts.md#03_vergelijk_vorige_releasejs).
 
 ## Een nieuw prefix gebruiken
 
@@ -141,6 +143,7 @@ Een nieuw regelbestand moet je ook toevoegen onder `skos.rules` in `config.yml`.
 ## Checklist vóór je commit
 
 - [ ] `pnpm run create_skos` draait zonder fouten
+- [ ] `pnpm run validate_release` draait zonder fouten (bewuste verwijderingen staan in `toegestane-verwijderingen.txt`)
 - [ ] de gegenereerde bestanden zitten mee in de commit
 - [ ] geen onbedoelde wijzigingen in andere bestanden (opmaak, line endings)
 - [ ] commit message in het Nederlands, liefst met ticketnummer (`ARMOS-123 Nieuwe systeemstatus in onderhoud`)
