@@ -21,6 +21,8 @@ kunnen gebruiken.
 
  pom.xml + Artifactory             ──►  pnpm run create_metadata  ──►  temp/  (DCAT-metadata + ODCS data contract)
 
+ gegenereerde .nt + git-tags       ──►  pnpm run validate_release ──►  ✔ / ✖  (SHACL + niets verdwenen t.o.v. vorige release)
+
  src/main/resources + temp/        ──►  mvn deploy / release      ──►  jar in repo.omgeving.vlaanderen.be
 ```
 
