@@ -23,21 +23,30 @@ export function isVoorouderVanHead(revisie) {
 }
 
 /**
+ * Release-tags '<artifactId>-x.y.z' die een voorouder zijn van HEAD, oudste versie eerst.
+ * @param {string} artifactId
+ * @returns {Promise<string[]>}
+ */
+export function releaseTagsInGeschiedenis(artifactId) {
+    return releaseTags(artifactId)
+        .then(tags => Promise.all(tags.map(isVoorouderVanHead))
+            .then(voorouders => tags.filter((_, i) => voorouders[i]).reverse()));
+}
+
+/**
  * Hoogste release-tag '<artifactId>-x.y.z' die een voorouder is van HEAD.
  * @param {string} artifactId
  * @returns {Promise<string>}
  * @throws {Error} als er geen zo'n tag is (bv. omdat de tags lokaal ontbreken)
  */
 export function laatsteReleaseTag(artifactId) {
-    return releaseTags(artifactId)
-        .then(tags => Promise.all(tags.map(isVoorouderVanHead))
-            .then(voorouders => tags.find((_, i) => voorouders[i])))
-        .then(gevonden => {
-            if (!gevonden) {
+    return releaseTagsInGeschiedenis(artifactId)
+        .then(tags => {
+            if (!tags.length) {
                 throw new Error(`No release tag '${artifactId}-*' found in the history of HEAD. `
                     + `Are the tags missing locally? Try 'git fetch --tags'.`);
             }
-            return gevonden;
+            return tags.at(-1);
         });
 }
 

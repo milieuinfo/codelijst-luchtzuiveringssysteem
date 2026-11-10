@@ -9,10 +9,14 @@
 //    - gewijzigde waarde:   subject + predicaat kregen een andere waarde  -> waarschuwing
 //    Verwijderingen die in source/toegestane-verwijderingen.txt staan, zijn toegestaan.
 //
-// Gebruik (vanuit src/):  node 03_validate_against_previous_release.js [--tag <git-tag>]
+// Gebruik (vanuit src/):  node 03_validate_against_previous_release.js [--tag <git-tag>] [--history]
 // Zonder --tag (of omgevingsvariabele VORIGE_RELEASE_TAG) wordt de hoogste release-tag
 // genomen die een voorouder is van HEAD.
 // Exit code 1 bij een SHACL-fout of een niet-toegestane verwijdering.
+//
+// Met --history wordt elke release vergeleken met de vorige (0.0.1 -> 0.0.2 -> ... -> huidige
+// bestanden). Per oudere stap worden de eerste 5 items van elke lijst getoond, met --verbose alles. Verwijderingen in oude releases worden enkel gerapporteerd; de exit code hangt, net
+// als zonder --history, enkel af van de SHACL-validatie en de laatste stap (laatste tag -> nu).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -20,7 +24,7 @@ import { Readable } from 'node:stream';
 import rdf from '@zazuko/env-node';
 import validate from '@milieuinfo/maven-metadata-generator-npm/src/utils/shacl_validation.js';
 import { skosOptions, skosSource, metadataOptions } from './utils/variables.js';
-import { laatsteReleaseTag, bestandInRevisie } from './utils/git-utils.js';
+import { laatsteReleaseTag, releaseTagsInGeschiedenis, bestandInRevisie } from './utils/git-utils.js';
 import { style, symbol, print } from './utils/console.js';
 
 const TOEGESTAAN_PAD = './source/toegestane-verwijderingen.txt';
@@ -188,43 +192,50 @@ function aantal(n, enkelvoud, meervoudsvorm) {
     return `${style.bold(n)} ${n === 1 ? enkelvoud : meervoudsvorm}`;
 }
 
-// Schrijft het resultaat uit; geeft het aantal fouten terug
-function rapporteer({ tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd, aantallen }) {
-    let fouten = 0;
+// Aantal fouten (niet-toegestane verwijderingen) in een resultaat van vergelijk()
+function telFouten({ verwijderdeConcepten, verwijderdeWaarden }) {
+    return verwijderdeConcepten.size + verwijderdeWaarden.length;
+}
 
-    print.title('Comparison with the previous release');
-    print.keyValue({
-        Triples: `${aantallen.vorige} ${style.gray(symbol.arrow)} ${aantallen.huidig}   `
-            + `${style.green(`+${aantallen.toegevoegd}`)}  ${style.red(`-${aantallen.verwijderd}`)}`
-    });
-    print.blank();
+// '952 → 1322   +372  -2'
+function triplesTekst({ vorige, huidig, toegevoegd, verwijderd }) {
+    return `${vorige} ${style.gray(symbol.arrow)} ${huidig}   `
+        + `${style.green(`+${toegevoegd}`)}  ${style.red(`-${verwijderd}`)}`;
+}
 
+// Schrijft de eerste `max` items van een lijst uit, met '… N more' voor de rest
+function detailLijst(items, schrijf, max) {
+    items.slice(0, max).forEach(schrijf);
+    if (items.length > max) print.detail(style.gray(`… ${items.length - max} more`));
+}
+
+// Schrijft de bevindingen van één vergelijking uit; geeft het aantal fouten terug.
+// `max` beperkt het aantal items per lijst (standaard alles).
+function rapporteerBevindingen({ tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd }, max = Infinity) {
     if (verwijderdeConcepten.size) {
-        fouten += verwijderdeConcepten.size;
         print.error(`${aantal(verwijderdeConcepten.size, 'concept', 'concepts')} removed`);
-        for (const { subject, triples, verwijzingen } of verwijderdeConcepten.values()) {
+        detailLijst([...verwijderdeConcepten.values()], ({ subject, triples, verwijzingen }) => {
             const label = triples.find(t => t.subject.equals(subject)
                 && t.predicate.value === 'http://www.w3.org/2004/02/skos/core#prefLabel');
             print.detail(`${style.red(symbol.bullet)} ${style.bold(kort(subject))}${label ? ` ${style.italic(label.object.value)}` : ''} `
                 + style.gray(`(${meervoud(triples.length - verwijzingen, 'triple', 'triples')}, `
                     + `${meervoud(verwijzingen, 'reference', 'references')} from other concepts)`));
-        }
+        }, max);
     }
 
     if (verwijderdeWaarden.length) {
-        fouten += verwijderdeWaarden.length;
         print.error(`${aantal(verwijderdeWaarden.length, 'value', 'values')} removed`);
-        for (const q of verwijderdeWaarden) {
+        detailLijst(verwijderdeWaarden, (q) => {
             print.detail(`${style.red(symbol.bullet)} ${style.bold(kort(q.subject))} ${style.gray(kort(q.predicate))} ${style.red(kort(q.object))}`);
-        }
+        }, max);
     }
 
     if (gewijzigd.size) {
         print.warning(`${aantal(gewijzigd.size, 'property', 'properties')} with a changed value`);
-        for (const { q, oud, nieuw } of gewijzigd.values()) {
+        detailLijst([...gewijzigd.values()], ({ q, oud, nieuw }) => {
             print.detail(`${style.yellow(symbol.bullet)} ${style.bold(kort(q.subject))} ${style.gray(kort(q.predicate))}`);
             print.detail(`${style.red(oud.map(kort).join(', '))} ${style.gray(symbol.arrow)} ${style.green(nieuw.map(kort).join(', '))}`, 2);
-        }
+        }, max);
     }
 
     if (toegestaan.length) {
@@ -237,7 +248,18 @@ function rapporteer({ tag, regels, toegestaan, verwijderdeConcepten, verwijderde
         for (const r of ongebruikt) print.detail(`${style.yellow(symbol.bullet)} ${style.gray(`line ${r.regelnr}:`)} ${r.tekst}`);
     }
 
-    if (!verwijderdeConcepten.size && !verwijderdeWaarden.length) {
+    return telFouten({ verwijderdeConcepten, verwijderdeWaarden });
+}
+
+// Schrijft het resultaat van de vergelijking met de vorige release uit; geeft het aantal fouten terug
+function rapporteer(resultaat) {
+    print.title('Comparison with the previous release');
+    print.keyValue({ Triples: triplesTekst(resultaat.aantallen) });
+    print.blank();
+
+    const fouten = rapporteerBevindingen(resultaat);
+
+    if (!fouten) {
         print.success('No concepts or values removed');
     } else {
         print.blank();
@@ -248,17 +270,18 @@ function rapporteer({ tag, regels, toegestaan, verwijderdeConcepten, verwijderde
 }
 
 const ntPad = skosOptions.ntriplesPath;
+// In --history: aantal items per lijst bij oudere stappen; --verbose toont alles
+const MAX_DETAILS = 5;
+const VERBOSE = process.argv.includes('--verbose');
+const artifactId = metadataOptions.artifactId;
 
-Promise.resolve()
-    .then(bepaalTag)
-    .then(tag => {
-        print.title('Validation against the previous release');
-        print.keyValue({ File: style.cyan(path.basename(ntPad)), Release: style.bold(tag) });
-        print.title('SHACL validation');
-        return { tag };
-    })
-    // 1. SHACL-validatie van de huidige gegenereerde bestanden
-    .then(ctx => parseNTriples(fs.readFileSync(ntPad, 'utf8'))
+// '0.2.1' i.p.v. 'codelijst-luchtzuiveringssysteem-0.2.1'
+const versie = (tag) => tag.startsWith(`${artifactId}-`) ? tag.slice(artifactId.length + 1) : tag;
+
+// SHACL-validatie van de huidige gegenereerde bestanden
+function valideerHuidig() {
+    print.title('SHACL validation');
+    return parseNTriples(fs.readFileSync(ntPad, 'utf8'))
         .then(huidig => validate(skosSource.shapesDataset, rdf.dataset(huidig))
             .then(report => {
                 if (report.conforms) {
@@ -267,23 +290,125 @@ Promise.resolve()
                     print.error('The code list does not conform to the AP constraints');
                     print.detail(`See ${style.cyan('../validation/validation_result.json')}`);
                 }
-                return { ...ctx, huidig, shaclFouten: report.conforms ? 0 : 1 };
-            })))
-    // 2. Vergelijking met de vorige release
-    .then(ctx => bestandInRevisie(ctx.tag, ntPad)
+                return { huidig, shaclFouten: report.conforms ? 0 : 1 };
+            }));
+}
+
+// Standaard: de huidige bestanden t.o.v. de vorige release
+function valideerTegenVorigeRelease() {
+    return Promise.resolve()
+        .then(bepaalTag)
+        .then(tag => {
+            print.title('Validation against the previous release');
+            print.keyValue({ File: style.cyan(path.basename(ntPad)), Release: style.bold(tag) });
+            return { tag };
+        })
+        // 1. SHACL-validatie van de huidige gegenereerde bestanden
+        .then(ctx => valideerHuidig().then(resultaat => ({ ...ctx, ...resultaat })))
+        // 2. Vergelijking met de vorige release
+        .then(ctx => bestandInRevisie(ctx.tag, ntPad)
+            .then(parseNTriples)
+            .then(vorige => ({ ...ctx, vorige })))
+        .then(ctx => leesToegestaan().then(regels => ({ ...ctx, regels })))
+        .then(ctx => ({ ...ctx, fouten: ctx.shaclFouten + rapporteer(vergelijk(ctx)) }))
+        .then(({ tag, fouten }) => {
+            print.blank();
+            if (fouten) {
+                print.error(`Validation against ${tag} failed`);
+                process.exitCode = 1;
+            } else {
+                print.success(style.green.bold(`Validation against ${tag} passed: no information was lost`));
+            }
+        });
+}
+
+// Leest de N-Triples van elke release; null als het bestand in die tag ontbreekt
+function leesReleases(tags) {
+    return Promise.all(tags.map(tag => bestandInRevisie(tag, ntPad)
         .then(parseNTriples)
-        .then(vorige => ({ ...ctx, vorige })))
-    .then(ctx => leesToegestaan().then(regels => ({ ...ctx, regels })))
-    .then(ctx => ({ ...ctx, fouten: ctx.shaclFouten + rapporteer(vergelijk(ctx)) }))
-    .then(({ tag, fouten }) => {
-        print.blank();
-        if (fouten) {
-            print.error(`Validation against ${tag} failed`);
-            process.exitCode = 1;
-        } else {
-            print.success(style.green.bold(`Validation against ${tag} passed: no information was lost`));
-        }
-    })
+        .then(triples => ({ tag, label: versie(tag), triples }), () => ({ tag, label: versie(tag), triples: null }))));
+}
+
+// Schrijft één stap van de geschiedenis uit; geeft een samenvatting terug
+function rapporteerStap(van, naar, resultaat) {
+    const fouten = telFouten(resultaat);
+    const stap = `${van.label} ${symbol.arrow} ${naar.label}`;
+    const status = fouten ? 'error' : resultaat.gewijzigd.size ? 'warning' : 'success';
+    if (status === 'success' && !resultaat.toegestaan.length && !resultaat.regels.some(r => !r.gebruikt)) {
+        print.success(`${style.bold(stap.padEnd(20))} ${triplesTekst(resultaat.aantallen)}`);
+    } else {
+        print.title(stap);
+        print.keyValue({ Triples: triplesTekst(resultaat.aantallen) });
+        // De laatste stap toont alles, zoals zonder --history; oudere stappen enkel de eerste items
+        rapporteerBevindingen(resultaat, naar.tag === 'HEAD' || VERBOSE ? Infinity : MAX_DETAILS);
+    }
+    return { stap, status, fouten };
+}
+
+// Met --history: elke release t.o.v. de vorige, en de laatste release t.o.v. de huidige bestanden
+function valideerGeschiedenis() {
+    return Promise.resolve()
+        .then(() => releaseTagsInGeschiedenis(artifactId))
+        .then(tags => {
+            if (!tags.length) {
+                throw new Error(`No release tag '${artifactId}-*' found in the history of HEAD. `
+                    + `Are the tags missing locally? Try 'git fetch --tags'.`);
+            }
+            print.title('Validation of the release history');
+            print.keyValue({
+                File: style.cyan(path.basename(ntPad)),
+                Releases: `${style.bold(tags.length)} tags: ${versie(tags[0])} ${style.gray(symbol.arrow)} ${versie(tags.at(-1))} ${style.gray(symbol.arrow)} current`
+            });
+            return tags;
+        })
+        .then(tags => valideerHuidig()
+            .then(({ huidig, shaclFouten }) => Promise.all([leesReleases(tags), leesToegestaan()])
+                .then(([releases, regels]) => ({ huidig, shaclFouten, releases, regels }))))
+        .then(({ huidig, shaclFouten, releases, regels }) => {
+            const ontbrekend = releases.filter(r => !r.triples);
+            if (ontbrekend.length) {
+                print.blank();
+                print.warning(`${aantal(ontbrekend.length, 'release', 'releases')} without ${path.basename(ntPad)}, skipped: ${ontbrekend.map(r => r.label).join(', ')}`);
+            }
+
+            // Enkel de laatste stap (laatste release -> huidige bestanden) gebruikt de toegestane verwijderingen
+            const reeks = [...releases.filter(r => r.triples), { tag: 'HEAD', label: 'current', triples: huidig }];
+            print.title('Release history');
+            const stappen = reeks.slice(1).map((naar, i) => {
+                const van = reeks[i];
+                const laatste = i === reeks.length - 2;
+                return rapporteerStap(van, naar, vergelijk({
+                    tag: van.tag, huidig: naar.triples, vorige: van.triples, regels: laatste ? regels : []
+                }));
+            });
+
+            print.title('Summary');
+            const metStatus = (status) => stappen.filter(s => s.status === status);
+            const opsomming = (lijst) => style.gray(lijst.map(s => s.stap).join(', '));
+            print.success(`${aantal(metStatus('success').length, 'step', 'steps')} without removals or changes`);
+            if (metStatus('warning').length) {
+                print.warning(`${aantal(metStatus('warning').length, 'step', 'steps')} with changed values only: ${opsomming(metStatus('warning'))}`);
+            }
+            if (metStatus('error').length) {
+                print.error(`${aantal(metStatus('error').length, 'step', 'steps')} with removals: ${opsomming(metStatus('error'))}`);
+            }
+
+            // De exit code hangt enkel af van SHACL en de laatste stap, zoals zonder --history
+            const laatste = stappen.at(-1);
+            const fouten = shaclFouten + laatste.fouten;
+            print.blank();
+            print.detail(style.gray('Removals in older releases are reported only; they do not affect the exit code.'), 0);
+            if (fouten) {
+                print.error(`Validation of ${laatste.stap} failed`);
+                process.exitCode = 1;
+            } else {
+                print.success(style.green.bold(`Validation of ${laatste.stap} passed: no information was lost`));
+            }
+        });
+}
+
+Promise.resolve()
+    .then(() => process.argv.includes('--history') ? valideerGeschiedenis() : valideerTegenVorigeRelease())
     .catch(err => {
         print.error(err.message);
         process.exitCode = 1;

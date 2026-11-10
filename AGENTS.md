@@ -67,6 +67,7 @@ pnpm install --frozen-lockfile
 pnpm run create_skos        # CSV -> SKOS files in src/main/resources/.../conceptscheme/
 pnpm run create_metadata    # DCAT + ODCS into temp/ (needs network access to repo.omgeving.vlaanderen.be)
 pnpm run validate_release   # SHACL + fail on information removed vs. the previous release tag (needs git tags)
+pnpm run validate_history   # same, plus a report of every release vs. the one before it (old removals: report only)
 mvn verify                  # full build: installs Node/pnpm in target/, runs both scripts, builds the jar
 ```
 
