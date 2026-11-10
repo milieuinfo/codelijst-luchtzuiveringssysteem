@@ -62,6 +62,13 @@ pipeline {
             when {
                 expression { git.notSkipCi() }
             }
+            environment {
+                // het script roept git aan in de Maven-container, waar de workspace een andere eigenaar heeft
+                // ('dubious ownership'); safe.directory via env omdat we geen -c kunnen meegeven
+                GIT_CONFIG_COUNT = '1'
+                GIT_CONFIG_KEY_0 = 'safe.directory'
+                GIT_CONFIG_VALUE_0 = '*'
+            }
             steps {
                 sh '''
                     git -c safe.directory="$WORKSPACE" fetch --tags --force --quiet origin \
