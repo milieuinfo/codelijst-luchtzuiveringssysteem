@@ -5,19 +5,19 @@ je in [Projectstructuur](projectstructuur.md).
 
 ## Welke bestanden voor welke wijziging?
 
-| Wat wil je doen? | Wat pas je aan | Uitleg |
-| --- | --- | --- |
-| Label, definitie of code van een concept wijzigen | CSV | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
-| Concept toevoegen | CSV | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
-| Concept of waarde verwijderen, of een `_id` wijzigen | CSV, `toegestane-verwijderingen.txt`, en afnemers verwittigen | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen) |
-| Parameter koppelen aan een systeemtype | CSV (kolom `relevantLZS` van de parameter) | `relevantProperty` op het systeemtype wordt automatisch afgeleid |
-| Concept in een nieuwe namespace | CSV, `config.yml`, beide `prefix.json` | [Nieuw prefix](#een-nieuw-prefix-gebruiken) |
-| Nieuw concept scheme | CSV, `config.yml` | [Nieuw concept scheme](#een-nieuw-concept-scheme-toevoegen) |
-| Nieuwe kolom of property | CSV, `context.json`, `variables.js`, eventueel vocabularium, shapes en gepubliceerde context | [Nieuwe kolom](#een-nieuwe-kolom-property-toevoegen) |
-| Relatie automatisch laten afleiden | `src/n3/luchtzuivering-rules.n3` | [Afleidingsregel](#een-afleidingsregel-toevoegen) |
-| Validatieregels (verplichte velden, ...) aanpassen | AP-constraints (`…-ap-constraints.ttl`) | [Projectstructuur](projectstructuur.md#srcmainresourcesdataidontology) |
-| Titel of beschrijving van de dataset of distributies | `config.yml`, blok `metadata` | [Node.js-scripts](scripts.md#02_metadatajs) |
-| Nieuwe versie uitbrengen | niets in de code, release starten in Jenkins | [Build en release](build-en-release.md#de-primary-branch-main) |
+| Wat wil je doen?                                     | Wat pas je aan                                                                               | Uitleg                                                                 |
+|------------------------------------------------------|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Label, definitie of code van een concept wijzigen    | CSV                                                                                          | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen)    |
+| Concept toevoegen                                    | CSV                                                                                          | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen)    |
+| Concept of waarde verwijderen, of een `_id` wijzigen | CSV, `toegestane-verwijderingen.txt`, en afnemers verwittigen                                | [Concept toevoegen of wijzigen](#een-concept-toevoegen-of-wijzigen)    |
+| Parameter koppelen aan een systeemtype               | CSV (kolom `relevantLZS` van de parameter)                                                   | `relevantProperty` op het systeemtype wordt automatisch afgeleid       |
+| Concept in een nieuwe namespace                      | CSV, `config.yml`, beide `prefix.json`                                                       | [Nieuw prefix](#een-nieuw-prefix-gebruiken)                            |
+| Nieuw concept scheme                                 | CSV, `config.yml`                                                                            | [Nieuw concept scheme](#een-nieuw-concept-scheme-toevoegen)            |
+| Nieuwe kolom of property                             | CSV, `context.json`, `variables.js`, eventueel vocabularium, shapes en gepubliceerde context | [Nieuwe kolom](#een-nieuwe-kolom-property-toevoegen)                   |
+| Relatie automatisch laten afleiden                   | `src/n3/luchtzuivering-rules.n3`                                                             | [Afleidingsregel](#een-afleidingsregel-toevoegen)                      |
+| Validatieregels (verplichte velden, ...) aanpassen   | AP-constraints (`…-ap-constraints.ttl`)                                                      | [Projectstructuur](projectstructuur.md#srcmainresourcesdataidontology) |
+| Titel of beschrijving van de dataset of distributies | `config.yml`, blok `metadata`                                                                | [Node.js-scripts](scripts.md#02_metadatajs)                            |
+| Nieuwe versie uitbrengen                             | niets in de code, release starten in Jenkins                                                 | [Build en release](build-en-release.md#de-primary-branch-main)         |
 
 Voor alle wijzigingen behalve de laatste twee geldt dezelfde afsluiter: `pnpm run create_skos`
 draaien en de gegenereerde bestanden mee committen.
@@ -43,11 +43,11 @@ Dit is veruit de meest voorkomende wijziging, en daarvoor pas je enkel de CSV aa
    komen. Een teksteditor of de CSV-weergave van je IDE is veiliger.
 2. Voeg een rij toe in het blok van het juiste concept scheme. Kijk naar een bestaand concept in
    hetzelfde scheme en neem dezelfde kolommen over. Minimaal heb je nodig:
-   - `_id`, bijvoorbeeld `lzs-status:in_onderhoud`
-   - `_type`: `skos:Concept` (of `ssn:Property` voor een parameter)
-   - `inScheme`, bijvoorbeeld `conceptscheme:systeemstatus`
-   - `prefLabel`
-   - `topConceptOf` als het een top concept is, of anders `broader`
+    - `_id`, bijvoorbeeld `lzs-status:in_onderhoud`
+    - `_type`: `skos:Concept` (of `ssn:Property` voor een parameter)
+    - `inScheme`, bijvoorbeeld `conceptscheme:systeemstatus`
+    - `prefLabel`
+    - `topConceptOf` als het een top concept is, of anders `broader`
 3. Verwijzingen naar andere concepten vul je in met hun CURIE. Meerdere waarden scheid je met `|`.
 4. Genereer opnieuw:
 
@@ -109,8 +109,8 @@ Dit vraagt het meeste werk, omdat een kolom op verschillende plaatsen gekend moe
    }
    ```
 
-3. **`src/utils/variables.js`** — verwijst de property naar een andere resource, voeg ze dan toe aan
-   **beide** frames (`frame_skos_prefixes` en `frame_skos_no_prefixes`) met `"@embed": "@never"` en
+3. **`src/utils/variables.js`** — verwijst de property naar een andere resource, voeg ze dan toe aan **beide** frames (`frame_skos_prefixes` en
+   `frame_skos_no_prefixes`) met `"@embed": "@never"` en
    `"@omitDefault": true`. Anders wordt het doelconcept genest in de JSON-LD- en JSON-output.
 4. **Vocabularium** — gaat het om een nieuwe eigen property onder `lzs-vocab:`, beschrijf ze dan in
    `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl`

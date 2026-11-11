@@ -38,12 +38,13 @@ aanroepen.
 
 ## Inhoud
 
-| Document | Waarover |
-| --- | --- |
-| [Projectstructuur](projectstructuur.md) | Opzoektabel per bestand: bron of gegenereerd, wie het schrijft en leest, of het in git en in de jar zit |
-| [Een codelijst aanpassen](codelijst-aanpassen.md) | Welke bestanden je aanpast voor welke wijziging, met een stappenplan per geval |
-| [Node.js-scripts](scripts.md) | Wat elk script in `src/` doet en hoe ze samenhangen |
-| [Build en release](build-en-release.md) | Maven, de Jenkins-pipeline, versies en het jar-bestand |
+| Document                                              | Waarover                                                                                                |
+|-------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| [Projectstructuur](projectstructuur.md)               | Opzoektabel per bestand: bron of gegenereerd, wie het schrijft en leest, of het in git en in de jar zit |
+| [Een codelijst aanpassen](codelijst-aanpassen.md)     | Welke bestanden je aanpast voor welke wijziging, met een stappenplan per geval                          |
+| [Node.js-scripts](scripts.md)                         | Wat elk script in `src/` doet en hoe ze samenhangen                                                     |
+| [Build en release](build-en-release.md)               | Maven, de Jenkins-pipeline, versies en het jar-bestand                                                  |
+| [Gekende inconsistenties](gekende-inconsistenties.md) | Opgemerkte fouten in de codelijst en de metadata die nog rechtgezet moeten worden                       |
 
 ## Snel aan de slag
 

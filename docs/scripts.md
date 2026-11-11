@@ -179,14 +179,14 @@ Dit is een manuele controle; Jenkins draait enkel `validate_release`.
 
 `03_…` en `04_…` delen hun hulpbestanden:
 
-| Bestand | Inhoud |
-| --- | --- |
-| `utils/releases.js` | Specifiek voor dit project: het pad van de `.nt`, de prefixen, de versie uit een tag, de triples van de huidige bestanden of van een release lezen |
-| `utils/rdf.js` | Generiek: N-Triples parsen, een term als N-Triples of verkort met prefixen schrijven, groeperen |
-| `utils/markdown.js` | Generiek: tekst escapen voor Markdown, tabellen met uitgelijnde kolommen (enkel `04_…`) |
-| `utils/git-utils.js` | Release-tags in de geschiedenis van `HEAD`, de datum van een tag, een bestand uit een tag lezen |
-| `utils/git.js` | Generiek: één functie per git-commando |
-| `utils/console.js` | Generiek: kleuren, symbolen, meldingen en `plural` |
+| Bestand              | Inhoud                                                                                                                                             |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `utils/releases.js`  | Specifiek voor dit project: het pad van de `.nt`, de prefixen, de versie uit een tag, de triples van de huidige bestanden of van een release lezen |
+| `utils/rdf.js`       | Generiek: N-Triples parsen, een term als N-Triples of verkort met prefixen schrijven, groeperen                                                    |
+| `utils/markdown.js`  | Generiek: tekst escapen voor Markdown, tabellen met uitgelijnde kolommen (enkel `04_…`)                                                            |
+| `utils/git-utils.js` | Release-tags in de geschiedenis van `HEAD`, de datum van een tag, een bestand uit een tag lezen                                                    |
+| `utils/git.js`       | Generiek: één functie per git-commando                                                                                                             |
+| `utils/console.js`   | Generiek: kleuren, symbolen, meldingen en `plural`                                                                                                 |
 
 De scripts roepen git niet zelf aan. `utils/git.js` is een kleine git-bibliotheek met één functie per
 git-commando (`show`, `tag`, `mergeBase`, `log`, ...), met dezelfde argumenten als op de command line.
@@ -215,13 +215,13 @@ er bijkwam, en dat in een vorm die afnemers kunnen lezen.
 Per release staat er een samenvatting (`🆕 5 nieuw · ✏️ 2 gewijzigd · 🗑️ 1 verwijderd`, in aantallen
 concepten) en per conceptschema één tabel. Elke rij begint met een emoji:
 
-| | Wanneer |
-| --- | --- |
-| 🆕 | Nieuw concept of conceptschema: de IRI is nieuw |
+|    | Wanneer                                                                     |
+|----|-----------------------------------------------------------------------------|
+| 🆕 | Nieuw concept of conceptschema: de IRI is nieuw                             |
 | ✏️ | Een property van een bestaand concept kreeg een andere waarde (oud → nieuw) |
-| ➕ | Een property van een bestaand concept kreeg er een waarde bij |
-| ➖ | Een property van een bestaand concept verloor een waarde |
-| 🗑️ | Verwijderd concept of conceptschema: de IRI komt nergens meer voor |
+| ➕ | Een property van een bestaand concept kreeg er een waarde bij               |
+| ➖ | Een property van een bestaand concept verloor een waarde                    |
+| 🗑️ | Verwijderd concept of conceptschema: de IRI komt nergens meer voor          |
 
 Een gewijzigd concept krijgt één rij per property; het concept en het label staan enkel in de eerste
 rij. Binnen een tabel staat eerst het conceptschema zelf (als het nieuw of verwijderd is), dan de nieuwe,
@@ -233,8 +233,8 @@ Afgeleide triples (`skos:narrower`, `skos:hasTopConcept`, `skos:note`, de `*Tran
 enkel herhalen wat al vermeld is. Welke predicaten dat zijn, staat in `AFGELEID` in het script; voeg je een
 N3-regel toe, vul die lijst dan aan.
 
-De tabellen zijn opgevuld met spaties, zodat de kolommen ook in de bron van het bestand uitgelijnd staan
-(`utils/markdown.js`, dat een emoji als twee tekens breed telt, zoals een editor met een monospace-font). Lange teksten worden daarom ingekort tot 120 tekens: anders wordt elke rij van de
+De tabellen zijn opgevuld met spaties, zodat de kolommen ook in de bron van het bestand uitgelijnd staan (`utils/markdown.js`, dat een emoji als twee tekens
+breed telt, zoals een editor met een monospace-font). Lange teksten worden daarom ingekort tot 120 tekens: anders wordt elke rij van de
 tabel zo breed als de langste waarde.
 
 **Twee manieren:**

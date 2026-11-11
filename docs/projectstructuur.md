@@ -9,36 +9,36 @@ wijziging moet gebeuren.
 Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De paden onder
 `src/main/resources/` zijn ingekort. Ze beginnen allemaal met `be/vlaanderen/omgeving/`.
 
-| Bestand of map | Soort | Geschreven door | Gelezen door | In git | In jar |
-| --- | --- | --- | --- | :---: | :---: |
-| `src/source/codelijst-source.csv` | ★ bron | jij | `create_skos` | ja | nee |
-| `src/source/config.yml` | ★ bron | jij | alle scripts | ja | nee |
-| `src/source/context.json` | ★ bron | jij | `create_skos`, `create_metadata`, `create_odcs` | ja | nee |
-| `src/source/prefix.json` | ★ bron (referentie) | jij | geen enkel script | ja | nee |
-| `src/source/toegestane-verwijderingen.txt` | ★ bron | jij | `validate_release` | ja | nee |
-| `src/n3/luchtzuivering-rules.n3` | ★ bron | jij | `create_skos` | ja | nee |
-| `src/utils/variables.js` | ★ bron (code) | jij | `01_…`, `02_…`, `03_…` en `04_…` | ja | nee |
-| `src/utils/git.js` | ★ bron (code) | jij | `utils/git-utils.js` | ja | nee |
-| `src/utils/git-utils.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
-| `src/utils/releases.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
-| `src/utils/rdf.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
-| `src/utils/console.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
-| `src/utils/markdown.js` | ★ bron (code) | jij | `04_…` | ja | nee |
-| `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl` | ★ bron | jij | geen enkel script, enkel afnemers | ja | ja |
-| `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron | jij | `create_skos` (SHACL), `create_odcs` | ja | ja |
-| `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json` | ★ bron (gepubliceerde kopie) | jij | geen enkel script, enkel afnemers | ja | ja |
-| `src/main/resources/…/data/id/conceptscheme/luchtzuiveringssysteem/*` | ⚙ gegenereerd | `create_skos` | afnemers (de `.parquet` ook door `create_odcs`) | ja | ja |
-| `temp/…/dataset/…/dataset.{ttl,jsonld}` | ⚙ gegenereerd | `create_metadata` | afnemers | nee | ja |
-| `temp/…/dataset/…/dataset.odcs.yaml` | ⚙ gegenereerd | `create_odcs` | afnemers | nee | ja |
-| `temp/…/catalog/…/catalog.{ttl,jsonld}` | ⚙ gegenereerd | `create_metadata` | afnemers | nee | ja |
-| `validation/` | ⚙ gegenereerd | SHACL-validatie (`create_skos`, `validate_release`), enkel bij een fout | jij, om de fout te vinden | nee | nee |
-| `CHANGELOG.md` | ⚙ gegenereerd | `create_changelog`, `create_changelog_full` | afnemers | ja | nee |
-| `pom.xml` | ★ bron | jij, de versie door de release-plugin | Maven, `create_metadata`, `create_odcs` | ja | — |
-| `package.json` | ★ bron | jij | pnpm | ja | nee |
-| `pnpm-lock.yaml` | ⚙ gegenereerd | pnpm | pnpm | ja | nee |
-| `Jenkinsfile.groovy` | ★ bron | jij | Jenkins | ja | nee |
-| `node_modules/` | ⚙ gegenereerd | pnpm | de scripts (generator, standaard N3-regels, DCAT-shapes) | nee | nee |
-| `target/` | ⚙ gegenereerd | Maven | — | nee | is de jar |
+| Bestand of map                                                                                     | Soort                         | Geschreven door                                                         | Gelezen door                                             | In git |  In jar   |
+|----------------------------------------------------------------------------------------------------|-------------------------------|-------------------------------------------------------------------------|----------------------------------------------------------|:------:|:---------:|
+| `src/source/codelijst-source.csv`                                                                  | ★ bron                       | jij                                                                     | `create_skos`                                            |   ja   |    nee    |
+| `src/source/config.yml`                                                                            | ★ bron                       | jij                                                                     | alle scripts                                             |   ja   |    nee    |
+| `src/source/context.json`                                                                          | ★ bron                       | jij                                                                     | `create_skos`, `create_metadata`, `create_odcs`          |   ja   |    nee    |
+| `src/source/prefix.json`                                                                           | ★ bron (referentie)          | jij                                                                     | geen enkel script                                        |   ja   |    nee    |
+| `src/source/toegestane-verwijderingen.txt`                                                         | ★ bron                       | jij                                                                     | `validate_release`                                       |   ja   |    nee    |
+| `src/n3/luchtzuivering-rules.n3`                                                                   | ★ bron                       | jij                                                                     | `create_skos`                                            |   ja   |    nee    |
+| `src/utils/variables.js`                                                                           | ★ bron (code)                | jij                                                                     | `01_…`, `02_…`, `03_…` en `04_…`                         |   ja   |    nee    |
+| `src/utils/git.js`                                                                                 | ★ bron (code)                | jij                                                                     | `utils/git-utils.js`                                     |   ja   |    nee    |
+| `src/utils/git-utils.js`                                                                           | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/releases.js`                                                                            | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/rdf.js`                                                                                 | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/console.js`                                                                             | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/markdown.js`                                                                            | ★ bron (code)                | jij                                                                     | `04_…`                                                   |   ja   |    nee    |
+| `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl`          | ★ bron                       | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
+| `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron                       | jij                                                                     | `create_skos` (SHACL), `create_odcs`                     |   ja   |    ja     |
+| `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json`                             | ★ bron (gepubliceerde kopie) | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
+| `src/main/resources/…/data/id/conceptscheme/luchtzuiveringssysteem/*`                              | ⚙ gegenereerd                | `create_skos`                                                           | afnemers (de `.parquet` ook door `create_odcs`)          |   ja   |    ja     |
+| `temp/…/dataset/…/dataset.{ttl,jsonld}`                                                            | ⚙ gegenereerd                | `create_metadata`                                                       | afnemers                                                 |  nee   |    ja     |
+| `temp/…/dataset/…/dataset.odcs.yaml`                                                               | ⚙ gegenereerd                | `create_odcs`                                                           | afnemers                                                 |  nee   |    ja     |
+| `temp/…/catalog/…/catalog.{ttl,jsonld}`                                                            | ⚙ gegenereerd                | `create_metadata`                                                       | afnemers                                                 |  nee   |    ja     |
+| `validation/`                                                                                      | ⚙ gegenereerd                | SHACL-validatie (`create_skos`, `validate_release`), enkel bij een fout | jij, om de fout te vinden                                |  nee   |    nee    |
+| `CHANGELOG.md`                                                                                     | ⚙ gegenereerd                | `create_changelog`, `create_changelog_full`                             | afnemers                                                 |   ja   |    nee    |
+| `pom.xml`                                                                                          | ★ bron                       | jij, de versie door de release-plugin                                   | Maven, `create_metadata`, `create_odcs`                  |   ja   |     —     |
+| `package.json`                                                                                     | ★ bron                       | jij                                                                     | pnpm                                                     |   ja   |    nee    |
+| `pnpm-lock.yaml`                                                                                   | ⚙ gegenereerd                | pnpm                                                                    | pnpm                                                     |   ja   |    nee    |
+| `Jenkinsfile.groovy`                                                                               | ★ bron                       | jij                                                                     | Jenkins                                                  |   ja   |    nee    |
+| `node_modules/`                                                                                    | ⚙ gegenereerd                | pnpm                                                                    | de scripts (generator, standaard N3-regels, DCAT-shapes) |  nee   |    nee    |
+| `target/`                                                                                          | ⚙ gegenereerd                | Maven                                                                   | —                                                        |  nee   | is de jar |
 
 Twee dingen vallen op:
 
@@ -99,15 +99,15 @@ een grootheid of een eenheid. Elke kolom is een eigenschap van die resource.
 
 De eerste kolommen zijn de belangrijkste:
 
-| Kolom | Betekenis |
-| --- | --- |
-| `_id` | De IRI van de resource, meestal als CURIE, bijvoorbeeld `lzs-type:s2` |
-| `_type` | De RDF-klasse: `skos:ConceptScheme`, `skos:Concept`, `ssn:Property`, `qudt:Unit`, ... |
-| `topConceptOf` | Het concept scheme waarvan dit een top concept is |
-| `inScheme` | Het concept scheme waartoe het concept behoort |
-| `prefLabel`, `altLabel` | Het label (in het Nederlands) |
-| `notation` | Een code, bijvoorbeeld `S2` |
-| `broader` | Het bovenliggende concept in een hiërarchie |
+| Kolom                   | Betekenis                                                                             |
+|-------------------------|---------------------------------------------------------------------------------------|
+| `_id`                   | De IRI van de resource, meestal als CURIE, bijvoorbeeld `lzs-type:s2`                 |
+| `_type`                 | De RDF-klasse: `skos:ConceptScheme`, `skos:Concept`, `ssn:Property`, `qudt:Unit`, ... |
+| `topConceptOf`          | Het concept scheme waarvan dit een top concept is                                     |
+| `inScheme`              | Het concept scheme waartoe het concept behoort                                        |
+| `prefLabel`, `altLabel` | Het label (in het Nederlands)                                                         |
+| `notation`              | Een code, bijvoorbeeld `S2`                                                           |
+| `broader`               | Het bovenliggende concept in een hiërarchie                                           |
 
 Daarna volgen domeinspecifieke kolommen zoals `relevantLZS` (voor welke systeemtypes een parameter
 geldt), `relevantUnit`, `relevantQuantityKind`, `minValue`, `maxValue`, `operatie` en `technischefiche`.
@@ -122,19 +122,19 @@ Een paar conventies:
 
 De concept schemes in het bestand, met het prefix dat hun concepten gebruiken:
 
-| Concept scheme | Prefix van de concepten |
-| --- | --- |
-| `conceptscheme:systeemtype` | `lzs-type` |
-| `conceptscheme:parameter` | `lzs-param` (van het type `ssn:Property`) |
-| `conceptscheme:parameter-norm` | `lzs-param-norm` |
-| `conceptscheme:norm-bandbreedte` | `lzs-bandbreedte` |
-| `conceptscheme:medium` | `lzs-medium` |
-| `conceptscheme:systeemstatus` | `lzs-status` |
-| `conceptscheme:stalbezetting` | `lzs-stalbezetting` |
-| `conceptscheme:systeemopstelling` | `lzs-systeemopstelling` |
-| `conceptscheme:dataleverancierstatus` | `lzs-dl-status` |
-| `conceptscheme:secundaire-alarmen` | `lzs-sec` |
-| `conceptscheme-alg:vlarem-klasse` | `vlarem-klasse` |
+| Concept scheme                        | Prefix van de concepten                   |
+|---------------------------------------|-------------------------------------------|
+| `conceptscheme:systeemtype`           | `lzs-type`                                |
+| `conceptscheme:parameter`             | `lzs-param` (van het type `ssn:Property`) |
+| `conceptscheme:parameter-norm`        | `lzs-param-norm`                          |
+| `conceptscheme:norm-bandbreedte`      | `lzs-bandbreedte`                         |
+| `conceptscheme:medium`                | `lzs-medium`                              |
+| `conceptscheme:systeemstatus`         | `lzs-status`                              |
+| `conceptscheme:stalbezetting`         | `lzs-stalbezetting`                       |
+| `conceptscheme:systeemopstelling`     | `lzs-systeemopstelling`                   |
+| `conceptscheme:dataleverancierstatus` | `lzs-dl-status`                           |
+| `conceptscheme:secundaire-alarmen`    | `lzs-sec`                                 |
+| `conceptscheme-alg:vlarem-klasse`     | `vlarem-klasse`                           |
 
 Daarnaast bevat het bestand een aantal QUDT-grootheden (`qudt:QuantityKind`) en -eenheden (`qudt:Unit`)
 die buiten een concept scheme vallen. Ze staan erin om er een Nederlandstalig label en de
@@ -179,12 +179,12 @@ naast de gepubliceerde versie in `lzs/data/id/graph/prefix.json`. Voeg je een pr
 
 Ze hebben elk een andere rol:
 
-| | `src/source/` | `src/main/resources/…/lzs/data/id/graph/` |
-| --- | --- | --- |
-| Rol | werkversie voor de build | gepubliceerde versie voor afnemers |
-| `context.json` | wordt ingelezen door de scripts | gaat mee in het jar-bestand, wordt door geen enkel script gelezen |
-| `prefix.json` | referentie, wordt nergens ingelezen | gaat mee in het jar-bestand, wordt door geen enkel script gelezen |
-| Bijgewerkt | bij elke nieuwe kolom of nieuw prefix | met de hand, wanneer afnemers de wijziging nodig hebben |
+|                | `src/source/`                         | `src/main/resources/…/lzs/data/id/graph/`                         |
+|----------------|---------------------------------------|-------------------------------------------------------------------|
+| Rol            | werkversie voor de build              | gepubliceerde versie voor afnemers                                |
+| `context.json` | wordt ingelezen door de scripts       | gaat mee in het jar-bestand, wordt door geen enkel script gelezen |
+| `prefix.json`  | referentie, wordt nergens ingelezen   | gaat mee in het jar-bestand, wordt door geen enkel script gelezen |
+| Bijgewerkt     | bij elke nieuwe kolom of nieuw prefix | met de hand, wanneer afnemers de wijziging nodig hebben           |
 
 Er is geen script dat de twee synchroon houdt. Momenteel loopt de gepubliceerde versie wat achter op
 `src/source/`: een paar recente termen en prefixen ontbreken er nog. Een wijziging aan de werkversie
@@ -225,14 +225,14 @@ context kunnen gebruiken. Ze worden niet automatisch gesynchroniseerd met `src/s
 `pnpm run create_skos` schrijft zes bestanden naar
 `src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/`:
 
-| Bestand | Formaat | Opmerking |
-| --- | --- | --- |
-| `luchtzuiveringssysteem.ttl` | Turtle | Met alle prefixen uit `config.yml`, het meest leesbaar |
-| `luchtzuiveringssysteem.nt` | N-Triples | Eén triple per regel, gesorteerd. Handig voor diffs |
-| `luchtzuiveringssysteem.jsonld` | JSON-LD | Geframed, met verkorte IRI's via de context |
-| `luchtzuiveringssysteem.json` | JSON | Plat, met volledige IRI's |
-| `luchtzuiveringssysteem.csv` | CSV | Eén rij per resource, ontbrekende waarden als `null` |
-| `luchtzuiveringssysteem.parquet` | Parquet | Dezelfde tabel als de CSV, in kolomformaat |
+| Bestand                          | Formaat   | Opmerking                                              |
+|----------------------------------|-----------|--------------------------------------------------------|
+| `luchtzuiveringssysteem.ttl`     | Turtle    | Met alle prefixen uit `config.yml`, het meest leesbaar |
+| `luchtzuiveringssysteem.nt`      | N-Triples | Eén triple per regel, gesorteerd. Handig voor diffs    |
+| `luchtzuiveringssysteem.jsonld`  | JSON-LD   | Geframed, met verkorte IRI's via de context            |
+| `luchtzuiveringssysteem.json`    | JSON      | Plat, met volledige IRI's                              |
+| `luchtzuiveringssysteem.csv`     | CSV       | Eén rij per resource, ontbrekende waarden als `null`   |
+| `luchtzuiveringssysteem.parquet` | Parquet   | Dezelfde tabel als de CSV, in kolomformaat             |
 
 Deze bestanden staan bewust in git. Zo staan ze in elke release-tag op hun vaste pad, en zie je bij
 een review meteen welk effect een wijziging aan de CSV heeft op de output. De `.nt` en de `.ttl` zijn
