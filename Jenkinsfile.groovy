@@ -1,4 +1,5 @@
 @Library('Cumulus@1.3-stable') _
+
 pipeline {
     agent {
         kubernetes {
@@ -24,7 +25,7 @@ pipeline {
                         }
                     } else {
                         properties([parameters([
-                                booleanParam(name: 'DEPLOY', defaultValue: false, description: 'If true, runs mvn deploy instead of mvn verify.')
+                            booleanParam(name: 'DEPLOY', defaultValue: false, description: 'If true, runs mvn deploy instead of mvn verify.')
                         ])])
                     }
                 }
@@ -168,8 +169,8 @@ pipeline {
                     steps {
                         script {
                             sonar.scanMaven([
-                                    projectKey        : env.SONAR_PROJECT_KEY,
-                                    tolerateBadQuality: true
+                                projectKey        : env.SONAR_PROJECT_KEY,
+                                tolerateBadQuality: true
                             ])
                         }
                     }
