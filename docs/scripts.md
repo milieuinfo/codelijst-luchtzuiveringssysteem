@@ -201,9 +201,9 @@ Dit script heeft geen netwerktoegang nodig, wel de git-tags.
 ## `04_create_changelog.js`
 
 ```bash
-pnpm run create_changelog                      # sectie voor de huidige versie toevoegen of vervangen
-pnpm run create_changelog --version 0.3.0      # andere versie dan die uit pom.xml
-pnpm run create_changelog_full                 # volledige changelog opnieuw opbouwen uit alle tags
+pnpm run create_changelog                      # sectie 'Volgende versie' toevoegen of vervangen
+pnpm run create_changelog --version 0.3.0      # sectie voor versie 0.3.0 i.p.v. 'Volgende versie'
+pnpm run create_changelog_full                 # volledige changelog opnieuw opbouwen uit alle tags, met 'Volgende versie'
 pnpm run create_changelog_full --version 0.3.0 # idem, met de huidige bestanden als versie 0.3.0 (zoals Jenkins)
 pnpm run create_changelog --stdout             # naar stdout i.p.v. naar CHANGELOG.md
 ```
@@ -240,22 +240,25 @@ tabel zo breed als de langste waarde.
 **Twee manieren:**
 
 - **`create_changelog`** vergelijkt de huidige gegenereerde bestanden met de laatste release-tag in de
-  geschiedenis van `HEAD`. De sectie krijgt de versie uit `--version`, anders uit de omgevingsvariabele
-  `VERSION` (die Jenkins zet bij een release), anders uit `pom.xml` zonder `-SNAPSHOT`. De datum is
-  die van vandaag. Bestaat er al een sectie voor die versie, dan wordt ze vervangen; de rest van het
-  bestand blijft ongemoeid. Je kan het dus herhaaldelijk draaien. Is de versie al gereleased (er
-  bestaat een tag voor), dan faalt het script.
+  geschiedenis van `HEAD`. Zonder versie komt het resultaat in de sectie *Volgende versie*, zonder
+  datum en met de vermelding t.o.v. welke release. Zo kan de analist zijn wijzigingen nalezen vóór ze
+  gepubliceerd worden. Met een versie (`--version`, of de omgevingsvariabele `VERSION` die Jenkins zet
+  bij een release) krijgt de sectie die versie en de datum van vandaag, en verdwijnt een bestaande
+  sectie *Volgende versie*. Bestaat er al een sectie met hetzelfde label, dan wordt ze vervangen; de
+  rest van het bestand blijft ongemoeid. Je kan het dus herhaaldelijk draaien. Is de versie al
+  gereleased (er bestaat een tag voor), dan faalt het script.
 - **`create_changelog_full`** bouwt het hele bestand opnieuw op uit de release-tags: elke release t.o.v.
   de vorige, met de datum van de tag. De eerste release krijgt een korte samenvatting. Een tag zonder
-  `.nt` krijgt een lege sectie en wordt overgeslagen bij de vergelijking. Geef je expliciet een versie
-  mee (`--version`, of de omgevingsvariabele `VERSION`) waarvoor nog geen tag bestaat, dan komen de
-  huidige bestanden er bovenaan bij als sectie voor die versie, met de datum van vandaag. Zonder
-  expliciete versie (de versie uit `pom.xml` telt hier niet), of als die versie al een tag heeft, tellen
-  de huidige bestanden niet mee. Jenkins gebruikt dit bij een release, zie
+  `.nt` krijgt een lege sectie en wordt overgeslagen bij de vergelijking. Bovenaan komen de huidige
+  bestanden: zonder versie als *Volgende versie*, met een versie (`--version` of `VERSION`) waarvoor nog
+  geen tag bestaat als sectie voor die versie, met de datum van vandaag. Heeft die versie al een tag,
+  dan tellen de huidige bestanden niet mee. Jenkins gebruikt dit bij een release (met `VERSION`), dus de
+  changelog in een release bevat nooit een sectie *Volgende versie*; zie
   [Build en release](build-en-release.md#changelog).
 
 Omdat beide manieren dezelfde vergelijking maken, levert `create_changelog` vlak vóór een release
-dezelfde sectie op als `create_changelog_full` na die release (op de datum na).
+dezelfde sectie op als `create_changelog_full` na die release (op de kop na: *Volgende versie* wordt
+de versie met datum).
 
 `CHANGELOG.md` is gegenereerd: pas het niet met de hand aan, want `create_changelog_full` overschrijft
 alles. Het bestand wordt gecommit, maar zit niet in het jar-bestand.

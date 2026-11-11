@@ -102,10 +102,13 @@ er niets gecommit. `release:prepare` maakt zijn commit en tag daarna bovenop de 
 changelog zit in de release-tag.
 
 Lokaal hoef je de changelog vóór een release dus niet meer bij te werken. Wil je vooraf zien wat erin
-komt:
+komt, draai dan `create_changelog` zonder versie: de nog niet gepubliceerde wijzigingen komen in de
+sectie *Volgende versie*. Die mag je committen; bij de release bouwt Jenkins de changelog opnieuw op met
+`VERSION`, zodat *Volgende versie* de nieuwe versie wordt en de release-tag geen sectie *Volgende versie*
+bevat.
 
 ```bash
-pnpm run create_changelog --stdout                    # versie uit pom.xml zonder -SNAPSHOT
+pnpm run create_changelog                                 # sectie 'Volgende versie' in CHANGELOG.md
 pnpm run create_changelog_full --version 0.3.0 --stdout   # zoals Jenkins het doet, voor versie 0.3.0
 ```
 

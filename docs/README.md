@@ -74,8 +74,8 @@ Alle commando's draai je vanuit de root van de repository.
 | `pnpm run create_metadata`       | Maakt de DCAT-metadata en het ODCS data contract in `temp/`                                                                                                          | netwerk naar Artifactory   |
 | `pnpm run validate_release`      | Valideert de gegenereerde bestanden met SHACL en faalt als er t.o.v. de vorige release-tag concepten of waarden verdwenen zijn                                       | git-tags                   |
 | `pnpm run validate_history`      | Zelfde controle, plus een rapport van elke release t.o.v. de vorige (`0.0.1 → … → current`)                                                                          | git-tags                   |
-| `pnpm run create_changelog`      | Voegt de wijzigingen van de huidige versie t.o.v. de vorige release-tag toe aan `CHANGELOG.md` (of vervangt die sectie)                                              | git-tags                   |
-| `pnpm run create_changelog_full` | Bouwt `CHANGELOG.md` volledig opnieuw op uit alle release-tags; met `--version` ook de huidige versie (zo doet Jenkins het bij een release)                          | git-tags                   |
+| `pnpm run create_changelog`      | Zet de wijzigingen t.o.v. de vorige release-tag in de sectie *Volgende versie* van `CHANGELOG.md` (met `--version` in een sectie voor die versie)                    | git-tags                   |
+| `pnpm run create_changelog_full` | Bouwt `CHANGELOG.md` opnieuw op uit alle release-tags, met de huidige bestanden als *Volgende versie* (met `--version` als die versie: zo doet Jenkins het)          | git-tags                   |
 | `mvn verify`                     | Volledige build: installeert Node/pnpm in `target/`, draait `create_skos` en `create_metadata`, bouwt de jar                                                         | interne Maven-repositories |
 
 Opties:
@@ -83,7 +83,7 @@ Opties:
 ```bash
 pnpm run validate_release --tag codelijst-luchtzuiveringssysteem-0.2.0   # andere vorige release
 pnpm run validate_history --verbose                                      # alle details per release
-pnpm run create_changelog --version 0.3.0                                # andere versie dan die uit pom.xml
+pnpm run create_changelog --version 0.3.0                                # sectie voor 0.3.0 i.p.v. 'Volgende versie'
 NO_COLOR=1 pnpm run validate_release                                     # zonder kleuren
 ```
 

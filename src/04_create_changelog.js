@@ -3,17 +3,19 @@
 // per release, door de N-Triples van opeenvolgende releases te vergelijken.
 //
 // Gebruik (vanuit src/):
-//   node 04_create_changelog.js            sectie voor de huidige versie toevoegen of vervangen
+//   node 04_create_changelog.js            sectie voor de huidige bestanden toevoegen of vervangen
 //   node 04_create_changelog.js --full     de volledige changelog opnieuw opbouwen uit alle release-tags
 //   --version <x.y.z>   versie van de nieuwe sectie; standaard de omgevingsvariabele VERSION
-//                       (zoals Jenkins die zet bij een release), anders (niet bij --full) de versie uit
-//                       pom.xml zonder -SNAPSHOT
+//                       (zoals Jenkins die zet bij een release)
 //   --stdout            de changelog naar stdout schrijven i.p.v. naar CHANGELOG.md
 //
 // Zonder --full worden de huidige gegenereerde bestanden vergeleken met de laatste release-tag in de
 // geschiedenis van HEAD. Een bestaande sectie voor dezelfde versie wordt vervangen, de rest van het
-// bestand blijft ongemoeid. Met --full worden de release-tags gebruikt; de huidige bestanden enkel als er
-// expliciet een versie is meegegeven (--version of VERSION) waarvoor nog geen tag bestaat.
+// bestand blijft ongemoeid. Met --full worden de release-tags gebruikt, met de huidige bestanden bovenaan.
+//
+// Zonder versie (geen release) komen de huidige bestanden in de sectie 'Volgende versie', zonder
+// datum: zo kan je de wijzigingen nalezen vóór ze gepubliceerd worden. Met een versie (bij een release)
+// komen ze in een sectie voor die versie en verdwijnt de sectie 'Volgende versie'.
 //
 // Per release een samenvatting en per conceptschema één tabel, met per rij een emoji:
 //   🆕 nieuw concept (het subject is nieuw)                🗑️ verwijderd concept (het subject komt nergens meer voor)
@@ -22,7 +24,6 @@
 // zolang de triple waaruit ze volgen er ook staat: ze zouden enkel herhalen wat al vermeld is.
 
 import fs from 'node:fs';
-import { metadataOptions } from './utils/variables.js';
 import { vereisteReleaseTags, datumVanRevisie } from './utils/git-utils.js';
 import { toNT as nt, tripleKey as sleutel, groupBy as groepeer } from './utils/rdf.js';
 import { artifactId, kort, versie, leesHuidig, leesReleases } from './utils/releases.js';
@@ -32,6 +33,7 @@ import { escapeMarkdown, table } from './utils/markdown.js';
 const CHANGELOG_PAD = '../CHANGELOG.md';
 const MAX_LENGTE = 120;
 const NAAR_STDOUT = process.argv.includes('--stdout');
+const VOLGENDE = 'Volgende versie';
 
 // Met --stdout gaat de changelog naar stdout; de meldingen van het script dan naar stderr
 if (NAAR_STDOUT) console.log = console.error;
@@ -242,9 +244,12 @@ function samenvatting({ toegevoegd, gewijzigd, verwijderd }) {
         .join(' · ');
 }
 
-// Markdown-sectie voor één release; `vorige` is null voor de eerste release
-function sectie({ label, datum, vorige, huidige }) {
-    const regels = [`## [${label}] - ${datum}`, ''];
+// Markdown-sectie voor één release; `vorige` is null voor de eerste release.
+// Zonder datum is het de volgende versie: de wijzigingen t.o.v. release `vorigeLabel`.
+function sectie({ label, datum, vorige, vorigeLabel, huidige }) {
+    const regels = datum
+        ? [`## [${label}] - ${datum}`, '']
+        : [`## [${label}]`, '', `Nog niet gepubliceerd: wijzigingen t.o.v. release ${vorigeLabel}.`, ''];
 
     if (!huidige) {
         regels.push('Deze release bevat geen gegenereerde codelijst.', '');
@@ -318,47 +323,56 @@ function splitsChangelog(inhoud) {
 
 const vandaag = () => new Date().toISOString().slice(0, 10);
 
-// Met --full: elke release t.o.v. de vorige. Is er expliciet een versie meegegeven (--version of VERSION,
-// zoals Jenkins die zet bij een release) die nog geen tag heeft, dan komen de huidige bestanden er
-// bovenaan bij als sectie voor die versie. Zo bevat de changelog in de release-tag ook die release zelf.
+// Versie uit --version of VERSION (zoals Jenkins die zet bij een release); undefined als er niet gereleased wordt
+const releaseVersie = () => argument('--version') ?? process.env.VERSION;
+
+// Met --full: elke release t.o.v. de vorige, met bovenaan de huidige bestanden. Is er een versie
+// meegegeven die nog geen tag heeft, dan als sectie voor die versie: zo bevat de changelog in de
+// release-tag ook die release zelf. Zonder versie als 'Volgende versie'.
 function maakVolledigeChangelog() {
-    const nieuweVersie = argument('--version') ?? process.env.VERSION;
+    const nieuweVersie = releaseVersie();
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
         .then(tags => Promise.all([leesReleases(tags), Promise.all(tags.map(datumVanRevisie))]))
         .then(([releases, datums]) => releases.map((r, i) => ({ ...r, datum: datums[i] })))
         .then(releases => {
-            const metHuidige = Boolean(nieuweVersie) && !releases.some(r => r.label === nieuweVersie);
+            const metHuidige = !releases.some(r => r.label === nieuweVersie);
             return Promise.all([releases, metHuidige, metHuidige ? leesHuidig() : null]);
         })
         .then(([releases, metHuidige, huidige]) => {
             print.title('Changelog of the release history');
             print.keyValue({ Releases: `${style.bold(releases.length)} tags: ${releases[0].label} ${style.gray(symbol.arrow)} ${releases.at(-1).label}` });
             if (metHuidige) {
-                print.keyValue({ 'New version': `${style.bold(nieuweVersie)} ${style.gray('(current files)')}` });
-            } else if (nieuweVersie) {
+                print.keyValue({ 'New version': `${style.bold(nieuweVersie ?? VOLGENDE)} ${style.gray('(current files)')}` });
+            } else {
                 print.info(`Version ${nieuweVersie} is already released; the current files are not added`);
             }
             print.blank();
 
             // Een release zonder codelijst wordt overgeslagen bij de vergelijking van de volgende
             let vorige = null;
+            let vorigeLabel = null;
             const versies = metHuidige
-                ? [...releases, { label: nieuweVersie, datum: vandaag(), triples: huidige }]
+                ? [...releases, { label: nieuweVersie ?? VOLGENDE, datum: nieuweVersie ? vandaag() : null, triples: huidige }]
                 : releases;
             const secties = versies.map(({ label, datum, triples }) => {
-                const resultaat = sectie({ label, datum, vorige, huidige: triples });
-                print.detail(`${style.bold(label.padEnd(8))} ${style.gray(datum)}  ${aantallenTekst(resultaat.aantallen)}`, 0);
-                if (triples) vorige = triples;
+                const resultaat = sectie({ label, datum, vorige, vorigeLabel, huidige: triples });
+                print.detail(`${style.bold(label.padEnd(8))} ${style.gray(datum ?? '')}  ${aantallenTekst(resultaat.aantallen)}`, 0);
+                if (triples) {
+                    vorige = triples;
+                    vorigeLabel = label;
+                }
                 return resultaat.tekst;
             });
             schrijf([HEADER, ...secties.toReversed()].join('\n'));
         });
 }
 
-// Zonder --full: de huidige bestanden t.o.v. de laatste release, als sectie voor de huidige versie
+// Zonder --full: de huidige bestanden t.o.v. de laatste release, als sectie voor de meegegeven versie,
+// of zonder versie als 'Volgende versie'
 function voegHuidigeVersieToe() {
-    const label = argument('--version') ?? process.env.VERSION ?? metadataOptions.next_release_version;
+    const nieuweVersie = releaseVersie();
+    const label = nieuweVersie ?? VOLGENDE;
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
         .then(tags => {
@@ -371,7 +385,9 @@ function voegHuidigeVersieToe() {
             print.keyValue({ Version: style.bold(label), 'Compared to': style.bold(tag) });
             return Promise.all([leesReleases([tag]), leesHuidig()]);
         })
-        .then(([[release], huidige]) => sectie({ label, datum: vandaag(), vorige: release.triples, huidige }))
+        .then(([[release], huidige]) => sectie({
+            label, datum: nieuweVersie ? vandaag() : null, vorige: release.triples, vorigeLabel: release.label, huidige
+        }))
         .then(({ tekst, aantallen }) => {
             print.blank();
             print.detail(`${style.bold(label.padEnd(8))} ${aantallenTekst(aantallen)}  ${style.gray('(added, changed, removed concepts)')}`, 0);
@@ -382,14 +398,20 @@ function voegHuidigeVersieToe() {
                 schrijf([HEADER, tekst].join('\n'));
                 return;
             }
-            const i = bestaand.secties.findIndex(s => s.label === label);
+            // Bij een release vervangt de sectie voor de versie de sectie 'Volgende versie'
+            let secties = bestaand.secties;
+            if (nieuweVersie && secties.some(s => s.label === VOLGENDE)) {
+                print.info(`Removing the section '${VOLGENDE}'`);
+                secties = secties.filter(s => s.label !== VOLGENDE);
+            }
+            const i = secties.findIndex(s => s.label === label);
             if (i !== -1) {
                 print.info(`Replacing the existing section for ${label}`);
-                bestaand.secties[i] = { label, tekst };
+                secties[i] = { label, tekst };
             } else {
-                bestaand.secties.unshift({ label, tekst });
+                secties.unshift({ label, tekst });
             }
-            schrijf([metEenRegeleinde(bestaand.kop), ...bestaand.secties.map(s => s.tekst)].join('\n'));
+            schrijf([metEenRegeleinde(bestaand.kop), ...secties.map(s => s.tekst)].join('\n'));
         });
 }
 

@@ -56,8 +56,8 @@ pnpm run create_skos            # CSV -> SKOS files in src/main/resources/.../co
 pnpm run create_metadata        # DCAT + ODCS into temp/ (network: repo.omgeving.vlaanderen.be)
 pnpm run validate_release       # SHACL + fail on info removed vs. previous release tag (needs tags)
 pnpm run validate_history       # same + report of every release vs. its predecessor (old removals: report only)
-pnpm run create_changelog       # add/replace CHANGELOG.md section of current version (vs. latest tag)
-pnpm run create_changelog_full  # rebuild CHANGELOG.md from all tags; with --version/VERSION also current files as that version (Jenkins does this at release)
+pnpm run create_changelog       # add/replace CHANGELOG.md section 'Volgende versie' (vs. latest tag); --version/VERSION: section for that version instead
+pnpm run create_changelog_full  # rebuild CHANGELOG.md from all tags + current files as 'Volgende versie', or with --version/VERSION as that version (Jenkins at release: no 'Volgende versie')
 mvn verify                      # full build: Node/pnpm in target/, both scripts, jar
 ```
 

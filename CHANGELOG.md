@@ -10,6 +10,52 @@ ze volgen uit de wijzigingen die wel vermeld zijn.
 Dit bestand wordt gegenereerd met `pnpm run create_changelog` (zie `docs/scripts.md`).
 Pas het niet met de hand aan: `pnpm run create_changelog_full` bouwt het volledig opnieuw op.
 
+## [Volgende versie]
+
+Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
+
+🆕 28 nieuw · ✏️ 2 gewijzigd
+
+### conceptschema luchtzuiveringssysteem normbandbreedte (`conceptscheme:norm-bandbreedte`)
+
+|     | Concept               | Label                                                      | Wijziging                                                        |
+| --- | --------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------- |
+| ✏️  | `lzs-bandbreedte:_19` | Waswaterdebiet afwijking naar beneden \> 20% (lelysphere)  | `schema:maxValue`: "0,8" (`xsd:decimal`) → "0.8" (`xsd:decimal`) |
+| ✏️  | `lzs-bandbreedte:_20` | Spuiwaterdebiet afwijking naar beneden \> 10% (lelysphere) | `schema:maxValue`: "0,9" (`xsd:decimal`) → "0.9" (`xsd:decimal`) |
+
+### Conceptschema secundaire alarmen luchtzuiveringssysteem (`conceptscheme:secundaire-alarmen`)
+
+|     | Concept                            | Label                                                                      | Wijziging           |
+| --- | ---------------------------------- | -------------------------------------------------------------------------- | ------------------- |
+| 🆕  | `conceptscheme:secundaire-alarmen` | Conceptschema secundaire alarmen luchtzuiveringssysteem                    | nieuw conceptschema |
+| 🆕  | `lzs-sec:alarmdrempel_1`           | Alarmdrempel zuurtegraad waswater (7 dagen)                                | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_2`           | Alarmdrempel geleidbaarheid van het waswater (7 dagen)                     | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_2a`          | Alarmdrempel geleidbaarheid waswater \> 280 mS/cm Lely Sphere (3 dagen)    | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_3`           | Alarmdrempel waswaterdebiet (7 dagen)                                      | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_4`           | Alarmdrempel spuiwaterproductie (7 dagen)                                  | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_5`           | Alarmdrempel drukval over het systeem (7 dagen)                            | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_6`           | Alarmdrempel waswaterdebiet voorbevochtiging (7 dagen)                     | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_7`           | Alarmdrempel waswaterdebiet bevloeiing (7 dagen)                           | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_8`           | Alarmdrempel biobedspuiwaterproductie (7 dagen)                            | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_9`           | Alarmdrempel biobedspoelwaterproductie (7 dagen)                           | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_10`          | Alarmdrempel elektriciteitsverbruik waswaterpomp = 0 Lely Sphere (3 dagen) | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_11`          | Alarmdrempel systeemstatus = storing (15 dagen)                            | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_12`          | Alarmdrempel systeemstatus = onderhoud (2 dagen)                           | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_13`          | Alarmdrempel systeemstatus = in\_reiniging (2 dagen)                       | nieuw concept       |
+| 🆕  | `lzs-sec:alarmdrempel_15`          | Alarmdrempel stalbezetting = leeg (15 dagen)                               | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_1`         | Dagbeoordelingsregel zuurtegraad waswater                                  | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_2`         | Dagbeoordelingsregel geleidbaarheid van het waswater                       | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_3`         | Dagbeoordelingsregel waswaterdebiet                                        | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_4`         | Dagbeoordelingsregel spuiwaterproductie                                    | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_5`         | Dagbeoordelingsregel drukval over het systeem                              | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_6`         | Dagbeoordelingsregel waswaterdebiet voorbevochtiging                       | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_7`         | Dagbeoordelingsregel waswaterdebiet bevloeiing                             | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_8`         | Dagbeoordelingsregel biobedspuiwaterproductie                              | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_9`         | Dagbeoordelingsregel biobedspoelwaterproductie                             | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_10`        | Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)        | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_11`        | Dagbeoordelingsregel systeemstatus                                         | nieuw concept       |
+| 🆕  | `lzs-sec:dagbeoordeling_12`        | Dagbeoordelingsregel stalbezetting                                         | nieuw concept       |
+
 ## [0.2.1] - 2026-09-25
 
 Geen inhoudelijke wijzigingen aan de codelijst.
