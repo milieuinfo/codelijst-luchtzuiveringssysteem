@@ -176,6 +176,14 @@ function schemaVan(subject, g) {
     return g.isSchema(subject) ? subject : g.schema(subject) ?? null;
 }
 
+// Soort en tekst van de wijziging van één property van een bestaand concept
+function propertyWijziging(predicaat, oud, nieuw) {
+    const p = `\`${kort(predicaat)}\``;
+    if (oud.length && nieuw.length) return ['gewijzigd', `${p}: ${waarden(oud)} → ${waarden(nieuw)}`];
+    if (nieuw.length) return ['toegevoegd', `${p}: ${waarden(nieuw)}`];
+    return ['verwijderd', `${p}: ${waarden(oud)}`];
+}
+
 // Tabelrijen voor één release, met per rij het conceptschema (voor de groepering) en de sortering
 function rijen({ toegevoegd, gewijzigd, verwijderd }) {
     const rij = (soort, subject, g, wijziging, toonConcept = true) => ({
@@ -194,10 +202,7 @@ function rijen({ toegevoegd, gewijzigd, verwijderd }) {
         ...gewijzigd.map(({ subject, predicaten, graaf: g }) => [...predicaten.values()]
             .sort((a, b) => vergelijkTekst(kort(a.predicaat), kort(b.predicaat)))
             .map(({ predicaat, oud, nieuw }, i) => {
-                const p = `\`${kort(predicaat)}\``;
-                const [soort, wijziging] = oud.length && nieuw.length ? ['gewijzigd', `${p}: ${waarden(oud)} → ${waarden(nieuw)}`]
-                    : nieuw.length ? ['toegevoegd', `${p}: ${waarden(nieuw)}`]
-                        : ['verwijderd', `${p}: ${waarden(oud)}`];
+                const [soort, wijziging] = propertyWijziging(predicaat, oud, nieuw);
                 // Het concept enkel in de eerste rij, zodat de rijen van één concept samen leesbaar zijn
                 return rij(soort, subject, g, wijziging, i === 0);
             })),
@@ -217,7 +222,7 @@ function tabellenPerSchema(rijGroepen) {
             const titel = schema
                 ? `${markdownTekst(g.label(schema) ?? kort(schema))} (\`${kort(schema)}\`)`
                 : 'Zonder conceptschema';
-            const gesorteerd = groep.sort(([a], [b]) => rang(a) - rang(b) || vergelijkTekst(kort(a.subject), kort(b.subject)));
+            const gesorteerd = groep.toSorted(([a], [b]) => rang(a) - rang(b) || vergelijkTekst(kort(a.subject), kort(b.subject)));
             return { schema, titel, tabel: table(['', 'Concept', 'Label', 'Wijziging'], gesorteerd.flat().map(r => r.cellen)) };
         })
         // Zonder conceptschema achteraan
@@ -251,10 +256,14 @@ function sectie({ label, datum, vorige, huidige }) {
         const subjects = [...g.perSubject.values()].map(lijst => lijst[0].subject);
         const schemas = subjects.filter(g.isSchema).sort((a, b) => vergelijkTekst(kort(a), kort(b)));
         const concepten = subjects.filter(g.isConcept);
-        regels.push(`Eerste release, met ${plural(concepten.length, 'concept', 'concepten')} `
-            + `in ${plural(schemas.length, 'conceptschema', 'conceptschema\'s')}:`, '');
-        regels.push(table(['', 'Conceptschema', 'Label'],
-            schemas.map(s => [SOORT.nieuw.emoji, `\`${kort(s)}\``, markdownTekst(g.label(s) ?? '')])), '');
+        regels.push(
+            `Eerste release, met ${plural(concepten.length, 'concept', 'concepten')} `
+                + `in ${plural(schemas.length, 'conceptschema', 'conceptschema\'s')}:`,
+            '',
+            table(['', 'Conceptschema', 'Label'],
+                schemas.map(s => [SOORT.nieuw.emoji, `\`${kort(s)}\``, markdownTekst(g.label(s) ?? '')])),
+            ''
+        );
         return { tekst: regels.join('\n'), aantallen: { toegevoegd: concepten.length, gewijzigd: 0, verwijderd: 0 } };
     }
 
@@ -274,7 +283,10 @@ function sectie({ label, datum, vorige, huidige }) {
 function aantallenTekst(aantallen) {
     if (!aantallen) return style.gray('no code list');
     const { toegevoegd, gewijzigd, verwijderd } = aantallen;
-    return `${style.green(`+${toegevoegd}`)}  ${style.yellow(`~${gewijzigd}`)}  ${style.red(`-${verwijderd}`)}`;
+    const plus = style.green(`+${toegevoegd}`);
+    const tilde = style.yellow(`~${gewijzigd}`);
+    const min = style.red(`-${verwijderd}`);
+    return `${plus}  ${tilde}  ${min}`;
 }
 
 function schrijf(inhoud) {
@@ -287,13 +299,20 @@ function schrijf(inhoud) {
     print.success(`Written to ${style.cyan('CHANGELOG.md')}`);
 }
 
+// Tekst met precies één regeleinde op het einde (zonder regex: /\n*$/ is traag door backtracking)
+function metEenRegeleinde(tekst) {
+    let einde = tekst.length;
+    while (einde > 0 && tekst[einde - 1] === '\n') einde--;
+    return `${tekst.slice(0, einde)}\n`;
+}
+
 // Secties uit een bestaande changelog: de tekst vóór de eerste sectie, en de secties zelf
 function splitsChangelog(inhoud) {
     const delen = inhoud.split(/^(?=## \[)/m);
     const kop = delen[0].startsWith('## [') ? '' : delen.shift();
     return {
         kop,
-        secties: delen.map(tekst => ({ label: tekst.match(/^## \[([^\]]+)\]/)[1], tekst: tekst.replace(/\n*$/, '\n') }))
+        secties: delen.map(tekst => ({ label: tekst.match(/^## \[([^\]]+)\]/)[1], tekst: metEenRegeleinde(tekst) }))
     };
 }
 
@@ -306,14 +325,13 @@ function maakVolledigeChangelog() {
     const nieuweVersie = argument('--version') ?? process.env.VERSION;
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
-        .then(tags => Promise.all([leesReleases(tags), Promise.all(tags.map(datumVanRevisie))])
-            .then(([releases, datums]) => releases.map((r, i) => ({ ...r, datum: datums[i] }))))
+        .then(tags => Promise.all([leesReleases(tags), Promise.all(tags.map(datumVanRevisie))]))
+        .then(([releases, datums]) => releases.map((r, i) => ({ ...r, datum: datums[i] })))
         .then(releases => {
             const metHuidige = Boolean(nieuweVersie) && !releases.some(r => r.label === nieuweVersie);
-            return (metHuidige ? leesHuidig() : Promise.resolve(null))
-                .then(huidige => ({ releases, metHuidige, huidige }));
+            return Promise.all([releases, metHuidige, metHuidige ? leesHuidig() : null]);
         })
-        .then(({ releases, metHuidige, huidige }) => {
+        .then(([releases, metHuidige, huidige]) => {
             print.title('Changelog of the release history');
             print.keyValue({ Releases: `${style.bold(releases.length)} tags: ${releases[0].label} ${style.gray(symbol.arrow)} ${releases.at(-1).label}` });
             if (metHuidige) {
@@ -334,7 +352,7 @@ function maakVolledigeChangelog() {
                 if (triples) vorige = triples;
                 return resultaat.tekst;
             });
-            schrijf([HEADER, ...secties.reverse()].join('\n'));
+            schrijf([HEADER, ...secties.toReversed()].join('\n'));
         });
 }
 
@@ -351,11 +369,9 @@ function voegHuidigeVersieToe() {
             }
             print.title('Changelog of the current version');
             print.keyValue({ Version: style.bold(label), 'Compared to': style.bold(tag) });
-            return Promise.all([leesReleases([tag]), leesHuidig()])
-                .then(([[release], huidige]) => sectie({
-                    label, datum: vandaag(), vorige: release.triples, huidige
-                }));
+            return Promise.all([leesReleases([tag]), leesHuidig()]);
         })
+        .then(([[release], huidige]) => sectie({ label, datum: vandaag(), vorige: release.triples, huidige }))
         .then(({ tekst, aantallen }) => {
             print.blank();
             print.detail(`${style.bold(label.padEnd(8))} ${aantallenTekst(aantallen)}  ${style.gray('(added, changed, removed concepts)')}`, 0);
@@ -373,7 +389,7 @@ function voegHuidigeVersieToe() {
             } else {
                 bestaand.secties.unshift({ label, tekst });
             }
-            schrijf([bestaand.kop.replace(/\n*$/, '\n'), ...bestaand.secties.map(s => s.tekst)].join('\n'));
+            schrijf([metEenRegeleinde(bestaand.kop), ...bestaand.secties.map(s => s.tekst)].join('\n'));
         });
 }
 

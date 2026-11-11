@@ -85,15 +85,8 @@ function toegestaanDoor(q, regels) {
     });
 }
 
-// Deelt de verwijderde triples in; zie de uitleg bovenaan
-function vergelijk({ tag, huidig, vorige, regels }) {
-    const huidigeSleutels = new Set(huidig.map(sleutel));
-    const vorigeSleutels = new Set(vorige.map(sleutel));
-    const huidigeSubjects = new Set(huidig.map(q => nt(q.subject)));
-    const verwijderd = vorige.filter(q => !huidigeSleutels.has(sleutel(q)));
-    const toegevoegd = huidig.filter(q => !vorigeSleutels.has(sleutel(q)));
-    const toegevoegdPerSP = groepeer(toegevoegd, q => `${nt(q.subject)} ${nt(q.predicate)}`);
-
+// Splitst de verwijderde triples in toegestane en nog te beoordelen; telt per regel het gebruik
+function splitsToegestaan(verwijderd, regels) {
     const toegestaan = [];
     const teBeoordelen = [];
     for (const q of verwijderd) {
@@ -105,16 +98,24 @@ function vergelijk({ tag, huidig, vorige, regels }) {
             teBeoordelen.push(q);
         }
     }
+    return { toegestaan, teBeoordelen };
+}
 
-    // Een verwijzing naar een verwijderd concept hoort bij de verwijdering van dat concept
-    const verdwenenSubjects = new Set(vorige.map(q => nt(q.subject)).filter(s => !huidigeSubjects.has(s)));
+// Het verdwenen concept waartoe een triple behoort: het subject zelf, of het concept waarnaar ze verwijst
+function verdwenenConcept(q, verdwenenSubjects) {
+    if (verdwenenSubjects.has(nt(q.subject))) return q.subject;
+    if (verdwenenSubjects.has(nt(q.object))) return q.object;
+    return null;
+}
+
+// Deelt de niet-toegestane verwijderingen in: verwijderd concept, gewijzigde of verwijderde waarde
+function deelIn(teBeoordelen, verdwenenSubjects, toegevoegdPerSP) {
     const verwijderdeConcepten = new Map();
     const verwijderdeWaarden = [];
     const gewijzigd = new Map();
     for (const q of teBeoordelen) {
-        const s = nt(q.subject), sp = `${s} ${nt(q.predicate)}`;
-        const concept = verdwenenSubjects.has(s) ? q.subject
-            : verdwenenSubjects.has(nt(q.object)) ? q.object : null;
+        const sp = `${nt(q.subject)} ${nt(q.predicate)}`;
+        const concept = verdwenenConcept(q, verdwenenSubjects);
         if (concept) {
             const c = nt(concept);
             if (!verwijderdeConcepten.has(c)) verwijderdeConcepten.set(c, { subject: concept, triples: [], verwijzingen: 0 });
@@ -127,6 +128,23 @@ function vergelijk({ tag, huidig, vorige, regels }) {
             verwijderdeWaarden.push(q);
         }
     }
+    return { verwijderdeConcepten, verwijderdeWaarden, gewijzigd };
+}
+
+// Deelt de verwijderde triples in; zie de uitleg bovenaan
+function vergelijk({ tag, huidig, vorige, regels }) {
+    const huidigeSleutels = new Set(huidig.map(sleutel));
+    const vorigeSleutels = new Set(vorige.map(sleutel));
+    const huidigeSubjects = new Set(huidig.map(q => nt(q.subject)));
+    const verwijderd = vorige.filter(q => !huidigeSleutels.has(sleutel(q)));
+    const toegevoegd = huidig.filter(q => !vorigeSleutels.has(sleutel(q)));
+    const toegevoegdPerSP = groepeer(toegevoegd, q => `${nt(q.subject)} ${nt(q.predicate)}`);
+
+    const { toegestaan, teBeoordelen } = splitsToegestaan(verwijderd, regels);
+
+    // Een verwijzing naar een verwijderd concept hoort bij de verwijdering van dat concept
+    const verdwenenSubjects = new Set(vorige.map(q => nt(q.subject)).filter(s => !huidigeSubjects.has(s)));
+    const { verwijderdeConcepten, verwijderdeWaarden, gewijzigd } = deelIn(teBeoordelen, verdwenenSubjects, toegevoegdPerSP);
 
     return {
         tag, regels, toegestaan, verwijderdeConcepten, verwijderdeWaarden, gewijzigd,
@@ -147,8 +165,9 @@ function telFouten({ verwijderdeConcepten, verwijderdeWaarden }) {
 
 // '952 → 1322   +372  -2'
 function triplesTekst({ vorige, huidig, toegevoegd, verwijderd }) {
-    return `${vorige} ${style.gray(symbol.arrow)} ${huidig}   `
-        + `${style.green(`+${toegevoegd}`)}  ${style.red(`-${verwijderd}`)}`;
+    const plus = style.green(`+${toegevoegd}`);
+    const min = style.red(`-${verwijderd}`);
+    return `${vorige} ${style.gray(symbol.arrow)} ${huidig}   ${plus}  ${min}`;
 }
 
 // Schrijft de eerste `max` items van een lijst uit, met '… N more' voor de rest
@@ -165,9 +184,11 @@ function rapporteerBevindingen({ tag, regels, toegestaan, verwijderdeConcepten, 
         detailLijst([...verwijderdeConcepten.values()], ({ subject, triples, verwijzingen }) => {
             const label = triples.find(t => t.subject.equals(subject)
                 && t.predicate.value === 'http://www.w3.org/2004/02/skos/core#prefLabel');
-            print.detail(`${style.red(symbol.bullet)} ${style.bold(kort(subject))}${label ? ` ${style.italic(label.object.value)}` : ''} `
-                + style.gray(`(${meervoud(triples.length - verwijzingen, 'triple', 'triples')}, `
-                    + `${meervoud(verwijzingen, 'reference', 'references')} from other concepts)`));
+            const labelTekst = label ? ' ' + style.italic(label.object.value) : '';
+            const eigen = meervoud(triples.length - verwijzingen, 'triple', 'triples');
+            const verwijzend = meervoud(verwijzingen, 'reference', 'references');
+            print.detail(`${style.red(symbol.bullet)} ${style.bold(kort(subject))}${labelTekst} `
+                + style.gray(`(${eigen}, ${verwijzend} from other concepts)`));
         }, max);
     }
 
@@ -193,7 +214,10 @@ function rapporteerBevindingen({ tag, regels, toegestaan, verwijderdeConcepten, 
     const ongebruikt = regels.filter(r => !r.gebruikt);
     if (ongebruikt.length) {
         print.warning(`${aantal(ongebruikt.length, 'line', 'lines')} in ${TOEGESTAAN_PAD} without effect against ${tag} (can be removed after the release)`);
-        for (const r of ongebruikt) print.detail(`${style.yellow(symbol.bullet)} ${style.gray(`line ${r.regelnr}:`)} ${r.tekst}`);
+        for (const r of ongebruikt) {
+            const lijn = style.gray(`line ${r.regelnr}:`);
+            print.detail(`${style.yellow(symbol.bullet)} ${lijn} ${r.tekst}`);
+        }
     }
 
     return telFouten({ verwijderdeConcepten, verwijderdeWaarden });
@@ -263,11 +287,18 @@ function valideerTegenVorigeRelease() {
         });
 }
 
+// 'error' bij verwijderingen, 'warning' bij enkel gewijzigde waarden, anders 'success'
+function stapStatus(fouten, resultaat) {
+    if (fouten) return 'error';
+    if (resultaat.gewijzigd.size) return 'warning';
+    return 'success';
+}
+
 // Schrijft één stap van de geschiedenis uit; geeft een samenvatting terug
 function rapporteerStap(van, naar, resultaat) {
     const fouten = telFouten(resultaat);
     const stap = `${van.label} ${symbol.arrow} ${naar.label}`;
-    const status = fouten ? 'error' : resultaat.gewijzigd.size ? 'warning' : 'success';
+    const status = stapStatus(fouten, resultaat);
     if (status === 'success' && !resultaat.toegestaan.length && !resultaat.regels.some(r => !r.gebruikt)) {
         print.success(`${style.bold(stap.padEnd(20))} ${triplesTekst(resultaat.aantallen)}`);
     } else {

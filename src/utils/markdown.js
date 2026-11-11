@@ -14,7 +14,7 @@
  * @returns {string}
  */
 export function escapeMarkdown(text) {
-    return text.replace(/([\\`*_[\]<>|])/g, '\\$1');
+    return text.replace(/([\\`*_[\]<>|])/g, String.raw`\$1`);
 }
 
 // Display width of a cell in a monospace editor: emoji take two columns, variation selectors and

@@ -1,6 +1,6 @@
 'use strict';
 import yaml from 'js-yaml';
-import fs, {readFileSync} from "fs";
+import fs, {readFileSync} from "node:fs";
 import rdf from "@zazuko/env-node";
 import {metadataOptions, shapes_dcat, dcat_rules, frame_catalog} from "@milieuinfo/maven-metadata-generator-npm/src/utils/variables.js";
 
@@ -9,11 +9,11 @@ const config = yaml.load(fs.readFileSync('./source/config.yml', 'utf8'));
 
 const virtuoso = config.deploy.virtuoso ;
 
-const prefixes = Object.assign( {}, config.skos.prefixes, config.prefixes, { '@base' : config.skos.prefixes.concept })
+const prefixes = { ...config.skos.prefixes, ...config.prefixes, '@base': config.skos.prefixes.concept }
 
 const context = JSON.parse(fs.readFileSync(config.source.path + config.source.context));
 
-const context_prefixes = Object.assign({},context , prefixes)
+const context_prefixes = { ...context, ...prefixes }
 
 
 const frame_skos_prefixes = {
@@ -347,7 +347,7 @@ const jsonOptions = {"file": config.skos.path + config.skos.name + '/' + config.
 
 const parquetOptions = {"file": config.skos.path + config.skos.name + '/' + config.skos.name + config.skos.parquet, "frame": frame_skos_no_prefixes}
 
-const skos_prefixes = Object.assign( {}, config.skos.prefixes, config.prefixes, { '@base' : config.skos.prefixes.concept })
+const skos_prefixes = { ...config.skos.prefixes, ...config.prefixes, '@base': config.skos.prefixes.concept }
 
 const skos_context = JSON.parse(readFileSync(config.source.path + config.source.context));
 
@@ -387,10 +387,10 @@ const skosOptions = {
 
 const skosSource = {
     "sourcePaths": config.source.codelijst_csv.map(csv => config.source.path + csv),
-    "contextPrefixes": Object.assign({},skos_context , skos_prefixes),
+    "contextPrefixes": { ...skos_context, ...skos_prefixes },
     "rules": config.skos.rules,
     "shapesDataset": await rdf.dataset().import(rdf.fromFile(config.ap.path + config.ap.name + '-' + config.ap.type + '/' + config.ap.name + '-' + config.ap.type + config.ap.turtle)),
-    "prefixes": Object.assign( {}, config.skos.prefixes, config.prefixes)
+    "prefixes": { ...config.skos.prefixes, ...config.prefixes }
 }
 
 // ODCS data contract voor de parquet-distributie: kolommen uit het parquet-bestand,
