@@ -75,13 +75,14 @@
           </execution>
           <execution>
             <!-- genereert de SKOS-bestanden opnieuw uit src/source; Jenkins controleert
-                 daarna dat ze identiek zijn aan de gecommitte versie -->
+                 daarna dat ze identiek zijn aan de gecommitte versie. Zonder changelog
+                 (create_skos werkt lokaal ook CHANGELOG.md bij; daarvoor zijn git-tags nodig) -->
             <id>create skos</id>
             <goals>
               <goal>pnpm</goal>
             </goals>
             <configuration>
-              <arguments>run create_skos</arguments>
+              <arguments>run create_skos_only</arguments>
             </configuration>
           </execution>
           <execution>

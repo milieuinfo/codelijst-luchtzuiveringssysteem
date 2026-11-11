@@ -6,7 +6,8 @@
   "main": "src/main/nodejs/01_codelijst_skos_from_csv.js",
   "packageManager": "pnpm@9.15.9",
   "scripts": {
-    "create_skos": "cd src && node 01_codelijst_skos_from_csv.js",
+    "create_skos": "pnpm run create_skos_only && pnpm run create_changelog",
+    "create_skos_only": "cd src && node 01_codelijst_skos_from_csv.js",
     "create_metadata": "cd src && node 02_metadata.js",
     "validate_release": "cd src && node 03_validate_against_previous_release.js",
     "validate_history": "cd src && node 03_validate_against_previous_release.js --history",

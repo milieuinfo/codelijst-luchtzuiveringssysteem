@@ -10,9 +10,14 @@ Alle scripts zijn ES modules en draaien vanuit de map `src/`. De npm scripts in 
 daarom eerst een `cd src`:
 
 ```json
-"create_skos":     "cd src && node 01_codelijst_skos_from_csv.js",
-"create_metadata": "cd src && node 02_metadata.js"
+"create_skos_only": "cd src && node 01_codelijst_skos_from_csv.js",
+"create_metadata":  "cd src && node 02_metadata.js"
 ```
+
+`create_skos` is `create_skos_only` gevolgd door `create_changelog`: na het genereren staan de
+wijzigingen meteen in de sectie *Volgende versie* van `CHANGELOG.md` (zie
+[`04_create_changelog.js`](#04_create_changelogjs)). Maven draait enkel `create_skos_only`: de build
+heeft geen git-tags nodig en mag `CHANGELOG.md` niet aanpassen.
 
 Start je een script met de hand, doe dat dan ook vanuit `src/`. Anders kloppen de relatieve paden uit
 `config.yml` niet.
@@ -49,7 +54,8 @@ exact de argumenten die de scripts doorgeven aan de generator.
 ## `01_codelijst_skos_from_csv.js`
 
 ```bash
-pnpm run create_skos
+pnpm run create_skos        # en daarna create_changelog
+pnpm run create_skos_only   # zonder changelog (zo doet Maven het)
 ```
 
 Roept `generate_skos(skosOptions, skosSource)` aan. Dat doet het volgende:

@@ -70,13 +70,14 @@ Alle commando's draai je vanuit de root van de repository.
 
 | Commando                         | Wat het doet                                                                                                                                                         | Nodig                      |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| `pnpm run create_skos`           | Zet `src/source/codelijst-source.csv` om naar de SKOS-bestanden in `src/main/resources/…/conceptscheme/luchtzuiveringssysteem/`, met N3-reasoning en SHACL-validatie | —                          |
+| `pnpm run create_skos`           | Zet de CSV om naar de SKOS-bestanden in `src/main/resources/…/conceptscheme/luchtzuiveringssysteem/` (N3, SHACL) en draait daarna `create_changelog`                 | git-tags                   |
+| `pnpm run create_skos_only`      | Enkel de SKOS-bestanden, zonder changelog (zo doet Maven het)                                                                                                        | —                          |
 | `pnpm run create_metadata`       | Maakt de DCAT-metadata en het ODCS data contract in `temp/`                                                                                                          | netwerk naar Artifactory   |
 | `pnpm run validate_release`      | Valideert de gegenereerde bestanden met SHACL en faalt als er t.o.v. de vorige release-tag concepten of waarden verdwenen zijn                                       | git-tags                   |
 | `pnpm run validate_history`      | Zelfde controle, plus een rapport van elke release t.o.v. de vorige (`0.0.1 → … → current`)                                                                          | git-tags                   |
 | `pnpm run create_changelog`      | Zet de wijzigingen t.o.v. de vorige release-tag in de sectie *Volgende versie* van `CHANGELOG.md` (met `--version` in een sectie voor die versie)                    | git-tags                   |
 | `pnpm run create_changelog_full` | Bouwt `CHANGELOG.md` opnieuw op uit alle release-tags, met de huidige bestanden als *Volgende versie* (met `--version` als die versie: zo doet Jenkins het)          | git-tags                   |
-| `mvn verify`                     | Volledige build: installeert Node/pnpm in `target/`, draait `create_skos` en `create_metadata`, bouwt de jar                                                         | interne Maven-repositories |
+| `mvn verify`                     | Volledige build: installeert Node/pnpm in `target/`, draait `create_skos_only` en `create_metadata`, bouwt de jar                                                    | interne Maven-repositories |
 
 Opties:
 

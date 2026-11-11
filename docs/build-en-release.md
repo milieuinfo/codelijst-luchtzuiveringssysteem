@@ -13,7 +13,7 @@ het volgende:
 |-------------------------|----------------------------------------------------------------------------------------------|
 | `install node and pnpm` | Installeert de Node.js- en pnpm-versie uit `pom.xml` in `target/`, via de Artifactory-mirror |
 | `pnpm install`          | `pnpm install --frozen-lockfile`: installeert exact wat in `pnpm-lock.yaml` staat            |
-| `create skos`           | `pnpm run create_skos`                                                                       |
+| `create skos`           | `pnpm run create_skos_only` (zonder changelog, die heeft git-tags nodig)                     |
 | `create metadata`       | `pnpm run create_metadata`                                                                   |
 
 Al deze stappen hangen standaard aan de fase `generate-resources`. Daarna kopieert Maven twee

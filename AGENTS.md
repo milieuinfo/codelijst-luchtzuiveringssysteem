@@ -52,7 +52,8 @@ From repo root. pnpm only (`packageManager` in `package.json`), never `npm insta
 
 ```bash
 pnpm install --frozen-lockfile
-pnpm run create_skos            # CSV -> SKOS files in src/main/resources/.../conceptscheme/
+pnpm run create_skos            # CSV -> SKOS files in src/main/resources/.../conceptscheme/, then create_changelog ('Volgende versie')
+pnpm run create_skos_only       # CSV -> SKOS files only (what Maven runs: no tags needed, CHANGELOG.md untouched)
 pnpm run create_metadata        # DCAT + ODCS into temp/ (network: repo.omgeving.vlaanderen.be)
 pnpm run validate_release       # SHACL + fail on info removed vs. previous release tag (needs tags)
 pnpm run validate_history       # same + report of every release vs. its predecessor (old removals: report only)
@@ -81,7 +82,7 @@ Workflow:
 2. Edit the source.
 3. `pnpm run create_skos`. On SHACL failure nothing is written: read `validation/validation_result.json`, fix the data, not the shapes (unless that is the intent).
 4. Review `git diff -- '*.nt'` (sorted, one triple per line). Run `pnpm run validate_release` (fails if anything from the previous tag is missing). Allowlist a removal only if the user intends it.
-5. Commit source **and** regenerated files together.
+5. Commit source **and** regenerated files (incl. `CHANGELOG.md`) together.
 
 ## Rules
 
