@@ -124,6 +124,26 @@ pipeline {
                 }
             }
             stages {
+                stage("Changelog") {
+                    // Bouwt CHANGELOG.md volledig opnieuw op uit de release-tags, met de huidige bestanden
+                    // als sectie voor de nieuwe versie (env.VERSION), en commit en pusht het resultaat.
+                    // Gebeurt vóór release:prepare, zodat de changelog in de release-tag zit.
+                    when {
+                        expression { versions.isRelease() }
+                    }
+                    environment {
+                        // het script roept git aan in de Maven-container (zie 'Vergelijking met vorige release')
+                        GIT_CONFIG_COUNT = '1'
+                        GIT_CONFIG_KEY_0 = 'safe.directory'
+                        GIT_CONFIG_VALUE_0 = '*'
+                    }
+                    steps {
+                        script {
+                            maven.goal([goal: 'frontend:pnpm@create-changelog'])
+                            git.commitAndPush("Changelog voor release ${env.VERSION}")
+                        }
+                    }
+                }
                 stage("Maven prepare") {
                     when {
                         expression { versions.isRelease() }

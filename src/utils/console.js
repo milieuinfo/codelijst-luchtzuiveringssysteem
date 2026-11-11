@@ -75,3 +75,15 @@ export const print = {
     /** Empty line. */
     blank: () => console.log()
 };
+
+/**
+ * Count with a singular or plural noun: plural(1, 'file', 'files') -> '1 file', plural(3, ...) -> '3 files'.
+ * @param {number} n
+ * @param {string} singular
+ * @param {string} pluralForm
+ * @param {(n: number) => string} [formatNumber] - e.g. style.bold
+ * @returns {string}
+ */
+export function plural(n, singular, pluralForm, formatNumber = String) {
+    return `${formatNumber(n)} ${n === 1 ? singular : pluralForm}`;
+}

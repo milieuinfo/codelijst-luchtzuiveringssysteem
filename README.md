@@ -1,72 +1,87 @@
-# codelijst-luchtzuiveringssysteem
+# Codelijst luchtzuiveringssysteem
 
-Codelijsten (SKOS) rond **luchtzuiveringssystemen voor stallen**, gebruikt voor de monitoring van
-ammoniakemissie in het ARMOS-project: types luchtzuiveringssystemen, parameters, normen en
-bandbreedtes, systeemstatussen, secundaire alarmen, ...
+Codelijsten rond **luchtzuiveringssystemen voor stallen**, opgezet voor de monitoring van
+ammoniakemissie in het ARMOS-project. Sensordata over die systemen worden aangeleverd en beoordeeld aan
+de hand van deze lijsten: welk type systeem het is, welke parameters er gemeten worden, binnen welke
+normen en bandbreedtes die moeten blijven, en wanneer er een alarm volgt.
 
-De codelijst wordt bijgehouden in één CSV-bestand. Daaruit genereert de build een SKOS-vocabularium
-(Turtle, N-Triples, JSON-LD, JSON, CSV en Parquet), valideert het tegen een SHACL-applicatieprofiel en
-publiceert het als Maven-artifact op `repo.omgeving.vlaanderen.be`. De generatielogica zit in
-[`@milieuinfo/maven-metadata-generator-npm`](https://github.com/milieuinfo/maven-metadata-generator-npm).
+De codelijst is een [SKOS](https://www.w3.org/TR/skos-reference/)-vocabularium. Elk concept heeft een
+vaste IRI onder `https://data.omgeving.vlaanderen.be/id/` (in de tabel hieronder ingekort tot `…`), een Nederlands label en waar nodig een
+definitie en verwijzingen naar andere concepten.
 
-## Snel aan de slag
+Wat er per versie veranderd is, lees je in de **[changelog](CHANGELOG.md)**.
 
-Je hebt Node.js en pnpm nodig (de versies staan in `pom.xml` en in `packageManager` van `package.json`).
-Gebruik geen `npm install`.
+## Conceptschema's
 
-```bash
-pnpm install --frozen-lockfile
-pnpm run create_skos
-pnpm run validate_release
+| Conceptschema                               | Inhoud                                                                                                                                                              |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `…/conceptscheme/lzs/systeemtype`           | Types luchtzuiveringssystemen, zoals biologische en chemische luchtwassystemen (S1, S2), biobedden (S3) en Lely Sphere                                              |
+| `…/conceptscheme/lzs/systeemopstelling`     | Enkelvoudige of gecombineerde opstelling van systemen                                                                                                               |
+| `…/conceptscheme/lzs/parameter`             | De eigenschappen die gemeten worden (waswaterdebiet, zuurtegraad, geleidbaarheid, drukval, ...), met hun grootheid en eenheid en de systeemtypes waarvoor ze gelden |
+| `…/conceptscheme/lzs/parameter-norm`        | Normen per parameter en systeemtype, met minimum- en maximumwaarden                                                                                                 |
+| `…/conceptscheme/lzs/norm-bandbreedte`      | Toegestane afwijkingen en bandbreedtes per parameter en systeemtype                                                                                                 |
+| `…/conceptscheme/lzs/secundaire-alarmen`    | Dagbeoordelingsregels en alarmdrempels voor de secundaire alarmlogica                                                                                               |
+| `…/conceptscheme/lzs/systeemstatus`         | Status van een systeem: operationeel, storing, in onderhoud, ...                                                                                                    |
+| `…/conceptscheme/lzs/stalbezetting`         | Of de stal in gebruik of leeg is                                                                                                                                    |
+| `…/conceptscheme/lzs/medium`                | Waarop een meting slaat: lucht, waswater, spuiwater, stal, ...                                                                                                      |
+| `…/conceptscheme/lzs/dataleverancierstatus` | Status van aangeleverde data: (niet) gevalideerd, geweigerd, ingetrokken                                                                                            |
+| `…/conceptscheme/vlarem-klasse`             | Indelingsklassen volgens VLAREM                                                                                                                                     |
+
+Grootheden en eenheden verwijzen naar [QUDT](https://qudt.org/) (`quantitykind:`, `unit:`).
+Eigen properties, zoals `relevantLZS` en `relevantProperty`, staan in een klein vocabularium onder
+`https://data.lzs.omgeving.vlaanderen.be/ns/vocab#`.
+
+## De codelijst gebruiken
+
+Elke release wordt gepubliceerd als Maven-artifact op de Artifactory van Omgeving
+(`repo.omgeving.vlaanderen.be`):
+
+```xml
+<dependency>
+    <groupId>be.vlaanderen.omgeving.data.id.graph</groupId>
+    <artifactId>codelijst-luchtzuiveringssysteem</artifactId>
+    <version><!-- zie CHANGELOG.md --></version>
+</dependency>
 ```
 
-## Commando's
+Het jar-bestand bevat dezelfde codelijst in verschillende formaten, onder
+`be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/`:
 
-Alle commando's draai je vanuit de root van de repository.
+| Bestand                          | Formaat                                                          |
+|----------------------------------|------------------------------------------------------------------|
+| `luchtzuiveringssysteem.ttl`     | Turtle                                                           |
+| `luchtzuiveringssysteem.nt`      | N-Triples, gesorteerd, één triple per regel                      |
+| `luchtzuiveringssysteem.jsonld`  | JSON-LD, met verkorte IRI's (prefixen)                           |
+| `luchtzuiveringssysteem.json`    | JSON, met volledige IRI's                                        |
+| `luchtzuiveringssysteem.csv`     | CSV, één rij per resource (concept, conceptschema, eenheid, ...) |
+| `luchtzuiveringssysteem.parquet` | Parquet, beschreven door een data contract (ODCS, zie hieronder) |
 
-| Commando | Wat het doet | Nodig |
-| --- | --- | --- |
-| `pnpm run create_skos` | Zet `src/source/codelijst-source.csv` om naar de SKOS-bestanden in `src/main/resources/…/conceptscheme/luchtzuiveringssysteem/`, met N3-reasoning en SHACL-validatie | — |
-| `pnpm run create_metadata` | Maakt de DCAT-metadata en het ODCS data contract in `temp/` | netwerk naar Artifactory |
-| `pnpm run validate_release` | Valideert de gegenereerde bestanden met SHACL en faalt als er t.o.v. de vorige release-tag concepten of waarden verdwenen zijn | git-tags |
-| `pnpm run validate_history` | Zelfde controle, plus een rapport van elke release t.o.v. de vorige (`0.0.1 → … → current`) | git-tags |
-| `mvn verify` | Volledige build: installeert Node/pnpm in `target/`, draait `create_skos` en `create_metadata`, bouwt de jar | interne Maven-repositories |
+Daarnaast zitten in het jar-bestand (paden onder `be/vlaanderen/omgeving/`):
 
-Opties voor de validatie:
+- de DCAT-beschrijving van de dataset en de catalogus van alle versies (`data/id/dataset/…`, `data/id/catalog/…`),
+- het ODCS data contract van het Parquet-bestand (`data/id/dataset/codelijst-luchtzuiveringssysteem/dataset.odcs.yaml`),
+- het vocabularium met de eigen properties (`data/id/ontology/luchtzuiveringssysteem/`),
+- de SHACL-shapes waaraan de codelijst voldoet (`data/id/ontology/luchtzuiveringssysteem-ap-constraints/`),
+- een JSON-LD context en prefixlijst (`lzs/data/id/graph/`).
 
-```bash
-pnpm run validate_release --tag codelijst-luchtzuiveringssysteem-0.2.0   # andere vorige release
-pnpm run validate_history --verbose                                      # alle details per release
-NO_COLOR=1 pnpm run validate_release                                     # zonder kleuren
-```
+De gegenereerde bestanden van de laatste versie staan ook in deze repository, in
+[`src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/`](src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/).
+Een vaste versie vind je onder de git-tag `codelijst-luchtzuiveringssysteem-x.y.z`.
 
-Ontbreken de tags lokaal, haal ze dan op met `git fetch --tags`.
+## Versies en compatibiliteit
 
-`src/99_deploy_latest.js` (laatste release naar de triple store) is een manuele stap met credentials die
-niet in git staan. Lees eerst [Node.js-scripts](docs/scripts.md#99_deploy_latestjs) voor je het gebruikt.
+- Elke release heeft een versienummer `x.y.z` en een git-tag `codelijst-luchtzuiveringssysteem-x.y.z`.
+- De [changelog](CHANGELOG.md) toont per versie welke concepten er bijkwamen, gewijzigd zijn of
+  verwijderd werden.
+- Concepten en waarden verdwijnen niet zomaar: bij elke build wordt gecontroleerd dat er t.o.v. de
+  vorige release niets weggevallen is. Een verwijdering is altijd een bewuste keuze en staat in de
+  changelog met 🗑️ of ➖.
+- Elke release voldoet aan de SHACL-shapes van het applicatieprofiel.
 
-## Een wijziging aan de codelijst
+## Licentie
 
-1. `pnpm run create_skos` draaien vóór je iets aanpast: er mag dan niets veranderen in `src/main/resources/`.
-2. De bron aanpassen, meestal enkel `src/source/codelijst-source.csv`.
-3. `pnpm run create_skos` opnieuw draaien en het effect bekijken met `git diff -- '*.nt'`.
-4. `pnpm run validate_release` draaien. Verwijder je bewust iets, zet het dan in
-   `src/source/toegestane-verwijderingen.txt` en vermeld het in de PR: het is een breaking change.
-5. De bronwijziging **en** de gegenereerde bestanden samen committen. Jenkins genereert alles opnieuw
-   en faalt als het afwijkt van wat gecommit is.
+Zie [LICENSE](LICENSE).
 
-Welke bestanden je aanpast voor welke wijziging, lees je in
-[Een codelijst aanpassen](docs/codelijst-aanpassen.md).
+## Onderhoud
 
-## Documentatie
-
-| Document | Waarover |
-| --- | --- |
-| [docs/README.md](docs/README.md) | Overzicht en hoe alles samenhangt |
-| [Projectstructuur](docs/projectstructuur.md) | Per bestand: bron of gegenereerd, wie het schrijft en leest, of het in git en in de jar zit |
-| [Een codelijst aanpassen](docs/codelijst-aanpassen.md) | Welke bestanden voor welke wijziging, met een stappenplan |
-| [Node.js-scripts](docs/scripts.md) | Wat elk script doet, inclusief de validatie t.o.v. vorige releases |
-| [Build en release](docs/build-en-release.md) | Maven, de Jenkins-pipeline, versies en releases |
-| [AGENTS.md](AGENTS.md) | Richtlijnen en conventies voor AI coding agents (in het Engels) |
-
-Releases maak je niet zelf: Jenkins zet de versie en maakt de tag `codelijst-luchtzuiveringssysteem-x.y.z`.
+Wil je de codelijst aanpassen of de build begrijpen, lees dan de [documentatie voor beheerders](docs/README.md).

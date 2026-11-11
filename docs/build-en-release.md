@@ -79,12 +79,37 @@ Op `main` wordt elke build met `mvn deploy` als snapshot gepubliceerd, gevolgd d
 Een **release** start je manueel in Jenkins met de release-parameters. De pipeline:
 
 1. bepaalt de nieuwe versie (`versions.bump`) en controleert dat de tag nog niet bestaat,
-2. draait `release:prepare`: de versie in `pom.xml` wordt aangepast, er wordt een tag gemaakt, en de
-   versie wordt opgehoogd naar de volgende `-SNAPSHOT`,
-3. draait `release:perform`, dat de release-versie bouwt en naar Artifactory publiceert.
+2. bouwt `CHANGELOG.md` opnieuw op en commit en pusht het naar `main` (zie [Changelog](#changelog)),
+3. draait `release:prepare`: de versie in `pom.xml` wordt aangepast en gecommit, er wordt een tag
+   gemaakt, en de versie wordt opgehoogd naar de volgende `-SNAPSHOT` (een tweede commit). Beide commits
+   en de tag worden gepusht,
+4. draait `release:perform`, dat de tag uitcheckt, de release-versie bouwt en naar Artifactory publiceert.
 
 De commits die de release-plugin daarbij maakt, beginnen met `[Maven skip ci]`. Zo start er geen
 nieuwe build op. Pas de versie in `pom.xml` dus nooit met de hand aan.
+
+### Changelog
+
+Bij een release werkt Jenkins `CHANGELOG.md` zelf bij, in de stage *Changelog* vlak vóór
+`release:prepare`. Die draait via Maven (`frontend:pnpm@create-changelog`) `pnpm run create_changelog_full`:
+de volledige changelog wordt opnieuw opgebouwd uit alle release-tags, met bovenaan de huidige bestanden
+als sectie voor de nieuwe versie. Die versie haalt het script uit de omgevingsvariabele `VERSION`, die
+Jenkins in de stage *Setup* zet.
+
+Het resultaat wordt gecommit en gepusht met `git.commitAndPush` uit de Cumulus-library. Die commit krijgt
+de trailer `Cumulus-Skip-Ci: true`, zodat er geen nieuwe build opstart. Is er niets gewijzigd, dan wordt
+er niets gecommit. `release:prepare` maakt zijn commit en tag daarna bovenop de changelog-commit, dus de
+changelog zit in de release-tag.
+
+Lokaal hoef je de changelog vóór een release dus niet meer bij te werken. Wil je vooraf zien wat erin
+komt:
+
+```bash
+pnpm run create_changelog --stdout                    # versie uit pom.xml zonder -SNAPSHOT
+pnpm run create_changelog_full --version 0.3.0 --stdout   # zoals Jenkins het doet, voor versie 0.3.0
+```
+
+Meer uitleg vind je in [Node.js-scripts](scripts.md#04_create_changelogjs).
 
 ## Versies
 

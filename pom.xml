@@ -105,6 +105,18 @@
               <arguments>run validate_release</arguments>
             </configuration>
           </execution>
+          <execution>
+            <!-- niet aan een fase gekoppeld: enkel bij een release aangeroepen door Jenkins via
+                 'frontend:pnpm@create-changelog'; de nieuwe versie komt uit de omgevingsvariabele VERSION -->
+            <id>create-changelog</id>
+            <phase>none</phase>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run create_changelog_full</arguments>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>

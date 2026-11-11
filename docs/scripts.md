@@ -18,7 +18,7 @@ Start je een script met de hand, doe dat dan ook vanuit `src/`. Anders kloppen d
 `config.yml` niet.
 
 De nummering geeft de volgorde aan: `01` en `02` horen bij de build, `03` is een controle die Jenkins
-nadien draait (en die je ook lokaal kan draaien), `99` is een manuele stap achteraf.
+nadien draait (en die je ook lokaal kan draaien), `04` hoort bij een release, `99` is een manuele stap achteraf.
 
 ## `utils/variables.js`
 
@@ -131,11 +131,11 @@ informatie verdwijnen zonder dat iemand het bewust beslist heeft. Het script:
    formaten zijn serialisaties van dezelfde graaf. Elke triple uit de tag die nu ontbreekt, valt in
    een van deze groepen:
 
-   | Groep | Wanneer | Resultaat |
-   | --- | --- | --- |
-   | Verwijderd concept | Het subject komt nergens meer voor. Verwijzingen ernaar vanuit andere concepten (bv. `hasTopConcept`) tellen mee. | fout |
-   | Verwijderde waarde | Een subject + predicaat verloor een waarde, zonder dat er een nieuwe waarde bij kwam | fout |
-   | Gewijzigde waarde | Een subject + predicaat kreeg een andere waarde (bv. `"0,8"` → `"0.8"`) | waarschuwing |
+   | Groep              | Wanneer                                                                                                           | Resultaat    |
+   |--------------------|-------------------------------------------------------------------------------------------------------------------|--------------|
+   | Verwijderd concept | Het subject komt nergens meer voor. Verwijzingen ernaar vanuit andere concepten (bv. `hasTopConcept`) tellen mee. | fout         |
+   | Verwijderde waarde | Een subject + predicaat verloor een waarde, zonder dat er een nieuwe waarde bij kwam                              | fout         |
+   | Gewijzigde waarde  | Een subject + predicaat kreeg een andere waarde (bv. `"0,8"` → `"0.8"`)                                           | waarschuwing |
 
    Toegevoegde triples zijn altijd goed.
 
@@ -177,14 +177,88 @@ Dit is een manuele controle; Jenkins draait enkel `validate_release`.
 
 ### Hulpbestanden
 
-Het script roept git niet zelf aan. `utils/git.js` is een kleine git-bibliotheek met één functie per
-git-commando (`show`, `tag`, `mergeBase`, `commit`, ...), met dezelfde argumenten als op de command line.
-Wat die commando's combineert (de laatste release-tag bepalen, een bestand uit een tag lezen), staat in
-`utils/git-utils.js`.
+`03_…` en `04_…` delen hun hulpbestanden:
+
+| Bestand | Inhoud |
+| --- | --- |
+| `utils/releases.js` | Specifiek voor dit project: het pad van de `.nt`, de prefixen, de versie uit een tag, de triples van de huidige bestanden of van een release lezen |
+| `utils/rdf.js` | Generiek: N-Triples parsen, een term als N-Triples of verkort met prefixen schrijven, groeperen |
+| `utils/markdown.js` | Generiek: tekst escapen voor Markdown, tabellen met uitgelijnde kolommen (enkel `04_…`) |
+| `utils/git-utils.js` | Release-tags in de geschiedenis van `HEAD`, de datum van een tag, een bestand uit een tag lezen |
+| `utils/git.js` | Generiek: één functie per git-commando |
+| `utils/console.js` | Generiek: kleuren, symbolen, meldingen en `plural` |
+
+De scripts roepen git niet zelf aan. `utils/git.js` is een kleine git-bibliotheek met één functie per
+git-commando (`show`, `tag`, `mergeBase`, `log`, ...), met dezelfde argumenten als op de command line.
+Wat die commando's combineert, staat in `utils/git-utils.js`.
 
 De uitvoer gebruikt kleuren en symbolen (✔ ✖ ⚠ ℹ) uit `utils/console.js`. Kleuren staan enkel aan in
 een terminal. Met `NO_COLOR=1` zet je ze uit, met `FORCE_COLOR=1` dwing je ze af (bv. in een CI-log die
 ANSI-kleuren toont).
+
+Dit script heeft geen netwerktoegang nodig, wel de git-tags.
+
+## `04_create_changelog.js`
+
+```bash
+pnpm run create_changelog                      # sectie voor de huidige versie toevoegen of vervangen
+pnpm run create_changelog --version 0.3.0      # andere versie dan die uit pom.xml
+pnpm run create_changelog_full                 # volledige changelog opnieuw opbouwen uit alle tags
+pnpm run create_changelog_full --version 0.3.0 # idem, met de huidige bestanden als versie 0.3.0 (zoals Jenkins)
+pnpm run create_changelog --stdout             # naar stdout i.p.v. naar CHANGELOG.md
+```
+
+Schrijft `CHANGELOG.md` in de root van de repository: per release de inhoudelijke wijzigingen aan de
+codelijst. Net als `03_…` vergelijkt het script de `.nt` van twee versies, maar het rapporteert ook wat
+er bijkwam, en dat in een vorm die afnemers kunnen lezen.
+
+Per release staat er een samenvatting (`🆕 5 nieuw · ✏️ 2 gewijzigd · 🗑️ 1 verwijderd`, in aantallen
+concepten) en per conceptschema één tabel. Elke rij begint met een emoji:
+
+| | Wanneer |
+| --- | --- |
+| 🆕 | Nieuw concept of conceptschema: de IRI is nieuw |
+| ✏️ | Een property van een bestaand concept kreeg een andere waarde (oud → nieuw) |
+| ➕ | Een property van een bestaand concept kreeg er een waarde bij |
+| ➖ | Een property van een bestaand concept verloor een waarde |
+| 🗑️ | Verwijderd concept of conceptschema: de IRI komt nergens meer voor |
+
+Een gewijzigd concept krijgt één rij per property; het concept en het label staan enkel in de eerste
+rij. Binnen een tabel staat eerst het conceptschema zelf (als het nieuw of verwijderd is), dan de nieuwe,
+de gewijzigde en de verwijderde concepten. Concepten zonder conceptschema (bv. QUDT-eenheden) staan in
+een laatste tabel *Zonder conceptschema*. De legende staat bovenaan in `CHANGELOG.md`.
+
+Afgeleide triples (`skos:narrower`, `skos:hasTopConcept`, `skos:note`, de `*Transitive`-varianten,
+`relevantProperty`, ...) worden weggelaten zolang de triple waaruit ze volgen er ook staat. Ze zouden
+enkel herhalen wat al vermeld is. Welke predicaten dat zijn, staat in `AFGELEID` in het script; voeg je een
+N3-regel toe, vul die lijst dan aan.
+
+De tabellen zijn opgevuld met spaties, zodat de kolommen ook in de bron van het bestand uitgelijnd staan
+(`utils/markdown.js`, dat een emoji als twee tekens breed telt, zoals een editor met een monospace-font). Lange teksten worden daarom ingekort tot 120 tekens: anders wordt elke rij van de
+tabel zo breed als de langste waarde.
+
+**Twee manieren:**
+
+- **`create_changelog`** vergelijkt de huidige gegenereerde bestanden met de laatste release-tag in de
+  geschiedenis van `HEAD`. De sectie krijgt de versie uit `--version`, anders uit de omgevingsvariabele
+  `VERSION` (die Jenkins zet bij een release), anders uit `pom.xml` zonder `-SNAPSHOT`. De datum is
+  die van vandaag. Bestaat er al een sectie voor die versie, dan wordt ze vervangen; de rest van het
+  bestand blijft ongemoeid. Je kan het dus herhaaldelijk draaien. Is de versie al gereleased (er
+  bestaat een tag voor), dan faalt het script.
+- **`create_changelog_full`** bouwt het hele bestand opnieuw op uit de release-tags: elke release t.o.v.
+  de vorige, met de datum van de tag. De eerste release krijgt een korte samenvatting. Een tag zonder
+  `.nt` krijgt een lege sectie en wordt overgeslagen bij de vergelijking. Geef je expliciet een versie
+  mee (`--version`, of de omgevingsvariabele `VERSION`) waarvoor nog geen tag bestaat, dan komen de
+  huidige bestanden er bovenaan bij als sectie voor die versie, met de datum van vandaag. Zonder
+  expliciete versie (de versie uit `pom.xml` telt hier niet), of als die versie al een tag heeft, tellen
+  de huidige bestanden niet mee. Jenkins gebruikt dit bij een release, zie
+  [Build en release](build-en-release.md#changelog).
+
+Omdat beide manieren dezelfde vergelijking maken, levert `create_changelog` vlak vóór een release
+dezelfde sectie op als `create_changelog_full` na die release (op de datum na).
+
+`CHANGELOG.md` is gegenereerd: pas het niet met de hand aan, want `create_changelog_full` overschrijft
+alles. Het bestand wordt gecommit, maar zit niet in het jar-bestand.
 
 Dit script heeft geen netwerktoegang nodig, wel de git-tags.
 

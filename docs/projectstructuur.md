@@ -17,10 +17,13 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/source/prefix.json` | ★ bron (referentie) | jij | geen enkel script | ja | nee |
 | `src/source/toegestane-verwijderingen.txt` | ★ bron | jij | `validate_release` | ja | nee |
 | `src/n3/luchtzuivering-rules.n3` | ★ bron | jij | `create_skos` | ja | nee |
-| `src/utils/variables.js` | ★ bron (code) | jij | `01_…`, `02_…` en `03_…` | ja | nee |
+| `src/utils/variables.js` | ★ bron (code) | jij | `01_…`, `02_…`, `03_…` en `04_…` | ja | nee |
 | `src/utils/git.js` | ★ bron (code) | jij | `utils/git-utils.js` | ja | nee |
-| `src/utils/git-utils.js` | ★ bron (code) | jij | `03_…` | ja | nee |
-| `src/utils/console.js` | ★ bron (code) | jij | `03_…` | ja | nee |
+| `src/utils/git-utils.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
+| `src/utils/releases.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
+| `src/utils/rdf.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
+| `src/utils/console.js` | ★ bron (code) | jij | `03_…`, `04_…` | ja | nee |
+| `src/utils/markdown.js` | ★ bron (code) | jij | `04_…` | ja | nee |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl` | ★ bron | jij | geen enkel script, enkel afnemers | ja | ja |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron | jij | `create_skos` (SHACL), `create_odcs` | ja | ja |
 | `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json` | ★ bron (gepubliceerde kopie) | jij | geen enkel script, enkel afnemers | ja | ja |
@@ -29,6 +32,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `temp/…/dataset/…/dataset.odcs.yaml` | ⚙ gegenereerd | `create_odcs` | afnemers | nee | ja |
 | `temp/…/catalog/…/catalog.{ttl,jsonld}` | ⚙ gegenereerd | `create_metadata` | afnemers | nee | ja |
 | `validation/` | ⚙ gegenereerd | SHACL-validatie (`create_skos`, `validate_release`), enkel bij een fout | jij, om de fout te vinden | nee | nee |
+| `CHANGELOG.md` | ⚙ gegenereerd | `create_changelog`, `create_changelog_full` | afnemers | ja | nee |
 | `pom.xml` | ★ bron | jij, de versie door de release-plugin | Maven, `create_metadata`, `create_odcs` | ja | — |
 | `package.json` | ★ bron | jij | pnpm | ja | nee |
 | `pnpm-lock.yaml` | ⚙ gegenereerd | pnpm | pnpm | ja | nee |
@@ -53,14 +57,19 @@ codelijst-luchtzuiveringssysteem/
 ├── package.json, pnpm-lock.yaml     Node.js-dependencies en de npm scripts
 ├── pom.xml                          Maven-build: installeert Node/pnpm en draait de scripts
 ├── Jenkinsfile.groovy               CI/CD-pipeline
+├── CHANGELOG.md                     ⚙ wijzigingen per release (create_changelog)
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS
 │   ├── 02_metadata.js                   script: DCAT-metadata + ODCS data contract
 │   ├── 03_validate_against_previous_release.js  script: SHACL + controle op verwijderingen t.o.v. vorige release
+│   ├── 04_create_changelog.js           script: CHANGELOG.md uit de verschillen tussen releases
 │   ├── 99_deploy_latest.js              script: laatste release naar Virtuoso (manueel)
 │   ├── utils/variables.js               configuratie voor de scripts, JSON-LD frames
 │   ├── utils/git.js                     git-bibliotheek: één functie per git-commando
-│   ├── utils/git-utils.js               git-hulpfuncties (release-tag, bestand uit een tag)
+│   ├── utils/git-utils.js               git-hulpfuncties (release-tags, datum, bestand uit een tag)
+│   ├── utils/releases.js                releases van de codelijst lezen (gedeeld door 03 en 04)
+│   ├── utils/rdf.js                     N-Triples parsen en termen schrijven
+│   ├── utils/markdown.js                Markdown: escapen, uitgelijnde tabellen
 │   ├── utils/console.js                 console-uitvoer met kleuren, vet en symbolen
 │   ├── source/                          ★ brondata
 │   │   ├── codelijst-source.csv

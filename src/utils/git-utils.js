@@ -1,6 +1,6 @@
 'use strict';
 // Hulpfuncties die git-commando's uit git.js combineren. Paden zijn relatief t.o.v. de huidige map (src/).
-import { tag, show, mergeBase } from './git.js';
+import { tag, show, mergeBase, log } from './git.js';
 
 /**
  * Release-tags '<artifactId>-x.y.z', hoogste versie eerst.
@@ -34,20 +34,49 @@ export function releaseTagsInGeschiedenis(artifactId) {
 }
 
 /**
- * Hoogste release-tag '<artifactId>-x.y.z' die een voorouder is van HEAD.
+ * Zoals releaseTagsInGeschiedenis, maar faalt als er geen enkele release-tag gevonden wordt.
  * @param {string} artifactId
- * @returns {Promise<string>}
+ * @returns {Promise<string[]>} oudste versie eerst, nooit leeg
  * @throws {Error} als er geen zo'n tag is (bv. omdat de tags lokaal ontbreken)
  */
-export function laatsteReleaseTag(artifactId) {
+export function vereisteReleaseTags(artifactId) {
     return releaseTagsInGeschiedenis(artifactId)
         .then(tags => {
             if (!tags.length) {
                 throw new Error(`No release tag '${artifactId}-*' found in the history of HEAD. `
                     + `Are the tags missing locally? Try 'git fetch --tags'.`);
             }
-            return tags.at(-1);
+            return tags;
         });
+}
+
+/**
+ * Hoogste release-tag '<artifactId>-x.y.z' die een voorouder is van HEAD.
+ * @param {string} artifactId
+ * @returns {Promise<string>}
+ * @throws {Error} als er geen zo'n tag is (bv. omdat de tags lokaal ontbreken)
+ */
+export function laatsteReleaseTag(artifactId) {
+    return vereisteReleaseTags(artifactId).then(tags => tags.at(-1));
+}
+
+/**
+ * Versie uit een release-tag: '0.2.1' i.p.v. '<artifactId>-0.2.1'.
+ * @param {string} artifactId
+ * @param {string} releaseTag
+ * @returns {string}
+ */
+export function versieVanTag(artifactId, releaseTag) {
+    return releaseTag.startsWith(`${artifactId}-`) ? releaseTag.slice(artifactId.length + 1) : releaseTag;
+}
+
+/**
+ * Commitdatum van een revisie als 'JJJJ-MM-DD'.
+ * @param {string} revisie
+ * @returns {Promise<string>}
+ */
+export function datumVanRevisie(revisie) {
+    return log('-1', '--format=%cs', revisie).then(uitvoer => uitvoer.trim());
 }
 
 /**

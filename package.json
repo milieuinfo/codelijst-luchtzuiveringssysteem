@@ -9,7 +9,9 @@
     "create_skos": "cd src && node 01_codelijst_skos_from_csv.js",
     "create_metadata": "cd src && node 02_metadata.js",
     "validate_release": "cd src && node 03_validate_against_previous_release.js",
-    "validate_history": "cd src && node 03_validate_against_previous_release.js --history"
+    "validate_history": "cd src && node 03_validate_against_previous_release.js --history",
+    "create_changelog": "cd src && node 04_create_changelog.js",
+    "create_changelog_full": "cd src && node 04_create_changelog.js --full"
   },
   "keywords": [
     "milieuinfo",

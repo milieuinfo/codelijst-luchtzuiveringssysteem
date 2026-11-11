@@ -20,55 +20,21 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { Readable } from 'node:stream';
 import rdf from '@zazuko/env-node';
 import validate from '@milieuinfo/maven-metadata-generator-npm/src/utils/shacl_validation.js';
-import { skosOptions, skosSource, metadataOptions } from './utils/variables.js';
-import { laatsteReleaseTag, releaseTagsInGeschiedenis, bestandInRevisie } from './utils/git-utils.js';
-import { style, symbol, print } from './utils/console.js';
+import { skosSource } from './utils/variables.js';
+import { laatsteReleaseTag, vereisteReleaseTags } from './utils/git-utils.js';
+import { parseNTriples, toNT as nt, tripleKey as sleutel, groupBy as groepeer } from './utils/rdf.js';
+import { ntPad, artifactId, prefixes, kort, versie, leesHuidig, leesRevisie, leesReleases } from './utils/releases.js';
+import { style, symbol, print, plural } from './utils/console.js';
 
 const TOEGESTAAN_PAD = './source/toegestane-verwijderingen.txt';
-const prefixes = skosSource.prefixes;
 
 function bepaalTag() {
     const i = process.argv.indexOf('--tag');
     if (i !== -1 && process.argv[i + 1]) return Promise.resolve(process.argv[i + 1]);
     if (process.env.VORIGE_RELEASE_TAG) return Promise.resolve(process.env.VORIGE_RELEASE_TAG);
-    return laatsteReleaseTag(metadataOptions.artifactId);
-}
-
-function parseNTriples(tekst) {
-    return Promise.resolve()
-        .then(() => rdf.formats.parsers.import('application/n-triples', Readable.from([tekst])))
-        .then(stream => rdf.dataset().import(stream))
-        .then(dataset => [...dataset]);
-}
-
-// N-Triples-notatie van een term: dient als sleutel en om toegestane triples te vergelijken
-function nt(term) {
-    if (term.termType === 'NamedNode') return `<${term.value}>`;
-    if (term.termType === 'BlankNode') return `_:${term.value}`;
-    const waarde = JSON.stringify(term.value);
-    if (term.language) return `${waarde}@${term.language}`;
-    if (term.datatype.value === 'http://www.w3.org/2001/XMLSchema#string') return waarde;
-    return `${waarde}^^<${term.datatype.value}>`;
-}
-
-// Leesbare notatie met prefixen, voor de uitvoer
-function kort(term) {
-    const iri = (value) => {
-        let beste = null;
-        for (const [prefix, ns] of Object.entries(prefixes)) {
-            if (value.startsWith(ns) && (!beste || ns.length > beste[1].length)) beste = [prefix, ns];
-        }
-        return beste ? `${beste[0]}:${value.slice(beste[1].length)}` : `<${value}>`;
-    };
-    if (term.termType === 'NamedNode') return iri(term.value);
-    if (term.termType !== 'Literal') return nt(term);
-    const waarde = JSON.stringify(term.value);
-    if (term.language) return `${waarde}@${term.language}`;
-    if (term.datatype.value === 'http://www.w3.org/2001/XMLSchema#string') return waarde;
-    return `${waarde}^^${iri(term.datatype.value)}`;
+    return laatsteReleaseTag(artifactId);
 }
 
 function expandeer(token, regelnr) {
@@ -109,10 +75,6 @@ function leesToegestaan() {
         .then(lijnen => Promise.all(lijnen.map(({ tekst, regelnr }) => leesRegel(tekst, regelnr))));
 }
 
-function sleutel(q) {
-    return `${nt(q.subject)} ${nt(q.predicate)} ${nt(q.object)} .`;
-}
-
 // Een toegestaan subject dekt ook de triples die ernaar verwijzen (bv. hasTopConcept, narrower)
 function toegestaanDoor(q, regels) {
     const s = nt(q.subject), p = nt(q.predicate), o = nt(q.object), t = sleutel(q);
@@ -121,16 +83,6 @@ function toegestaanDoor(q, regels) {
         if (r.predicaat) return r.subject === s && r.predicaat === p;
         return r.subject === s || r.subject === o;
     });
-}
-
-function groepeer(lijst, sleutelFn) {
-    const map = new Map();
-    for (const item of lijst) {
-        const k = sleutelFn(item);
-        if (!map.has(k)) map.set(k, []);
-        map.get(k).push(item);
-    }
-    return map;
 }
 
 // Deelt de verwijderde triples in; zie de uitleg bovenaan
@@ -183,14 +135,10 @@ function vergelijk({ tag, huidig, vorige, regels }) {
 }
 
 // '1 concept' of '3 concepts'
-function meervoud(n, enkelvoud, meervoudsvorm) {
-    return `${n} ${n === 1 ? enkelvoud : meervoudsvorm}`;
-}
+const meervoud = (n, enkelvoud, meervoudsvorm) => plural(n, enkelvoud, meervoudsvorm);
 
 // Zoals meervoud, met het getal in het vet
-function aantal(n, enkelvoud, meervoudsvorm) {
-    return `${style.bold(n)} ${n === 1 ? enkelvoud : meervoudsvorm}`;
-}
+const aantal = (n, enkelvoud, meervoudsvorm) => plural(n, enkelvoud, meervoudsvorm, style.bold);
 
 // Aantal fouten (niet-toegestane verwijderingen) in een resultaat van vergelijk()
 function telFouten({ verwijderdeConcepten, verwijderdeWaarden }) {
@@ -269,19 +217,14 @@ function rapporteer(resultaat) {
     return fouten;
 }
 
-const ntPad = skosOptions.ntriplesPath;
 // In --history: aantal items per lijst bij oudere stappen; --verbose toont alles
 const MAX_DETAILS = 5;
 const VERBOSE = process.argv.includes('--verbose');
-const artifactId = metadataOptions.artifactId;
-
-// '0.2.1' i.p.v. 'codelijst-luchtzuiveringssysteem-0.2.1'
-const versie = (tag) => tag.startsWith(`${artifactId}-`) ? tag.slice(artifactId.length + 1) : tag;
 
 // SHACL-validatie van de huidige gegenereerde bestanden
 function valideerHuidig() {
     print.title('SHACL validation');
-    return parseNTriples(fs.readFileSync(ntPad, 'utf8'))
+    return leesHuidig()
         .then(huidig => validate(skosSource.shapesDataset, rdf.dataset(huidig))
             .then(report => {
                 if (report.conforms) {
@@ -306,9 +249,7 @@ function valideerTegenVorigeRelease() {
         // 1. SHACL-validatie van de huidige gegenereerde bestanden
         .then(ctx => valideerHuidig().then(resultaat => ({ ...ctx, ...resultaat })))
         // 2. Vergelijking met de vorige release
-        .then(ctx => bestandInRevisie(ctx.tag, ntPad)
-            .then(parseNTriples)
-            .then(vorige => ({ ...ctx, vorige })))
+        .then(ctx => leesRevisie(ctx.tag).then(vorige => ({ ...ctx, vorige })))
         .then(ctx => leesToegestaan().then(regels => ({ ...ctx, regels })))
         .then(ctx => ({ ...ctx, fouten: ctx.shaclFouten + rapporteer(vergelijk(ctx)) }))
         .then(({ tag, fouten }) => {
@@ -320,13 +261,6 @@ function valideerTegenVorigeRelease() {
                 print.success(style.green.bold(`Validation against ${tag} passed: no information was lost`));
             }
         });
-}
-
-// Leest de N-Triples van elke release; null als het bestand in die tag ontbreekt
-function leesReleases(tags) {
-    return Promise.all(tags.map(tag => bestandInRevisie(tag, ntPad)
-        .then(parseNTriples)
-        .then(triples => ({ tag, label: versie(tag), triples }), () => ({ tag, label: versie(tag), triples: null }))));
 }
 
 // Schrijft één stap van de geschiedenis uit; geeft een samenvatting terug
@@ -348,12 +282,8 @@ function rapporteerStap(van, naar, resultaat) {
 // Met --history: elke release t.o.v. de vorige, en de laatste release t.o.v. de huidige bestanden
 function valideerGeschiedenis() {
     return Promise.resolve()
-        .then(() => releaseTagsInGeschiedenis(artifactId))
+        .then(() => vereisteReleaseTags(artifactId))
         .then(tags => {
-            if (!tags.length) {
-                throw new Error(`No release tag '${artifactId}-*' found in the history of HEAD. `
-                    + `Are the tags missing locally? Try 'git fetch --tags'.`);
-            }
             print.title('Validation of the release history');
             print.keyValue({
                 File: style.cyan(path.basename(ntPad)),
