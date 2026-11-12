@@ -51,6 +51,10 @@ aanroepen.
 Je hebt Node.js en pnpm nodig (de versies staan in `pom.xml` en in `packageManager` van
 `package.json`). Gebruik geen `npm install`.
 
+pnpm 11 leest zijn instellingen uit `pnpm-workspace.yaml`. Het weigert packages die minder dan een
+dag geleden gepubliceerd zijn (`minimumReleaseAge`): kies dan een iets oudere versie. Een dependency
+met een install-script heeft een beslissing nodig onder `allowBuilds`, anders faalt `pnpm install`.
+
 ```bash
 pnpm install --frozen-lockfile
 pnpm run create_skos

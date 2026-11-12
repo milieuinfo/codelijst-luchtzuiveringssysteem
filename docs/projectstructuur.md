@@ -41,7 +41,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `.prettierrc.json`, `.prettierignore`                                                              | ★ bron                       | jij                                                                     | `pnpm run format`                                        |   ja   |    nee    |
 | `vitest.config.js`, `test/`                                                                        | ★ bron (tests)               | jij                                                                     | `pnpm run test`                                          |   ja   |    nee    |
 | `stryker.config.json`                                                                              | ★ bron (tests)               | jij                                                                     | `pnpm run test:mutation`                                 |   ja   |    nee    |
-| `.npmrc`                                                                                           | ★ bron                       | jij                                                                     | pnpm (`save-exact`)                                      |   ja   |    nee    |
+| `pnpm-workspace.yaml`                                                                              | ★ bron                       | jij                                                                     | pnpm (overrides, exacte versies, build-scripts)          |   ja   |    nee    |
 | `sonar-project.properties`                                                                         | ★ bron                       | jij                                                                     | Sonar-scan in Jenkins                                    |   ja   |    nee    |
 | `node_modules/`                                                                                    | ⚙ gegenereerd                | pnpm                                                                    | de scripts (generator, standaard N3-regels, DCAT-shapes) |  nee   |    nee    |
 | `target/`                                                                                          | ⚙ gegenereerd                | Maven                                                                   | —                                                        |  nee   | is de jar |
@@ -69,7 +69,7 @@ codelijst-luchtzuiveringssysteem/
 ├── sonar-project.properties         extra instellingen voor de Sonar-scan in Jenkins
 ├── vitest.config.js, test/          Vitest-configuratie en de tests
 ├── stryker.config.json              mutation testing van src/utils/ (Stryker)
-├── .npmrc                           pnpm: exacte versies bij pnpm add
+├── pnpm-workspace.yaml              pnpm-instellingen: overrides, exacte versies, build-scripts
 ├── CHANGELOG.md                     ⚙ wijzigingen per release (create_changelog)
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS

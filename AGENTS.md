@@ -40,7 +40,7 @@ Sources (edit these):
 | `.prettierrc.json`, `.prettierignore` | Prettier: JS + config files only; md, `src/source/`, `src/main/resources/` ignored |
 | `vitest.config.js`, `test/*.test.js` | Vitest: unit tests for utils (git/`child_process` mocked), integration tests (config, SHACL, regenerating the code list byte for byte, env-node equals generator's). `test/setup.js` chdirs to `src/` (needs `pool: 'forks'`) |
 | `stryker.config.json` | Stryker mutation testing of `src/utils/*.js` (not `variables.js`); breaks below 95 %. Output in `reports/` (git-ignored) |
-| `.npmrc` | `save-exact=true`: `pnpm add` writes exact versions |
+| `pnpm-workspace.yaml` | pnpm 11 settings (pnpm 11 ignores the `pnpm` field in `package.json`): `overrides` (`@rdfjs/types`), `saveExact`, `allowBuilds` (`classic-level: false`: ships prebuilds) |
 | `sonar-project.properties` | Extra settings for the Jenkins Sonar scan (`sonar.scanMaven` runs the `sonar-scanner` CLI, so `pom.xml` properties are ignored; its `-D` args win). Ignores S7785 (top-level await) |
 | `src/main/resources/be/vlaanderen/omgeving/lzs/data/id/graph/*.json` | Published context/prefix copies for consumers; hand-maintained, read by no script |
 
@@ -132,7 +132,8 @@ JavaScript:
 - 4 spaces, single quotes, semicolons, printWidth 120, camelCase for new names. Existing code mixes camelCase and snake_case (`skosOptions`, `frame_skos_prefixes`): don't rename.
 - New code: Promise chains (`Promise.resolve().then(...)`), no top-level `await` (`02_metadata.js`, `variables.js` keep theirs unless asked).
 - New modules export inline (`export const`/`export function`); `variables.js` keeps its export list.
-- Dependencies: exact versions only (no `^`/`~`; ESLint `restrict-dependency-ranges` enforces it, except in `pnpm.overrides`: check those yourself). Keep `@zazuko/env-node` equal to the generator's pinned version (datasets are passed between both). After an update: `pnpm run check`, `create_skos_only` (no diff), `validate:release`.
+- pnpm 11 (`packageManager` in `package.json` and `<pnpmVersion>` in `pom.xml`: change both). Its `minimumReleaseAge` policy rejects packages published less than a day ago: pick an older version, don't relax the policy. A dependency with an install script needs an `allowBuilds` decision, or `pnpm install` fails (also in Maven).
+- Dependencies: exact versions only (no `^`/`~`; ESLint `restrict-dependency-ranges` enforces it, except in `overrides` in `pnpm-workspace.yaml`: check those yourself). Keep `@zazuko/env-node` equal to the generator's pinned version (datasets are passed between both). After an update: `pnpm run check`, `create_skos_only` (no diff), `validate:release`.
 - Tests: Vitest in `test/`, import `describe`/`it`/`expect` from `vitest`; new util logic gets a test. After changing `src/utils/`, run `test:mutation`: kill new survivors with a test (only equivalent mutants may survive: `releases.js` `'utf8'`).
 - Import only packages in `package.json` (`n/no-extraneous-import`) (pnpm strict: e.g. `rdf-validate-shacl` from the generator is not importable). Importing files from the generator's `src/` is fine (`variables.js` does; `03_…` uses `src/utils/shacl_validation.js`).
 - On failure set `process.exitCode = 1`, never `process.exit()` (flushes output; `n/no-process-exit`).
