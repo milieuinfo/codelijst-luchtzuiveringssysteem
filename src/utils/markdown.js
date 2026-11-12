@@ -19,10 +19,11 @@ export function escapeMarkdown(text) {
 
 // Display width of a cell in a monospace editor: emoji take two columns, variation selectors and
 // zero-width joiners none, other characters one (counted per code point, not per UTF-16 code unit)
-const width = (text) => [...text].reduce((sum, char) => {
-    if (char === '\uFE0F' || char === '\u200D') return sum;
-    return sum + (/\p{Extended_Pictographic}/u.test(char) ? 2 : 1);
-}, 0);
+const width = (text) =>
+    [...text].reduce((sum, char) => {
+        if (char === '\uFE0F' || char === '\u200D') return sum;
+        return sum + (/\p{Extended_Pictographic}/u.test(char) ? 2 : 1);
+    }, 0);
 
 const pad = (text, size) => text + ' '.repeat(size - width(text));
 
@@ -34,13 +35,9 @@ const pad = (text, size) => text + ' '.repeat(size - width(text));
  * @returns {string} the table, without a trailing newline
  */
 export function table(headers, rows) {
-    const cells = rows.map(row => headers.map((_, i) => row[i] ?? ''));
+    const cells = rows.map((row) => headers.map((_, i) => row[i] ?? ''));
     // A separator needs at least three dashes
-    const sizes = headers.map((header, i) => Math.max(3, width(header), ...cells.map(row => width(row[i]))));
+    const sizes = headers.map((header, i) => Math.max(3, width(header), ...cells.map((row) => width(row[i]))));
     const line = (row) => `| ${row.map((cell, i) => pad(cell, sizes[i])).join(' | ')} |`;
-    return [
-        line(headers),
-        line(sizes.map(size => '-'.repeat(size))),
-        ...cells.map(line)
-    ].join('\n');
+    return [line(headers), line(sizes.map((size) => '-'.repeat(size))), ...cells.map(line)].join('\n');
 }

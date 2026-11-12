@@ -38,6 +38,7 @@ Sources (edit these):
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary + SHACL shapes (AP constraints) |
 | `eslint.config.js` | ESLint flat config: JS (recommended, `eslint-plugin-n`, convention rules, `eslint-config-prettier` last) + Markdown (`@eslint/markdown`, GFM; `CHANGELOG.md` ignored) |
 | `.prettierrc.json`, `.prettierignore` | Prettier: JS + config files only; md, `src/source/`, `src/main/resources/` ignored |
+| `sonar-project.properties` | Extra settings for the Jenkins Sonar scan (`sonar.scanMaven` runs the `sonar-scanner` CLI, so `pom.xml` properties are ignored; its `-D` args win). Ignores S7785 (top-level await) |
 | `src/main/resources/be/vlaanderen/omgeving/lzs/data/id/graph/*.json` | Published context/prefix copies for consumers; hand-maintained, read by no script |
 
 `src/main/resources/` mixes sources and output; only `data/id/conceptscheme/` is generated.

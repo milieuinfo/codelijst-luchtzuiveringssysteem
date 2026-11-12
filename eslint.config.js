@@ -54,11 +54,6 @@ export default [
         },
     },
     {
-        // src/utils/setenv.js bevat credentials en staat niet in git (ook niet in Jenkins)
-        files: ['src/99_deploy_latest.js'],
-        rules: { 'n/no-missing-import': 'off' },
-    },
-    {
         files: ['src/utils/git.js'],
         rules: { 'no-restricted-imports': 'off' },
     },

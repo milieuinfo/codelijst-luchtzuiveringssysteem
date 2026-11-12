@@ -70,9 +70,10 @@ const AFGELEID = {
     [`${SKOS}hasTopConcept`]: [{ predicaat: `${SKOS}topConceptOf`, invers: true }],
     [`${SKOS}narrower`]: [{ predicaat: `${SKOS}broader`, invers: true }],
     [`${SKOS}inScheme`]: [{ predicaat: `${SKOS}topConceptOf` }],
-    [`${SKOS}note`]: ['definition', 'scopeNote', 'changeNote', 'editorialNote', 'example', 'historyNote']
-        .map(p => ({ predicaat: `${SKOS}${p}` })),
-    [`${VOCAB}relevantProperty`]: [{ predicaat: `${VOCAB}relevantLZS`, invers: true }]
+    [`${SKOS}note`]: ['definition', 'scopeNote', 'changeNote', 'editorialNote', 'example', 'historyNote'].map((p) => ({
+        predicaat: `${SKOS}${p}`,
+    })),
+    [`${VOCAB}relevantProperty`]: [{ predicaat: `${VOCAB}relevantLZS`, invers: true }],
 };
 
 function argument(naam) {
@@ -93,10 +94,9 @@ function isAfgeleid(q, sleutels) {
 
 // Hulpfuncties om een graaf te bevragen
 function graaf(triples) {
-    const perSubject = groepeer(triples, q => nt(q.subject));
-    const waarden = (subject, predicaat) => (perSubject.get(nt(subject)) ?? [])
-        .filter(q => q.predicate.value === predicaat)
-        .map(q => q.object);
+    const perSubject = groepeer(triples, (q) => nt(q.subject));
+    const waarden = (subject, predicaat) =>
+        (perSubject.get(nt(subject)) ?? []).filter((q) => q.predicate.value === predicaat).map((q) => q.object);
     return {
         triples,
         sleutels: new Set(triples.map(sleutel)),
@@ -106,11 +106,11 @@ function graaf(triples) {
         // prefLabel, bij voorkeur in het Nederlands
         label: (subject) => {
             const labels = waarden(subject, `${SKOS}prefLabel`);
-            return (labels.find(l => l.language === 'nl') ?? labels[0])?.value;
+            return (labels.find((l) => l.language === 'nl') ?? labels[0])?.value;
         },
-        isSchema: (subject) => waarden(subject, RDF_TYPE).some(t => t.value === `${SKOS}ConceptScheme`),
-        isConcept: (subject) => waarden(subject, RDF_TYPE).some(t => t.value === `${SKOS}Concept`),
-        schema: (subject) => [...waarden(subject, `${SKOS}inScheme`), ...waarden(subject, `${SKOS}topConceptOf`)][0]
+        isSchema: (subject) => waarden(subject, RDF_TYPE).some((t) => t.value === `${SKOS}ConceptScheme`),
+        isConcept: (subject) => waarden(subject, RDF_TYPE).some((t) => t.value === `${SKOS}Concept`),
+        schema: (subject) => [...waarden(subject, `${SKOS}inScheme`), ...waarden(subject, `${SKOS}topConceptOf`)][0],
     };
 }
 
@@ -118,8 +118,8 @@ function graaf(triples) {
 function vergelijk(vorige, huidige) {
     const oud = graaf(vorige);
     const nieuw = graaf(huidige);
-    const toegevoegdeSubjects = [...nieuw.subjects].filter(s => !oud.subjects.has(s));
-    const verwijderdeSubjects = [...oud.subjects].filter(s => !nieuw.subjects.has(s));
+    const toegevoegdeSubjects = [...nieuw.subjects].filter((s) => !oud.subjects.has(s));
+    const verwijderdeSubjects = [...oud.subjects].filter((s) => !nieuw.subjects.has(s));
     const nieuwOfWeg = new Set([...toegevoegdeSubjects, ...verwijderdeSubjects]);
 
     // Waarden die bij een bestaand subject wegvielen of bijkwamen, per subject en predicaat
@@ -133,18 +133,21 @@ function vergelijk(vorige, huidige) {
         predicaten.get(p)[soort].push(q.object);
     };
     for (const q of vorige) {
-        if (!nieuw.sleutels.has(sleutel(q)) && !nieuwOfWeg.has(nt(q.subject)) && !isAfgeleid(q, oud.sleutels)) noteer(q, 'oud');
+        if (!nieuw.sleutels.has(sleutel(q)) && !nieuwOfWeg.has(nt(q.subject)) && !isAfgeleid(q, oud.sleutels))
+            noteer(q, 'oud');
     }
     for (const q of huidige) {
-        if (!oud.sleutels.has(sleutel(q)) && !nieuwOfWeg.has(nt(q.subject)) && !isAfgeleid(q, nieuw.sleutels)) noteer(q, 'nieuw');
+        if (!oud.sleutels.has(sleutel(q)) && !nieuwOfWeg.has(nt(q.subject)) && !isAfgeleid(q, nieuw.sleutels))
+            noteer(q, 'nieuw');
     }
 
     const subject = (g, s) => g.perSubject.get(s)[0].subject;
     return {
-        oud, nieuw,
-        toegevoegd: toegevoegdeSubjects.map(s => ({ subject: subject(nieuw, s), graaf: nieuw })),
-        verwijderd: verwijderdeSubjects.map(s => ({ subject: subject(oud, s), graaf: oud })),
-        gewijzigd: [...wijzigingen.values()].map(w => ({ ...w, graaf: nieuw }))
+        oud,
+        nieuw,
+        toegevoegd: toegevoegdeSubjects.map((s) => ({ subject: subject(nieuw, s), graaf: nieuw })),
+        verwijderd: verwijderdeSubjects.map((s) => ({ subject: subject(oud, s), graaf: oud })),
+        gewijzigd: [...wijzigingen.values()].map((w) => ({ ...w, graaf: nieuw })),
     };
 }
 
@@ -172,12 +175,12 @@ const SOORT = {
     gewijzigd: { emoji: '✏️', tekst: 'waarde gewijzigd' },
     toegevoegd: { emoji: '➕', tekst: 'waarde toegevoegd' },
     verwijderd: { emoji: '➖', tekst: 'waarde verwijderd' },
-    weg: { emoji: '🗑️', tekst: 'verwijderd' }
+    weg: { emoji: '🗑️', tekst: 'verwijderd' },
 };
 
 // Het conceptschema waaronder een subject valt: een conceptschema valt onder zichzelf
 function schemaVan(subject, g) {
-    return g.isSchema(subject) ? subject : g.schema(subject) ?? null;
+    return g.isSchema(subject) ? subject : (g.schema(subject) ?? null);
 }
 
 // Soort en tekst van de wijziging van één property van een bestaand concept
@@ -191,26 +194,33 @@ function propertyWijziging(predicaat, oud, nieuw) {
 // Tabelrijen voor één release, met per rij het conceptschema (voor de groepering) en de sortering
 function rijen({ toegevoegd, gewijzigd, verwijderd }) {
     const rij = (soort, subject, g, wijziging, toonConcept = true) => ({
-        soort, subject, graaf: g, schema: schemaVan(subject, g),
+        soort,
+        subject,
+        graaf: g,
+        schema: schemaVan(subject, g),
         cellen: [
             SOORT[soort].emoji,
             toonConcept ? `\`${kort(subject)}\`` : '',
             toonConcept && g.label(subject) ? markdownTekst(g.label(subject)) : '',
-            wijziging
-        ]
+            wijziging,
+        ],
     });
-    const soortConcept = (subject, g) => g.isSchema(subject) ? 'conceptschema' : 'concept';
+    const soortConcept = (subject, g) => (g.isSchema(subject) ? 'conceptschema' : 'concept');
 
     return [
         ...toegevoegd.map(({ subject, graaf: g }) => [rij('nieuw', subject, g, `nieuw ${soortConcept(subject, g)}`)]),
-        ...gewijzigd.map(({ subject, predicaten, graaf: g }) => [...predicaten.values()]
-            .sort((a, b) => vergelijkTekst(kort(a.predicaat), kort(b.predicaat)))
-            .map(({ predicaat, oud, nieuw }, i) => {
-                const [soort, wijziging] = propertyWijziging(predicaat, oud, nieuw);
-                // Het concept enkel in de eerste rij, zodat de rijen van één concept samen leesbaar zijn
-                return rij(soort, subject, g, wijziging, i === 0);
-            })),
-        ...verwijderd.map(({ subject, graaf: g }) => [rij('weg', subject, g, `${soortConcept(subject, g)} verwijderd`)])
+        ...gewijzigd.map(({ subject, predicaten, graaf: g }) =>
+            [...predicaten.values()]
+                .sort((a, b) => vergelijkTekst(kort(a.predicaat), kort(b.predicaat)))
+                .map(({ predicaat, oud, nieuw }, i) => {
+                    const [soort, wijziging] = propertyWijziging(predicaat, oud, nieuw);
+                    // Het concept enkel in de eerste rij, zodat de rijen van één concept samen leesbaar zijn
+                    return rij(soort, subject, g, wijziging, i === 0);
+                }),
+        ),
+        ...verwijderd.map(({ subject, graaf: g }) => [
+            rij('weg', subject, g, `${soortConcept(subject, g)} verwijderd`),
+        ]),
     ];
 }
 
@@ -218,20 +228,31 @@ function rijen({ toegevoegd, gewijzigd, verwijderd }) {
 // gewijzigd, verwijderd; per soort op IRI. De rijen van één gewijzigd concept blijven bij elkaar.
 function tabellenPerSchema(rijGroepen) {
     // 0 het schema zelf, 1 nieuw, 2 gewijzigd (gewijzigd, toegevoegd en verwijderd samen), 3 verwijderd
-    const rang = (r) => r.schema?.equals(r.subject) ? 0 : { nieuw: 1, weg: 3 }[r.soort] ?? 2;
-    const groepen = groepeer(rijGroepen, ([eerste]) => eerste.schema ? nt(eerste.schema) : '');
-    return [...groepen.values()]
-        .map(groep => {
-            const { schema, graaf: g } = groep[0][0];
-            const titel = schema
-                ? `${markdownTekst(g.label(schema) ?? kort(schema))} (\`${kort(schema)}\`)`
-                : 'Zonder conceptschema';
-            const gesorteerd = groep.toSorted(([a], [b]) => rang(a) - rang(b) || vergelijkTekst(kort(a.subject), kort(b.subject)));
-            return { schema, titel, tabel: table(['', 'Concept', 'Label', 'Wijziging'], gesorteerd.flat().map(r => r.cellen)) };
-        })
-        // Zonder conceptschema achteraan
-        .sort((a, b) => Number(!a.schema) - Number(!b.schema) || vergelijkTekst(a.titel, b.titel))
-        .flatMap(({ titel, tabel }) => [`### ${titel}`, '', tabel, '']);
+    const rang = (r) => (r.schema?.equals(r.subject) ? 0 : ({ nieuw: 1, weg: 3 }[r.soort] ?? 2));
+    const groepen = groepeer(rijGroepen, ([eerste]) => (eerste.schema ? nt(eerste.schema) : ''));
+    return (
+        [...groepen.values()]
+            .map((groep) => {
+                const { schema, graaf: g } = groep[0][0];
+                const titel = schema
+                    ? `${markdownTekst(g.label(schema) ?? kort(schema))} (\`${kort(schema)}\`)`
+                    : 'Zonder conceptschema';
+                const gesorteerd = groep.toSorted(
+                    ([a], [b]) => rang(a) - rang(b) || vergelijkTekst(kort(a.subject), kort(b.subject)),
+                );
+                return {
+                    schema,
+                    titel,
+                    tabel: table(
+                        ['', 'Concept', 'Label', 'Wijziging'],
+                        gesorteerd.flat().map((r) => r.cellen),
+                    ),
+                };
+            })
+            // Zonder conceptschema achteraan
+            .sort((a, b) => Number(!a.schema) - Number(!b.schema) || vergelijkTekst(a.titel, b.titel))
+            .flatMap(({ titel, tabel }) => [`### ${titel}`, '', tabel, ''])
+    );
 }
 
 // '🆕 5 nieuw · ✏️ 2 gewijzigd · 🗑️ 1 verwijderd' (aantallen concepten)
@@ -239,7 +260,7 @@ function samenvatting({ toegevoegd, gewijzigd, verwijderd }) {
     return [
         [toegevoegd, SOORT.nieuw.emoji, 'nieuw'],
         [gewijzigd, SOORT.gewijzigd.emoji, 'gewijzigd'],
-        [verwijderd, SOORT.weg.emoji, 'verwijderd']
+        [verwijderd, SOORT.weg.emoji, 'verwijderd'],
     ]
         .filter(([n]) => n)
         .map(([n, emoji, tekst]) => `${emoji} ${n} ${tekst}`)
@@ -248,25 +269,31 @@ function samenvatting({ toegevoegd, gewijzigd, verwijderd }) {
 
 // Gebruik van een predicaat in een graaf: aantal waarden en aantal subjects
 function gebruik(g, predicaat) {
-    const triples = g.triples.filter(q => q.predicate.value === predicaat);
-    const subjects = new Set(triples.map(q => nt(q.subject)));
+    const triples = g.triples.filter((q) => q.predicate.value === predicaat);
+    const subjects = new Set(triples.map((q) => nt(q.subject)));
     return `${plural(triples.length, 'waarde', 'waarden')} bij ${plural(subjects.size, 'concept', 'concepten')}`;
 }
 
 // Tabel met de properties die voor het eerst of niet meer gebruikt worden (bv. een nieuwe kolom in de
 // CSV). Afgeleide predicaten blijven weg, net als in de tabellen per conceptschema.
 function propertyTabel(oud, nieuw) {
-    const predicaten = (g) => new Set(g.triples.map(q => q.predicate.value).filter(p => !AFGELEID[p]));
+    const predicaten = (g) => new Set(g.triples.map((q) => q.predicate.value).filter((p) => !AFGELEID[p]));
     const voor = predicaten(oud);
     const na = predicaten(nieuw);
     const kortIri = (iri) => shortenIri(iri, prefixes);
     const sorteer = (lijst) => lijst.sort((a, b) => vergelijkTekst(kortIri(a), kortIri(b)));
     const code = (p) => `\`${kortIri(p)}\``;
     const rijen = [
-        ...sorteer([...na].filter(p => !voor.has(p)))
-            .map(p => [SOORT.nieuw.emoji, code(p), `nieuwe property: ${gebruik(nieuw, p)}`]),
-        ...sorteer([...voor].filter(p => !na.has(p)))
-            .map(p => [SOORT.weg.emoji, code(p), `niet meer gebruikt (was: ${gebruik(oud, p)})`])
+        ...sorteer([...na].filter((p) => !voor.has(p))).map((p) => [
+            SOORT.nieuw.emoji,
+            code(p),
+            `nieuwe property: ${gebruik(nieuw, p)}`,
+        ]),
+        ...sorteer([...voor].filter((p) => !na.has(p))).map((p) => [
+            SOORT.weg.emoji,
+            code(p),
+            `niet meer gebruikt (was: ${gebruik(oud, p)})`,
+        ]),
     ];
     return rijen.length ? ['### Properties', '', table(['', 'Property', 'Wijziging'], rijen), ''] : [];
 }
@@ -285,28 +312,37 @@ function sectie({ label, datum, vorige, vorigeLabel, huidige }) {
 
     if (!vorige) {
         const g = graaf(huidige);
-        const subjects = [...g.perSubject.values()].map(lijst => lijst[0].subject);
+        const subjects = [...g.perSubject.values()].map((lijst) => lijst[0].subject);
         const schemas = subjects.filter(g.isSchema).sort((a, b) => vergelijkTekst(kort(a), kort(b)));
         const concepten = subjects.filter(g.isConcept);
         regels.push(
-            `Eerste release, met ${plural(concepten.length, 'concept', 'concepten')} `
-                + `in ${plural(schemas.length, 'conceptschema', 'conceptschema\'s')}:`,
+            `Eerste release, met ${plural(concepten.length, 'concept', 'concepten')} ` +
+                `in ${plural(schemas.length, 'conceptschema', "conceptschema's")}:`,
             '',
-            table(['', 'Conceptschema', 'Label'],
-                schemas.map(s => [SOORT.nieuw.emoji, `\`${kort(s)}\``, markdownTekst(g.label(s) ?? '')])),
-            ''
+            table(
+                ['', 'Conceptschema', 'Label'],
+                schemas.map((s) => [SOORT.nieuw.emoji, `\`${kort(s)}\``, markdownTekst(g.label(s) ?? '')]),
+            ),
+            '',
         );
         return { tekst: regels.join('\n'), aantallen: { toegevoegd: concepten.length, gewijzigd: 0, verwijderd: 0 } };
     }
 
     const verschil = vergelijk(vorige, huidige);
     const aantallen = {
-        toegevoegd: verschil.toegevoegd.length, gewijzigd: verschil.gewijzigd.length, verwijderd: verschil.verwijderd.length
+        toegevoegd: verschil.toegevoegd.length,
+        gewijzigd: verschil.gewijzigd.length,
+        verwijderd: verschil.verwijderd.length,
     };
     if (!aantallen.toegevoegd && !aantallen.gewijzigd && !aantallen.verwijderd) {
         regels.push('Geen inhoudelijke wijzigingen aan de codelijst.', '');
     } else {
-        regels.push(samenvatting(aantallen), '', ...propertyTabel(verschil.oud, verschil.nieuw), ...tabellenPerSchema(rijen(verschil)));
+        regels.push(
+            samenvatting(aantallen),
+            '',
+            ...propertyTabel(verschil.oud, verschil.nieuw),
+            ...tabellenPerSchema(rijen(verschil)),
+        );
     }
     return { tekst: regels.join('\n'), aantallen };
 }
@@ -344,7 +380,7 @@ function splitsChangelog(inhoud) {
     const kop = delen[0].startsWith('## [') ? '' : delen.shift();
     return {
         kop,
-        secties: delen.map(tekst => ({ label: tekst.match(/^## \[([^\]]+)\]/)[1], tekst: metEenRegeleinde(tekst) }))
+        secties: delen.map((tekst) => ({ label: tekst.match(/^## \[([^\]]+)\]/)[1], tekst: metEenRegeleinde(tekst) })),
     };
 }
 
@@ -360,17 +396,21 @@ function maakVolledigeChangelog() {
     const nieuweVersie = releaseVersie();
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
-        .then(tags => Promise.all([leesReleases(tags), Promise.all(tags.map(datumVanRevisie))]))
+        .then((tags) => Promise.all([leesReleases(tags), Promise.all(tags.map(datumVanRevisie))]))
         .then(([releases, datums]) => releases.map((r, i) => ({ ...r, datum: datums[i] })))
-        .then(releases => {
-            const metHuidige = !releases.some(r => r.label === nieuweVersie);
+        .then((releases) => {
+            const metHuidige = !releases.some((r) => r.label === nieuweVersie);
             return Promise.all([releases, metHuidige, metHuidige ? leesHuidig() : null]);
         })
         .then(([releases, metHuidige, huidige]) => {
             print.title('Changelog of the release history');
-            print.keyValue({ Releases: `${style.bold(releases.length)} tags: ${releases[0].label} ${style.gray(symbol.arrow)} ${releases.at(-1).label}` });
+            print.keyValue({
+                Releases: `${style.bold(releases.length)} tags: ${releases[0].label} ${style.gray(symbol.arrow)} ${releases.at(-1).label}`,
+            });
             if (metHuidige) {
-                print.keyValue({ 'New version': `${style.bold(nieuweVersie ?? VOLGENDE)} ${style.gray('(current files)')}` });
+                print.keyValue({
+                    'New version': `${style.bold(nieuweVersie ?? VOLGENDE)} ${style.gray('(current files)')}`,
+                });
             } else {
                 print.info(`Version ${nieuweVersie} is already released; the current files are not added`);
             }
@@ -380,11 +420,17 @@ function maakVolledigeChangelog() {
             let vorige = null;
             let vorigeLabel = null;
             const versies = metHuidige
-                ? [...releases, { label: nieuweVersie ?? VOLGENDE, datum: nieuweVersie ? vandaag() : null, triples: huidige }]
+                ? [
+                      ...releases,
+                      { label: nieuweVersie ?? VOLGENDE, datum: nieuweVersie ? vandaag() : null, triples: huidige },
+                  ]
                 : releases;
             const secties = versies.map(({ label, datum, triples }) => {
                 const resultaat = sectie({ label, datum, vorige, vorigeLabel, huidige: triples });
-                print.detail(`${style.bold(label.padEnd(8))} ${style.gray(datum ?? '')}  ${aantallenTekst(resultaat.aantallen)}`, 0);
+                print.detail(
+                    `${style.bold(label.padEnd(8))} ${style.gray(datum ?? '')}  ${aantallenTekst(resultaat.aantallen)}`,
+                    0,
+                );
                 if (triples) {
                     vorige = triples;
                     vorigeLabel = label;
@@ -402,49 +448,64 @@ function voegHuidigeVersieToe() {
     const label = nieuweVersie ?? VOLGENDE;
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
-        .then(tags => {
+        .then((tags) => {
             const tag = tags.at(-1);
             if (versie(tag) === label) {
-                throw new Error(`Version ${label} is already released (tag ${tag}). `
-                    + `Use --version for a new version, or --full to rebuild the changelog from the tags.`);
+                throw new Error(
+                    `Version ${label} is already released (tag ${tag}). ` +
+                        `Use --version for a new version, or --full to rebuild the changelog from the tags.`,
+                );
             }
             print.title('Changelog of the current version');
             print.keyValue({ Version: style.bold(label), 'Compared to': style.bold(tag) });
             return Promise.all([leesReleases([tag]), leesHuidig()]);
         })
-        .then(([[release], huidige]) => sectie({
-            label, datum: nieuweVersie ? vandaag() : null, vorige: release.triples, vorigeLabel: release.label, huidige
-        }))
+        .then(([[release], huidige]) =>
+            sectie({
+                label,
+                datum: nieuweVersie ? vandaag() : null,
+                vorige: release.triples,
+                vorigeLabel: release.label,
+                huidige,
+            }),
+        )
         .then(({ tekst, aantallen }) => {
             print.blank();
-            print.detail(`${style.bold(label.padEnd(8))} ${aantallenTekst(aantallen)}  ${style.gray('(added, changed, removed concepts)')}`, 0);
+            print.detail(
+                `${style.bold(label.padEnd(8))} ${aantallenTekst(aantallen)}  ${style.gray('(added, changed, removed concepts)')}`,
+                0,
+            );
 
-            const bestaand = fs.existsSync(CHANGELOG_PAD) ? splitsChangelog(fs.readFileSync(CHANGELOG_PAD, 'utf8')) : null;
+            const bestaand = fs.existsSync(CHANGELOG_PAD)
+                ? splitsChangelog(fs.readFileSync(CHANGELOG_PAD, 'utf8'))
+                : null;
             if (!bestaand) {
-                print.warning(`${CHANGELOG_PAD} does not exist yet; run 'pnpm run create_changelog_full' to include older releases`);
+                print.warning(
+                    `${CHANGELOG_PAD} does not exist yet; run 'pnpm run create_changelog_full' to include older releases`,
+                );
                 schrijf([HEADER, tekst].join('\n'));
                 return;
             }
             // Bij een release vervangt de sectie voor de versie de sectie 'Volgende versie'
             let secties = bestaand.secties;
-            if (nieuweVersie && secties.some(s => s.label === VOLGENDE)) {
+            if (nieuweVersie && secties.some((s) => s.label === VOLGENDE)) {
                 print.info(`Removing the section '${VOLGENDE}'`);
-                secties = secties.filter(s => s.label !== VOLGENDE);
+                secties = secties.filter((s) => s.label !== VOLGENDE);
             }
-            const i = secties.findIndex(s => s.label === label);
+            const i = secties.findIndex((s) => s.label === label);
             if (i !== -1) {
                 print.info(`Replacing the existing section for ${label}`);
                 secties[i] = { label, tekst };
             } else {
                 secties.unshift({ label, tekst });
             }
-            schrijf([metEenRegeleinde(bestaand.kop), ...secties.map(s => s.tekst)].join('\n'));
+            schrijf([metEenRegeleinde(bestaand.kop), ...secties.map((s) => s.tekst)].join('\n'));
         });
 }
 
 Promise.resolve()
-    .then(() => process.argv.includes('--full') ? maakVolledigeChangelog() : voegHuidigeVersieToe())
-    .catch(err => {
+    .then(() => (process.argv.includes('--full') ? maakVolledigeChangelog() : voegHuidigeVersieToe()))
+    .catch((err) => {
         print.error(err.message);
         process.exitCode = 1;
     });

@@ -27,8 +27,7 @@ const DEFAULT_OPTIONS = { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 };
 export function git(...args) {
     const last = args.at(-1);
     const options = last !== null && typeof last === 'object' ? args.pop() : {};
-    return execFileAsync('git', args, { ...DEFAULT_OPTIONS, ...options })
-        .then(({ stdout }) => stdout);
+    return execFileAsync('git', args, { ...DEFAULT_OPTIONS, ...options }).then(({ stdout }) => stdout);
 }
 
 /**
@@ -36,7 +35,10 @@ export function git(...args) {
  * @param {string} name
  * @returns {(...args: (string|import('node:child_process').ExecFileOptions)[]) => Promise<string>}
  */
-export const command = (name) => (...args) => git(name, ...args);
+export const command =
+    (name) =>
+    (...args) =>
+        git(name, ...args);
 
 export const add = command('add');
 export const branch = command('branch');

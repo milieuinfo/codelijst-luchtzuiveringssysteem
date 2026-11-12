@@ -39,6 +39,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `Jenkinsfile.groovy`                                                                               | ★ bron                       | jij                                                                     | Jenkins                                                  |   ja   |    nee    |
 | `eslint.config.js`                                                                                 | ★ bron                       | jij                                                                     | `pnpm run lint`                                          |   ja   |    nee    |
 | `.prettierrc.json`, `.prettierignore`                                                              | ★ bron                       | jij                                                                     | `pnpm run format`                                        |   ja   |    nee    |
+| `sonar-project.properties`                                                                         | ★ bron                       | jij                                                                     | Sonar-scan in Jenkins                                    |   ja   |    nee    |
 | `node_modules/`                                                                                    | ⚙ gegenereerd                | pnpm                                                                    | de scripts (generator, standaard N3-regels, DCAT-shapes) |  nee   |    nee    |
 | `target/`                                                                                          | ⚙ gegenereerd                | Maven                                                                   | —                                                        |  nee   | is de jar |
 
@@ -62,6 +63,7 @@ codelijst-luchtzuiveringssysteem/
 ├── eslint.config.js                 ESLint-regels voor de JavaScript
 ├── .prettierrc.json                 Prettier-opmaak
 ├── .prettierignore                  wat Prettier overslaat
+├── sonar-project.properties         extra instellingen voor de Sonar-scan in Jenkins
 ├── CHANGELOG.md                     ⚙ wijzigingen per release (create_changelog)
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS

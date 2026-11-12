@@ -33,10 +33,10 @@ Eigen properties, zoals `relevantLZS` en `relevantProperty`, staan in een klein 
 
 ## De codelijst gebruiken
 
-Elke release wordt gepubliceerd als Maven-artifact op de Artifactory van Omgeving
-(`repo.omgeving.vlaanderen.be`):
+Elke release wordt gepubliceerd als Maven-artifact op de Artifactory van Omgeving (`repo.omgeving.vlaanderen.be`):
 
 ```xml
+
 <dependency>
     <groupId>be.vlaanderen.omgeving.data.id.graph</groupId>
     <artifactId>codelijst-luchtzuiveringssysteem</artifactId>
@@ -65,7 +65,8 @@ Daarnaast zitten in het jar-bestand (paden onder `be/vlaanderen/omgeving/`):
 - een JSON-LD context en prefixlijst (`lzs/data/id/graph/`).
 
 De gegenereerde bestanden van de laatste versie staan ook in deze repository, in
-[`src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/`](src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/).
+[
+`src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/`](src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/luchtzuiveringssysteem/).
 Een vaste versie vind je onder de git-tag `codelijst-luchtzuiveringssysteem-x.y.z`.
 
 ## Versies en compatibiliteit

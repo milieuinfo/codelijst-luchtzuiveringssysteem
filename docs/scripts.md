@@ -293,6 +293,7 @@ De doelomgeving staat hard in het script (`const omgeving = 'pr'`). De servernaa
 
 Het script verwacht een lokaal bestand `src/utils/setenv.js` dat een functie `set_env(omgeving)` exporteert.
 Die functie zet de credentials voor de triple store als environment variables. Dat bestand bevat
-geheimen, staat in `.gitignore` en hoort nooit in git. Zonder dat bestand start het script niet.
+geheimen, staat in `.gitignore` en hoort nooit in git. Het script importeert het dynamisch: ontbreekt
+het, dan stopt het met een melding die naar deze sectie verwijst.
 
 Draai dit script enkel als je weet wat je doet: het overschrijft de graaf op een gedeelde server.

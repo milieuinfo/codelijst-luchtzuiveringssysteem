@@ -48,6 +48,12 @@ export function leesRevisie(revisie) {
  * @returns {Promise<{ tag: string, label: string, triples: import('@rdfjs/types').Quad[]|null }[]>}
  */
 export function leesReleases(tags) {
-    return Promise.all(tags.map(tag => leesRevisie(tag)
-        .then(triples => ({ tag, label: versie(tag), triples }), () => ({ tag, label: versie(tag), triples: null }))));
+    return Promise.all(
+        tags.map((tag) =>
+            leesRevisie(tag).then(
+                (triples) => ({ tag, label: versie(tag), triples }),
+                () => ({ tag, label: versie(tag), triples: null }),
+            ),
+        ),
+    );
 }

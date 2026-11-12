@@ -85,6 +85,10 @@ publiceren, start de build dan met de parameter `DEPLOY` aan, dan wordt het `mvn
 ### De primary branch (`main`)
 
 Op `main` wordt elke build met `mvn deploy` als snapshot gepubliceerd, gevolgd door een Sonar-scan.
+Die scan (`sonar.scanMaven` uit de Cumulus-library) draait de `sonar-scanner` CLI, niet de Maven-plugin:
+instellingen in `pom.xml` worden dus niet gelezen. Extra instellingen staan in `sonar-project.properties`
+in de root; wat `scanMaven` zelf met `-D` meegeeft (zoals `sonar.exclusions`) heeft voorrang. Daar staat
+nu enkel dat regel S7785 (top-level await) genegeerd wordt: de scripts gebruiken bewust Promise chains.
 
 Een **release** start je manueel in Jenkins met de release-parameters. De pipeline:
 

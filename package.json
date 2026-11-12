@@ -1,9 +1,9 @@
 {
-  "type": "module",
   "name": "codelijst-luchtzuiveringssysteem",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "src/main/nodejs/01_codelijst_skos_from_csv.js",
+  "description": "SKOS-codelijst van luchtzuiveringssystemen in stallen (ARMOS): CSV naar RDF, gevalideerd met SHACL",
+  "type": "module",
   "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=26.10.0"
@@ -31,11 +31,14 @@
     "maven"
   ],
   "author": "Vlaamse Overheid, Departement omgeving",
-  "license": "ISC",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milieuinfo/codelijst-luchtzuiveringssysteem.git"
+  },
   "dependencies": {
     "@milieuinfo/maven-metadata-generator-npm": "^0.7.8",
     "@zazuko/env-node": "^1.0.2",
-    "child_process": "^1.0.2",
     "csv-parser": "^3.2.0",
     "dotenv": "^16.4.5",
     "js-yaml": "^4.1.0"
