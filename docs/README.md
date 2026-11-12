@@ -15,7 +15,7 @@ kunnen gebruiken.
 
 ## In het kort
 
-```
+```text
  src/source/codelijst-source.csv  ─┐
  src/source/context.json           │   pnpm run create_skos
  src/source/config.yml             ├──────────────────────────►  src/main/resources/.../conceptscheme/luchtzuiveringssysteem/
@@ -77,6 +77,9 @@ Alle commando's draai je vanuit de root van de repository.
 | `pnpm run validate_history`      | Zelfde controle, plus een rapport van elke release t.o.v. de vorige (`0.0.1 → … → current`)                                                                          | git-tags                   |
 | `pnpm run create_changelog`      | Zet de wijzigingen t.o.v. de vorige release-tag in de sectie *Volgende versie* van `CHANGELOG.md` (met `--version` in een sectie voor die versie)                    | git-tags                   |
 | `pnpm run create_changelog_full` | Bouwt `CHANGELOG.md` opnieuw op uit alle release-tags, met de huidige bestanden als *Volgende versie* (met `--version` als die versie: zo doet Jenkins het)          | git-tags                   |
+| `pnpm run lint`                  | Controleert alle JavaScript en Markdown met ESLint (`lint:fix` herstelt wat automatisch kan)                                                                         | —                          |
+| `pnpm run format`                | Formatteert JavaScript en configuratiebestanden met Prettier (`format:check` controleert enkel)                                                                      | —                          |
+| `pnpm run check`                 | `lint` en `format:check` samen (zo doet Jenkins het)                                                                                                                 | —                          |
 | `mvn verify`                     | Volledige build: installeert Node/pnpm in `target/`, draait `create_skos_only` en `create_metadata`, bouwt de jar                                                    | interne Maven-repositories |
 
 Opties:
@@ -111,6 +114,11 @@ Ook `CHANGELOG.md` werkt Jenkins dan bij; zie [Build en release](build-en-releas
 ## Afspraken
 
 - Opmaak volgt [`.editorconfig`](../.editorconfig). Zorg dat je editor dat bestand respecteert.
+- JavaScript wordt geformatteerd met Prettier (`.prettierrc.json`) en gecontroleerd met ESLint
+  (`eslint.config.js`), samen met de Markdown-bestanden (lege links, codeblokken zonder taal, ...).
+  ESLint bewaakt ook enkele afspraken: geen `process.exit()`, enkel packages uit `package.json`
+  importeren, git enkel via `src/utils/git.js`. Draai `pnpm run format` en `pnpm run check` vóór je commit: Jenkins faalt
+  anders.
 - Gegenereerde bestanden pas je nooit met de hand aan.
 - Credentials (`.env`, `setenv*.js`) staan in `.gitignore` en horen niet in git, ook niet in deze docs.
 - Richtlijnen voor AI coding agents staan in [`AGENTS.md`](../AGENTS.md).

@@ -5,6 +5,9 @@
   "description": "",
   "main": "src/main/nodejs/01_codelijst_skos_from_csv.js",
   "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=26.10.0"
+  },
   "scripts": {
     "create_skos": "pnpm run create_skos_only && pnpm run create_changelog",
     "create_skos_only": "cd src && node 01_codelijst_skos_from_csv.js",
@@ -12,7 +15,12 @@
     "validate_release": "cd src && node 03_validate_against_previous_release.js",
     "validate_history": "cd src && node 03_validate_against_previous_release.js --history",
     "create_changelog": "cd src && node 04_create_changelog.js",
-    "create_changelog_full": "cd src && node 04_create_changelog.js --full"
+    "create_changelog_full": "cd src && node 04_create_changelog.js --full",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm run lint && pnpm run format:check"
   },
   "keywords": [
     "milieuinfo",
@@ -36,5 +44,14 @@
     "overrides": {
       "@rdfjs/types": "^2.0.1"
     }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/markdown": "^8.0.3",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^18.5.0",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1"
   }
 }

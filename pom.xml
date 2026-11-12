@@ -96,6 +96,18 @@
           </execution>
           <execution>
             <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
+                 'frontend:pnpm@code-quality' (ESLint + Prettier-controle) -->
+            <id>code-quality</id>
+            <phase>none</phase>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run check</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
                  'frontend:pnpm@validate-previous-release', zodat node in de Maven-container draait -->
             <id>validate-previous-release</id>
             <phase>none</phase>

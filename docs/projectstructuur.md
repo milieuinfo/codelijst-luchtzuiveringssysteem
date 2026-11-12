@@ -37,6 +37,8 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `package.json`                                                                                     | ★ bron                       | jij                                                                     | pnpm                                                     |   ja   |    nee    |
 | `pnpm-lock.yaml`                                                                                   | ⚙ gegenereerd                | pnpm                                                                    | pnpm                                                     |   ja   |    nee    |
 | `Jenkinsfile.groovy`                                                                               | ★ bron                       | jij                                                                     | Jenkins                                                  |   ja   |    nee    |
+| `eslint.config.js`                                                                                 | ★ bron                       | jij                                                                     | `pnpm run lint`                                          |   ja   |    nee    |
+| `.prettierrc.json`, `.prettierignore`                                                              | ★ bron                       | jij                                                                     | `pnpm run format`                                        |   ja   |    nee    |
 | `node_modules/`                                                                                    | ⚙ gegenereerd                | pnpm                                                                    | de scripts (generator, standaard N3-regels, DCAT-shapes) |  nee   |    nee    |
 | `target/`                                                                                          | ⚙ gegenereerd                | Maven                                                                   | —                                                        |  nee   | is de jar |
 
@@ -52,11 +54,14 @@ Twee dingen vallen op:
 
 ## Overzicht
 
-```
+```text
 codelijst-luchtzuiveringssysteem/
 ├── package.json, pnpm-lock.yaml     Node.js-dependencies en de npm scripts
 ├── pom.xml                          Maven-build: installeert Node/pnpm en draait de scripts
 ├── Jenkinsfile.groovy               CI/CD-pipeline
+├── eslint.config.js                 ESLint-regels voor de JavaScript
+├── .prettierrc.json                 Prettier-opmaak
+├── .prettierignore                  wat Prettier overslaat
 ├── CHANGELOG.md                     ⚙ wijzigingen per release (create_changelog)
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS
@@ -245,7 +250,7 @@ opnieuw en faalt als het resultaat afwijkt van wat in git staat.
 
 `pnpm run create_metadata` schrijft naar `temp/`, een map die in `.gitignore` staat:
 
-```
+```text
 temp/be/vlaanderen/omgeving/data/id/
 ├── dataset/codelijst-luchtzuiveringssysteem/
 │   ├── dataset.ttl          DCAT-beschrijving van de versie die nu gebouwd wordt

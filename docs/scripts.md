@@ -152,7 +152,7 @@ Bij een SHACL-fout of een verwijdering die niet toegestaan is, stopt het script 
 Wil je echt iets verwijderen, zet het dan in `src/source/toegestane-verwijderingen.txt`. Eén regel per
 verwijdering, met IRI's als `<...>` of als CURIE uit `config.yml`:
 
-```
+```text
 lzs-status:gereinigd                          alle triples van dit concept, en verwijzingen ernaar
 lzs-param-norm:_1 lzs-vocab:technischefiche   alle waarden van dit predicaat bij dit concept
 <https://...> <https://...> "waarde"@nl .     precies deze triple (N-Triples)

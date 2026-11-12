@@ -36,6 +36,8 @@ Sources (edit these):
 | `src/utils/markdown.js` | Generic: `escapeMarkdown`, `table` (padded, aligned) |
 | `src/utils/console.js` | Generic console output (see Utils) |
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary + SHACL shapes (AP constraints) |
+| `eslint.config.js` | ESLint flat config: JS (recommended, `eslint-plugin-n`, convention rules, `eslint-config-prettier` last) + Markdown (`@eslint/markdown`, GFM; `CHANGELOG.md` ignored) |
+| `.prettierrc.json`, `.prettierignore` | Prettier: JS + config files only; md, `src/source/`, `src/main/resources/` ignored |
 | `src/main/resources/be/vlaanderen/omgeving/lzs/data/id/graph/*.json` | Published context/prefix copies for consumers; hand-maintained, read by no script |
 
 `src/main/resources/` mixes sources and output; only `data/id/conceptscheme/` is generated.
@@ -59,6 +61,9 @@ pnpm run validate_release       # SHACL + fail on info removed vs. previous rele
 pnpm run validate_history       # same + report of every release vs. its predecessor (old removals: report only)
 pnpm run create_changelog       # add/replace CHANGELOG.md section 'Volgende versie' (vs. latest tag); --version/VERSION: section for that version instead
 pnpm run create_changelog_full  # rebuild CHANGELOG.md from all tags + current files as 'Volgende versie', or with --version/VERSION as that version (Jenkins at release: no 'Volgende versie')
+pnpm run lint                   # ESLint on JS + Markdown (lint:fix to autofix)
+pnpm run format                 # Prettier write (format:check to check only)
+pnpm run check                  # lint + format:check (what Jenkins runs)
 mvn verify                      # full build: Node/pnpm in target/, both scripts, jar
 ```
 
@@ -117,14 +122,15 @@ File names:
 
 JavaScript:
 - ES modules (`"type": "module"`); new files start with `'use strict';` (like `01_…`, `variables.js`).
-- 4 spaces, single quotes, semicolons, camelCase for new names. Existing code mixes camelCase and snake_case (`skosOptions`, `frame_skos_prefixes`): don't rename.
+- Prettier formats, ESLint checks: run `pnpm run format` and `pnpm run check` before committing; Jenkins (stage *Codekwaliteit*) fails otherwise. Don't disable rules inline without reason.
+- 4 spaces, single quotes, semicolons, printWidth 120, camelCase for new names. Existing code mixes camelCase and snake_case (`skosOptions`, `frame_skos_prefixes`): don't rename.
 - New code: Promise chains (`Promise.resolve().then(...)`), no top-level `await` (`02_metadata.js`, `variables.js` keep theirs unless asked).
 - New modules export inline (`export const`/`export function`); `variables.js` keeps its export list.
-- Import only packages in `package.json` (pnpm strict: e.g. `rdf-validate-shacl` from the generator is not importable). Importing files from the generator's `src/` is fine (`variables.js` does; `03_…` uses `src/utils/shacl_validation.js`).
-- On failure set `process.exitCode = 1`, never `process.exit()` (flushes output).
+- Import only packages in `package.json` (`n/no-extraneous-import`) (pnpm strict: e.g. `rdf-validate-shacl` from the generator is not importable). Importing files from the generator's `src/` is fine (`variables.js` does; `03_…` uses `src/utils/shacl_validation.js`).
+- On failure set `process.exitCode = 1`, never `process.exit()` (flushes output; `n/no-process-exit`).
 
 Utils:
-- **Git:** never call git directly from a script. `git.js`: one function per command (`show`, `tag`, `mergeBase`, `commit`, ...), CLI arguments plus optional options object last (`{ cwd }`), returns Promise of stdout; add commands with `command('name')`. Combining/parsing logic -> `git-utils.js`.
+- **Git:** never call git directly from a script (`no-restricted-imports` bans `child_process` outside `git.js`). `git.js`: one function per command (`show`, `tag`, `mergeBase`, `commit`, ...), CLI arguments plus optional options object last (`{ cwd }`), returns Promise of stdout; add commands with `command('name')`. Combining/parsing logic -> `git-utils.js`.
 - **Console:** use `console.js`. `print.success`/`error`/`warning`/`info` prefix ✔/✖/⚠/ℹ; errors and warnings to stderr. `style`: chainable colours (`style.red.bold(...)`); `symbol`: `→`, `•`, ...
 - **Colours:** only when stdout is a TTY; `NO_COLOR` off (wins), `FORCE_COLOR` on. Jenkins logs are plain text with symbols; don't set `FORCE_COLOR` in the Jenkinsfile unless AnsiColor is known installed.
 - Generator lines (e.g. `Validation succeeded.`) can't be changed from this repo.

@@ -16,8 +16,11 @@ het volgende:
 | `create skos`           | `pnpm run create_skos_only` (zonder changelog, die heeft git-tags nodig)                     |
 | `create metadata`       | `pnpm run create_metadata`                                                                   |
 
-Al deze stappen hangen standaard aan de fase `generate-resources`. Daarna kopieert Maven twee
-resource-mappen naar `target/classes/`:
+Al deze stappen hangen standaard aan de fase `generate-resources`. Daarnaast zijn er drie executions
+zonder fase, die enkel Jenkins expliciet aanroept: `code-quality` (`pnpm run check`),
+`validate-previous-release` en `create-changelog`.
+
+Na de stappen in `generate-resources` kopieert Maven twee resource-mappen naar `target/classes/`:
 
 - `src/main/resources/` — de SKOS-export, de ontologie en de gepubliceerde context
 - `temp/` — de DCAT-metadata en het ODCS data contract
@@ -56,6 +59,13 @@ De oplossing: `pnpm install --frozen-lockfile`, `pnpm run create_skos`, en het r
 
 Deze controle gebeurt vóór er een release-tag gemaakt wordt. Zo bevat elke tag gegarandeerd
 SKOS-bestanden die overeenkomen met de bron.
+
+### Codekwaliteit
+
+Daarna draait Jenkins `pnpm run check` (Maven-execution `code-quality`): ESLint op de JavaScript en
+de Markdown, en de Prettier-controle op de JavaScript. De build faalt bij een ESLint-fout of een
+bestand dat niet volgens Prettier geformatteerd is. Lokaal los je dat op met `pnpm run format` en
+`pnpm run lint:fix`; wat overblijft, pas je met de hand aan.
 
 ### Vergelijking met vorige release
 
