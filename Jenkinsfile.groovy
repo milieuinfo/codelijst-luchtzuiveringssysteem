@@ -58,8 +58,8 @@ pipeline {
             }
         }
         stage("Codekwaliteit") {
-            // ESLint en de Prettier-controle op de JavaScript (pnpm run check). Draait na de vorige
-            // stap, zodat Node en de dependencies al in target/ staan.
+            // pnpm run check: ESLint, de Prettier-controle en de Vitest-tests met coverage (coverage/lcov.info,
+            // gebruikt door de Sonar-scan). Draait na de vorige stap, zodat Node en de dependencies al in target/ staan.
             when {
                 expression { git.notSkipCi() }
             }

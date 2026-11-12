@@ -1,3 +1,4 @@
+'use strict';
 // Genereert de codelijst opnieuw uit de CSV, met de echte generator, naar een tijdelijke map en
 // vergelijkt elk bestand byte voor byte met de gecommitte versie (zoals Jenkins doet). Zo faalt
 // een dependency-update die de generatie breekt of de output verandert.

@@ -1,10 +1,10 @@
+'use strict';
 // Hulpfuncties voor tests op de echte codelijst: deterministisch gekozen concepten en kopieën van de
-// triples met een bewuste wijziging (concept verwijderd, waarde verwijderd of gewijzigd, concept nieuw).
+// triples met een bewuste wijziging (concept verwijderd, waarde verwijderd of gewijzigd).
 import rdf from '@zazuko/env-node';
 import { leesHuidig } from '../src/utils/releases.js';
 
 export const SKOS = 'http://www.w3.org/2004/02/skos/core#';
-const RDF_TYPE = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
 
 export const huidig = () => leesHuidig();
 
@@ -39,15 +39,3 @@ export const gewijzigd = (triples, q, nieuweWaarde) => [
     ...zonder(triples, q),
     rdf.quad(q.subject, q.predicate, rdf.literal(nieuweWaarde, q.object.language || undefined)),
 ];
-
-/** Met een nieuw concept in hetzelfde schema als het gegeven concept. */
-export function metNieuwConcept(triples, naast, iri, label) {
-    const schema = triples.find((q) => q.subject.equals(naast) && q.predicate.value === `${SKOS}inScheme`).object;
-    const s = rdf.namedNode(iri);
-    return [
-        ...triples,
-        rdf.quad(s, rdf.namedNode(RDF_TYPE), rdf.namedNode(`${SKOS}Concept`)),
-        rdf.quad(s, rdf.namedNode(`${SKOS}prefLabel`), rdf.literal(label, 'nl')),
-        rdf.quad(s, rdf.namedNode(`${SKOS}inScheme`), schema),
-    ];
-}

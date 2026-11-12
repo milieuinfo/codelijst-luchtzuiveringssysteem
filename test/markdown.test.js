@@ -1,3 +1,4 @@
+'use strict';
 import { describe, expect, it } from 'vitest';
 import { escapeMarkdown, table } from '../src/utils/markdown.js';
 

@@ -14,5 +14,10 @@ import { pathToFileURL } from 'node:url';
 export function isMainModule(moduleUrl) {
     const script = process.argv[1];
     if (!script) return false;
-    return moduleUrl === pathToFileURL(fs.realpathSync(script)).href;
+    try {
+        return moduleUrl === pathToFileURL(fs.realpathSync(script)).href;
+    } catch {
+        // argv[1] is not an existing file (e.g. node -e with extra arguments): not this module
+        return false;
+    }
 }

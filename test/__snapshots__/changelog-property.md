@@ -7,10 +7,11 @@
 |     | Property                   | Wijziging                               |
 | --- | -------------------------- | --------------------------------------- |
 | 🆕  | `lzs-vocab:nieuweProperty` | nieuwe property: 1 waarde bij 1 concept |
+| 🆕  | `skos:altLabel`            | nieuwe property: 1 waarde bij 1 concept |
 
-### Conceptschema dataleverancier status (`conceptscheme:dataleverancierstatus`)
+### Testschema (`conceptscheme:test`)
 
-|     | Concept                     | Label       | Wijziging                       |
-| --- | --------------------------- | ----------- | ------------------------------- |
-| ➕  | `lzs-dl-status:gevalideerd` | Gevalideerd | `lzs-vocab:nieuweProperty`: "x" |
-| ➕  |                             |             | `skos:altLabel`: "Ander label"  |
+|     | Concept      | Label     | Wijziging                       |
+| --- | ------------ | --------- | ------------------------------- |
+| ➕  | `lzs-type:d` | Systeem D | `lzs-vocab:nieuweProperty`: "x" |
+| ➕  |              |           | `skos:altLabel`: "Ander label"  |

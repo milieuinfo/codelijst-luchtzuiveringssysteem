@@ -1,3 +1,4 @@
+'use strict';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as git from '../src/utils/git.js';
 import {

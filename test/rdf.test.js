@@ -1,3 +1,4 @@
+'use strict';
 import { describe, expect, it } from 'vitest';
 import { groupBy, parseNTriples, shorten, shortenIri, toNT, tripleKey } from '../src/utils/rdf.js';
 

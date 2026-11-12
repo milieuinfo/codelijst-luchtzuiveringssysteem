@@ -144,6 +144,9 @@ Een nieuw regelbestand moet je ook toevoegen onder `skos.rules` in `config.yml`.
 
 - [ ] `pnpm run create_skos` draait zonder fouten
 - [ ] `pnpm run validate:release` draait zonder fouten (bewuste verwijderingen staan in `toegestane-verwijderingen.txt`)
+- [ ] `pnpm run check` draait zonder fouten. Pas je `config.yml`, de kolommen of de SHACL-shapes aan,
+      dan veranderen de verwachte `config.json` en `odcs.yaml` in `test/__snapshots__/`: werk ze bij met
+      `pnpm run test -u` en bekijk de diff. Een gewone wijziging aan concepten raakt de snapshots niet.
 - [ ] de gegenereerde bestanden zitten mee in de commit
 - [ ] geen onbedoelde wijzigingen in andere bestanden (opmaak, line endings)
 - [ ] commit message in het Nederlands, liefst met ticketnummer (`ARMOS-123 Nieuwe systeemstatus in onderhoud`)

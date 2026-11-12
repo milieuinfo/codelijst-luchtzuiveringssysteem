@@ -96,7 +96,7 @@
           </execution>
           <execution>
             <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
-                 'frontend:pnpm@code-quality' (ESLint + Prettier-controle) -->
+                 'frontend:pnpm@code-quality' (pnpm run check: ESLint, Prettier, Vitest met coverage) -->
             <id>code-quality</id>
             <phase>none</phase>
             <goals>

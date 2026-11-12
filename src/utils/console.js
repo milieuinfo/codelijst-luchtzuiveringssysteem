@@ -76,6 +76,8 @@ export const print = {
     error: (text) => console.error(`${style.red(symbol.error)} ${style.red.bold(text)}`),
     /** Indented detail line below a message; `level` is the number of indents. */
     detail: (text, level = 1) => console.log(`${indent(level)}${text}`),
+    /** Like detail, but to stderr: for the explanation below an error or warning. */
+    errorDetail: (text, level = 1) => console.error(`${indent(level)}${text}`),
     /** Aligned 'key  value' lines, e.g. { File: 'x.nt', Release: 'v1.0' }. */
     keyValue: (pairs, level = 1) => {
         const width = Math.max(...Object.keys(pairs).map((key) => key.length));

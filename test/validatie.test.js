@@ -1,3 +1,4 @@
+'use strict';
 // De vergelijking met de vorige release (03_validate_against_previous_release.js): deelt verdwenen
 // triples correct in, zodat een dependency-update de controle niet ongemerkt uitschakelt.
 import { beforeAll, describe, expect, it } from 'vitest';

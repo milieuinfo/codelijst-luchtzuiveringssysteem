@@ -72,9 +72,10 @@ De tests zijn er vooral om dependencies veilig te kunnen updaten:
 - de codelijst wordt opnieuw gegenereerd en byte voor byte vergeleken met de gecommitte bestanden;
 - de SHACL-validatie, de ingelezen `config.yml` en het ODCS data contract worden vergeleken met de
   verwachte uitvoer in `test/__snapshots__/`;
-- de vergelijking met de vorige release (`03_…`) en de changelog (`04_…`) worden getest op de echte
-  codelijst met bewuste wijzigingen: een verwijderd concept, een verwijderde of gewijzigde waarde, een
-  nieuw concept of een nieuwe property;
+- de vergelijking met de vorige release (`03_…`) wordt getest op de echte codelijst met bewuste
+  wijzigingen (een verwijderd concept, een verwijderde of gewijzigde waarde);
+- de changelog (`04_…`) wordt getest op een kleine, vaste codelijst: die snapshots veranderen dus niet
+  bij een wijziging aan de echte codelijst;
 - een test bewaakt dat `@zazuko/env-node` dezelfde versie heeft als in de generator: die aanvaardt
   enkel datasets van zijn eigen versie.
 
@@ -83,7 +84,8 @@ bewust (bv. een aangepaste `config.yml`), werk de snapshots dan bij met `pnpm ru
 bekijk de diff.
 
 `pnpm run test` maakt ook een coverage-rapport in `coverage/`. Sonar leest `coverage/lcov.info` in
-(zie `sonar-project.properties`); de HTML-versie staat in `coverage/lcov-report/index.html`.
+(zie `sonar-project.properties`, dat ook `test/`, de configuratiebestanden en `99_deploy_latest.js`
+buiten de coverage houdt); de HTML-versie staat in `coverage/lcov-report/index.html`.
 
 ### Vergelijking met vorige release
 

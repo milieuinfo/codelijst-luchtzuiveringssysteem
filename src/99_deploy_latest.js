@@ -12,12 +12,12 @@ import(setenv)
         const missing = error?.code === 'ERR_MODULE_NOT_FOUND' && error.url === setenv;
         if (missing) {
             print.error('Missing src/utils/setenv.js (credentials, git-ignored)');
-            print.detail(
+            print.errorDetail(
                 `${style.gray(symbol.arrow)} see ${style.cyan('docs/scripts.md')}, section 99_deploy_latest.js`,
             );
         } else {
             print.error('Deploy failed');
-            print.detail(style.gray(error?.message ?? error));
+            print.errorDetail(style.gray(error?.message ?? error));
         }
         process.exitCode = 1;
     });
