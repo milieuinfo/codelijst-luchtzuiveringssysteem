@@ -83,9 +83,9 @@ Faalt een snapshot na een update, dan is de uitvoer veranderd: zoek uit waarom. 
 bewust (bv. een aangepaste `config.yml`), werk de snapshots dan bij met `pnpm run test -u` en
 bekijk de diff.
 
-`pnpm run test` maakt ook een coverage-rapport in `coverage/`. Sonar leest `coverage/lcov.info` in
-(zie `sonar-project.properties`, dat ook `test/`, de configuratiebestanden en `99_deploy_latest.js`
-buiten de coverage houdt); de HTML-versie staat in `coverage/lcov-report/index.html`.
+`pnpm run test` maakt ook een coverage-rapport in `coverage/`. De Sonar-scan leest `coverage/lcov.info`
+in (zie [De primary branch](#de-primary-branch-main)); de HTML-versie staat in
+`coverage/lcov-report/index.html`.
 
 ### Vergelijking met vorige release
 
@@ -106,9 +106,13 @@ publiceren, start de build dan met de parameter `DEPLOY` aan, dan wordt het `mvn
 
 Op `main` wordt elke build met `mvn deploy` als snapshot gepubliceerd, gevolgd door een Sonar-scan.
 Die scan (`sonar.scanMaven` uit de Cumulus-library) draait de `sonar-scanner` CLI, niet de Maven-plugin:
-instellingen in `pom.xml` worden dus niet gelezen. Extra instellingen staan in `sonar-project.properties`
-in de root; wat `scanMaven` zelf met `-D` meegeeft (zoals `sonar.exclusions`) heeft voorrang. Daar staat
-nu enkel dat regel S7785 (top-level await) genegeerd wordt: de scripts gebruiken bewust Promise chains.
+instellingen in `pom.xml` worden dus niet gelezen, en ook een `sonar-project.properties` wordt niet
+opgepikt. Alle extra instellingen gaan daarom als `-D` mee via `extraArgs` in `Jenkinsfile.groovy`:
+
+- `sonar.javascript.lcov.reportPaths`: de Vitest-coverage uit de stage Codekwaliteit;
+- `sonar.test.inclusions`: `test/` is testcode, geen productiecode (de library-default kent enkel Java);
+- `sonar.coverage.exclusions`: de configuratiebestanden en `99_deploy_latest.js` tellen niet mee;
+- regel S7785 (top-level await) wordt genegeerd: de scripts gebruiken bewust Promise chains.
 
 Een **release** start je manueel in Jenkins met de release-parameters. De pipeline:
 

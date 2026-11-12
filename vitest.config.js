@@ -13,7 +13,7 @@ export default defineConfig({
         testTimeout: 60000,
         hookTimeout: 120000,
         // Coverage van de code in src/ (pnpm run test zet ze aan). coverage/lcov.info leest Sonar in
-        // (zie sonar-project.properties); de HTML-versie staat in coverage/lcov-report/index.html.
+        // (zie de stage Sonar scan in Jenkinsfile.groovy); de HTML-versie staat in coverage/lcov-report/index.html.
         coverage: {
             provider: 'v8',
             include: ['src/**/*.js'],

@@ -42,7 +42,7 @@ Sources (edit these):
 | `.prettierrc.json`, `.prettierignore` | Prettier on JS + config files; not md, `src/source/`, `src/main/resources/`, snapshots |
 | `vitest.config.js`, `test/` | See Tests |
 | `pnpm-workspace.yaml` | pnpm settings (pnpm 11 ignores `pnpm` in `package.json`): `overrides` (`@rdfjs/types`), `saveExact`, `allowBuilds` (`classic-level: false`: ships prebuilds) |
-| `sonar-project.properties` | Jenkins Sonar scan extras (`sonar.scanMaven` runs `sonar-scanner` CLI: `pom.xml` properties ignored, its `-D` args win): ignore S7785 (top-level await), lcov path, coverage exclusions (`test/`, `*.config.js`, `99_…`) |
+| `Jenkinsfile.groovy` | Sonar settings as `-D` in `sonar.scanMaven` `extraArgs` (standalone `sonar-scanner`: `pom.xml`, `sonar-project.properties` unused): lcov path, `test/` as tests, coverage exclusions (`*.config.js`, `99_…`), ignore S7785 |
 
 `src/main/resources/` mixes sources and output; only `data/id/conceptscheme/` is generated.
 

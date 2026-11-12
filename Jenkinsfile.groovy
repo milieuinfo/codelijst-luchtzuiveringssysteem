@@ -181,9 +181,24 @@ pipeline {
                 stage("Sonar scan") {
                     steps {
                         script {
+                            // sonar.scanMaven draait de standalone sonar-scanner: instellingen in pom.xml of
+                            // sonar-project.properties worden niet gebruikt, alles gaat hier via -D mee.
                             sonar.scanMaven([
                                 projectKey        : env.SONAR_PROJECT_KEY,
-                                tolerateBadQuality: true
+                                tolerateBadQuality: true,
+                                extraArgs         : [
+                                    // Vitest-coverage uit de stage Codekwaliteit (pnpm run check)
+                                    "-Dsonar.javascript.lcov.reportPaths=coverage/lcov.info",
+                                    // Override van de library-default (enkel Java): test/ is testcode, geen productiecode
+                                    "-Dsonar.test.inclusions='**/src/test/java/**/*.java,test/**'",
+                                    // Bewust niet getest (deploy met credentials) of geen productiecode
+                                    "-Dsonar.coverage.exclusions='**/*.config.js,src/99_deploy_latest.js'",
+                                    // S7785 (top-level await i.p.v. een Promise chain) negeren: de scripts gebruiken
+                                    // bewust Promise chains met process.exitCode bij een fout (zie AGENTS.md)
+                                    "-Dsonar.issue.ignore.multicriteria=e1",
+                                    "-Dsonar.issue.ignore.multicriteria.e1.ruleKey=javascript:S7785",
+                                    "-Dsonar.issue.ignore.multicriteria.e1.resourceKey='**/*.js'",
+                                ].join(' ')
                             ])
                         }
                     }
