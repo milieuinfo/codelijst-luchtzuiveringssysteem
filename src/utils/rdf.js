@@ -18,8 +18,8 @@ const XSD_STRING = 'http://www.w3.org/2001/XMLSchema#string';
 export function parseNTriples(text) {
     return Promise.resolve()
         .then(() => rdf.formats.parsers.import('application/n-triples', Readable.from([text])))
-        .then(stream => rdf.dataset().import(stream))
-        .then(dataset => [...dataset]);
+        .then((stream) => rdf.dataset().import(stream))
+        .then((dataset) => [...dataset]);
 }
 
 /**

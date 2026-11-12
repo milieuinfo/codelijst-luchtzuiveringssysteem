@@ -16,8 +16,11 @@ het volgende:
 | `create skos`           | `pnpm run create_skos_only` (zonder changelog, die heeft git-tags nodig)                     |
 | `create metadata`       | `pnpm run create_metadata`                                                                   |
 
-Al deze stappen hangen standaard aan de fase `generate-resources`. Daarna kopieert Maven twee
-resource-mappen naar `target/classes/`:
+Al deze stappen hangen standaard aan de fase `generate-resources`. Daarnaast zijn er drie executions
+zonder fase, die enkel Jenkins expliciet aanroept: `code-quality` (`pnpm run check`: lint, opmaak en
+tests), `validate-previous-release` en `create-changelog`.
+
+Na de stappen in `generate-resources` kopieert Maven twee resource-mappen naar `target/classes/`:
 
 - `src/main/resources/` — de SKOS-export, de ontologie en de gepubliceerde context
 - `temp/` — de DCAT-metadata en het ODCS data contract
@@ -57,6 +60,33 @@ De oplossing: `pnpm install --frozen-lockfile`, `pnpm run create_skos`, en het r
 Deze controle gebeurt vóór er een release-tag gemaakt wordt. Zo bevat elke tag gegarandeerd
 SKOS-bestanden die overeenkomen met de bron.
 
+### Codekwaliteit
+
+Daarna draait Jenkins `pnpm run check` (Maven-execution `code-quality`): ESLint op de JavaScript en
+de Markdown, de Prettier-controle op de JavaScript en de Vitest-tests in `test/`. De build faalt bij
+een ESLint-fout, een bestand dat niet volgens Prettier geformatteerd is of een falende test. Lokaal
+los je dat op met `pnpm run format` en `pnpm run lint:fix`; wat overblijft, pas je met de hand aan.
+
+De tests zijn er vooral om dependencies veilig te kunnen updaten:
+
+- de codelijst wordt opnieuw gegenereerd en byte voor byte vergeleken met de gecommitte bestanden;
+- de SHACL-validatie, de ingelezen `config.yml` en het ODCS data contract worden vergeleken met de
+  verwachte uitvoer in `test/__snapshots__/`;
+- de vergelijking met de vorige release (`03_…`) wordt getest op de echte codelijst met bewuste
+  wijzigingen (een verwijderd concept, een verwijderde of gewijzigde waarde);
+- de changelog (`04_…`) wordt getest op een kleine, vaste codelijst: die snapshots veranderen dus niet
+  bij een wijziging aan de echte codelijst;
+- een test bewaakt dat `@zazuko/env-node` dezelfde versie heeft als in de generator: die aanvaardt
+  enkel datasets van zijn eigen versie.
+
+Faalt een snapshot na een update, dan is de uitvoer veranderd: zoek uit waarom. Is de wijziging
+bewust (bv. een aangepaste `config.yml`), werk de snapshots dan bij met `pnpm run test -u` en
+bekijk de diff.
+
+`pnpm run test` maakt ook een coverage-rapport in `coverage/`. Sonar leest `coverage/lcov.info` in
+(zie `sonar-project.properties`, dat ook `test/`, de configuratiebestanden en `99_deploy_latest.js`
+buiten de coverage houdt); de HTML-versie staat in `coverage/lcov-report/index.html`.
+
 ### Vergelijking met vorige release
 
 Daarna haalt Jenkins de git-tags op en draait `03_validate_against_previous_release.js` met de Node.js uit
@@ -75,6 +105,10 @@ publiceren, start de build dan met de parameter `DEPLOY` aan, dan wordt het `mvn
 ### De primary branch (`main`)
 
 Op `main` wordt elke build met `mvn deploy` als snapshot gepubliceerd, gevolgd door een Sonar-scan.
+Die scan (`sonar.scanMaven` uit de Cumulus-library) draait de `sonar-scanner` CLI, niet de Maven-plugin:
+instellingen in `pom.xml` worden dus niet gelezen. Extra instellingen staan in `sonar-project.properties`
+in de root; wat `scanMaven` zelf met `-D` meegeeft (zoals `sonar.exclusions`) heeft voorrang. Daar staat
+nu enkel dat regel S7785 (top-level await) genegeerd wordt: de scripts gebruiken bewust Promise chains.
 
 Een **release** start je manueel in Jenkins met de release-parameters. De pipeline:
 

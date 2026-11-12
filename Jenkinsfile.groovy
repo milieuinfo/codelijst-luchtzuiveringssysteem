@@ -57,6 +57,18 @@ pipeline {
                 }
             }
         }
+        stage("Codekwaliteit") {
+            // pnpm run check: ESLint, de Prettier-controle en de Vitest-tests met coverage (coverage/lcov.info,
+            // gebruikt door de Sonar-scan). Draait na de vorige stap, zodat Node en de dependencies al in target/ staan.
+            when {
+                expression { git.notSkipCi() }
+            }
+            steps {
+                script {
+                    maven.goal([goal: 'frontend:pnpm@code-quality'])
+                }
+            }
+        }
         stage("Vergelijking met vorige release") {
             // Valideert de gegenereerde SKOS tegen de AP-constraints en faalt als er t.o.v. de
             // vorige release-tag informatie verdwenen is (zie src/03_validate_against_previous_release.js).

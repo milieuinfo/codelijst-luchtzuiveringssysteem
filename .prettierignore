@@ -1,0 +1,11 @@
+# Prettier formatteert enkel JavaScript en de configuratiebestanden van het project.
+# Gegenereerde bestanden, data en documentatie blijven ongemoeid.
+node_modules/
+target/
+temp/
+validation*/
+pnpm-lock.yaml
+src/main/resources/
+src/source/
+*.md
+test/__snapshots__/

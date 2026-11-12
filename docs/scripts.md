@@ -25,6 +25,10 @@ Start je een script met de hand, doe dat dan ook vanuit `src/`. Anders kloppen d
 De nummering geeft de volgorde aan: `01` en `02` horen bij de build, `03` is een controle die Jenkins
 nadien draait (en die je ook lokaal kan draaien), `04` hoort bij een release, `99` is een manuele stap achteraf.
 
+`03_…` en `04_…` exporteren hun kernlogica (`vergelijk`, `leesRegel`, `sectie`) voor de tests in
+`test/`. Ze voeren enkel iets uit als ze als script gestart worden (`isMainModule` uit
+`utils/script.js`); een import doet niets.
+
 ## `utils/variables.js`
 
 Geen script, maar de lijm tussen de configuratie en de generator. Bij het importeren gebeurt het
@@ -120,9 +124,9 @@ geen invloed op de SKOS-bestanden.
 ## `03_validate_against_previous_release.js`
 
 ```bash
-pnpm run validate_release
-pnpm run validate_release --tag codelijst-luchtzuiveringssysteem-0.2.0   # andere baseline
-pnpm run validate_history                                                # alle releases, tag per tag
+pnpm run validate:release
+pnpm run validate:release --tag codelijst-luchtzuiveringssysteem-0.2.0   # andere baseline
+pnpm run validate:history                                                # alle releases, tag per tag
 ```
 
 Vergelijkt de gegenereerde codelijst met die van de vorige release. Zo kan er bij een release geen
@@ -152,7 +156,7 @@ Bij een SHACL-fout of een verwijdering die niet toegestaan is, stopt het script 
 Wil je echt iets verwijderen, zet het dan in `src/source/toegestane-verwijderingen.txt`. Eén regel per
 verwijdering, met IRI's als `<...>` of als CURIE uit `config.yml`:
 
-```
+```text
 lzs-status:gereinigd                          alle triples van dit concept, en verwijzingen ernaar
 lzs-param-norm:_1 lzs-vocab:technischefiche   alle waarden van dit predicaat bij dit concept
 <https://...> <https://...> "waarde"@nl .     precies deze triple (N-Triples)
@@ -162,9 +166,9 @@ Een verwijdering blijft een breaking change voor afnemers: vermeld ze in de PR. 
 verwijdering in de nieuwe tag. Het script meldt dan dat die regels geen effect meer hebben, en je
 mag ze weghalen.
 
-### Volledige geschiedenis: `validate_history`
+### Volledige geschiedenis: `validate:history`
 
-`pnpm run validate_history` (het script met `--history`) loopt alle releases af, telkens t.o.v. de
+`pnpm run validate:history` (het script met `--history`) loopt alle releases af, telkens t.o.v. de
 vorige: `0.0.1 → 0.0.2 → … → 0.2.1 → current`. Zo zie je in welke release er ooit informatie
 verdwenen is.
 
@@ -172,14 +176,14 @@ verdwenen is.
   wordt overgeslagen, met een waarschuwing.
 - Een stap zonder verwijderingen of wijzigingen is één regel (`✔ 0.2.0 → 0.2.1  952 → 952  +0  -0`).
   Bij de andere stappen staan de bevindingen eronder, met per lijst de eerste 5 items. Met
-  `pnpm run validate_history --verbose` zie je alles.
+  `pnpm run validate:history --verbose` zie je alles.
 - Op het einde volgt een samenvatting: hoeveel stappen in orde waren, enkel wijzigingen hadden of
   verwijderingen bevatten.
 - Verwijderingen in oudere releases worden **enkel gerapporteerd**. Ze zijn al gepubliceerd en
   `toegestane-verwijderingen.txt` geldt er niet voor. De exit code hangt, net als bij
-  `validate_release`, enkel af van de SHACL-validatie en de laatste stap (laatste tag → huidige bestanden).
+  `validate:release`, enkel af van de SHACL-validatie en de laatste stap (laatste tag → huidige bestanden).
 
-Dit is een manuele controle; Jenkins draait enkel `validate_release`.
+Dit is een manuele controle; Jenkins draait enkel `validate:release`.
 
 ### Hulpbestanden
 
@@ -293,6 +297,7 @@ De doelomgeving staat hard in het script (`const omgeving = 'pr'`). De servernaa
 
 Het script verwacht een lokaal bestand `src/utils/setenv.js` dat een functie `set_env(omgeving)` exporteert.
 Die functie zet de credentials voor de triple store als environment variables. Dat bestand bevat
-geheimen, staat in `.gitignore` en hoort nooit in git. Zonder dat bestand start het script niet.
+geheimen, staat in `.gitignore` en hoort nooit in git. Het script importeert het dynamisch: ontbreekt
+het, dan stopt het met een melding die naar deze sectie verwijst.
 
 Draai dit script enkel als je weet wat je doet: het overschrijft de graaf op een gedeelde server.

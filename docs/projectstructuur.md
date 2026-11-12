@@ -15,7 +15,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/source/config.yml`                                                                            | ★ bron                       | jij                                                                     | alle scripts                                             |   ja   |    nee    |
 | `src/source/context.json`                                                                          | ★ bron                       | jij                                                                     | `create_skos`, `create_metadata`, `create_odcs`          |   ja   |    nee    |
 | `src/source/prefix.json`                                                                           | ★ bron (referentie)          | jij                                                                     | geen enkel script                                        |   ja   |    nee    |
-| `src/source/toegestane-verwijderingen.txt`                                                         | ★ bron                       | jij                                                                     | `validate_release`                                       |   ja   |    nee    |
+| `src/source/toegestane-verwijderingen.txt`                                                         | ★ bron                       | jij                                                                     | `validate:release`                                       |   ja   |    nee    |
 | `src/n3/luchtzuivering-rules.n3`                                                                   | ★ bron                       | jij                                                                     | `create_skos`                                            |   ja   |    nee    |
 | `src/utils/variables.js`                                                                           | ★ bron (code)                | jij                                                                     | `01_…`, `02_…`, `03_…` en `04_…`                         |   ja   |    nee    |
 | `src/utils/git.js`                                                                                 | ★ bron (code)                | jij                                                                     | `utils/git-utils.js`                                     |   ja   |    nee    |
@@ -24,6 +24,8 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/utils/rdf.js`                                                                                 | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/console.js`                                                                             | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/markdown.js`                                                                            | ★ bron (code)                | jij                                                                     | `04_…`                                                   |   ja   |    nee    |
+| `src/utils/files.js`                                                                               | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/script.js`                                                                              | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl`          | ★ bron                       | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron                       | jij                                                                     | `create_skos` (SHACL), `create_odcs`                     |   ja   |    ja     |
 | `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json`                             | ★ bron (gepubliceerde kopie) | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
@@ -31,12 +33,19 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `temp/…/dataset/…/dataset.{ttl,jsonld}`                                                            | ⚙ gegenereerd                | `create_metadata`                                                       | afnemers                                                 |  nee   |    ja     |
 | `temp/…/dataset/…/dataset.odcs.yaml`                                                               | ⚙ gegenereerd                | `create_odcs`                                                           | afnemers                                                 |  nee   |    ja     |
 | `temp/…/catalog/…/catalog.{ttl,jsonld}`                                                            | ⚙ gegenereerd                | `create_metadata`                                                       | afnemers                                                 |  nee   |    ja     |
-| `validation/`                                                                                      | ⚙ gegenereerd                | SHACL-validatie (`create_skos`, `validate_release`), enkel bij een fout | jij, om de fout te vinden                                |  nee   |    nee    |
+| `validation/`                                                                                      | ⚙ gegenereerd                | SHACL-validatie (`create_skos`, `validate:release`), enkel bij een fout | jij, om de fout te vinden                                |  nee   |    nee    |
+| `coverage/`                                                                                        | ⚙ gegenereerd                | `pnpm run test`                                                         | Sonar, jij                                               |  nee   |    nee    |
 | `CHANGELOG.md`                                                                                     | ⚙ gegenereerd                | `create_changelog`, `create_changelog_full`                             | afnemers                                                 |   ja   |    nee    |
 | `pom.xml`                                                                                          | ★ bron                       | jij, de versie door de release-plugin                                   | Maven, `create_metadata`, `create_odcs`                  |   ja   |     —     |
 | `package.json`                                                                                     | ★ bron                       | jij                                                                     | pnpm                                                     |   ja   |    nee    |
 | `pnpm-lock.yaml`                                                                                   | ⚙ gegenereerd                | pnpm                                                                    | pnpm                                                     |   ja   |    nee    |
 | `Jenkinsfile.groovy`                                                                               | ★ bron                       | jij                                                                     | Jenkins                                                  |   ja   |    nee    |
+| `eslint.config.js`                                                                                 | ★ bron                       | jij                                                                     | `pnpm run lint`                                          |   ja   |    nee    |
+| `.prettierrc.json`, `.prettierignore`                                                              | ★ bron                       | jij                                                                     | `pnpm run format`                                        |   ja   |    nee    |
+| `vitest.config.js`, `test/`                                                                        | ★ bron (tests)               | jij                                                                     | `pnpm run test`                                          |   ja   |    nee    |
+| `test/__snapshots__/`                                                                              | ⚙ gegenereerd                | `pnpm run test -u`                                                      | `pnpm run test`                                          |   ja   |    nee    |
+| `pnpm-workspace.yaml`                                                                              | ★ bron                       | jij                                                                     | pnpm (overrides, exacte versies, build-scripts)          |   ja   |    nee    |
+| `sonar-project.properties`                                                                         | ★ bron                       | jij                                                                     | Sonar-scan in Jenkins                                    |   ja   |    nee    |
 | `node_modules/`                                                                                    | ⚙ gegenereerd                | pnpm                                                                    | de scripts (generator, standaard N3-regels, DCAT-shapes) |  nee   |    nee    |
 | `target/`                                                                                          | ⚙ gegenereerd                | Maven                                                                   | —                                                        |  nee   | is de jar |
 
@@ -52,11 +61,17 @@ Twee dingen vallen op:
 
 ## Overzicht
 
-```
+```text
 codelijst-luchtzuiveringssysteem/
 ├── package.json, pnpm-lock.yaml     Node.js-dependencies en de npm scripts
 ├── pom.xml                          Maven-build: installeert Node/pnpm en draait de scripts
 ├── Jenkinsfile.groovy               CI/CD-pipeline
+├── eslint.config.js                 ESLint-regels voor de JavaScript
+├── .prettierrc.json                 Prettier-opmaak
+├── .prettierignore                  wat Prettier overslaat
+├── sonar-project.properties         extra instellingen voor de Sonar-scan in Jenkins
+├── vitest.config.js, test/          Vitest-configuratie, de tests en hun verwachte uitvoer (__snapshots__)
+├── pnpm-workspace.yaml              pnpm-instellingen: overrides, exacte versies, build-scripts
 ├── CHANGELOG.md                     ⚙ wijzigingen per release (create_changelog)
 ├── src/
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS
@@ -70,6 +85,8 @@ codelijst-luchtzuiveringssysteem/
 │   ├── utils/releases.js                releases van de codelijst lezen (gedeeld door 03 en 04)
 │   ├── utils/rdf.js                     N-Triples parsen en termen schrijven
 │   ├── utils/markdown.js                Markdown: escapen, uitgelijnde tabellen
+│   ├── utils/files.js                   bestanden lezen met promises (ontbrekend bestand -> standaardwaarde)
+│   ├── utils/script.js                  isMainModule: script enkel uitvoeren als het gestart wordt
 │   ├── utils/console.js                 console-uitvoer met kleuren, vet en symbolen
 │   ├── source/                          ★ brondata
 │   │   ├── codelijst-source.csv
@@ -245,7 +262,7 @@ opnieuw en faalt als het resultaat afwijkt van wat in git staat.
 
 `pnpm run create_metadata` schrijft naar `temp/`, een map die in `.gitignore` staat:
 
-```
+```text
 temp/be/vlaanderen/omgeving/data/id/
 ├── dataset/codelijst-luchtzuiveringssysteem/
 │   ├── dataset.ttl          DCAT-beschrijving van de versie die nu gebouwd wordt

@@ -1,0 +1,615 @@
+apiVersion: v3.0.2
+kind: DataContract
+id: https://data.omgeving.vlaanderen.be/id/datacontract/codelijst-luchtzuiveringssysteem_<versie>_parquet
+name: Codelijsten ivm. luchtzuiveringssystemen voor stallen, geserialiseerd als parquet-formaat.
+version: <versie>
+status: draft
+domain: luchtzuiveringssystemen
+dataProduct: codelijst-luchtzuiveringssysteem
+description:
+  purpose: >-
+    Deze dataset bevat codelijsten i.v.m. luchtzuiveringssystemen voor stallen, gericht op de reductie van
+    stikstofuitstoot. De codelijsten hebben een onderlinge samenhang, bv. types van luchtzuiveringssystemen met
+    specifieke regels. De lijsten worden gebruikt bij een IOT-opzet, i.e. sensordata die aangeleverd worden voor de
+    monitoring van deze systemen. Deze monitoring is opgezet in het kader van het ARMOS-project.
+  usage: Codelijsten ivm. luchtzuiveringssystemen voor stallen, geserialiseerd als parquet bestand.
+  limitations: >-
+    Deze combinatie van codelijsten kwam tot stand in het kader van het ARMOS-project en is een representatie van de
+    logica en typering, die vervat is in regelgeving rond reductie van ammoniakemissie van stallen.
+tags:
+  - codelijst
+  - skos
+  - luchtzuiveringssystemen
+authoritativeDefinitions:
+  - type: odcs
+    url: https://bitol-io.github.io/open-data-contract-standard/v3.0.2/
+  - type: dcat:Dataset
+    url: https://data.omgeving.vlaanderen.be/id/dataset/codelijst-luchtzuiveringssysteem
+  - type: dcat:Distribution
+    url: https://data.omgeving.vlaanderen.be/id/distribution/codelijst-luchtzuiveringssysteem_<versie>_parquet
+  - type: dcat:Catalog
+    url: https://data.omgeving.vlaanderen.be/id/catalog/codelijst
+  - type: landingPage
+    url: https://data.omgeving.vlaanderen.be/doc/catalog/codelijst.html
+  - type: license
+    url: http://data.vlaanderen.be/id/licentie/modellicentie-gratis-hergebruik/v1.0
+  - type: applicationProfile
+    url: https://data.omgeving.vlaanderen.be/id/ontology/luchtzuiveringssysteem-ap-constraints
+servers:
+  - server: datasets
+    type: custom
+    location: >-
+      https://datasets.omgeving.vlaanderen.be/be.vlaanderen.omgeving.data.id.distribution.codelijst-luchtzuiveringssysteem.<versie>.luchtzuiveringssysteem.parquet
+    format: parquet
+    description: Parquet-distributie van be.vlaanderen.omgeving.data.id.graph:codelijst-luchtzuiveringssysteem:<versie>.
+support:
+  - channel: helpdesk
+    url: https://data.omgeving.vlaanderen.be/id/vcard/helpdesk
+slaProperties:
+  - property: frequency
+    value: http://publications.europa.eu/resource/authority/frequency/IRREG
+schema:
+  - name: luchtzuiveringssysteem
+    physicalName: luchtzuiveringssysteem.parquet
+    physicalType: table
+    logicalType: object
+    businessName: Dataset van codelijsten i.v.m. luchtzuiveringssystemen voor stallen, gericht op de reductie van stikstofuitstoot.
+    description: >-
+      Eén rij per bron uit de codelijst (concept, conceptschema, collectie, ...), geframed met de JSON-LD-context van de
+      codelijst.
+    quality:
+      - type: library
+        rule: rowCount
+        mustBeGreaterThan: 0
+        dimension: completeness
+        description: 'Bij generatie: 124 rijen.'
+    properties:
+      - name: id
+        physicalName: id
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        description: IRI van de beschreven bron.
+        required: true
+        unique: true
+        primaryKey: true
+        primaryKeyPosition: 1
+        quality:
+          - type: library
+            rule: duplicateCount
+            mustBe: 0
+            dimension: uniqueness
+      - name: _type
+        physicalName: _type
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        businessName: rdf type
+        description: Aanduiding dat een bron een instantie van een bepaalde klasse is.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/rdf_type
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+      - name: applicableUnit
+        physicalName: applicableUnit
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        description: Waarde van http://qudt.org/schema/qudt/applicableUnit.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://qudt.org/schema/qudt/applicableUnit
+        customProperties:
+          - property: rdfPredicate
+            value: http://qudt.org/schema/qudt/applicableUnit
+      - name: altLabel
+        physicalName: altLabel
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        businessName: alternatief label
+        description: Een alternatief lexicaal label voor een bepaalde bron.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#altLabel
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/altLabel
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#altLabel
+          - property: language
+            value: nl
+      - name: inScheme
+        physicalName: inScheme
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        businessName: is in schema
+        description: Drukt de relatie uit tussen een 'resource' en het schema dat het bevat.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#inScheme
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/inScheme
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#inScheme
+      - name: code
+        physicalName: code
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        businessName: notatie
+        description: >-
+          Een notatie, ook wel classificatiecode genoemd, is een reeks tekens zoals "PCB151" of "EtFOSA" die wordt
+          gebruikt om een luchtzuiveringssysteem op unieke wijze te identificeren binnen de context van dit schema.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#notation
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/notation
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#notation
+      - name: prefLabel
+        physicalName: prefLabel
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        businessName: voorkeurslabel
+        description: Het voorkeurslabel.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#prefLabel
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/conceptscheme_prefLabel
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#prefLabel
+          - property: language
+            value: nl
+      - name: topConceptOf
+        physicalName: topConceptOf
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        businessName: topconcept van
+        description: De relatie tussen een concept en het schema, waarvan het een topconcept is.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#topConceptOf
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/topConceptOf
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#topConceptOf
+      - name: dc_type
+        physicalName: dc_type
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        description: Waarde van http://purl.org/dc/elements/1.1/type.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://purl.org/dc/elements/1.1/type
+        customProperties:
+          - property: rdfPredicate
+            value: http://purl.org/dc/elements/1.1/type
+      - name: definition
+        physicalName: definition
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        businessName: definitie
+        description: Een uitspraak over de betekenis van het concept, de collectie of het schema.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#definition
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/definition
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#definition
+          - property: language
+            value: nl
+      - name: note
+        physicalName: note
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+        businessName: note
+        description: Een uitspraak over de betekenis van het concept, de collectie of het schema.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#note
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/note
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#note
+          - property: language
+            value: nl
+      - name: scopeNote
+        physicalName: scopeNote
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        description: Waarde van http://www.w3.org/2004/02/skos/core#scopeNote.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#scopeNote
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#scopeNote
+          - property: language
+            value: nl
+      - name: relevantLZS
+        physicalName: relevantLZS
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantLZS
+      - name: relevantProperty
+        physicalName: relevantProperty
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantProperty
+      - name: maxValue
+        physicalName: maxValue
+        logicalType: number
+        physicalType: DOUBLE
+        description: Waarde van https://schema.org/maxValue.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://schema.org/maxValue
+        customProperties:
+          - property: rdfPredicate
+            value: https://schema.org/maxValue
+          - property: rdfDatatype
+            value: http://www.w3.org/2001/XMLSchema#decimal
+      - name: operatie
+        physicalName: operatie
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#operatie
+          - property: language
+            value: nl
+      - name: minValue
+        physicalName: minValue
+        logicalType: number
+        physicalType: DOUBLE
+        description: Waarde van https://schema.org/minValue.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://schema.org/minValue
+        customProperties:
+          - property: rdfPredicate
+            value: https://schema.org/minValue
+          - property: rdfDatatype
+            value: http://www.w3.org/2001/XMLSchema#decimal
+      - name: subject
+        physicalName: subject
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        description: Waarde van http://purl.org/dc/terms/subject.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://purl.org/dc/terms/subject
+        customProperties:
+          - property: rdfPredicate
+            value: http://purl.org/dc/terms/subject
+      - name: relevantQuantityKind
+        physicalName: relevantQuantityKind
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van http://qudt.org/schema/qudt/relevantQuantityKind.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://qudt.org/schema/qudt/relevantQuantityKind
+        customProperties:
+          - property: rdfPredicate
+            value: http://qudt.org/schema/qudt/relevantQuantityKind
+      - name: seeAlso
+        physicalName: seeAlso
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        description: Waarde van http://www.w3.org/2000/01/rdf-schema#seeAlso.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2000/01/rdf-schema#seeAlso
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2000/01/rdf-schema#seeAlso
+      - name: relevantCodeList
+        physicalName: relevantCodeList
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantCodeList.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantCodeList
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantCodeList
+      - name: referentiewaardeType
+        physicalName: referentiewaardeType
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#referentiewaardeType
+      - name: technischefiche
+        physicalName: technischefiche
+        logicalType: boolean
+        physicalType: BOOLEAN
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#technischefiche.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#technischefiche
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#technischefiche
+          - property: rdfDatatype
+            value: http://www.w3.org/2001/XMLSchema#boolean
+      - name: value
+        physicalName: value
+        logicalType: integer
+        physicalType: INT64
+        description: Waarde van https://schema.org/value.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://schema.org/value
+        customProperties:
+          - property: rdfPredicate
+            value: https://schema.org/value
+          - property: rdfDatatype
+            value: http://www.w3.org/2001/XMLSchema#decimal
+      - name: relevantValue
+        physicalName: relevantValue
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantValue
+      - name: relevantNormBandbreedte
+        physicalName: relevantNormBandbreedte
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        description: Waarde van https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantNormBandbreedte.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantNormBandbreedte
+        customProperties:
+          - property: rdfPredicate
+            value: https://data.lzs.omgeving.vlaanderen.be/ns/vocab#relevantNormBandbreedte
+      - name: broader
+        physicalName: broader
+        logicalType: string
+        physicalType: BYTE_ARRAY (UTF8)
+        logicalTypeOptions:
+          format: uri
+        description: Waarde van http://www.w3.org/2004/02/skos/core#broader.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#broader
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#broader
+      - name: broaderTransitive
+        physicalName: broaderTransitive
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van http://www.w3.org/2004/02/skos/core#broaderTransitive.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#broaderTransitive
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#broaderTransitive
+      - name: semanticRelation
+        physicalName: semanticRelation
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van http://www.w3.org/2004/02/skos/core#semanticRelation.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#semanticRelation
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#semanticRelation
+      - name: narrower
+        physicalName: narrower
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van http://www.w3.org/2004/02/skos/core#narrower.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#narrower
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#narrower
+      - name: narrowerTransitive
+        physicalName: narrowerTransitive
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        description: Waarde van http://www.w3.org/2004/02/skos/core#narrowerTransitive.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#narrowerTransitive
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#narrowerTransitive
+      - name: hasTopConcept
+        physicalName: hasTopConcept
+        logicalType: array
+        physicalType: LIST<BYTE_ARRAY (UTF8)>
+        items:
+          name: element
+          logicalType: string
+          physicalType: BYTE_ARRAY (UTF8)
+          logicalTypeOptions:
+            format: uri
+        businessName: heeft topconcept
+        description: >-
+          Verbindt een conceptschema met een concept dat bovenaan in een 'broader/narrower' hierarchie staat en voorziet
+          aldus een ingang tot die hierarchie.
+        required: false
+        authoritativeDefinitions:
+          - type: businessDefinition
+            url: http://www.w3.org/2004/02/skos/core#hasTopConcept
+          - type: implementation
+            url: https://data.omgeving.vlaanderen.be/id/propertyshape/schema_hasTopConcept
+        customProperties:
+          - property: rdfPredicate
+            value: http://www.w3.org/2004/02/skos/core#hasTopConcept
+customProperties:
+  - property: publisher
+    value: http://data.vlaanderen.be/id/organisatie/OVO003323
+  - property: rightsHolder
+    value: http://data.vlaanderen.be/id/organisatie/OVO003323
+  - property: accessRights
+    value: http://publications.europa.eu/resource/authority/access-right/PUBLIC
+  - property: theme
+    value:
+      - http://eurovoc.europa.eu/2407
+      - http://publications.europa.eu/resource/authority/data-theme/ENVI
+      - http://vocab.belgif.be/auth/datatheme/ENVI
+      - http://www.eionet.europa.eu/gemet/concept/10087
+  - property: spatial
+    value:
+      - http://publications.europa.eu/resource/authority/country/BEL
+      - https://sws.geonames.org/3337388/
+  - property: language
+    value: http://publications.europa.eu/resource/authority/language/NLD
+  - property: mediaType
+    value: https://www.iana.org/assignments/media-types/application/vnd.apache.parquet
+  - property: fileFormat
+    value: http://publications.europa.eu/resource/authority/file-type/PARQUET
+  - property: mavenCoordinates
+    value: be.vlaanderen.omgeving.data.id.graph:codelijst-luchtzuiveringssysteem:<versie>
+contractCreatedTs: <tijdstip>

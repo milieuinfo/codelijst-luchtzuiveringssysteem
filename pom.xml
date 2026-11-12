@@ -51,7 +51,7 @@
         <version>2.0.2</version>
         <configuration>
           <nodeVersion>v26.10.0</nodeVersion>
-          <pnpmVersion>9.15.9</pnpmVersion>
+          <pnpmVersion>11.28.9</pnpmVersion>
           <nodeDownloadRoot>${acd.repository.node.dist.url}</nodeDownloadRoot>
           <pnpmDownloadRoot>${acd.repository.pnpm.dist.url}</pnpmDownloadRoot>
           <serverId>repo.omgeving.vlaanderen.be</serverId>
@@ -96,6 +96,18 @@
           </execution>
           <execution>
             <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
+                 'frontend:pnpm@code-quality' (pnpm run check: ESLint, Prettier, Vitest met coverage) -->
+            <id>code-quality</id>
+            <phase>none</phase>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run check</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
                  'frontend:pnpm@validate-previous-release', zodat node in de Maven-container draait -->
             <id>validate-previous-release</id>
             <phase>none</phase>
@@ -103,7 +115,7 @@
               <goal>pnpm</goal>
             </goals>
             <configuration>
-              <arguments>run validate_release</arguments>
+              <arguments>run validate:release</arguments>
             </configuration>
           </execution>
           <execution>

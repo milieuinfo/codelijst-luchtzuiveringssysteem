@@ -8,8 +8,7 @@ import { tag, show, mergeBase, log } from './git.js';
  * @returns {Promise<string[]>}
  */
 export function releaseTags(artifactId) {
-    return tag('--list', `${artifactId}-*`, '--sort=-v:refname')
-        .then(uitvoer => uitvoer.split('\n').filter(Boolean));
+    return tag('--list', `${artifactId}-*`, '--sort=-v:refname').then((uitvoer) => uitvoer.split('\n').filter(Boolean));
 }
 
 /**
@@ -19,7 +18,10 @@ export function releaseTags(artifactId) {
  */
 export function isVoorouderVanHead(revisie) {
     // 'merge-base --is-ancestor' geeft exit code 1 als de revisie geen voorouder is
-    return mergeBase('--is-ancestor', revisie, 'HEAD').then(() => true, () => false);
+    return mergeBase('--is-ancestor', revisie, 'HEAD').then(
+        () => true,
+        () => false,
+    );
 }
 
 /**
@@ -28,9 +30,9 @@ export function isVoorouderVanHead(revisie) {
  * @returns {Promise<string[]>}
  */
 export function releaseTagsInGeschiedenis(artifactId) {
-    return releaseTags(artifactId)
-        .then(tags => Promise.all(tags.map(isVoorouderVanHead))
-            .then(voorouders => tags.filter((_, i) => voorouders[i]).reverse()));
+    return releaseTags(artifactId).then((tags) =>
+        Promise.all(tags.map(isVoorouderVanHead)).then((voorouders) => tags.filter((_, i) => voorouders[i]).reverse()),
+    );
 }
 
 /**
@@ -40,14 +42,15 @@ export function releaseTagsInGeschiedenis(artifactId) {
  * @throws {Error} als er geen zo'n tag is (bv. omdat de tags lokaal ontbreken)
  */
 export function vereisteReleaseTags(artifactId) {
-    return releaseTagsInGeschiedenis(artifactId)
-        .then(tags => {
-            if (!tags.length) {
-                throw new Error(`No release tag '${artifactId}-*' found in the history of HEAD. `
-                    + `Are the tags missing locally? Try 'git fetch --tags'.`);
-            }
-            return tags;
-        });
+    return releaseTagsInGeschiedenis(artifactId).then((tags) => {
+        if (!tags.length) {
+            throw new Error(
+                `No release tag '${artifactId}-*' found in the history of HEAD. ` +
+                    `Are the tags missing locally? Try 'git fetch --tags'.`,
+            );
+        }
+        return tags;
+    });
 }
 
 /**
@@ -57,7 +60,7 @@ export function vereisteReleaseTags(artifactId) {
  * @throws {Error} als er geen zo'n tag is (bv. omdat de tags lokaal ontbreken)
  */
 export function laatsteReleaseTag(artifactId) {
-    return vereisteReleaseTags(artifactId).then(tags => tags.at(-1));
+    return vereisteReleaseTags(artifactId).then((tags) => tags.at(-1));
 }
 
 /**
@@ -76,7 +79,7 @@ export function versieVanTag(artifactId, releaseTag) {
  * @returns {Promise<string>}
  */
 export function datumVanRevisie(revisie) {
-    return log('-1', '--format=%cs', revisie).then(uitvoer => uitvoer.trim());
+    return log('-1', '--format=%cs', revisie).then((uitvoer) => uitvoer.trim());
 }
 
 /**
@@ -88,8 +91,7 @@ export function datumVanRevisie(revisie) {
  */
 export function bestandInRevisie(revisie, pad) {
     // '<revisie>:./pad' is relatief t.o.v. de huidige map
-    return show(`${revisie}:${pad.startsWith('./') ? pad : './' + pad}`)
-        .catch(() => {
-            throw new Error(`${pad} does not exist in ${revisie}.`);
-        });
+    return show(`${revisie}:${pad.startsWith('./') ? pad : './' + pad}`).catch(() => {
+        throw new Error(`${pad} does not exist in ${revisie}.`);
+    });
 }

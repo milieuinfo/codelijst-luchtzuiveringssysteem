@@ -24,13 +24,24 @@ export const colorsEnabled = (() => {
     return Boolean(process.stdout.isTTY && process.stdout.hasColors?.());
 })();
 
-const FORMATS = ['bold', 'dim', 'italic', 'underline', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'gray', 'white'];
+const FORMATS = [
+    'bold',
+    'dim',
+    'italic',
+    'underline',
+    'red',
+    'green',
+    'yellow',
+    'blue',
+    'magenta',
+    'cyan',
+    'gray',
+    'white',
+];
 
 // Creates a style function that can be chained: style.red.bold('text')
 function createStyle(formats) {
-    const fn = (text) => colorsEnabled
-        ? styleText(formats, String(text), { validateStream: false })
-        : String(text);
+    const fn = (text) => (colorsEnabled ? styleText(formats, String(text), { validateStream: false }) : String(text));
     for (const format of FORMATS) {
         Object.defineProperty(fn, format, { get: () => createStyle([...formats, format]) });
     }
@@ -41,7 +52,7 @@ function createStyle(formats) {
  * Style functions, chainable: style.bold('x'), style.red('x'), style.green.bold('x').
  * Without colours they return the text unchanged.
  */
-export const style = Object.fromEntries(FORMATS.map(format => [format, createStyle([format])]));
+export const style = Object.fromEntries(FORMATS.map((format) => [format, createStyle([format])]));
 
 /** Symbols for messages. */
 export const symbol = {
@@ -50,7 +61,7 @@ export const symbol = {
     warning: '⚠',
     info: 'ℹ',
     arrow: '→',
-    bullet: '•'
+    bullet: '•',
 };
 
 const indent = (level) => '  '.repeat(level);
@@ -65,15 +76,17 @@ export const print = {
     error: (text) => console.error(`${style.red(symbol.error)} ${style.red.bold(text)}`),
     /** Indented detail line below a message; `level` is the number of indents. */
     detail: (text, level = 1) => console.log(`${indent(level)}${text}`),
+    /** Like detail, but to stderr: for the explanation below an error or warning. */
+    errorDetail: (text, level = 1) => console.error(`${indent(level)}${text}`),
     /** Aligned 'key  value' lines, e.g. { File: 'x.nt', Release: 'v1.0' }. */
     keyValue: (pairs, level = 1) => {
-        const width = Math.max(...Object.keys(pairs).map(key => key.length));
+        const width = Math.max(...Object.keys(pairs).map((key) => key.length));
         for (const [key, value] of Object.entries(pairs)) {
             console.log(`${indent(level)}${style.gray(key.padEnd(width))}  ${value}`);
         }
     },
     /** Empty line. */
-    blank: () => console.log()
+    blank: () => console.log(),
 };
 
 /**

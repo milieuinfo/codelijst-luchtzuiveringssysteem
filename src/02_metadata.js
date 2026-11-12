@@ -5,17 +5,10 @@ import {
     datasetOptions,
     catalogOptions,
     odcsSource,
-    odcsOptions
+    odcsOptions,
 } from './utils/variables.js';
 
 // create_metadata maakt ../temp/ leeg, dus het ODCS-contract pas daarna schrijven
-await create_metadata(
-    metadataSource,
-    metadataOptions,
-    datasetOptions,
-    catalogOptions);
+await create_metadata(metadataSource, metadataOptions, datasetOptions, catalogOptions);
 
-await create_odcs(
-    odcsSource,
-    metadataOptions,
-    odcsOptions);
+await create_odcs(odcsSource, metadataOptions, odcsOptions);
