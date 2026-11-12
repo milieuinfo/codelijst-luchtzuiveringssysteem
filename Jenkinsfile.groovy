@@ -22,6 +22,7 @@ pipeline {
                             git.validateTag(version)
                             maven.validateVersion(version)
                             env.VERSION = version
+                            currentBuild.displayName = "Release ${version}"
                         }
                     } else {
                         properties([parameters([
