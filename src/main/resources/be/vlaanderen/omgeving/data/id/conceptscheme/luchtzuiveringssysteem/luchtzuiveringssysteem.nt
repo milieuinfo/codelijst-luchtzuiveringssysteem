@@ -1194,14 +1194,14 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/geweigerd> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/ingetrokken> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/nietgevalideerd> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema dataleverancier status"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/dataleverancierstatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema dataleverancier status"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/hetelektronischmonitoringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/lucht> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/spuiwater> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/stal> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/waswater> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem medium"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem medium"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#altLabel> "Ranges"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_10> .
@@ -1225,7 +1225,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_7> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_8> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_9> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem normbandbreedte"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem normbandbreedte"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#definition> "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_10> .
@@ -1248,7 +1248,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_8> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#note> "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem parameter specificatie"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem parameter specificatie"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspuiwaterproductie> .
@@ -1262,7 +1262,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietbevloeiing> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/waswaterdebietvoorbevochtiging> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/zuurtegraadwaswater> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem eigenschap"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem eigenschap"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#altLabel> "Dagbeoordelingsregels en alarmdrempels"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#definition> "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl .
@@ -1295,26 +1295,26 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_9> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#note> "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#note> "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem secundaire alarmen"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem secundaire alarmen"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#scopeNote> "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem stalbezetting"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem stalbezetting"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/enkelvoudig> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem opstellingen"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem opstellingen"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/onderhoud> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/storing> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem status"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem status"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2> .

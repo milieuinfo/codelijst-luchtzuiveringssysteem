@@ -2133,7 +2133,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/ingetrokken",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/dataleverancierstatus/nietgevalideerd"
         ],
-        "prefLabel": "conceptschema dataleverancier status"
+        "prefLabel": "Conceptschema dataleverancier status"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/medium",
@@ -2147,7 +2147,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/stal",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/medium/waswater"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem medium"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem medium"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte",
@@ -2178,7 +2178,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_8",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_9"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem normbandbreedte"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem normbandbreedte"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter",
@@ -2199,7 +2199,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/stalbezetting",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/systeemstatus"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem eigenschap"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem eigenschap"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm",
@@ -2231,7 +2231,7 @@
         "note": [
             "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem parameter specificatie"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen",
@@ -2273,7 +2273,7 @@
             "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
             "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem secundaire alarmen",
+        "prefLabel": "Conceptschema luchtzuiveringssysteem secundaire alarmen",
         "scopeNote": "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
     },
     {
@@ -2285,7 +2285,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/leeg",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem stalbezetting"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling",
@@ -2296,7 +2296,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/enkelvoudig",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem opstellingen"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem opstellingen"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",
@@ -2310,7 +2310,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/status/operationeel"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem status"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem status"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype",
@@ -2320,7 +2320,7 @@
         "hasTopConcept": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem"
         ],
-        "prefLabel": "conceptschema luchtzuiveringssysteem"
+        "prefLabel": "Conceptschema luchtzuiveringssysteem"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse",

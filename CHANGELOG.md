@@ -14,7 +14,7 @@ Pas het niet met de hand aan: `pnpm run create_changelog_full` bouwt het volledi
 
 Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 
-🆕 28 nieuw · ✏️ 3 gewijzigd
+🆕 28 nieuw · ✏️ 11 gewijzigd
 
 ### Properties
 
@@ -24,24 +24,55 @@ Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 | 🆕  | `lzs-vocab:relevantValue`           | nieuwe property: 8 waarden bij 6 concepten   |
 | 🆕  | `schema:value`                      | nieuwe property: 27 waarden bij 27 concepten |
 
-### conceptschema luchtzuiveringssysteem normbandbreedte (`conceptscheme:norm-bandbreedte`)
+### Conceptschema dataleverancier status (`conceptscheme:dataleverancierstatus`)
 
-|     | Concept               | Label                                                      | Wijziging                                                        |
-| --- | --------------------- | ---------------------------------------------------------- | ---------------------------------------------------------------- |
-| ✏️  | `lzs-bandbreedte:_19` | Waswaterdebiet afwijking naar beneden \> 20% (lelysphere)  | `schema:maxValue`: "0,8" (`xsd:decimal`) → "0.8" (`xsd:decimal`) |
-| ✏️  | `lzs-bandbreedte:_20` | Spuiwaterdebiet afwijking naar beneden \> 10% (lelysphere) | `schema:maxValue`: "0,9" (`xsd:decimal`) → "0.9" (`xsd:decimal`) |
+|     | Concept                               | Label                                | Wijziging                                                                                         |
+| --- | ------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:dataleverancierstatus` | Conceptschema dataleverancier status | `skos:prefLabel`: "conceptschema dataleverancier status" → "Conceptschema dataleverancier status" |
 
-### conceptschema luchtzuiveringssysteem opstellingen (`conceptscheme:systeemopstelling`)
+### Conceptschema luchtzuiveringssysteem (`conceptscheme:systeemtype`)
+
+|     | Concept                     | Label                                | Wijziging                                                                                         |
+| --- | --------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:systeemtype` | Conceptschema luchtzuiveringssysteem | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem" → "Conceptschema luchtzuiveringssysteem" |
+
+### Conceptschema luchtzuiveringssysteem eigenschap (`conceptscheme:parameter`)
+
+|     | Concept                   | Label                                           | Wijziging                                                                                                               |
+| --- | ------------------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:parameter` | Conceptschema luchtzuiveringssysteem eigenschap | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem eigenschap" → "Conceptschema luchtzuiveringssysteem eigenschap" |
+
+### Conceptschema luchtzuiveringssysteem medium (`conceptscheme:medium`)
+
+|     | Concept                | Label                                       | Wijziging                                                                                                       |
+| --- | ---------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:medium` | Conceptschema luchtzuiveringssysteem medium | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem medium" → "Conceptschema luchtzuiveringssysteem medium" |
+
+### Conceptschema luchtzuiveringssysteem normbandbreedte (`conceptscheme:norm-bandbreedte`)
+
+|     | Concept                          | Label                                                      | Wijziging                                                                                                                         |
+| --- | -------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:norm-bandbreedte` | Conceptschema luchtzuiveringssysteem normbandbreedte       | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem normbandbreedte" → "Conceptschema luchtzuiveringssysteem normbandbreedte" |
+| ✏️  | `lzs-bandbreedte:_19`            | Waswaterdebiet afwijking naar beneden \> 20% (lelysphere)  | `schema:maxValue`: "0,8" (`xsd:decimal`) → "0.8" (`xsd:decimal`)                                                                  |
+| ✏️  | `lzs-bandbreedte:_20`            | Spuiwaterdebiet afwijking naar beneden \> 10% (lelysphere) | `schema:maxValue`: "0,9" (`xsd:decimal`) → "0.9" (`xsd:decimal`)                                                                  |
+
+### Conceptschema luchtzuiveringssysteem opstellingen (`conceptscheme:systeemopstelling`)
 
 |     | Concept                           | Label                                             | Wijziging                                                                                                                  |
 | --- | --------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| ✏️  | `conceptscheme:systeemopstelling` | conceptschema luchtzuiveringssysteem opstellingen | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem opstelingen" → "conceptschema luchtzuiveringssysteem opstellingen" |
+| ✏️  | `conceptscheme:systeemopstelling` | Conceptschema luchtzuiveringssysteem opstellingen | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem opstelingen" → "Conceptschema luchtzuiveringssysteem opstellingen" |
 
-### conceptschema luchtzuiveringssysteem secundaire alarmen (`conceptscheme:secundaire-alarmen`)
+### Conceptschema luchtzuiveringssysteem parameter specificatie (`conceptscheme:parameter-norm`)
+
+|     | Concept                        | Label                                                       | Wijziging                                                                                                                                       |
+| --- | ------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:parameter-norm` | Conceptschema luchtzuiveringssysteem parameter specificatie | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem parameter specificatie" → "Conceptschema luchtzuiveringssysteem parameter specificatie" |
+
+### Conceptschema luchtzuiveringssysteem secundaire alarmen (`conceptscheme:secundaire-alarmen`)
 
 |     | Concept                            | Label                                                                      | Wijziging           |
 | --- | ---------------------------------- | -------------------------------------------------------------------------- | ------------------- |
-| 🆕  | `conceptscheme:secundaire-alarmen` | conceptschema luchtzuiveringssysteem secundaire alarmen                    | nieuw conceptschema |
+| 🆕  | `conceptscheme:secundaire-alarmen` | Conceptschema luchtzuiveringssysteem secundaire alarmen                    | nieuw conceptschema |
 | 🆕  | `lzs-sec:alarmdrempel_1`           | Alarmdrempel zuurtegraad waswater (7 dagen)                                | nieuw concept       |
 | 🆕  | `lzs-sec:alarmdrempel_2`           | Alarmdrempel geleidbaarheid van het waswater (7 dagen)                     | nieuw concept       |
 | 🆕  | `lzs-sec:alarmdrempel_2a`          | Alarmdrempel geleidbaarheid waswater \> 280 mS/cm Lely Sphere (3 dagen)    | nieuw concept       |
@@ -69,6 +100,18 @@ Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 | 🆕  | `lzs-sec:dagbeoordeling_10`        | Dagbeoordelingsregel elektriciteitsverbruik van de waswaterpomp(en)        | nieuw concept       |
 | 🆕  | `lzs-sec:dagbeoordeling_11`        | Dagbeoordelingsregel systeemstatus                                         | nieuw concept       |
 | 🆕  | `lzs-sec:dagbeoordeling_12`        | Dagbeoordelingsregel stalbezetting                                         | nieuw concept       |
+
+### Conceptschema luchtzuiveringssysteem stalbezetting (`conceptscheme:stalbezetting`)
+
+|     | Concept                       | Label                                              | Wijziging                                                                                                                     |
+| --- | ----------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:stalbezetting` | Conceptschema luchtzuiveringssysteem stalbezetting | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem stalbezetting" → "Conceptschema luchtzuiveringssysteem stalbezetting" |
+
+### Conceptschema luchtzuiveringssysteem status (`conceptscheme:systeemstatus`)
+
+|     | Concept                       | Label                                       | Wijziging                                                                                                       |
+| --- | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:systeemstatus` | Conceptschema luchtzuiveringssysteem status | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem status" → "Conceptschema luchtzuiveringssysteem status" |
 
 ## [0.2.1] - 2026-09-25
 

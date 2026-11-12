@@ -14,7 +14,7 @@ Een rechtzetting in de codelijst zelf (`src/source/codelijst-source.csv`) volgt 
 
 ## 1. Verkeerde definitie bij `parameter-norm`
 
-Het conceptschema `conceptscheme:parameter-norm` (*conceptschema luchtzuiveringssysteem parameter
+Het conceptschema `conceptscheme:parameter-norm` (*Conceptschema luchtzuiveringssysteem parameter
 specificatie*) heeft als `skos:definition`:
 
 > Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).

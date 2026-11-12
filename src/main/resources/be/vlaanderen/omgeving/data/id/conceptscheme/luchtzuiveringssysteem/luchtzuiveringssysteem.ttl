@@ -1178,41 +1178,41 @@ vlarem-klasse:k3 a skos:Concept;
     skos:topConceptOf conceptscheme-alg:vlarem-klasse.
 conceptscheme:dataleverancierstatus a skos:ConceptScheme;
     skos:hasTopConcept lzs-dl-status:gevalideerd, lzs-dl-status:geweigerd, lzs-dl-status:ingetrokken, lzs-dl-status:nietgevalideerd;
-    skos:prefLabel "conceptschema dataleverancier status"@nl.
+    skos:prefLabel "Conceptschema dataleverancier status"@nl.
 conceptscheme:medium a skos:ConceptScheme;
     skos:hasTopConcept lzs-medium:hetelektronischmonitoringssysteem, lzs-medium:lucht, lzs-medium:spuiwater, lzs-medium:stal, lzs-medium:waswater;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem medium"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem medium"@nl.
 conceptscheme:norm-bandbreedte a skos:ConceptScheme;
     skos:altLabel "Ranges"@nl;
     skos:hasTopConcept lzs-bandbreedte:_10, lzs-bandbreedte:_11, lzs-bandbreedte:_12, lzs-bandbreedte:_13, lzs-bandbreedte:_14, lzs-bandbreedte:_15, lzs-bandbreedte:_16, lzs-bandbreedte:_17, lzs-bandbreedte:_18, lzs-bandbreedte:_19, lzs-bandbreedte:_1, lzs-bandbreedte:_20, lzs-bandbreedte:_21, lzs-bandbreedte:_2, lzs-bandbreedte:_3, lzs-bandbreedte:_4, lzs-bandbreedte:_5, lzs-bandbreedte:_6, lzs-bandbreedte:_7, lzs-bandbreedte:_8, lzs-bandbreedte:_9;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem normbandbreedte"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem normbandbreedte"@nl.
 conceptscheme:parameter-norm a skos:ConceptScheme;
     skos:definition "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl;
     skos:hasTopConcept lzs-param-norm:_10, lzs-param-norm:_11, lzs-param-norm:_12, lzs-param-norm:_13, lzs-param-norm:_14, lzs-param-norm:_15, lzs-param-norm:_16, lzs-param-norm:_17, lzs-param-norm:_18, lzs-param-norm:_19, lzs-param-norm:_1, lzs-param-norm:_2, lzs-param-norm:_3, lzs-param-norm:_4, lzs-param-norm:_5, lzs-param-norm:_6, lzs-param-norm:_7, lzs-param-norm:_8, lzs-param-norm:_9;
     skos:note "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem parameter specificatie"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem parameter specificatie"@nl.
 conceptscheme:parameter a skos:ConceptScheme;
     skos:hasTopConcept lzs-param:biobedspoelwaterproductie, lzs-param:biobedspuiwaterproductie, lzs-param:drukvaloverhetsysteem, lzs-param:elektriciteitsverbruikwaterpompen, lzs-param:geleidbaarheidvanhetwaswater, lzs-param:spuiwaterproductie, lzs-param:stalbezetting, lzs-param:systeemstatus, lzs-param:waswaterdebiet, lzs-param:waswaterdebietbevloeiing, lzs-param:waswaterdebietvoorbevochtiging, lzs-param:zuurtegraadwaswater;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem eigenschap"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem eigenschap"@nl.
 conceptscheme:secundaire-alarmen a skos:ConceptScheme;
     skos:altLabel "Dagbeoordelingsregels en alarmdrempels"@nl;
     skos:definition "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl;
     skos:hasTopConcept lzs-sec:alarmdrempel_10, lzs-sec:alarmdrempel_11, lzs-sec:alarmdrempel_12, lzs-sec:alarmdrempel_13, lzs-sec:alarmdrempel_15, lzs-sec:alarmdrempel_1, lzs-sec:alarmdrempel_2, lzs-sec:alarmdrempel_2a, lzs-sec:alarmdrempel_3, lzs-sec:alarmdrempel_4, lzs-sec:alarmdrempel_5, lzs-sec:alarmdrempel_6, lzs-sec:alarmdrempel_7, lzs-sec:alarmdrempel_8, lzs-sec:alarmdrempel_9, lzs-sec:dagbeoordeling_10, lzs-sec:dagbeoordeling_11, lzs-sec:dagbeoordeling_12, lzs-sec:dagbeoordeling_1, lzs-sec:dagbeoordeling_2, lzs-sec:dagbeoordeling_3, lzs-sec:dagbeoordeling_4, lzs-sec:dagbeoordeling_5, lzs-sec:dagbeoordeling_6, lzs-sec:dagbeoordeling_7, lzs-sec:dagbeoordeling_8, lzs-sec:dagbeoordeling_9;
     skos:note "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl, "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem secundaire alarmen"@nl;
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem secundaire alarmen"@nl;
     skos:scopeNote "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl.
 conceptscheme:stalbezetting a skos:ConceptScheme;
     skos:hasTopConcept lzs-stalbezetting:in_gebruik, lzs-stalbezetting:leeg;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem stalbezetting"@nl.
 conceptscheme:systeemopstelling a skos:ConceptScheme;
     skos:hasTopConcept lzs-systeemopstelling:enkelvoudig, lzs-systeemopstelling:gecombineerd;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem opstellingen"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem opstellingen"@nl.
 conceptscheme:systeemstatus a skos:ConceptScheme;
     skos:hasTopConcept lzs-status:buiten_gebruik, lzs-status:in_reiniging, lzs-status:onderhoud, lzs-status:operationeel, lzs-status:storing;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem status"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem status"@nl.
 conceptscheme:systeemtype a skos:ConceptScheme;
     skos:hasTopConcept lzs-type:luchtzuiveringssysteem;
-    skos:prefLabel "conceptschema luchtzuiveringssysteem"@nl.
+    skos:prefLabel "Conceptschema luchtzuiveringssysteem"@nl.
 conceptscheme-alg:vlarem-klasse a skos:ConceptScheme;
     skos:hasTopConcept vlarem-klasse:k1, vlarem-klasse:k2, vlarem-klasse:k3;
     skos:prefLabel "VLAREM indelingsklassen"@nl.
