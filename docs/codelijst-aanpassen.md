@@ -55,7 +55,11 @@ Dit is veruit de meest voorkomende wijziging, en daarvoor pas je enkel de CSV aa
    pnpm run create_skos
    ```
 
-5. Faalt het script op de SHACL-validatie, open dan het validatierapport in
+5. Faalt de controle van de bron-CSV (een prefix die niet in `config.yml` staat, of een waarde die
+   niet past bij het datatype van de kolom, zoals `0,8` in plaats van `0.8`), dan genereert het script
+   niets en toont het de fouten met het `_id` van de rij. Zie
+   [Node.js-scripts](scripts.md#00_validate_source_csvjs).
+   Faalt het script op de SHACL-validatie, open dan het validatierapport in
    `validation/validation_result.json` (die map staat in `.gitignore`). Daarin staat welke resource
    niet voldoet en aan welke shape. Meestal ontbreekt een `prefLabel` of `inScheme`, of is er een
    typfout in een CURIE.

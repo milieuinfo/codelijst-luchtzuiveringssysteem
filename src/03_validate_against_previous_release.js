@@ -318,7 +318,7 @@ function valideerHuidig() {
 }
 
 // Standaard: de huidige bestanden t.o.v. de vorige release
-function valideerTegenVorigeRelease() {
+export function valideerTegenVorigeRelease() {
     return (
         Promise.resolve()
             .then(bepaalTag)
@@ -369,7 +369,7 @@ function rapporteerStap(van, naar, resultaat) {
 }
 
 // Met --history: elke release t.o.v. de vorige, en de laatste release t.o.v. de huidige bestanden
-function valideerGeschiedenis() {
+export function valideerGeschiedenis() {
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
         .then((tags) => {

@@ -395,7 +395,7 @@ const releaseVersie = () => argument('--version') ?? process.env.VERSION;
 // Met --full: elke release t.o.v. de vorige, met bovenaan de huidige bestanden. Is er een versie
 // meegegeven die nog geen tag heeft, dan als sectie voor die versie: zo bevat de changelog in de
 // release-tag ook die release zelf. Zonder versie als 'Volgende versie'.
-function maakVolledigeChangelog() {
+export function maakVolledigeChangelog() {
     const nieuweVersie = releaseVersie();
     return Promise.resolve()
         .then(() => vereisteReleaseTags(artifactId))
@@ -447,7 +447,7 @@ function maakVolledigeChangelog() {
 
 // Zonder --full: de huidige bestanden t.o.v. de laatste release, als sectie voor de meegegeven versie,
 // of zonder versie als 'Volgende versie'
-function voegHuidigeVersieToe() {
+export function voegHuidigeVersieToe() {
     const nieuweVersie = releaseVersie();
     const label = nieuweVersie ?? VOLGENDE;
     return Promise.resolve()

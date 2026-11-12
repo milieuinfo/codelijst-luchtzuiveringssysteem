@@ -33,6 +33,7 @@ Sources (edit these):
 | `src/utils/releases.js` | Shared by `03_…`/`04_…`: `.nt` path, prefixes, `kort`, version from tag, triples of current files or a release |
 | `src/utils/rdf.js` | Generic: `parseNTriples`, `toNT`, `tripleKey`, `shorten` (CURIE), `groupBy` |
 | `src/utils/markdown.js` | Generic: `escapeMarkdown`, `table` (padded) |
+| `src/utils/csv.js` | Generic: `parseCsv(text)` (csv-parser) |
 | `src/utils/files.js` | Generic: `readTextIfExists(path, fallback)` (missing file -> fallback) |
 | `src/utils/script.js` | Generic: `isMainModule(import.meta.url)`: run main only when started, not imported |
 | `src/utils/console.js` | Generic console output (see Utils) |
@@ -57,7 +58,8 @@ From repo root, pnpm only (never `npm install`). Scripts `cd src`; `config.yml` 
 ```bash
 pnpm install --frozen-lockfile
 pnpm run create_skos            # CSV -> SKOS files (conceptscheme/), then create_changelog
-pnpm run create_skos_only       # SKOS only (what Maven runs: no tags needed, CHANGELOG.md untouched)
+pnpm run create_skos_only       # validate:csv, then SKOS only (what Maven runs: no tags needed, CHANGELOG.md untouched)
+pnpm run validate:csv           # source CSV before generation: prefixes in config.yml, XSD lexical forms (0.8, not 0,8)
 pnpm run create_metadata        # DCAT + ODCS into temp/ (network: repo.omgeving.vlaanderen.be)
 pnpm run validate:release       # SHACL + fail on info removed vs. previous release tag (needs tags)
 pnpm run validate:history       # same + report per release vs. predecessor (old removals: report only)
@@ -116,11 +118,11 @@ Workflow:
 | Text | Language |
 | --- | --- |
 | Commits, PRs, `docs/` (technical terms English), `toegestane-verwijderingen.txt` header, `CHANGELOG.md`, Jenkinsfile `echo`, comments in scripts, repo-specific utils (`variables.js`, `git-utils.js`, `releases.js`) and tests | Flemish |
-| Generic utils (`git.js`, `console.js`, `rdf.js`, `markdown.js`, `files.js`, `script.js`): names, comments, JSDoc | English (reusable) |
+| Generic utils (`git.js`, `console.js`, `rdf.js`, `markdown.js`, `files.js`, `script.js`, `csv.js`): names, comments, JSDoc | English (reusable) |
 | Script console output | English, like the generator (`Validation succeeded.`) |
 | This file | English |
 
-File names: scripts `src/NN_english_snake_case.js` (`01`/`02` build, `03` check after, `04` release, `99` manual); utils short lowercase English in `src/utils/` (check there first: RDF -> `rdf.js`, releases -> `releases.js`; logic used by >1 script goes there, not copied); `src/source/` data keeps Flemish names.
+File names: scripts `src/NN_english_snake_case.js` (`00` check before build, `01`/`02` build, `03` check after, `04` release, `99` manual); utils short lowercase English in `src/utils/` (check there first: RDF -> `rdf.js`, releases -> `releases.js`; logic used by >1 script goes there, not copied); `src/source/` data keeps Flemish names.
 
 JavaScript:
 - ES modules; new files start with `'use strict';`. 4 spaces, single quotes, semicolons, printWidth 120, camelCase for new names; existing snake_case (`frame_skos_prefixes`) stays.
@@ -133,13 +135,13 @@ JavaScript:
 
 Dependencies:
 - pnpm 11: `packageManager` in `package.json` + `<pnpmVersion>` in `pom.xml`, change both. `minimumReleaseAge` rejects packages < 1 day old: pick an older version, don't relax it. Install scripts need an `allowBuilds` decision, or `pnpm install` fails (also in Maven).
-- Exact versions only (ESLint enforces; `overrides` in `pnpm-workspace.yaml`: check yourself). `@zazuko/env-node` = generator's pinned version (generator rejects other datasets; tested). `csv-parser` = tests only; `dotenv` = only for local `setenv.js`.
+- Exact versions only (ESLint enforces; `overrides` in `pnpm-workspace.yaml`: check yourself). `@zazuko/env-node` = generator's pinned version (generator rejects other datasets; tested). `dotenv` = only for local `setenv.js`.
 - After an update: `pnpm run check`, `create_skos_only` (no diff), `validate:release`. Failing snapshot = changed output: investigate, don't just `-u`.
 
-Tests (Vitest, `test/`, run with `src/` as cwd via `test/setup.js`, `pool: 'forks'`):
+Tests (Vitest, `test/`, run with `src/` as cwd via `test/setup.js`, `pool: 'forks'`; JUnit report `target/surefire-reports/TEST-vitest.xml`, published by the library's `maven.goal` -> Jenkins *Test Result*):
 - Import `describe`/`it`/`expect` from `vitest`. New util logic gets a test (rule 10).
-- Scripts with logic worth testing export it and run main only via `isMainModule(import.meta.url)` (`03_…`: `vergelijk`, `leesRegel`; `04_…`: `sectie`).
-- `validatie`: `03_…` on the real list with deliberate changes (`fixtures.js`). `changelog`: `04_…` on a small fixed list (snapshots independent of data). Integration: config (snapshot), CSV prefixes, SHACL, byte-for-byte regeneration, ODCS (snapshot, version/time masked), env-node guard.
+- Scripts with logic worth testing export it and run main only via `isMainModule(import.meta.url)` (`00_…`: `ongekendePrefixen`, `ongeldigeWaarden`, `valideerBron`; `03_…`: `vergelijk`, `leesRegel`, both main flows; `04_…`: `sectie`, both main flows). Main-flow tests mock `git-utils.js` (tags, files at a tag; Jenkins fetches tags after the tests) and `writeFile`; `fixtures.js`: `vorigeRelease`, `alsTekst`, `vangUitvoer`.
+- `validatie`: `03_…` on the real list with deliberate changes (`fixtures.js`). `changelog`: `04_…` on a small fixed list (snapshots independent of data). `bron`: `00_…` on the source CSV and deliberate errors. Integration: config (snapshot), generated CSV datatypes, SHACL, byte-for-byte regeneration, ODCS (snapshot, version/time masked), env-node guard.
 
 Utils:
 - **Git:** never call git directly from a script (`child_process` banned outside `git.js`). `git.js`: one function per command, CLI args plus optional options object last (`{ cwd }`), returns Promise of stdout; add with `command('name')`. Parsing/combining -> `git-utils.js`.

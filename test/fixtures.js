@@ -3,6 +3,7 @@
 // triples met een bewuste wijziging (concept verwijderd, waarde verwijderd of gewijzigd).
 import rdf from '@zazuko/env-node';
 import { leesHuidig } from '../src/utils/releases.js';
+import { tripleKey } from '../src/utils/rdf.js';
 
 export const SKOS = 'http://www.w3.org/2004/02/skos/core#';
 
@@ -39,3 +40,31 @@ export const gewijzigd = (triples, q, nieuweWaarde) => [
     ...zonder(triples, q),
     rdf.quad(q.subject, q.predicate, rdf.literal(nieuweWaarde, q.object.language || undefined)),
 ];
+
+/**
+ * Een fictieve vorige release t.o.v. de huidige triples: met een concept dat nu ontbreekt (en een
+ * verwijzing ernaar), een waarde die nu ontbreekt en een prefLabel dat nu anders is.
+ */
+export function vorigeRelease(triples) {
+    const q = enigeWaarde(triples, `${SKOS}prefLabel`);
+    const weg = rdf.namedNode('https://data.omgeving.vlaanderen.be/id/concept/lzs/type/verwijderd');
+    const label = (tekst) => rdf.literal(tekst, 'nl');
+    return [
+        ...gewijzigd(triples, q, 'Oud label'),
+        rdf.quad(weg, rdf.namedNode(`${SKOS}prefLabel`), label('Verwijderd concept')),
+        rdf.quad(q.subject, rdf.namedNode(`${SKOS}related`), weg),
+        rdf.quad(q.subject, rdf.namedNode(`${SKOS}altLabel`), label('Verwijderde waarde')),
+    ];
+}
+
+/** Triples als N-Triples-tekst, zoals in een release-tag. */
+export const alsTekst = (triples) => triples.map(tripleKey).join('\n') + '\n';
+
+/** Vangt de uitvoer van console op (in volgorde); geeft een functie terug die alle uitvoer als één tekst geeft. */
+export function vangUitvoer(vi) {
+    const regels = [];
+    for (const methode of ['log', 'warn', 'error']) {
+        vi.spyOn(console, methode).mockImplementation((...args) => regels.push(args.join(' ')));
+    }
+    return () => regels.join('\n');
+}

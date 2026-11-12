@@ -12,6 +12,10 @@ export default defineConfig({
         // variables.js laadt bij het importeren de SHACL-shapes; de generatie en validatie duren even
         testTimeout: 60000,
         hookTimeout: 120000,
+        // Ook een JUnit-rapport: maven.goal uit de Jenkins-library publiceert elk nieuw XML-bestand in
+        // target/surefire-reports/ na de stage Codekwaliteit, zodat de tests onder 'Test Result' staan.
+        reporters: ['default', 'junit'],
+        outputFile: { junit: 'target/surefire-reports/TEST-vitest.xml' },
         // Coverage van de code in src/ (pnpm run test zet ze aan). coverage/lcov.info leest Sonar in
         // (zie de stage Sonar scan in Jenkinsfile.groovy); de HTML-versie staat in coverage/lcov-report/index.html.
         coverage: {

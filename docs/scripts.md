@@ -10,7 +10,7 @@ Alle scripts zijn ES modules en draaien vanuit de map `src/`. De npm scripts in 
 daarom eerst een `cd src`:
 
 ```json
-"create_skos_only": "cd src && node 01_codelijst_skos_from_csv.js",
+"create_skos_only": "cd src && node 00_validate_source_csv.js && node 01_codelijst_skos_from_csv.js",
 "create_metadata":  "cd src && node 02_metadata.js"
 ```
 
@@ -22,11 +22,11 @@ heeft geen git-tags nodig en mag `CHANGELOG.md` niet aanpassen.
 Start je een script met de hand, doe dat dan ook vanuit `src/`. Anders kloppen de relatieve paden uit
 `config.yml` niet.
 
-De nummering geeft de volgorde aan: `01` en `02` horen bij de build, `03` is een controle die Jenkins
+De nummering geeft de volgorde aan: `00` controleert de bron vóór de build, `01` en `02` horen bij de build, `03` is een controle die Jenkins
 nadien draait (en die je ook lokaal kan draaien), `04` hoort bij een release, `99` is een manuele stap achteraf.
 
-`03_…` en `04_…` exporteren hun kernlogica (`vergelijk`, `leesRegel`, `sectie`) voor de tests in
-`test/`. Ze voeren enkel iets uit als ze als script gestart worden (`isMainModule` uit
+`00_…`, `03_…` en `04_…` exporteren hun kernlogica (`ongekendePrefixen`, `ongeldigeWaarden`,
+`vergelijk`, `leesRegel`, `sectie`) en hun hoofdstappen voor de tests in `test/`. Ze voeren enkel iets uit als ze als script gestart worden (`isMainModule` uit
 `utils/script.js`); een import doet niets.
 
 ## `utils/variables.js`
@@ -54,6 +54,28 @@ verwijst. Voeg je een nieuwe property toe die naar een IRI verwijst, zet die dan
 
 De geëxporteerde objecten (`skosOptions`, `skosSource`, `metadataSource`, `odcsSource`, ...) zijn
 exact de argumenten die de scripts doorgeven aan de generator.
+
+## `00_validate_source_csv.js`
+
+```bash
+pnpm run validate:csv       # enkel de controle
+pnpm run create_skos_only   # de controle, en enkel als ze slaagt de generatie
+```
+
+Controleert de bron-CSV vóór de generatie, op fouten die een spreadsheet er makkelijk insluipt en die
+de SHACL-validatie niet (duidelijk) vindt:
+
+- **Prefixen.** Elke CURIE in een IRI-kolom (`_id`, `_type` en elke kolom met `"@type": "@id"` in
+  `context.json`) gebruikt een prefix uit `prefixes:` van `config.yml`.
+- **Datatypes.** Elke waarde in een kolom met een XSD-datatype in `context.json` (`decimal`,
+  `integer`, `boolean`, `date`, `dateTime`) heeft een geldige lexicale vorm. Een spreadsheet maakt
+  van `0.8` makkelijk `0,8`: de generator schrijft dat dan zonder fout weg als ongeldige
+  `"0,8"^^xsd:decimal` (gebeurd vóór release 0.2.2). Krijgt een kolom een ander datatype, dan stopt
+  het script tot er een patroon voor toegevoegd is.
+
+Bij een fout toont het script elke fout met het `_id` van de rij, en stopt het met exit code 1:
+`create_skos_only` genereert dan niets. Maven draait `create_skos_only`, dus ook de build in Jenkins
+faalt. De CSV inlezen gebeurt met `utils/csv.js`.
 
 ## `01_codelijst_skos_from_csv.js`
 

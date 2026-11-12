@@ -13,7 +13,7 @@ het volgende:
 |-------------------------|----------------------------------------------------------------------------------------------|
 | `install node and pnpm` | Installeert de Node.js- en pnpm-versie uit `pom.xml` in `target/`, via de Artifactory-mirror |
 | `pnpm install`          | `pnpm install --frozen-lockfile`: installeert exact wat in `pnpm-lock.yaml` staat            |
-| `create skos`           | `pnpm run create_skos_only` (zonder changelog, die heeft git-tags nodig)                     |
+| `create skos`           | `pnpm run create_skos_only`: controle van de bron-CSV, dan de generatie (zonder changelog)   |
 | `create metadata`       | `pnpm run create_metadata`                                                                   |
 
 Al deze stappen hangen standaard aan de fase `generate-resources`. Daarnaast zijn er drie executions
@@ -76,12 +76,24 @@ De tests zijn er vooral om dependencies veilig te kunnen updaten:
   wijzigingen (een verwijderd concept, een verwijderde of gewijzigde waarde);
 - de changelog (`04_…`) wordt getest op een kleine, vaste codelijst: die snapshots veranderen dus niet
   bij een wijziging aan de echte codelijst;
+- de volledige scripts `03_…` (ook met `--history`) en `04_…` (ook met `--full`) worden doorlopen met
+  gesimuleerde release-tags: git en het schrijven van `CHANGELOG.md` worden in de tests vervangen, zodat
+  ze geen tags nodig hebben (Jenkins haalt die pas na de tests op);
 - een test bewaakt dat `@zazuko/env-node` dezelfde versie heeft als in de generator: die aanvaardt
   enkel datasets van zijn eigen versie.
+
+De bron-CSV zelf wordt al vóór de generatie gecontroleerd door `00_validate_source_csv.js` (prefixen
+en datatypes, zie [Node.js-scripts](scripts.md#00_validate_source_csvjs)); Maven draait die controle
+als deel van `create_skos_only`. De tests controleren die logica, en dezelfde datatypes in de
+gegenereerde `luchtzuiveringssysteem.csv`.
 
 Faalt een snapshot na een update, dan is de uitvoer veranderd: zoek uit waarom. Is de wijziging
 bewust (bv. een aangepaste `config.yml`), werk de snapshots dan bij met `pnpm run test -u` en
 bekijk de diff.
+
+`pnpm run test` schrijft ook een JUnit-rapport naar `target/surefire-reports/TEST-vitest.xml`.
+`maven.goal` uit de Jenkins-library publiceert elk nieuw rapport in die map na de Maven-goal, dus de
+tests staan per testbestand onder *Test Result* van de build, ook als er een faalt.
 
 `pnpm run test` maakt ook een coverage-rapport in `coverage/`. De Sonar-scan leest `coverage/lcov.info`
 in (zie [De primary branch](#de-primary-branch-main)); de HTML-versie staat in

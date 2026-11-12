@@ -1,10 +1,36 @@
 'use strict';
 // De vergelijking met de vorige release (03_validate_against_previous_release.js): deelt verdwenen
 // triples correct in, zodat een dependency-update de controle niet ongemerkt uitschakelt.
-import { beforeAll, describe, expect, it } from 'vitest';
-import { leesRegel, vergelijk } from '../src/03_validate_against_previous_release.js';
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
+import {
+    leesRegel,
+    valideerGeschiedenis,
+    valideerTegenVorigeRelease,
+    vergelijk,
+} from '../src/03_validate_against_previous_release.js';
+import { bestandInRevisie, laatsteReleaseTag, vereisteReleaseTags } from '../src/utils/git-utils.js';
 import { toNT } from '../src/utils/rdf.js';
-import { conceptMetVerwijzing, enigeWaarde, gewijzigd, huidig, SKOS, zonder, zonderConcept } from './fixtures.js';
+import {
+    alsTekst,
+    conceptMetVerwijzing,
+    enigeWaarde,
+    gewijzigd,
+    huidig,
+    SKOS,
+    vangUitvoer,
+    vorigeRelease,
+    zonder,
+    zonderConcept,
+} from './fixtures.js';
+
+// Geen echte git: de release-tags en hun bestanden worden gesimuleerd (Jenkins haalt de tags pas na
+// de tests op)
+vi.mock('../src/utils/git-utils.js', async (importOriginal) => ({
+    ...(await importOriginal()),
+    bestandInRevisie: vi.fn(),
+    laatsteReleaseTag: vi.fn(),
+    vereisteReleaseTags: vi.fn(),
+}));
 
 let triples;
 beforeAll(() =>
@@ -85,4 +111,67 @@ describe('leesRegel (toegestane-verwijderingen.txt)', () => {
             expect(leesRegel('<http://example.org/x> kapot .', 8)).rejects.toThrow(':8: not a valid N-Triples line.'),
             expect(leesRegel('a:b c:d e:f', 9)).rejects.toThrow(':9: expected a subject'),
         ]));
+});
+
+describe('script', () => {
+    const ID = 'codelijst-luchtzuiveringssysteem';
+    // Per tag de inhoud van het N-Triples-bestand; een tag zonder inhoud heeft geen bestand
+    const releases = (inhoud) => {
+        vereisteReleaseTags.mockResolvedValue(Object.keys(inhoud));
+        laatsteReleaseTag.mockResolvedValue(Object.keys(inhoud).at(-1));
+        bestandInRevisie.mockImplementation((tag) =>
+            inhoud[tag] ? Promise.resolve(inhoud[tag]) : Promise.reject(new Error(`missing in ${tag}`)),
+        );
+    };
+
+    afterEach(() => {
+        vi.restoreAllMocks();
+        process.exitCode = undefined;
+    });
+
+    it('passes against an identical previous release', () => {
+        const uitvoer = vangUitvoer(vi);
+        releases({ [`${ID}-1.0.0`]: alsTekst(triples) });
+        return valideerTegenVorigeRelease().then(() => {
+            expect(process.exitCode).toBeUndefined();
+            expect(uitvoer()).toContain(`Validation against ${ID}-1.0.0 passed`);
+        });
+    });
+
+    it('fails on a removed concept or value and warns about a changed value', () => {
+        const uitvoer = vangUitvoer(vi);
+        releases({ [`${ID}-1.0.0`]: alsTekst(vorigeRelease(triples)) });
+        return valideerTegenVorigeRelease().then(() => {
+            expect(process.exitCode).toBe(1);
+            expect(uitvoer()).toMatch(/1 concept removed[\s\S]*Verwijderd concept/);
+            expect(uitvoer()).toMatch(/1 value removed[\s\S]*Verwijderde waarde/);
+            expect(uitvoer()).toContain('1 property with a changed value');
+            expect(uitvoer()).toContain(`Validation against ${ID}-1.0.0 failed`);
+        });
+    });
+
+    it('reports removals in older releases in --history without failing', () => {
+        const uitvoer = vangUitvoer(vi);
+        releases({
+            [`${ID}-0.9.0`]: null,
+            [`${ID}-1.0.0`]: alsTekst(vorigeRelease(triples)),
+            [`${ID}-1.1.0`]: alsTekst(triples),
+        });
+        return valideerGeschiedenis().then(() => {
+            expect(process.exitCode).toBeUndefined();
+            expect(uitvoer()).toContain('1 release without luchtzuiveringssysteem.nt, skipped: 0.9.0');
+            expect(uitvoer()).toContain('1 step with removals: 1.0.0 → 1.1.0');
+            expect(uitvoer()).toContain('Validation of 1.1.0 → current passed');
+        });
+    });
+
+    it('fails in --history when the last step removes information', () => {
+        const uitvoer = vangUitvoer(vi);
+        releases({ [`${ID}-1.0.0`]: alsTekst(triples), [`${ID}-1.1.0`]: alsTekst(vorigeRelease(triples)) });
+        return valideerGeschiedenis().then(() => {
+            expect(process.exitCode).toBe(1);
+            expect(uitvoer()).toContain('1 step with changed values only: 1.0.0 → 1.1.0');
+            expect(uitvoer()).toContain('Validation of 1.1.0 → current failed');
+        });
+    });
 });

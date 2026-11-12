@@ -17,15 +17,16 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/source/prefix.json`                                                                           | ★ bron (referentie)          | jij                                                                     | geen enkel script                                        |   ja   |    nee    |
 | `src/source/toegestane-verwijderingen.txt`                                                         | ★ bron                       | jij                                                                     | `validate:release`                                       |   ja   |    nee    |
 | `src/n3/luchtzuivering-rules.n3`                                                                   | ★ bron                       | jij                                                                     | `create_skos`                                            |   ja   |    nee    |
-| `src/utils/variables.js`                                                                           | ★ bron (code)                | jij                                                                     | `01_…`, `02_…`, `03_…` en `04_…`                         |   ja   |    nee    |
+| `src/utils/variables.js`                                                                           | ★ bron (code)                | jij                                                                     | `00_…` t.e.m. `04_…`                                     |   ja   |    nee    |
 | `src/utils/git.js`                                                                                 | ★ bron (code)                | jij                                                                     | `utils/git-utils.js`                                     |   ja   |    nee    |
 | `src/utils/git-utils.js`                                                                           | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/releases.js`                                                                            | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/rdf.js`                                                                                 | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
-| `src/utils/console.js`                                                                             | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/console.js`                                                                             | ★ bron (code)                | jij                                                                     | `00_…`, `03_…`, `04_…`                                   |   ja   |    nee    |
 | `src/utils/markdown.js`                                                                            | ★ bron (code)                | jij                                                                     | `04_…`                                                   |   ja   |    nee    |
 | `src/utils/files.js`                                                                               | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
-| `src/utils/script.js`                                                                              | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
+| `src/utils/csv.js`                                                                                 | ★ bron (code)                | jij                                                                     | `00_…`, tests                                            |   ja   |    nee    |
+| `src/utils/script.js`                                                                              | ★ bron (code)                | jij                                                                     | `00_…`, `03_…`, `04_…`                                   |   ja   |    nee    |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl`          | ★ bron                       | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron                       | jij                                                                     | `create_skos` (SHACL), `create_odcs`                     |   ja   |    ja     |
 | `src/main/resources/…/lzs/data/id/graph/context.json` en `prefix.json`                             | ★ bron (gepubliceerde kopie) | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
@@ -72,6 +73,7 @@ codelijst-luchtzuiveringssysteem/
 ├── pnpm-workspace.yaml              pnpm-instellingen: overrides, exacte versies, build-scripts
 ├── CHANGELOG.md                     ⚙ wijzigingen per release (create_changelog)
 ├── src/
+│   ├── 00_validate_source_csv.js        script: controle van de bron-CSV (prefixen, datatypes)
 │   ├── 01_codelijst_skos_from_csv.js    script: CSV → SKOS
 │   ├── 02_metadata.js                   script: DCAT-metadata + ODCS data contract
 │   ├── 03_validate_against_previous_release.js  script: SHACL + controle op verwijderingen t.o.v. vorige release
@@ -84,6 +86,7 @@ codelijst-luchtzuiveringssysteem/
 │   ├── utils/rdf.js                     N-Triples parsen en termen schrijven
 │   ├── utils/markdown.js                Markdown: escapen, uitgelijnde tabellen
 │   ├── utils/files.js                   bestanden lezen met promises (ontbrekend bestand -> standaardwaarde)
+│   ├── utils/csv.js                     CSV-tekst inlezen als rijen (csv-parser)
 │   ├── utils/script.js                  isMainModule: script enkel uitvoeren als het gestart wordt
 │   ├── utils/console.js                 console-uitvoer met kleuren, vet en symbolen
 │   ├── source/                          ★ brondata

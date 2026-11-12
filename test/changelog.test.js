@@ -2,10 +2,25 @@
 // De changelog-sectie (04_create_changelog.js) op een kleine, vaste codelijst. De verwachte Markdown
 // staat in __snapshots__/ en verandert dus enkel als de code of een dependency de inhoud, sortering of
 // opmaak verandert, niet bij een wijziging aan de echte codelijst. Bewust gewijzigd: 'pnpm run test -u'.
-import { beforeAll, describe, expect, it } from 'vitest';
+import { writeFile } from 'node:fs/promises';
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest';
 import rdf from '@zazuko/env-node';
-import { sectie } from '../src/04_create_changelog.js';
+import { maakVolledigeChangelog, sectie, voegHuidigeVersieToe } from '../src/04_create_changelog.js';
+import { bestandInRevisie, datumVanRevisie, vereisteReleaseTags } from '../src/utils/git-utils.js';
 import { parseNTriples } from '../src/utils/rdf.js';
+import { alsTekst, huidig, vangUitvoer, vorigeRelease } from './fixtures.js';
+
+// Geen echte git en geen CHANGELOG.md overschrijven: tags, hun bestanden en writeFile worden gesimuleerd
+vi.mock('../src/utils/git-utils.js', async (importOriginal) => ({
+    ...(await importOriginal()),
+    bestandInRevisie: vi.fn(),
+    datumVanRevisie: vi.fn(),
+    vereisteReleaseTags: vi.fn(),
+}));
+vi.mock('node:fs/promises', async (importOriginal) => ({
+    ...(await importOriginal()),
+    writeFile: vi.fn(() => Promise.resolve()),
+}));
 
 const SKOS = 'http://www.w3.org/2004/02/skos/core#';
 const TYPE = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
@@ -82,5 +97,95 @@ describe('sectie', () => {
         const { tekst, aantallen } = sectie({ label: '1.1.0', datum: '2026-02-01', vorige, huidige: nieuw });
         expect(aantallen).toEqual({ toegevoegd: 0, gewijzigd: 1, verwijderd: 0 });
         return expect(tekst).toMatchFileSnapshot('__snapshots__/changelog-property.md');
+    });
+});
+
+describe('script', () => {
+    const ID = 'codelijst-luchtzuiveringssysteem';
+    let triples;
+    beforeAll(() =>
+        huidig().then((t) => {
+            triples = t;
+        }),
+    );
+
+    // Per tag de inhoud van het N-Triples-bestand; een tag zonder inhoud heeft geen bestand
+    const releases = (inhoud) => {
+        vereisteReleaseTags.mockResolvedValue(Object.keys(inhoud));
+        datumVanRevisie.mockResolvedValue('2026-01-01');
+        bestandInRevisie.mockImplementation((tag) =>
+            inhoud[tag] ? Promise.resolve(inhoud[tag]) : Promise.reject(new Error(`missing in ${tag}`)),
+        );
+    };
+    const geschreven = () => {
+        expect(writeFile).toHaveBeenCalledTimes(1);
+        expect(writeFile.mock.calls[0][0]).toBe('../CHANGELOG.md');
+        return writeFile.mock.calls[0][1];
+    };
+
+    afterEach(() => {
+        vi.restoreAllMocks();
+        vi.unstubAllEnvs();
+        writeFile.mockClear();
+    });
+
+    it('adds the current files as the next version', () => {
+        vangUitvoer(vi);
+        vi.stubEnv('VERSION', undefined);
+        releases({ [`${ID}-1.0.0`]: alsTekst(vorigeRelease(triples)) });
+        return voegHuidigeVersieToe().then(() => {
+            const tekst = geschreven();
+            expect(tekst).toMatch(/^# Changelog/);
+            expect(tekst).toContain('## [Volgende versie]\n\nNog niet gepubliceerd: wijzigingen t.o.v. release 1.0.0.');
+            expect(tekst.match(/^## \[Volgende versie\]/gm)).toHaveLength(1);
+        });
+    });
+
+    it('replaces the next version by the released version', () => {
+        vangUitvoer(vi);
+        vi.stubEnv('VERSION', '1.1.0');
+        releases({ [`${ID}-1.0.0`]: alsTekst(vorigeRelease(triples)) });
+        return voegHuidigeVersieToe().then(() => {
+            const tekst = geschreven();
+            expect(tekst).toMatch(/^## \[1\.1\.0\] - \d{4}-\d{2}-\d{2}$/m);
+            expect(tekst).not.toContain('## [Volgende versie]');
+        });
+    });
+
+    it('refuses a version that is already released', () => {
+        vangUitvoer(vi);
+        vi.stubEnv('VERSION', '1.0.0');
+        releases({ [`${ID}-1.0.0`]: alsTekst(triples) });
+        return expect(voegHuidigeVersieToe()).rejects.toThrow('Version 1.0.0 is already released');
+    });
+
+    it('rebuilds the changelog from all release tags with --full', () => {
+        const uitvoer = vangUitvoer(vi);
+        vi.stubEnv('VERSION', undefined);
+        releases({
+            [`${ID}-0.9.0`]: null,
+            [`${ID}-1.0.0`]: alsTekst(vorigeRelease(triples)),
+            [`${ID}-1.1.0`]: alsTekst(triples),
+        });
+        return maakVolledigeChangelog().then(() => {
+            const secties = geschreven().match(/^## \[[^\]]+\].*$/gm);
+            expect(secties).toEqual([
+                '## [Volgende versie]',
+                '## [1.1.0] - 2026-01-01',
+                '## [1.0.0] - 2026-01-01',
+                '## [0.9.0] - 2026-01-01',
+            ]);
+            expect(uitvoer()).toContain('no code list');
+        });
+    });
+
+    it('does not add the current files with --full when the version is already released', () => {
+        const uitvoer = vangUitvoer(vi);
+        vi.stubEnv('VERSION', '1.0.0');
+        releases({ [`${ID}-1.0.0`]: alsTekst(triples) });
+        return maakVolledigeChangelog().then(() => {
+            expect(geschreven().match(/^## \[[^\]]+\].*$/gm)).toEqual(['## [1.0.0] - 2026-01-01']);
+            expect(uitvoer()).toContain('Version 1.0.0 is already released');
+        });
     });
 });

@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import * as git from '../src/utils/git.js';
 import {
     bestandInRevisie,
+    datumVanRevisie,
     laatsteReleaseTag,
     releaseTagsInGeschiedenis,
     versieVanTag,
@@ -70,5 +71,15 @@ describe('bestandInRevisie', () => {
     it('fails with a clear message when the file does not exist', () => {
         git.show.mockRejectedValue(new Error('fatal'));
         return expect(bestandInRevisie('v1', './x.nt')).rejects.toThrow('./x.nt does not exist in v1.');
+    });
+});
+
+describe('datumVanRevisie', () => {
+    it('returns the commit date without the line ending', () => {
+        git.log.mockResolvedValue('2026-01-02\n');
+        return datumVanRevisie('v1').then((datum) => {
+            expect(datum).toBe('2026-01-02');
+            expect(git.log).toHaveBeenCalledWith('-1', '--format=%cs', 'v1');
+        });
     });
 });
