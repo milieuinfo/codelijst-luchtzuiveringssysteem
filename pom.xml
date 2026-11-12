@@ -51,7 +51,7 @@
         <version>2.0.2</version>
         <configuration>
           <nodeVersion>v26.10.0</nodeVersion>
-          <pnpmVersion>9.15.9</pnpmVersion>
+          <pnpmVersion>11.28.9</pnpmVersion>
           <nodeDownloadRoot>${acd.repository.node.dist.url}</nodeDownloadRoot>
           <pnpmDownloadRoot>${acd.repository.pnpm.dist.url}</pnpmDownloadRoot>
           <serverId>repo.omgeving.vlaanderen.be</serverId>

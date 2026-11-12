@@ -1,0 +1,7 @@
+overrides:
+  '@rdfjs/types': 2.0.1
+
+saveExact: true
+
+allowBuilds:
+  classic-level: false
