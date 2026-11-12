@@ -234,6 +234,11 @@ rij. Binnen een tabel staat eerst het conceptschema zelf (als het nieuw of verwi
 de gewijzigde en de verwijderde concepten. Concepten zonder conceptschema (bv. QUDT-eenheden) staan in
 een laatste tabel *Zonder conceptschema*. De legende staat bovenaan in `CHANGELOG.md`.
 
+Vóór de tabellen per conceptschema staat een tabel *Properties* als er properties voor het eerst (🆕)
+of niet meer (🗑️) gebruikt worden, met het aantal waarden en concepten. Zo zie je een nieuwe kolom in
+de CSV ook als die enkel bij nieuwe concepten ingevuld is: van een nieuw concept toont de changelog de
+waarden niet. Afgeleide predicaten blijven ook hier weg.
+
 Afgeleide triples (`skos:narrower`, `skos:hasTopConcept`, `skos:note`, de `*Transitive`-varianten,
 `relevantProperty`, ...) worden weggelaten zolang de triple waaruit ze volgen er ook staat. Ze zouden
 enkel herhalen wat al vermeld is. Welke predicaten dat zijn, staat in `AFGELEID` in het script; voeg je een

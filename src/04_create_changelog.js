@@ -20,13 +20,15 @@
 // Per release een samenvatting en per conceptschema één tabel, met per rij een emoji:
 //   🆕 nieuw concept (het subject is nieuw)                🗑️ verwijderd concept (het subject komt nergens meer voor)
 //   ✏️ / ➕ / ➖ een waarde van een bestaand concept is gewijzigd / toegevoegd / verwijderd (één rij per property)
+// Daarvóór een tabel 'Properties' met de predicaten die voor het eerst (🆕) of niet meer (🗑️) gebruikt
+// worden, bv. een nieuwe kolom in de CSV.
 // Afgeleide triples (zie AFGELEID) worden weggelaten
 // zolang de triple waaruit ze volgen er ook staat: ze zouden enkel herhalen wat al vermeld is.
 
 import fs from 'node:fs';
 import { vereisteReleaseTags, datumVanRevisie } from './utils/git-utils.js';
-import { toNT as nt, tripleKey as sleutel, groupBy as groepeer } from './utils/rdf.js';
-import { artifactId, kort, versie, leesHuidig, leesReleases } from './utils/releases.js';
+import { toNT as nt, tripleKey as sleutel, groupBy as groepeer, shortenIri } from './utils/rdf.js';
+import { artifactId, kort, prefixes, versie, leesHuidig, leesReleases } from './utils/releases.js';
 import { style, symbol, print, plural } from './utils/console.js';
 import { escapeMarkdown, table } from './utils/markdown.js';
 
@@ -244,6 +246,31 @@ function samenvatting({ toegevoegd, gewijzigd, verwijderd }) {
         .join(' · ');
 }
 
+// Gebruik van een predicaat in een graaf: aantal waarden en aantal subjects
+function gebruik(g, predicaat) {
+    const triples = g.triples.filter(q => q.predicate.value === predicaat);
+    const subjects = new Set(triples.map(q => nt(q.subject)));
+    return `${plural(triples.length, 'waarde', 'waarden')} bij ${plural(subjects.size, 'concept', 'concepten')}`;
+}
+
+// Tabel met de properties die voor het eerst of niet meer gebruikt worden (bv. een nieuwe kolom in de
+// CSV). Afgeleide predicaten blijven weg, net als in de tabellen per conceptschema.
+function propertyTabel(oud, nieuw) {
+    const predicaten = (g) => new Set(g.triples.map(q => q.predicate.value).filter(p => !AFGELEID[p]));
+    const voor = predicaten(oud);
+    const na = predicaten(nieuw);
+    const kortIri = (iri) => shortenIri(iri, prefixes);
+    const sorteer = (lijst) => lijst.sort((a, b) => vergelijkTekst(kortIri(a), kortIri(b)));
+    const code = (p) => `\`${kortIri(p)}\``;
+    const rijen = [
+        ...sorteer([...na].filter(p => !voor.has(p)))
+            .map(p => [SOORT.nieuw.emoji, code(p), `nieuwe property: ${gebruik(nieuw, p)}`]),
+        ...sorteer([...voor].filter(p => !na.has(p)))
+            .map(p => [SOORT.weg.emoji, code(p), `niet meer gebruikt (was: ${gebruik(oud, p)})`])
+    ];
+    return rijen.length ? ['### Properties', '', table(['', 'Property', 'Wijziging'], rijen), ''] : [];
+}
+
 // Markdown-sectie voor één release; `vorige` is null voor de eerste release.
 // Zonder datum is het de volgende versie: de wijzigingen t.o.v. release `vorigeLabel`.
 function sectie({ label, datum, vorige, vorigeLabel, huidige }) {
@@ -279,7 +306,7 @@ function sectie({ label, datum, vorige, vorigeLabel, huidige }) {
     if (!aantallen.toegevoegd && !aantallen.gewijzigd && !aantallen.verwijderd) {
         regels.push('Geen inhoudelijke wijzigingen aan de codelijst.', '');
     } else {
-        regels.push(samenvatting(aantallen), '', ...tabellenPerSchema(rijen(verschil)));
+        regels.push(samenvatting(aantallen), '', ...propertyTabel(verschil.oud, verschil.nieuw), ...tabellenPerSchema(rijen(verschil)));
     }
     return { tekst: regels.join('\n'), aantallen };
 }

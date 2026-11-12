@@ -16,6 +16,14 @@ Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 
 🆕 28 nieuw · ✏️ 2 gewijzigd
 
+### Properties
+
+|     | Property                            | Wijziging                                    |
+| --- | ----------------------------------- | -------------------------------------------- |
+| 🆕  | `lzs-vocab:relevantNormBandbreedte` | nieuwe property: 1 waarde bij 1 concept      |
+| 🆕  | `lzs-vocab:relevantValue`           | nieuwe property: 8 waarden bij 6 concepten   |
+| 🆕  | `schema:value`                      | nieuwe property: 27 waarden bij 27 concepten |
+
 ### conceptschema luchtzuiveringssysteem normbandbreedte (`conceptscheme:norm-bandbreedte`)
 
 |     | Concept               | Label                                                      | Wijziging                                                        |
@@ -201,6 +209,12 @@ Geen inhoudelijke wijzigingen aan de codelijst.
 ## [0.1.3] - 2025-10-17
 
 🆕 71 nieuw · ✏️ 6 gewijzigd · 🗑️ 68 verwijderd
+
+### Properties
+
+|     | Property  | Wijziging                                    |
+| --- | --------- | -------------------------------------------- |
+| 🆕  | `dc:type` | nieuwe property: 16 waarden bij 16 concepten |
 
 ### conceptschema luchtzuiveringssysteem (`conceptscheme:lzstype`)
 
@@ -498,6 +512,13 @@ Geen inhoudelijke wijzigingen aan de codelijst.
 
 ✏️ 42 gewijzigd
 
+### Properties
+
+|     | Property                | Wijziging                                             |
+| --- | ----------------------- | ----------------------------------------------------- |
+| 🆕  | `lzs-vocab:relevantLZS` | nieuwe property: 52 waarden bij 42 concepten          |
+| 🗑️  | `dcterms:type`          | niet meer gebruikt (was: 52 waarden bij 42 concepten) |
+
 ### conceptschema luchtzuiveringssysteem eigenschap (`conceptscheme:lzsp`)
 
 |     | Concept                                             | Label                                                            | Wijziging                                                                        |
@@ -688,6 +709,23 @@ Geen inhoudelijke wijzigingen aan de codelijst.
 ## [0.0.5] - 2025-08-18
 
 🆕 29 nieuw · ✏️ 35 gewijzigd · 🗑️ 6 verwijderd
+
+### Properties
+
+|     | Property                                                               | Wijziging                                           |
+| --- | ---------------------------------------------------------------------- | --------------------------------------------------- |
+| 🆕  | `lzs-vocab:hasProcedureForProperty`                                    | nieuwe property: 2 waarden bij 2 concepten          |
+| 🆕  | `lzs-vocab:operatie`                                                   | nieuwe property: 14 waarden bij 14 concepten        |
+| 🆕  | `lzs-vocab:referentiewaardeType`                                       | nieuwe property: 14 waarden bij 14 concepten        |
+| 🆕  | `lzs-vocab:relevantCodeList`                                           | nieuwe property: 2 waarden bij 2 concepten          |
+| 🆕  | `lzs-vocab:relevantDataType`                                           | nieuwe property: 9 waarden bij 9 concepten          |
+| 🆕  | `lzs-vocab:technischefiche`                                            | nieuwe property: 15 waarden bij 15 concepten        |
+| 🆕  | `skos:scopeNote`                                                       | nieuwe property: 16 waarden bij 16 concepten        |
+| 🗑️  | `<https://data.omgeving.vlaanderen.be/ns/lzs#hasProcedureForProperty>` | niet meer gebruikt (was: 2 waarden bij 2 concepten) |
+| 🗑️  | `<https://data.omgeving.vlaanderen.be/ns/lzs#operatie>`                | niet meer gebruikt (was: 7 waarden bij 7 concepten) |
+| 🗑️  | `<https://data.omgeving.vlaanderen.be/ns/lzs#relevantCodeList>`        | niet meer gebruikt (was: 2 waarden bij 2 concepten) |
+| 🗑️  | `<https://data.omgeving.vlaanderen.be/ns/lzs#relevantDataType>`        | niet meer gebruikt (was: 9 waarden bij 9 concepten) |
+| 🗑️  | `<https://data.omgeving.vlaanderen.be/ns/lzs#relevantProperty>`        | niet meer gebruikt (was: 9 waarden bij 9 concepten) |
 
 ### conceptschema luchtzuiveringssysteem (`conceptscheme-alg:lzs`)
 
@@ -921,6 +959,18 @@ Geen inhoudelijke wijzigingen aan de codelijst.
 ## [0.0.3] - 2025-08-05
 
 🆕 10 nieuw · ✏️ 14 gewijzigd
+
+### Properties
+
+|     | Property                                                      | Wijziging                                             |
+| --- | ------------------------------------------------------------- | ----------------------------------------------------- |
+| 🆕  | `<https://data.omgeving.vlaanderen.be/ns/lzs#operatie>`       | nieuwe property: 7 waarden bij 7 concepten            |
+| 🆕  | `dcterms:type`                                                | nieuwe property: 30 waarden bij 20 concepten          |
+| 🆕  | `schema:maxValue`                                             | nieuwe property: 4 waarden bij 4 concepten            |
+| 🆕  | `schema:minValue`                                             | nieuwe property: 5 waarden bij 5 concepten            |
+| 🆕  | `skos:altLabel`                                               | nieuwe property: 1 waarde bij 1 concept               |
+| 🆕  | `skos:definition`                                             | nieuwe property: 9 waarden bij 9 concepten            |
+| 🗑️  | `<https://data.omgeving.vlaanderen.be/ns/lzs#relevantSystem>` | niet meer gebruikt (was: 21 waarden bij 11 concepten) |
 
 ### conceptschema luchtzuiveringssysteem (`conceptscheme-alg:lzs`)
 
