@@ -115,7 +115,7 @@
               <goal>pnpm</goal>
             </goals>
             <configuration>
-              <arguments>run validate_release</arguments>
+              <arguments>run validate:release</arguments>
             </configuration>
           </execution>
           <execution>

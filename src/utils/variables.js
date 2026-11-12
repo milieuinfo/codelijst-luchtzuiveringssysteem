@@ -1,5 +1,5 @@
 'use strict';
-import yaml from 'js-yaml';
+import { load as loadYaml } from 'js-yaml';
 import fs, { readFileSync } from 'node:fs';
 import rdf from '@zazuko/env-node';
 import {
@@ -9,7 +9,7 @@ import {
     frame_catalog,
 } from '@milieuinfo/maven-metadata-generator-npm/src/utils/variables.js';
 
-const config = yaml.load(fs.readFileSync('./source/config.yml', 'utf8'));
+const config = loadYaml(fs.readFileSync('./source/config.yml', 'utf8'));
 
 const virtuoso = config.deploy.virtuoso;
 

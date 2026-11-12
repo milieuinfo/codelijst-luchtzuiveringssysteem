@@ -5,6 +5,7 @@ import js from '@eslint/js';
 import markdown from '@eslint/markdown';
 import prettier from 'eslint-config-prettier';
 import n from 'eslint-plugin-n';
+import packageJson from 'eslint-plugin-package-json';
 import globals from 'globals';
 
 const JS = ['**/*.js'];
@@ -12,7 +13,16 @@ const JS = ['**/*.js'];
 export default [
     {
         // gegenereerd, extern of met geheimen (git-ignored); CHANGELOG.md wordt gegenereerd
-        ignores: ['node_modules/', 'target/', 'temp/', 'validation*/', 'src/utils/setenv*.js', 'CHANGELOG.md'],
+        ignores: [
+            'node_modules/',
+            'target/',
+            'temp/',
+            'validation*/',
+            '.stryker-tmp/',
+            'reports/',
+            'src/utils/setenv*.js',
+            'CHANGELOG.md',
+        ],
     },
 
     // JavaScript
@@ -54,10 +64,21 @@ export default [
         },
     },
     {
-        files: ['src/utils/git.js'],
+        // git.js zelf, en de test die child_process simuleert
+        files: ['src/utils/git.js', 'test/git.test.js'],
         rules: { 'no-restricted-imports': 'off' },
     },
     { files: JS, ...prettier },
+
+    // package.json: geldige velden, vaste volgorde van de sleutels, enkel exacte versies
+    packageJson.configs.recommended,
+    {
+        files: ['package.json'],
+        rules: {
+            'package-json/order-properties': 'error',
+            'package-json/restrict-dependency-ranges': ['error', { rangeType: 'pin' }],
+        },
+    },
 
     // Markdown (GitHub Flavored, voor de tabellen)
     ...markdown.configs.recommended.map((config) => ({ ...config, language: 'markdown/gfm' })),

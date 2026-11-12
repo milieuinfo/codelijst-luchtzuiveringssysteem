@@ -143,7 +143,7 @@ Een nieuw regelbestand moet je ook toevoegen onder `skos.rules` in `config.yml`.
 ## Checklist vóór je commit
 
 - [ ] `pnpm run create_skos` draait zonder fouten
-- [ ] `pnpm run validate_release` draait zonder fouten (bewuste verwijderingen staan in `toegestane-verwijderingen.txt`)
+- [ ] `pnpm run validate:release` draait zonder fouten (bewuste verwijderingen staan in `toegestane-verwijderingen.txt`)
 - [ ] de gegenereerde bestanden zitten mee in de commit
 - [ ] geen onbedoelde wijzigingen in andere bestanden (opmaak, line endings)
 - [ ] commit message in het Nederlands, liefst met ticketnummer (`ARMOS-123 Nieuwe systeemstatus in onderhoud`)

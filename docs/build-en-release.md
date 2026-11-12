@@ -17,8 +17,8 @@ het volgende:
 | `create metadata`       | `pnpm run create_metadata`                                                                   |
 
 Al deze stappen hangen standaard aan de fase `generate-resources`. Daarnaast zijn er drie executions
-zonder fase, die enkel Jenkins expliciet aanroept: `code-quality` (`pnpm run check`),
-`validate-previous-release` en `create-changelog`.
+zonder fase, die enkel Jenkins expliciet aanroept: `code-quality` (`pnpm run check`: lint, opmaak en
+tests), `validate-previous-release` en `create-changelog`.
 
 Na de stappen in `generate-resources` kopieert Maven twee resource-mappen naar `target/classes/`:
 
@@ -63,9 +63,18 @@ SKOS-bestanden die overeenkomen met de bron.
 ### Codekwaliteit
 
 Daarna draait Jenkins `pnpm run check` (Maven-execution `code-quality`): ESLint op de JavaScript en
-de Markdown, en de Prettier-controle op de JavaScript. De build faalt bij een ESLint-fout of een
-bestand dat niet volgens Prettier geformatteerd is. Lokaal los je dat op met `pnpm run format` en
-`pnpm run lint:fix`; wat overblijft, pas je met de hand aan.
+de Markdown, de Prettier-controle op de JavaScript en de Vitest-tests in `test/`. De build faalt bij
+een ESLint-fout, een bestand dat niet volgens Prettier geformatteerd is of een falende test. Lokaal
+los je dat op met `pnpm run format` en `pnpm run lint:fix`; wat overblijft, pas je met de hand aan.
+
+De tests bestaan uit unit tests van de utils (git wordt daarbij gesimuleerd) en integratietests op de
+echte configuratie en de gegenereerde codelijst: de SHACL-validatie, en een test die de codelijst
+opnieuw genereert en byte voor byte vergelijkt met de gecommitte bestanden. Ze vangen zo ook een
+dependency-update op die de generatie breekt. Een aparte test bewaakt dat `@zazuko/env-node` dezelfde
+versie heeft als in de generator: die aanvaardt enkel datasets van zijn eigen versie.
+
+Hoe goed de tests zijn, meet je met `pnpm run test:mutation` (Stryker): het brengt kleine fouten aan in
+`src/utils/` en kijkt of een test faalt. Onder 95 % faalt het commando. Jenkins draait dit (nog) niet.
 
 ### Vergelijking met vorige release
 
