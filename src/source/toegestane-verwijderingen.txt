@@ -1,0 +1,10 @@
+# Bewuste verwijderingen t.o.v. de vorige release, gelezen door 03_validate_against_previous_release.js.
+# Een verwijdering is een breaking change voor afnemers: vermeld ze in de PR.
+#
+# Eén regel per verwijdering, in een van deze vormen (IRI als <...> of als CURIE uit config.yml):
+#   lzs-param:voorbeeld                                   alle triples van dit subject
+#   lzs-param:voorbeeld skos:altLabel                     alle waarden van dit predicaat bij dit subject
+#   <https://...> <https://...> "waarde"@nl .             precies deze triple (N-Triples)
+#
+# Na de release staan deze verwijderingen in de nieuwe tag. Het script meldt dan dat de regels
+# geen effect meer hebben, en ze mogen weg.

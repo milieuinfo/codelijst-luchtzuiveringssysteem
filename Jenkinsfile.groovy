@@ -1,4 +1,5 @@
 @Library('Cumulus@1.3-stable') _
+
 pipeline {
     agent {
         kubernetes {
@@ -24,7 +25,7 @@ pipeline {
                         }
                     } else {
                         properties([parameters([
-                                booleanParam(name: 'DEPLOY', defaultValue: false, description: 'If true, runs mvn deploy instead of mvn verify.')
+                            booleanParam(name: 'DEPLOY', defaultValue: false, description: 'If true, runs mvn deploy instead of mvn verify.')
                         ])])
                     }
                 }
@@ -52,6 +53,30 @@ pipeline {
                         fi
                         rm -f skos-diff.txt
                     '''
+                }
+            }
+        }
+        stage("Vergelijking met vorige release") {
+            // Valideert de gegenereerde SKOS tegen de AP-constraints en faalt als er t.o.v. de
+            // vorige release-tag informatie verdwenen is (zie src/03_validate_against_previous_release.js).
+            // Loopt via Maven zodat node in de Maven-container draait (de agent-container mist libatomic).
+            when {
+                expression { git.notSkipCi() }
+            }
+            environment {
+                // het script roept git aan in de Maven-container, waar de workspace een andere eigenaar heeft
+                // ('dubious ownership'); safe.directory via env omdat we geen -c kunnen meegeven
+                GIT_CONFIG_COUNT = '1'
+                GIT_CONFIG_KEY_0 = 'safe.directory'
+                GIT_CONFIG_VALUE_0 = '*'
+            }
+            steps {
+                sh '''
+                    git -c safe.directory="$WORKSPACE" fetch --tags --force --quiet origin \
+                        || echo "Tags ophalen mislukt, de lokale tags worden gebruikt."
+                '''
+                script {
+                    maven.goal([goal: 'frontend:pnpm@validate-previous-release'])
                 }
             }
         }
@@ -100,6 +125,26 @@ pipeline {
                 }
             }
             stages {
+                stage("Changelog") {
+                    // Bouwt CHANGELOG.md volledig opnieuw op uit de release-tags, met de huidige bestanden
+                    // als sectie voor de nieuwe versie (env.VERSION), en commit en pusht het resultaat.
+                    // Gebeurt vóór release:prepare, zodat de changelog in de release-tag zit.
+                    when {
+                        expression { versions.isRelease() }
+                    }
+                    environment {
+                        // het script roept git aan in de Maven-container (zie 'Vergelijking met vorige release')
+                        GIT_CONFIG_COUNT = '1'
+                        GIT_CONFIG_KEY_0 = 'safe.directory'
+                        GIT_CONFIG_VALUE_0 = '*'
+                    }
+                    steps {
+                        script {
+                            maven.goal([goal: 'frontend:pnpm@create-changelog'])
+                            git.commitAndPush("Changelog voor release ${env.VERSION}")
+                        }
+                    }
+                }
                 stage("Maven prepare") {
                     when {
                         expression { versions.isRelease() }
@@ -124,8 +169,8 @@ pipeline {
                     steps {
                         script {
                             sonar.scanMaven([
-                                    projectKey        : env.SONAR_PROJECT_KEY,
-                                    tolerateBadQuality: true
+                                projectKey        : env.SONAR_PROJECT_KEY,
+                                tolerateBadQuality: true
                             ])
                         }
                     }

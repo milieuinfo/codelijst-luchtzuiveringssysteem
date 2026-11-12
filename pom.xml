@@ -75,13 +75,14 @@
           </execution>
           <execution>
             <!-- genereert de SKOS-bestanden opnieuw uit src/source; Jenkins controleert
-                 daarna dat ze identiek zijn aan de gecommitte versie -->
+                 daarna dat ze identiek zijn aan de gecommitte versie. Zonder changelog
+                 (create_skos werkt lokaal ook CHANGELOG.md bij; daarvoor zijn git-tags nodig) -->
             <id>create skos</id>
             <goals>
               <goal>pnpm</goal>
             </goals>
             <configuration>
-              <arguments>run create_skos</arguments>
+              <arguments>run create_skos_only</arguments>
             </configuration>
           </execution>
           <execution>
@@ -91,6 +92,30 @@
             </goals>
             <configuration>
               <arguments>run create_metadata</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- niet aan een fase gekoppeld: enkel expliciet aangeroepen door Jenkins via
+                 'frontend:pnpm@validate-previous-release', zodat node in de Maven-container draait -->
+            <id>validate-previous-release</id>
+            <phase>none</phase>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run validate_release</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- niet aan een fase gekoppeld: enkel bij een release aangeroepen door Jenkins via
+                 'frontend:pnpm@create-changelog'; de nieuwe versie komt uit de omgevingsvariabele VERSION -->
+            <id>create-changelog</id>
+            <phase>none</phase>
+            <goals>
+              <goal>pnpm</goal>
+            </goals>
+            <configuration>
+              <arguments>run create_changelog_full</arguments>
             </configuration>
           </execution>
         </executions>

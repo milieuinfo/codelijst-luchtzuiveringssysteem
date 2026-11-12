@@ -3059,7 +3059,7 @@
                 "lzs-dl-status:ingetrokken",
                 "lzs-dl-status:nietgevalideerd"
             ],
-            "prefLabel": "conceptschema dataleverancier status"
+            "prefLabel": "Conceptschema dataleverancier status"
         },
         {
             "id": "conceptscheme:medium",
@@ -3073,7 +3073,7 @@
                 "lzs-medium:stal",
                 "lzs-medium:waswater"
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem medium"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem medium"
         },
         {
             "id": "conceptscheme:norm-bandbreedte",
@@ -3104,7 +3104,7 @@
                 "lzs-bandbreedte:_8",
                 "lzs-bandbreedte:_9"
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem normbandbreedte"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem normbandbreedte"
         },
         {
             "id": "conceptscheme:parameter",
@@ -3125,14 +3125,14 @@
                 "lzs-param:stalbezetting",
                 "lzs-param:systeemstatus"
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem eigenschap"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem eigenschap"
         },
         {
             "id": "conceptscheme:parameter-norm",
             "_type": [
                 "skos:ConceptScheme"
             ],
-            "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
+            "definition": "Normen per parameter en systeemtype, met minimum- en maximumwaarden.",
             "hasTopConcept": [
                 "lzs-param-norm:_10",
                 "lzs-param-norm:_11",
@@ -3155,9 +3155,9 @@
                 "lzs-param-norm:_9"
             ],
             "note": [
-                "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
+                "Normen per parameter en systeemtype, met minimum- en maximumwaarden."
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem parameter specificatie"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem parameter specificatie"
         },
         {
             "id": "conceptscheme:secundaire-alarmen",
@@ -3199,7 +3199,7 @@
                 "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
                 "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
             ],
-            "prefLabel": "Conceptschema secundaire alarmen luchtzuiveringssysteem",
+            "prefLabel": "Conceptschema luchtzuiveringssysteem secundaire alarmen",
             "scopeNote": "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
         },
         {
@@ -3211,7 +3211,7 @@
                 "lzs-stalbezetting:leeg",
                 "lzs-stalbezetting:in_gebruik"
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem stalbezetting"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem stalbezetting"
         },
         {
             "id": "conceptscheme:systeemopstelling",
@@ -3222,7 +3222,7 @@
                 "lzs-systeemopstelling:enkelvoudig",
                 "lzs-systeemopstelling:gecombineerd"
             ],
-            "prefLabel": "conceptschema  luchtzuiveringssysteem opstelingen"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem opstellingen"
         },
         {
             "id": "conceptscheme:systeemstatus",
@@ -3236,7 +3236,7 @@
                 "lzs-status:buiten_gebruik",
                 "lzs-status:operationeel"
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem status"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem status"
         },
         {
             "id": "conceptscheme:systeemtype",
@@ -3246,17 +3246,21 @@
             "hasTopConcept": [
                 "lzs-type:luchtzuiveringssysteem"
             ],
-            "prefLabel": "conceptschema luchtzuiveringssysteem"
+            "prefLabel": "Conceptschema luchtzuiveringssysteem"
         },
         {
             "id": "conceptscheme-alg:vlarem-klasse",
             "_type": [
                 "skos:ConceptScheme"
             ],
+            "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
             "hasTopConcept": [
                 "vlarem-klasse:k1",
                 "vlarem-klasse:k2",
                 "vlarem-klasse:k3"
+            ],
+            "note": [
+                "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
             ],
             "prefLabel": "VLAREM indelingsklassen"
         }

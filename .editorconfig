@@ -1,0 +1,37 @@
+# EditorConfig — https://editorconfig.org
+# Gedeelde opmaakregels voor iedereen die aan dit project werkt.
+# IntelliJ/WebStorm ondersteunen dit standaard; voor VS Code is de
+# extensie "EditorConfig for VS Code" nodig.
+
+root = true
+
+# Standaard voor alle bestanden
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JSON, YAML en XML (package.json, context.json, config.yml, pom.xml, ...)
+[*.{json,jsonld,yml,yaml,xml}]
+indent_size = 2
+
+# Markdown: twee spaties op het einde van een regel is een harde line break
+[*.md]
+trim_trailing_whitespace = false
+
+# CSV-bronnen: witruimte kan deel uitmaken van een waarde, dus niets wegknippen
+[*.csv]
+trim_trailing_whitespace = false
+
+# Gegenereerde SKOS-bestanden: nooit met de hand bewerken.
+# Ze worden geschreven door `pnpm run create_skos` en Jenkins controleert
+# dat ze byte voor byte overeenkomen met wat het script opnieuw genereert.
+# Een editor mag hier dus niets aan de opmaak veranderen.
+[src/main/resources/be/vlaanderen/omgeving/data/id/conceptscheme/**]
+indent_style = unset
+indent_size = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
