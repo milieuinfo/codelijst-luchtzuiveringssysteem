@@ -25,13 +25,14 @@
 // Afgeleide triples (zie AFGELEID) worden weggelaten
 // zolang de triple waaruit ze volgen er ook staat: ze zouden enkel herhalen wat al vermeld is.
 
-import fs from 'node:fs';
+import { writeFile } from 'node:fs/promises';
 import { vereisteReleaseTags, datumVanRevisie } from './utils/git-utils.js';
 import { toNT as nt, tripleKey as sleutel, groupBy as groepeer, shortenIri } from './utils/rdf.js';
 import { artifactId, kort, prefixes, versie, leesHuidig, leesReleases } from './utils/releases.js';
 import { style, symbol, print, plural } from './utils/console.js';
 import { escapeMarkdown, table } from './utils/markdown.js';
 import { isMainModule } from './utils/script.js';
+import { readTextIfExists } from './utils/files.js';
 
 const CHANGELOG_PAD = '../CHANGELOG.md';
 const MAX_LENGTE = 120;
@@ -361,11 +362,12 @@ function aantallenTekst(aantallen) {
 function schrijf(inhoud) {
     if (NAAR_STDOUT) {
         process.stdout.write(inhoud);
-        return;
+        return Promise.resolve();
     }
-    fs.writeFileSync(CHANGELOG_PAD, inhoud);
-    print.blank();
-    print.success(`Written to ${style.cyan('CHANGELOG.md')}`);
+    return writeFile(CHANGELOG_PAD, inhoud).then(() => {
+        print.blank();
+        print.success(`Written to ${style.cyan('CHANGELOG.md')}`);
+    });
 }
 
 // Tekst met precies één regeleinde op het einde (zonder regex: /\n*$/ is traag door backtracking)
@@ -439,7 +441,7 @@ function maakVolledigeChangelog() {
                 }
                 return resultaat.tekst;
             });
-            schrijf([HEADER, ...secties.toReversed()].join('\n'));
+            return schrijf([HEADER, ...secties.toReversed()].join('\n'));
         });
 }
 
@@ -477,16 +479,17 @@ function voegHuidigeVersieToe() {
                 `${style.bold(label.padEnd(8))} ${aantallenTekst(aantallen)}  ${style.gray('(added, changed, removed concepts)')}`,
                 0,
             );
-
-            const bestaand = fs.existsSync(CHANGELOG_PAD)
-                ? splitsChangelog(fs.readFileSync(CHANGELOG_PAD, 'utf8'))
-                : null;
+            return readTextIfExists(CHANGELOG_PAD).then((inhoud) => ({
+                tekst,
+                bestaand: inhoud === null ? null : splitsChangelog(inhoud),
+            }));
+        })
+        .then(({ tekst, bestaand }) => {
             if (!bestaand) {
                 print.warning(
                     `${CHANGELOG_PAD} does not exist yet; run 'pnpm run create_changelog_full' to include older releases`,
                 );
-                schrijf([HEADER, tekst].join('\n'));
-                return;
+                return schrijf([HEADER, tekst].join('\n'));
             }
             // Bij een release vervangt de sectie voor de versie de sectie 'Volgende versie'
             let secties = bestaand.secties;
@@ -501,7 +504,7 @@ function voegHuidigeVersieToe() {
             } else {
                 secties.unshift({ label, tekst });
             }
-            schrijf([metEenRegeleinde(bestaand.kop), ...secties.map((s) => s.tekst)].join('\n'));
+            return schrijf([metEenRegeleinde(bestaand.kop), ...secties.map((s) => s.tekst)].join('\n'));
         });
 }
 

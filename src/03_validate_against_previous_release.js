@@ -18,7 +18,6 @@
 // bestanden). Per oudere stap worden de eerste 5 items van elke lijst getoond, met --verbose alles. Verwijderingen in oude releases worden enkel gerapporteerd; de exit code hangt, net
 // als zonder --history, enkel af van de SHACL-validatie en de laatste stap (laatste tag -> nu).
 
-import fs from 'node:fs';
 import path from 'node:path';
 import rdf from '@zazuko/env-node';
 import validate from '@milieuinfo/maven-metadata-generator-npm/src/utils/shacl_validation.js';
@@ -28,6 +27,7 @@ import { parseNTriples, toNT as nt, tripleKey as sleutel, groupBy as groepeer } 
 import { ntPad, artifactId, prefixes, kort, versie, leesHuidig, leesRevisie, leesReleases } from './utils/releases.js';
 import { style, symbol, print, plural } from './utils/console.js';
 import { isMainModule } from './utils/script.js';
+import { readTextIfExists } from './utils/files.js';
 
 const TOEGESTAAN_PAD = './source/toegestane-verwijderingen.txt';
 
@@ -71,8 +71,7 @@ export function leesRegel(tekst, regelnr) {
 
 // Elke regel is een subject, een subject + predicaat (IRI of CURIE), of een volledige N-Triples-regel
 function leesToegestaan() {
-    return Promise.resolve()
-        .then(() => (fs.existsSync(TOEGESTAAN_PAD) ? fs.readFileSync(TOEGESTAAN_PAD, 'utf8') : ''))
+    return readTextIfExists(TOEGESTAAN_PAD, '')
         .then((inhoud) =>
             inhoud
                 .split('\n')

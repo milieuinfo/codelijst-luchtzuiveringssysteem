@@ -24,6 +24,7 @@ Wat is een bestand, wie maakt het, wie gebruikt het en waar belandt het? De pade
 | `src/utils/rdf.js`                                                                                 | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/console.js`                                                                             | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/markdown.js`                                                                            | ★ bron (code)                | jij                                                                     | `04_…`                                                   |   ja   |    nee    |
+| `src/utils/files.js`                                                                               | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/utils/script.js`                                                                              | ★ bron (code)                | jij                                                                     | `03_…`, `04_…`                                           |   ja   |    nee    |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem/luchtzuiveringssysteem.ttl`          | ★ bron                       | jij                                                                     | geen enkel script, enkel afnemers                        |   ja   |    ja     |
 | `src/main/resources/…/data/id/ontology/luchtzuiveringssysteem-ap-constraints/…-ap-constraints.ttl` | ★ bron                       | jij                                                                     | `create_skos` (SHACL), `create_odcs`                     |   ja   |    ja     |
@@ -84,6 +85,7 @@ codelijst-luchtzuiveringssysteem/
 │   ├── utils/releases.js                releases van de codelijst lezen (gedeeld door 03 en 04)
 │   ├── utils/rdf.js                     N-Triples parsen en termen schrijven
 │   ├── utils/markdown.js                Markdown: escapen, uitgelijnde tabellen
+│   ├── utils/files.js                   bestanden lezen met promises (ontbrekend bestand -> standaardwaarde)
 │   ├── utils/script.js                  isMainModule: script enkel uitvoeren als het gestart wordt
 │   ├── utils/console.js                 console-uitvoer met kleuren, vet en symbolen
 │   ├── source/                          ★ brondata

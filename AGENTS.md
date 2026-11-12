@@ -34,6 +34,7 @@ Sources (edit these):
 | `src/utils/releases.js` | Shared by `03_…`/`04_…`: `.nt` path, prefixes, `kort`, version from tag, triples of current files or a release |
 | `src/utils/rdf.js` | Generic: `parseNTriples`, `toNT`, `tripleKey`, `shorten` (CURIE), `groupBy` |
 | `src/utils/markdown.js` | Generic: `escapeMarkdown`, `table` (padded, aligned) |
+| `src/utils/files.js` | Generic: `readTextIfExists(path, fallback)` (fs/promises; missing file -> fallback) |
 | `src/utils/script.js` | Generic: `isMainModule(import.meta.url)`: run a script's main only when started, not when imported |
 | `src/utils/console.js` | Generic console output (see Utils) |
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary + SHACL shapes (AP constraints) |
@@ -117,7 +118,7 @@ Language. "Flemish" = Belgian Dutch: standard spelling, Flemish wording (*afneme
 | --- | --- |
 | Commits, PR descriptions, `docs/` (technical terms in English), header comment of `toegestane-verwijderingen.txt`, `CHANGELOG.md`, `echo` in `Jenkinsfile.groovy` | Flemish |
 | Code comments in project scripts and repo-specific utils (`01_…`, `03_…`, `04_…`, `variables.js`, `git-utils.js`, `releases.js`) | Flemish |
-| Generic utils (`git.js`, `console.js`, `rdf.js`, `markdown.js`): names, comments, JSDoc | English (reusable elsewhere) |
+| Generic utils (`git.js`, `console.js`, `rdf.js`, `markdown.js`, `files.js`, `script.js`): names, comments, JSDoc | English (reusable elsewhere) |
 | Script console output | English, matching the generator (`skos generation: csv to jsonld`, `Validation succeeded.`) |
 | This file | English |
 
@@ -136,6 +137,7 @@ JavaScript:
 - Dependencies: exact versions only (no `^`/`~`; ESLint `restrict-dependency-ranges` enforces it, except in `overrides` in `pnpm-workspace.yaml`: check those yourself). Keep `@zazuko/env-node` equal to the generator's pinned version (datasets are passed between both). After an update: `pnpm run check`, `create_skos_only` (no diff), `validate:release`.
 - Tests: Vitest in `test/`, import `describe`/`it`/`expect` from `vitest`; new util logic gets a test. Scripts with logic worth testing export it and run their main only via `isMainModule(import.meta.url)`. A failing snapshot after a dependency update = changed output: investigate, don't just update it.
 - Import only packages in `package.json` (`n/no-extraneous-import`) (pnpm strict: e.g. `rdf-validate-shacl` from the generator is not importable). Importing files from the generator's `src/` is fine (`variables.js` does; `03_…` uses `src/utils/shacl_validation.js`).
+- File access inside Promise chains: `node:fs/promises` (`readTextIfExists` for optional files, no `existsSync` + read). Sync only where a value is needed at module load (`variables.js`, `isMainModule`).
 - On failure set `process.exitCode = 1`, never `process.exit()` (flushes output; `n/no-process-exit`).
 
 Utils:

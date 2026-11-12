@@ -2,7 +2,7 @@
 // Gedeelde logica voor de scripts die releases van de codelijst vergelijken
 // (03_validate_against_previous_release.js en 04_create_changelog.js).
 // Enkel de N-Triples tellen: de andere formaten zijn serialisaties van dezelfde graaf.
-import fs from 'node:fs';
+import { readFile } from 'node:fs/promises';
 import { skosOptions, skosSource, metadataOptions } from './variables.js';
 import { bestandInRevisie, versieVanTag } from './git-utils.js';
 import { parseNTriples, shorten } from './rdf.js';
@@ -27,9 +27,7 @@ export const versie = (releaseTag) => versieVanTag(artifactId, releaseTag);
  * @returns {Promise<import('@rdfjs/types').Quad[]>}
  */
 export function leesHuidig() {
-    return Promise.resolve()
-        .then(() => fs.readFileSync(ntPad, 'utf8'))
-        .then(parseNTriples);
+    return readFile(ntPad, 'utf8').then(parseNTriples);
 }
 
 /**
