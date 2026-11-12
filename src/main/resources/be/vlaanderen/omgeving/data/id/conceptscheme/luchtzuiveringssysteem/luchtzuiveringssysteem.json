@@ -2273,7 +2273,7 @@
             "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default",
             "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
         ],
-        "prefLabel": "Conceptschema secundaire alarmen luchtzuiveringssysteem",
+        "prefLabel": "conceptschema luchtzuiveringssysteem secundaire alarmen",
         "scopeNote": "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"
     },
     {
@@ -2296,7 +2296,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/enkelvoudig",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd"
         ],
-        "prefLabel": "conceptschema  luchtzuiveringssysteem opstelingen"
+        "prefLabel": "conceptschema luchtzuiveringssysteem opstellingen"
     },
     {
         "id": "https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus",

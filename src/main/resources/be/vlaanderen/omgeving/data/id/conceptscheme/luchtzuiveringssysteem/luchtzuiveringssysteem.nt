@@ -1295,7 +1295,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/secundair_alarm/dagbeoordeling_9> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#note> "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#note> "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema secundaire alarmen luchtzuiveringssysteem"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem secundaire alarmen"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/secundaire-alarmen> <http://www.w3.org/2004/02/skos/core#scopeNote> "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/stalbezetting> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/stalbezetting/in_gebruik> .
@@ -1304,7 +1304,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/enkelvoudig> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/systeemopstelling/gecombineerd> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema  luchtzuiveringssysteem opstelingen"@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemopstelling> <http://www.w3.org/2004/02/skos/core#prefLabel> "conceptschema luchtzuiveringssysteem opstellingen"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/buiten_gebruik> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemstatus> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/status/in_reiniging> .

@@ -84,7 +84,7 @@ metadata :
     type: http://www.w3.org/ns/dcat#Catalog
   dataset :
     title: "Dataset van codelijsten i.v.m. luchtzuiveringssystemen voor stallen, gericht op de reductie van stikstofuitstoot."
-    description: "Deze dataset bevat codelijsten i.v.m. luchtzuiveringssystemen voor stallen, gericht op de reductie van stikstofuitstoot. De codelijsten hebben een onderlinge samenhang, bv. types van luchtzuiveringssystemen met specifieke regels. De lijsten worden gebruikt bij de een IOT-opzet, i.e. sensordata die aangeleverd worden voor de monitoring van deze systemen. Deze momitoring is opgezet in het kader van het ARMOS-project."
+    description: "Deze dataset bevat codelijsten i.v.m. luchtzuiveringssystemen voor stallen, gericht op de reductie van stikstofuitstoot. De codelijsten hebben een onderlinge samenhang, bv. types van luchtzuiveringssystemen met specifieke regels. De lijsten worden gebruikt bij een IOT-opzet, i.e. sensordata die aangeleverd worden voor de monitoring van deze systemen. Deze monitoring is opgezet in het kader van het ARMOS-project."
     temporal : https://data.omgeving.vlaanderen.be/id/periodoftime/dataset_omg
     type : http://www.w3.org/ns/dcat#Dataset
     provenance:

@@ -7,12 +7,10 @@ Een rechtzetting in de codelijst zelf (`src/source/codelijst-source.csv`) volgt 
 [Een codelijst aanpassen](codelijst-aanpassen.md) en komt in de volgende release in
 [`CHANGELOG.md`](../CHANGELOG.md). Haal een punt hier weg zodra het rechtgezet is.
 
-| # | Wat                                                            | Waar                                         | Wijzigt de codelijst? |
-|---|----------------------------------------------------------------|----------------------------------------------|:---------------------:|
-| 1 | Verkeerde definitie bij het conceptschema `parameter-norm`     | `codelijst-source.csv`, regel 9              |          ja           |
-| 2 | Twee verschillende licenties                                   | `LICENSE` en `config.yml`                    |          nee          |
-| 3 | Tikfout en dubbele spatie in het label van `systeemopstelling` | `codelijst-source.csv`, regel 11             |          ja           |
-| 4 | Tikfouten in de beschrijving van de dataset                    | `config.yml`, `metadata.dataset.description` |          nee          |
+| # | Wat                                                        | Waar                             | Wijzigt de codelijst? |
+|---|------------------------------------------------------------|----------------------------------|:---------------------:|
+| 1 | Verkeerde definitie bij het conceptschema `parameter-norm` | `codelijst-source.csv`, regel 9  |          ja           |
+| 2 | Twee verschillende licenties                               | `LICENSE` en `config.yml`        |          nee          |
 
 ## 1. Verkeerde definitie bij `parameter-norm`
 
@@ -49,24 +47,7 @@ codelijst mogen gebruiken. De [README](../README.md) verwijst voorlopig enkel na
 **Te beslissen.** Welke licentie geldt voor de codelijst. Mogelijk is `LICENSE` bedoeld voor de code in
 de repository en de modellicentie voor de data; dan zeggen we dat beter expliciet in de README.
 
-## 3. Label van `systeemopstelling`
+## Daarnaast
 
-Het conceptschema `conceptscheme:systeemopstelling` heeft als `skos:prefLabel`
-*conceptschema␣␣luchtzuiveringssysteem opstelingen*: een dubbele spatie, en *opstelingen* i.p.v. *opstellingen*.
-
-**Impact.** Klein, maar zichtbaar voor afnemers die het label tonen. Rechtzetten is een gewijzigde waarde (✏️ in de changelog), geen breaking change.
-
-## 4. Tikfouten in de beschrijving van de dataset
-
-De beschrijving van de dataset (`metadata.dataset.description` in `config.yml`) bevat *bij de een
-IOT-opzet* en *momitoring*. Die tekst komt in de DCAT-beschrijving (`dataset.ttl`), niet in de
-codelijst zelf.
-
-**Impact.** Enkel de metadata; rechtzetten verandert niets aan de SKOS-bestanden en komt niet in de
-changelog.
-
-### Daarnaast
-
-Kleinere ongelijkheden in de labels van de conceptschema's, die geen fout zijn maar wel opvallen:
-*Conceptschema secundaire alarmen luchtzuiveringssysteem* begint met een hoofdletter, de andere met *conceptschema*, en *VLAREM indelingsklassen* heeft het
-woord *conceptschema* niet.
+Een kleinere ongelijkheid in de labels van de conceptschema's, die geen fout is maar wel opvalt:
+*VLAREM indelingsklassen* heeft het woord *conceptschema* niet, de andere wel.

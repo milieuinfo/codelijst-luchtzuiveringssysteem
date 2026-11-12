@@ -1199,14 +1199,14 @@ conceptscheme:secundaire-alarmen a skos:ConceptScheme;
     skos:definition "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl;
     skos:hasTopConcept lzs-sec:alarmdrempel_10, lzs-sec:alarmdrempel_11, lzs-sec:alarmdrempel_12, lzs-sec:alarmdrempel_13, lzs-sec:alarmdrempel_15, lzs-sec:alarmdrempel_1, lzs-sec:alarmdrempel_2, lzs-sec:alarmdrempel_2a, lzs-sec:alarmdrempel_3, lzs-sec:alarmdrempel_4, lzs-sec:alarmdrempel_5, lzs-sec:alarmdrempel_6, lzs-sec:alarmdrempel_7, lzs-sec:alarmdrempel_8, lzs-sec:alarmdrempel_9, lzs-sec:dagbeoordeling_10, lzs-sec:dagbeoordeling_11, lzs-sec:dagbeoordeling_12, lzs-sec:dagbeoordeling_1, lzs-sec:dagbeoordeling_2, lzs-sec:dagbeoordeling_3, lzs-sec:dagbeoordeling_4, lzs-sec:dagbeoordeling_5, lzs-sec:dagbeoordeling_6, lzs-sec:dagbeoordeling_7, lzs-sec:dagbeoordeling_8, lzs-sec:dagbeoordeling_9;
     skos:note "Bevat dagbeoordelingsregels (Y) en alarmdrempels (X) ten behoeve van secundaire alarmlogica. Opzoeksleutel is relevantProperty (parameter-URI) als default"@nl, "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl;
-    skos:prefLabel "Conceptschema secundaire alarmen luchtzuiveringssysteem"@nl;
+    skos:prefLabel "conceptschema luchtzuiveringssysteem secundaire alarmen"@nl;
     skos:scopeNote "relevantNormBandbreedte heeft voorrang indien aanwezig. Prefix: lzs-sec: (https://data.omgeving.vlaanderen.be/id/concept/lzs/secundaire_alarmen/)"@nl.
 conceptscheme:stalbezetting a skos:ConceptScheme;
     skos:hasTopConcept lzs-stalbezetting:in_gebruik, lzs-stalbezetting:leeg;
     skos:prefLabel "conceptschema luchtzuiveringssysteem stalbezetting"@nl.
 conceptscheme:systeemopstelling a skos:ConceptScheme;
     skos:hasTopConcept lzs-systeemopstelling:enkelvoudig, lzs-systeemopstelling:gecombineerd;
-    skos:prefLabel "conceptschema  luchtzuiveringssysteem opstelingen"@nl.
+    skos:prefLabel "conceptschema luchtzuiveringssysteem opstellingen"@nl.
 conceptscheme:systeemstatus a skos:ConceptScheme;
     skos:hasTopConcept lzs-status:buiten_gebruik, lzs-status:in_reiniging, lzs-status:onderhoud, lzs-status:operationeel, lzs-status:storing;
     skos:prefLabel "conceptschema luchtzuiveringssysteem status"@nl.

@@ -14,7 +14,7 @@ Pas het niet met de hand aan: `pnpm run create_changelog_full` bouwt het volledi
 
 Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 
-🆕 28 nieuw · ✏️ 2 gewijzigd
+🆕 28 nieuw · ✏️ 3 gewijzigd
 
 ### Properties
 
@@ -31,11 +31,17 @@ Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 | ✏️  | `lzs-bandbreedte:_19` | Waswaterdebiet afwijking naar beneden \> 20% (lelysphere)  | `schema:maxValue`: "0,8" (`xsd:decimal`) → "0.8" (`xsd:decimal`) |
 | ✏️  | `lzs-bandbreedte:_20` | Spuiwaterdebiet afwijking naar beneden \> 10% (lelysphere) | `schema:maxValue`: "0,9" (`xsd:decimal`) → "0.9" (`xsd:decimal`) |
 
-### Conceptschema secundaire alarmen luchtzuiveringssysteem (`conceptscheme:secundaire-alarmen`)
+### conceptschema luchtzuiveringssysteem opstellingen (`conceptscheme:systeemopstelling`)
+
+|     | Concept                           | Label                                             | Wijziging                                                                                                                  |
+| --- | --------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:systeemopstelling` | conceptschema luchtzuiveringssysteem opstellingen | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem opstelingen" → "conceptschema luchtzuiveringssysteem opstellingen" |
+
+### conceptschema luchtzuiveringssysteem secundaire alarmen (`conceptscheme:secundaire-alarmen`)
 
 |     | Concept                            | Label                                                                      | Wijziging           |
 | --- | ---------------------------------- | -------------------------------------------------------------------------- | ------------------- |
-| 🆕  | `conceptscheme:secundaire-alarmen` | Conceptschema secundaire alarmen luchtzuiveringssysteem                    | nieuw conceptschema |
+| 🆕  | `conceptscheme:secundaire-alarmen` | conceptschema luchtzuiveringssysteem secundaire alarmen                    | nieuw conceptschema |
 | 🆕  | `lzs-sec:alarmdrempel_1`           | Alarmdrempel zuurtegraad waswater (7 dagen)                                | nieuw concept       |
 | 🆕  | `lzs-sec:alarmdrempel_2`           | Alarmdrempel geleidbaarheid van het waswater (7 dagen)                     | nieuw concept       |
 | 🆕  | `lzs-sec:alarmdrempel_2a`          | Alarmdrempel geleidbaarheid waswater \> 280 mS/cm Lely Sphere (3 dagen)    | nieuw concept       |
