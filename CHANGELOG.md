@@ -14,7 +14,7 @@ Pas het niet met de hand aan: `pnpm run create_changelog_full` bouwt het volledi
 
 Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 
-🆕 28 nieuw · ✏️ 11 gewijzigd
+🆕 28 nieuw · ✏️ 12 gewijzigd
 
 ### Properties
 
@@ -64,9 +64,10 @@ Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 
 ### Conceptschema luchtzuiveringssysteem parameter specificatie (`conceptscheme:parameter-norm`)
 
-|     | Concept                        | Label                                                       | Wijziging                                                                                                                                       |
-| --- | ------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| ✏️  | `conceptscheme:parameter-norm` | Conceptschema luchtzuiveringssysteem parameter specificatie | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem parameter specificatie" → "Conceptschema luchtzuiveringssysteem parameter specificatie" |
+|     | Concept                        | Label                                                       | Wijziging                                                                                                                                                                                          |
+| --- | ------------------------------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ✏️  | `conceptscheme:parameter-norm` | Conceptschema luchtzuiveringssysteem parameter specificatie | `skos:definition`: "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)." → "Normen per parameter en systeemtype, met minimum- en maximumwaarden." |
+| ✏️  |                                |                                                             | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem parameter specificatie" → "Conceptschema luchtzuiveringssysteem parameter specificatie"                                                    |
 
 ### Conceptschema luchtzuiveringssysteem secundaire alarmen (`conceptscheme:secundaire-alarmen`)
 
@@ -112,6 +113,12 @@ Nog niet gepubliceerd: wijzigingen t.o.v. release 0.2.1.
 |     | Concept                       | Label                                       | Wijziging                                                                                                       |
 | --- | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | ✏️  | `conceptscheme:systeemstatus` | Conceptschema luchtzuiveringssysteem status | `skos:prefLabel`: "conceptschema luchtzuiveringssysteem status" → "Conceptschema luchtzuiveringssysteem status" |
+
+### VLAREM indelingsklassen (`conceptscheme-alg:vlarem-klasse`)
+
+|     | Concept                           | Label                   | Wijziging                                                                                                                 |
+| --- | --------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| ➕  | `conceptscheme-alg:vlarem-klasse` | VLAREM indelingsklassen | `skos:definition`: "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)." |
 
 ## [0.2.1] - 2026-09-25
 

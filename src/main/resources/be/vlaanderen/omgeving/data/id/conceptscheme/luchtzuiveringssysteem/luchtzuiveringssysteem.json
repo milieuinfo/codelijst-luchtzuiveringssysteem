@@ -2206,7 +2206,7 @@
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
-        "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
+        "definition": "Normen per parameter en systeemtype, met minimum- en maximumwaarden.",
         "hasTopConcept": [
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_10",
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_11",
@@ -2229,7 +2229,7 @@
             "https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9"
         ],
         "note": [
-            "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
+            "Normen per parameter en systeemtype, met minimum- en maximumwaarden."
         ],
         "prefLabel": "Conceptschema luchtzuiveringssysteem parameter specificatie"
     },
@@ -2327,10 +2327,14 @@
         "_type": [
             "http://www.w3.org/2004/02/skos/core#ConceptScheme"
         ],
+        "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
         "hasTopConcept": [
             "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1",
             "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2",
             "https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k3"
+        ],
+        "note": [
+            "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
         ],
         "prefLabel": "VLAREM indelingsklassen"
     }

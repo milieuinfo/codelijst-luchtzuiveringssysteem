@@ -1227,7 +1227,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/norm_bandbreedte/_9> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/norm-bandbreedte> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem normbandbreedte"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#definition> "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#definition> "Normen per parameter en systeemtype, met minimum- en maximumwaarden."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_10> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_11> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_12> .
@@ -1247,7 +1247,7 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_7> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_8> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter_norm/_9> .
-<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#note> "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#note> "Normen per parameter en systeemtype, met minimum- en maximumwaarden."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter-norm> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem parameter specificatie"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/parameter> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/parameter/biobedspoelwaterproductie> .
@@ -1316,7 +1316,9 @@
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/lzs/type/luchtzuiveringssysteem> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/lzs/systeemtype> <http://www.w3.org/2004/02/skos/core#prefLabel> "Conceptschema luchtzuiveringssysteem"@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#definition> "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k1> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k2> .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#hasTopConcept> <https://data.omgeving.vlaanderen.be/id/concept/vlarem-klasse/k3> .
+<https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#note> "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."@nl .
 <https://data.omgeving.vlaanderen.be/id/conceptscheme/vlarem-klasse> <http://www.w3.org/2004/02/skos/core#prefLabel> "VLAREM indelingsklassen"@nl .

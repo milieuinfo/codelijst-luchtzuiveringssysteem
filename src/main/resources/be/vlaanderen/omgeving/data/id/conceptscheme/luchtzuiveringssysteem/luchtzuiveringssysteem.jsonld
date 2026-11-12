@@ -3132,7 +3132,7 @@
             "_type": [
                 "skos:ConceptScheme"
             ],
-            "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
+            "definition": "Normen per parameter en systeemtype, met minimum- en maximumwaarden.",
             "hasTopConcept": [
                 "lzs-param-norm:_10",
                 "lzs-param-norm:_11",
@@ -3155,7 +3155,7 @@
                 "lzs-param-norm:_9"
             ],
             "note": [
-                "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
+                "Normen per parameter en systeemtype, met minimum- en maximumwaarden."
             ],
             "prefLabel": "Conceptschema luchtzuiveringssysteem parameter specificatie"
         },
@@ -3253,10 +3253,14 @@
             "_type": [
                 "skos:ConceptScheme"
             ],
+            "definition": "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM).",
             "hasTopConcept": [
                 "vlarem-klasse:k1",
                 "vlarem-klasse:k2",
                 "vlarem-klasse:k3"
+            ],
+            "note": [
+                "Het schema van indelingsklassen (1, 2, 3) zoals vastgelegd in de Vlaamse milieuregelgeving (VLAREM)."
             ],
             "prefLabel": "VLAREM indelingsklassen"
         }
