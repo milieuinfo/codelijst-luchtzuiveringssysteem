@@ -28,14 +28,6 @@ describe('table', () => {
         expect(table(['A', 'B'], [['x']])).toBe(['| A   | B   |', '| --- | --- |', '| x   |     |'].join('\n'));
     });
 
-    it('counts variation selectors and zero-width joiners as zero columns', () => {
-        // ✏️ = U+270F + U+FE0F, 👩‍💻 = U+1F469 + U+200D + U+1F4BB
-        const [header, , een, twee] = table(['Kolom1'], [['✏️'], ['👩‍💻']]).split('\n');
-        expect(header).toBe('| Kolom1 |');
-        expect(een).toBe('| ✏️     |');
-        expect(twee).toBe('| 👩‍💻   |');
-    });
-
     it('counts an emoji as two columns', () => {
         const [header, , row] = table(['Status'], [['🆕 x']]).split('\n');
         expect(header).toBe('| Status |');

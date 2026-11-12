@@ -31,6 +31,7 @@ import { toNT as nt, tripleKey as sleutel, groupBy as groepeer, shortenIri } fro
 import { artifactId, kort, prefixes, versie, leesHuidig, leesReleases } from './utils/releases.js';
 import { style, symbol, print, plural } from './utils/console.js';
 import { escapeMarkdown, table } from './utils/markdown.js';
+import { isMainModule } from './utils/script.js';
 
 const CHANGELOG_PAD = '../CHANGELOG.md';
 const MAX_LENGTE = 120;
@@ -38,7 +39,7 @@ const NAAR_STDOUT = process.argv.includes('--stdout');
 const VOLGENDE = 'Volgende versie';
 
 // Met --stdout gaat de changelog naar stdout; de meldingen van het script dan naar stderr
-if (NAAR_STDOUT) console.log = console.error;
+if (NAAR_STDOUT && isMainModule(import.meta.url)) console.log = console.error;
 
 // Sorteert '_2' vóór '_10'
 const vergelijkTekst = (a, b) => a.localeCompare(b, 'nl', { numeric: true });
@@ -300,7 +301,7 @@ function propertyTabel(oud, nieuw) {
 
 // Markdown-sectie voor één release; `vorige` is null voor de eerste release.
 // Zonder datum is het de volgende versie: de wijzigingen t.o.v. release `vorigeLabel`.
-function sectie({ label, datum, vorige, vorigeLabel, huidige }) {
+export function sectie({ label, datum, vorige, vorigeLabel, huidige }) {
     const regels = datum
         ? [`## [${label}] - ${datum}`, '']
         : [`## [${label}]`, '', `Nog niet gepubliceerd: wijzigingen t.o.v. release ${vorigeLabel}.`, ''];
@@ -400,9 +401,10 @@ function maakVolledigeChangelog() {
         .then(([releases, datums]) => releases.map((r, i) => ({ ...r, datum: datums[i] })))
         .then((releases) => {
             const metHuidige = !releases.some((r) => r.label === nieuweVersie);
-            return Promise.all([releases, metHuidige, metHuidige ? leesHuidig() : null]);
+            const huidig = metHuidige ? leesHuidig() : Promise.resolve(null);
+            return huidig.then((huidige) => ({ releases, metHuidige, huidige }));
         })
-        .then(([releases, metHuidige, huidige]) => {
+        .then(({ releases, metHuidige, huidige }) => {
             print.title('Changelog of the release history');
             print.keyValue({
                 Releases: `${style.bold(releases.length)} tags: ${releases[0].label} ${style.gray(symbol.arrow)} ${releases.at(-1).label}`,
@@ -503,9 +505,12 @@ function voegHuidigeVersieToe() {
         });
 }
 
-Promise.resolve()
-    .then(() => (process.argv.includes('--full') ? maakVolledigeChangelog() : voegHuidigeVersieToe()))
-    .catch((err) => {
-        print.error(err.message);
-        process.exitCode = 1;
-    });
+// Enkel als script gestart; bij een import (bv. in de tests) gebeurt er niets
+if (isMainModule(import.meta.url)) {
+    Promise.resolve()
+        .then(() => (process.argv.includes('--full') ? maakVolledigeChangelog() : voegHuidigeVersieToe()))
+        .catch((err) => {
+            print.error(err.message);
+            process.exitCode = 1;
+        });
+}

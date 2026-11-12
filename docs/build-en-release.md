@@ -67,14 +67,23 @@ de Markdown, de Prettier-controle op de JavaScript en de Vitest-tests in `test/`
 een ESLint-fout, een bestand dat niet volgens Prettier geformatteerd is of een falende test. Lokaal
 los je dat op met `pnpm run format` en `pnpm run lint:fix`; wat overblijft, pas je met de hand aan.
 
-De tests bestaan uit unit tests van de utils (git wordt daarbij gesimuleerd) en integratietests op de
-echte configuratie en de gegenereerde codelijst: de SHACL-validatie, en een test die de codelijst
-opnieuw genereert en byte voor byte vergelijkt met de gecommitte bestanden. Ze vangen zo ook een
-dependency-update op die de generatie breekt. Een aparte test bewaakt dat `@zazuko/env-node` dezelfde
-versie heeft als in de generator: die aanvaardt enkel datasets van zijn eigen versie.
+De tests zijn er vooral om dependencies veilig te kunnen updaten:
 
-Hoe goed de tests zijn, meet je met `pnpm run test:mutation` (Stryker): het brengt kleine fouten aan in
-`src/utils/` en kijkt of een test faalt. Onder 95 % faalt het commando. Jenkins draait dit (nog) niet.
+- de codelijst wordt opnieuw gegenereerd en byte voor byte vergeleken met de gecommitte bestanden;
+- de SHACL-validatie, de ingelezen `config.yml` en het ODCS data contract worden vergeleken met de
+  verwachte uitvoer in `test/__snapshots__/`;
+- de vergelijking met de vorige release (`03_…`) en de changelog (`04_…`) worden getest op de echte
+  codelijst met bewuste wijzigingen: een verwijderd concept, een verwijderde of gewijzigde waarde, een
+  nieuw concept of een nieuwe property;
+- een test bewaakt dat `@zazuko/env-node` dezelfde versie heeft als in de generator: die aanvaardt
+  enkel datasets van zijn eigen versie.
+
+Faalt een snapshot na een update, dan is de uitvoer veranderd: zoek uit waarom. Is de wijziging
+bewust (bv. een aangepaste `config.yml`), werk de snapshots dan bij met `pnpm run test -u` en
+bekijk de diff.
+
+`pnpm run test` maakt ook een coverage-rapport in `coverage/`. Sonar leest `coverage/lcov.info` in
+(zie `sonar-project.properties`); de HTML-versie staat in `coverage/lcov-report/index.html`.
 
 ### Vergelijking met vorige release
 

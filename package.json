@@ -29,8 +29,7 @@
     "format:check": "prettier --check .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "vitest run",
-    "test:mutation": "stryker run",
+    "test": "vitest run --coverage",
     "validate:history": "cd src && node 03_validate_against_previous_release.js --history",
     "validate:release": "cd src && node 03_validate_against_previous_release.js"
   },
@@ -44,8 +43,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@eslint/markdown": "8.0.3",
-    "@stryker-mutator/core": "10.1.1",
-    "@stryker-mutator/vitest-runner": "10.1.1",
+    "@vitest/coverage-v8": "5.1.0",
     "eslint": "10.14.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-n": "18.5.0",

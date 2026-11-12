@@ -27,6 +27,7 @@ import { laatsteReleaseTag, vereisteReleaseTags } from './utils/git-utils.js';
 import { parseNTriples, toNT as nt, tripleKey as sleutel, groupBy as groepeer } from './utils/rdf.js';
 import { ntPad, artifactId, prefixes, kort, versie, leesHuidig, leesRevisie, leesReleases } from './utils/releases.js';
 import { style, symbol, print, plural } from './utils/console.js';
+import { isMainModule } from './utils/script.js';
 
 const TOEGESTAAN_PAD = './source/toegestane-verwijderingen.txt';
 
@@ -44,7 +45,7 @@ function expandeer(token, regelnr) {
     throw new Error(`${TOEGESTAAN_PAD}:${regelnr}: '${token}' is not an IRI or known CURIE.`);
 }
 
-function leesRegel(tekst, regelnr) {
+export function leesRegel(tekst, regelnr) {
     const regel = { regelnr, tekst, gebruikt: 0 };
     if (tekst.endsWith('.')) {
         return parseNTriples(tekst + '\n')
@@ -143,7 +144,7 @@ function deelIn(teBeoordelen, verdwenenSubjects, toegevoegdPerSP) {
 }
 
 // Deelt de verwijderde triples in; zie de uitleg bovenaan
-function vergelijk({ tag, huidig, vorige, regels }) {
+export function vergelijk({ tag, huidig, vorige, regels }) {
     const huidigeSleutels = new Set(huidig.map(sleutel));
     const vorigeSleutels = new Set(vorige.map(sleutel));
     const huidigeSubjects = new Set(huidig.map((q) => nt(q.subject)));
@@ -449,9 +450,12 @@ function valideerGeschiedenis() {
         });
 }
 
-Promise.resolve()
-    .then(() => (process.argv.includes('--history') ? valideerGeschiedenis() : valideerTegenVorigeRelease()))
-    .catch((err) => {
-        print.error(err.message);
-        process.exitCode = 1;
-    });
+// Enkel als script gestart; bij een import (bv. in de tests) gebeurt er niets
+if (isMainModule(import.meta.url)) {
+    Promise.resolve()
+        .then(() => (process.argv.includes('--history') ? valideerGeschiedenis() : valideerTegenVorigeRelease()))
+        .catch((err) => {
+            print.error(err.message);
+            process.exitCode = 1;
+        });
+}

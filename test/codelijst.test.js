@@ -4,10 +4,15 @@ import fs from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import validate from '@milieuinfo/maven-metadata-generator-npm/src/utils/shacl_validation.js';
 import rdf from '@zazuko/env-node';
-import { skosOptions, skosSource } from '../src/utils/variables.js';
+import { odcsSource, skosOptions, skosSource } from '../src/utils/variables.js';
 import { leesHuidig } from '../src/utils/releases.js';
 
 describe('configuration', () => {
+    // De ingelezen config.yml staat in __snapshots__/config.json: een update van js-yaml die de
+    // inhoud anders inleest, valt zo op. Na een bewuste wijziging aan config.yml: 'pnpm run test -u'.
+    it('reads config.yml the same way', () =>
+        expect(JSON.stringify(odcsSource.config, null, 2) + '\n').toMatchFileSnapshot('__snapshots__/config.json'));
+
     it('loads config.yml and the SHACL shapes', () => {
         expect(Object.keys(skosSource.prefixes).length).toBeGreaterThan(0);
         expect(skosSource.shapesDataset.size).toBeGreaterThan(0);

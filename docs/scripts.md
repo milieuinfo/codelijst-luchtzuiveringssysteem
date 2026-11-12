@@ -25,6 +25,10 @@ Start je een script met de hand, doe dat dan ook vanuit `src/`. Anders kloppen d
 De nummering geeft de volgorde aan: `01` en `02` horen bij de build, `03` is een controle die Jenkins
 nadien draait (en die je ook lokaal kan draaien), `04` hoort bij een release, `99` is een manuele stap achteraf.
 
+`03_…` en `04_…` exporteren hun kernlogica (`vergelijk`, `leesRegel`, `sectie`) voor de tests in
+`test/`. Ze voeren enkel iets uit als ze als script gestart worden (`isMainModule` uit
+`utils/script.js`); een import doet niets.
+
 ## `utils/variables.js`
 
 Geen script, maar de lijm tussen de configuratie en de generator. Bij het importeren gebeurt het

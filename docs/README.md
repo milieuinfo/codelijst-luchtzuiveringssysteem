@@ -83,8 +83,7 @@ Alle commando's draai je vanuit de root van de repository.
 | `pnpm run create_changelog_full` | Bouwt `CHANGELOG.md` opnieuw op uit alle release-tags, met de huidige bestanden als *Volgende versie* (met `--version` als die versie: zo doet Jenkins het)          | git-tags                   |
 | `pnpm run lint`                  | Controleert JavaScript, Markdown en `package.json` met ESLint (`lint:fix` herstelt wat automatisch kan)                                                              | —                          |
 | `pnpm run format`                | Formatteert JavaScript en configuratiebestanden met Prettier (`format:check` controleert enkel)                                                                      | —                          |
-| `pnpm run test`                  | Draait de Vitest-tests in `test/`: unit tests van de utils en integratietests op de configuratie en de gegenereerde codelijst (SHACL)                                | —                          |
-| `pnpm run test:mutation`         | Mutation testing met Stryker op `src/utils/`: controleert of de tests fouten in de code echt opmerken (rapport in `reports/mutation/`)                               | —                          |
+| `pnpm run test`                  | Draait de Vitest-tests in `test/` met coverage (`coverage/`, voor Sonar): utils, vergelijking, changelog, generatie, SHACL, ODCS                                     | —                          |
 | `pnpm run check`                 | `lint`, `format:check` en `test` samen (zo doet Jenkins het)                                                                                                         | —                          |
 | `mvn verify`                     | Volledige build: installeert Node/pnpm in `target/`, draait `create_skos_only` en `create_metadata`, bouwt de jar                                                    | interne Maven-repositories |
 

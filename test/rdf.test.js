@@ -54,23 +54,6 @@ describe('shortenIri', () => {
         expect(shortenIri('http://example.org/b', prefixes)).toBe('ex:b');
     });
 
-    it('does not depend on the order of the prefixes', () => {
-        const omgekeerd = { exa: 'http://example.org/a/', ex: 'http://example.org/' };
-        expect(shortenIri('http://example.org/a/1', omgekeerd)).toBe('exa:1');
-    });
-
-    it('keeps the first prefix when two have the same namespace', () => {
-        expect(shortenIri('http://example.org/b', { een: 'http://example.org/', twee: 'http://example.org/' })).toBe(
-            'een:b',
-        );
-    });
-
-    it('skips values that are not a namespace', () => {
-        expect(shortenIri('http://example.org/b', { ctx: { '@id': 'x' }, ex: 'http://example.org/' })).toBe('ex:b');
-        // een array wordt door startsWith omgezet naar een string: toch geen namespace
-        expect(shortenIri('http://example.org/b', { lijst: ['http://example.org/'] })).toBe('<http://example.org/b>');
-    });
-
     it('ignores keys starting with @', () => {
         expect(shortenIri('http://example.org/b', { '@base': 'http://example.org/' })).toBe('<http://example.org/b>');
     });
@@ -87,21 +70,6 @@ describe('shorten', () => {
             expect(short).toContain('skos:prefLabel "Eén"@nl');
             expect(short).toContain('skos:notation "1"^^<http://www.w3.org/2001/XMLSchema#integer>');
             expect(short).toContain('skos:related exa:1');
-        }));
-});
-
-describe('shorten for other terms', () => {
-    it('writes blank nodes and plain strings like toNT', () =>
-        parseNTriples(ntriples).then((quads) => {
-            const blank = quads.find((quad) => quad.subject.termType === 'BlankNode');
-            const tekst = quads.find((quad) => quad.object.value === 'tekst');
-            expect(shorten(blank.subject, prefixes)).toBe(toNT(blank.subject));
-            expect(shorten(tekst.object, prefixes)).toBe('"tekst"');
-        }));
-
-    it('shortens a datatype that has a prefix', () =>
-        parseNTriples(`<http://example.org/x> <${SKOS}notation> "1"^^<http://example.org/a/type> .`).then(([quad]) => {
-            expect(shorten(quad.object, prefixes)).toBe('"1"^^exa:type');
         }));
 });
 

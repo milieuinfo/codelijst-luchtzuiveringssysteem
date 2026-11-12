@@ -12,5 +12,14 @@ export default defineConfig({
         // variables.js laadt bij het importeren de SHACL-shapes; de generatie en validatie duren even
         testTimeout: 60000,
         hookTimeout: 120000,
+        // Coverage van de code in src/ (pnpm run test zet ze aan). coverage/lcov.info leest Sonar in
+        // (zie sonar-project.properties); de HTML-versie staat in coverage/lcov-report/index.html.
+        coverage: {
+            provider: 'v8',
+            include: ['src/**/*.js'],
+            exclude: ['src/utils/setenv*.js', 'src/99_deploy_latest.js'],
+            reporter: ['text', 'lcov'],
+            reportsDirectory: 'coverage',
+        },
     },
 });

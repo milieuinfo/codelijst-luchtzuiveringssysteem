@@ -23,5 +23,4 @@ target
 temp
 node_modules
 validation
-.stryker-tmp
-reports
+coverage

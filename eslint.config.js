@@ -18,10 +18,11 @@ export default [
             'target/',
             'temp/',
             'validation*/',
-            '.stryker-tmp/',
-            'reports/',
+            'coverage/',
             'src/utils/setenv*.js',
             'CHANGELOG.md',
+            // verwachte uitvoer van de tests, zoals gegenereerd
+            'test/__snapshots__/',
         ],
     },
 
@@ -64,8 +65,7 @@ export default [
         },
     },
     {
-        // git.js zelf, en de test die child_process simuleert
-        files: ['src/utils/git.js', 'test/git.test.js'],
+        files: ['src/utils/git.js'],
         rules: { 'no-restricted-imports': 'off' },
     },
     { files: JS, ...prettier },

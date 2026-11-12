@@ -34,12 +34,12 @@ Sources (edit these):
 | `src/utils/releases.js` | Shared by `03_…`/`04_…`: `.nt` path, prefixes, `kort`, version from tag, triples of current files or a release |
 | `src/utils/rdf.js` | Generic: `parseNTriples`, `toNT`, `tripleKey`, `shorten` (CURIE), `groupBy` |
 | `src/utils/markdown.js` | Generic: `escapeMarkdown`, `table` (padded, aligned) |
+| `src/utils/script.js` | Generic: `isMainModule(import.meta.url)`: run a script's main only when started, not when imported |
 | `src/utils/console.js` | Generic console output (see Utils) |
 | `src/main/resources/be/vlaanderen/omgeving/data/id/ontology/**` | Small `lzs-vocab:` vocabulary + SHACL shapes (AP constraints) |
 | `eslint.config.js` | ESLint flat config: JS (recommended, `eslint-plugin-n`, convention rules, `eslint-config-prettier` last) + Markdown (`@eslint/markdown`, GFM; `CHANGELOG.md` ignored) + `package.json` (`eslint-plugin-package-json`: valid fields, standard key order, sorted scripts, exact versions) |
 | `.prettierrc.json`, `.prettierignore` | Prettier: JS + config files only; md, `src/source/`, `src/main/resources/` ignored |
-| `vitest.config.js`, `test/*.test.js` | Vitest: unit tests for utils (git/`child_process` mocked), integration tests (config, SHACL, regenerating the code list byte for byte, env-node equals generator's). `test/setup.js` chdirs to `src/` (needs `pool: 'forks'`) |
-| `stryker.config.json` | Stryker mutation testing of `src/utils/*.js` (not `variables.js`); breaks below 95 %. Output in `reports/` (git-ignored) |
+| `vitest.config.js`, `test/` | Vitest (`pnpm run test`, with coverage). Unit tests for utils; `validatie`/`changelog` test `vergelijk`, `leesRegel` (`03_…`) and `sectie` (`04_…`) on the real code list with deliberate changes (`test/fixtures.js`); integration tests: config, SHACL, regenerating the code list byte for byte, ODCS, env-node equals generator's. `test/setup.js` chdirs to `src/` (needs `pool: 'forks'`). Expected output in `test/__snapshots__/` (committed; not formatted or linted) |
 | `pnpm-workspace.yaml` | pnpm 11 settings (pnpm 11 ignores the `pnpm` field in `package.json`): `overrides` (`@rdfjs/types`), `saveExact`, `allowBuilds` (`classic-level: false`: ships prebuilds) |
 | `sonar-project.properties` | Extra settings for the Jenkins Sonar scan (`sonar.scanMaven` runs the `sonar-scanner` CLI, so `pom.xml` properties are ignored; its `-D` args win). Ignores S7785 (top-level await) |
 | `src/main/resources/be/vlaanderen/omgeving/lzs/data/id/graph/*.json` | Published context/prefix copies for consumers; hand-maintained, read by no script |
@@ -67,8 +67,8 @@ pnpm run create_changelog       # add/replace CHANGELOG.md section 'Volgende ver
 pnpm run create_changelog_full  # rebuild CHANGELOG.md from all tags + current files as 'Volgende versie', or with --version/VERSION as that version (Jenkins at release: no 'Volgende versie')
 pnpm run lint                   # ESLint on JS, Markdown, package.json (lint:fix to autofix)
 pnpm run format                 # Prettier write (format:check to check only)
-pnpm run test                   # Vitest (tests run with src/ as cwd, like the scripts)
-pnpm run test:mutation          # Stryker on src/utils (~10 s); report: reports/mutation/index.html
+pnpm run test                   # Vitest + coverage (cwd src/, like the scripts); coverage/lcov.info for Sonar
+pnpm run test -u                # update test/__snapshots__/ after an intended output change (review the diff)
 pnpm run check                  # lint + format:check + test (what Jenkins runs)
 mvn verify                      # full build: Node/pnpm in target/, both scripts, jar
 ```
@@ -134,7 +134,7 @@ JavaScript:
 - New modules export inline (`export const`/`export function`); `variables.js` keeps its export list.
 - pnpm 11 (`packageManager` in `package.json` and `<pnpmVersion>` in `pom.xml`: change both). Its `minimumReleaseAge` policy rejects packages published less than a day ago: pick an older version, don't relax the policy. A dependency with an install script needs an `allowBuilds` decision, or `pnpm install` fails (also in Maven).
 - Dependencies: exact versions only (no `^`/`~`; ESLint `restrict-dependency-ranges` enforces it, except in `overrides` in `pnpm-workspace.yaml`: check those yourself). Keep `@zazuko/env-node` equal to the generator's pinned version (datasets are passed between both). After an update: `pnpm run check`, `create_skos_only` (no diff), `validate:release`.
-- Tests: Vitest in `test/`, import `describe`/`it`/`expect` from `vitest`; new util logic gets a test. After changing `src/utils/`, run `test:mutation`: kill new survivors with a test (only equivalent mutants may survive: `releases.js` `'utf8'`).
+- Tests: Vitest in `test/`, import `describe`/`it`/`expect` from `vitest`; new util logic gets a test. Scripts with logic worth testing export it and run their main only via `isMainModule(import.meta.url)`. A failing snapshot after a dependency update = changed output: investigate, don't just update it.
 - Import only packages in `package.json` (`n/no-extraneous-import`) (pnpm strict: e.g. `rdf-validate-shacl` from the generator is not importable). Importing files from the generator's `src/` is fine (`variables.js` does; `03_…` uses `src/utils/shacl_validation.js`).
 - On failure set `process.exitCode = 1`, never `process.exit()` (flushes output; `n/no-process-exit`).
 
